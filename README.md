@@ -1,5 +1,5 @@
 # BBox API Document
-Version: v.0.6.0
+Version: v.0.6.1
 Release date: December 3, 2018 
 
 ## Introduction
@@ -115,19 +115,19 @@ The core function of BBox is to control beam steering. The following code snippe
 # API parameters
 ## ControlCmd
     public int ControlCmd(int channel, Control ctrl, byte val);
-| **T****ype** | **N****ame** | **Value**                                 |
+| Type | Name | Value                                 |
 | ------------ | ------------ | ----------------------------------------- |
-| int          | channel      | { 1 | 2 | 3 | 4 } in BBox Lite            |
+| int          | channel      | { 1 \| 2 \| 3 \| 4 } in BBox Lite            |
 | Control      | ctrl         | Please refer to Enumeration table below   |
 | byte         | val          | Please refer to Control range table below |
 
 ----------
 ## GetStepVal
     public int GetStepVal(TxRxMode trmode, int channel, Control ctrl);
-| **T****ype** | **N****ame** | **Value**                                        |
+| Type | Name | Value                                        |
 | ------------ | ------------ | ------------------------------------------------ |
 | TxRxMode     | trmode       | Please refer to Enumeration TxRxMode table below |
-| int          | channel      | { 1 | 2 | 3 | 4 } in BBox Lite                   |
+| int          | channel      | { 1 \| 2 \| 3 \| 4 } in BBox Lite                   |
 | Control      | ctrl         | Please refer to Enumeration Control table below  |
 
 ----------
@@ -139,17 +139,17 @@ The core function of BBox is to control beam steering. The following code snippe
 ----------
 ## SwitchTxRxMode
     public int SwitchTxRxMode(TxRxMode mode);
-| **T****ype** | **N****ame** | **Value**                                        |
+| Type | Name | Value                                        |
 | ------------ | ------------ | ------------------------------------------------ |
 | TxRxMode     | mode         | Please refer to Enumeration TxRxMode table below |
 
 ----------
 ## BeamSteer
     public int BeamSteer(TxRxMode mode, double angle);
-| **T****ype** | **N****ame** | **Value**                                        |
+| Type | Name | Value                                        |
 | ------------ | ------------ | ------------------------------------------------ |
 | TxRxMode     | mode         | Please refer to Enumeration TxRxMode table below |
-| double       | angle        | Angle value range: -26.5°~26.5°                  |
+| double       | angle        | Angle value range: -26.5°~26.5° for BBox Lite                  |
 
 
 
@@ -176,7 +176,7 @@ The core function of BBox is to control beam steering. The following code snippe
 
 
 # Control range
-## Tx
+## Tx Control range
 | PA_BIAS  | 0-7  |
 | -------- | ---- |
 | PA_GAIN  | 0-15 |
@@ -185,7 +185,7 @@ The core function of BBox is to control beam steering. The following code snippe
 | PS_BIAS  | 0-3  |
 | PS_PHASE | 0-63 |
 
-## Rx
+## Rx control range
 | LNA_BIAS | 0-7  |
 | -------- | ---- |
 | LNA_GAIN | 0-7  |
