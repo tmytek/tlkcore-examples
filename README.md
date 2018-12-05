@@ -61,7 +61,7 @@ BBox is TDD based device.
 ## Installation
 ----------
 
-Please copy BBoxLiteAPI.dll to the project folder (e.g. root folder of the project or ./Debug). Add the following lines in the top of the .cpp file to include necessary DLL files. 
+Please copy **BBoxLiteAPI.dll** and **MPSSELight.dll** to the project folder (e.g. root folder of the project or ./Debug). Add the following lines in the top of the .cpp file to include necessary DLL files. 
 
 
     #using "..\Debug\BBoxLiteAPI.dll"
