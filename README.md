@@ -184,6 +184,7 @@ The core function of BBox is to control beam steering. The following code snippe
 | VGA_GAIN | 0-15 |
 | PS_BIAS  | 0-3  |
 | PS_PHASE | 0-63 |
+| CHANNEL_POWER | 0-1  // 0:ON 1:OFF|
 
 ## Rx control range
 | LNA_BIAS | 0-7  |
@@ -193,5 +194,6 @@ The core function of BBox is to control beam steering. The following code snippe
 | VGA_GAIN | 0-31 |
 | PS_BIAS  | 0-3  |
 | PS_PHASE | 0-63 |
+| CHANNEL_POWER | 0-1 // 0:ON 1:OFF|
 
 
