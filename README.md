@@ -1,6 +1,6 @@
 # BBox API Document
-Version: v.0.6.1
-Release date: December 3, 2018 
+Version: v.1.0.0
+Release date: Aug 2, 2019 
 
 ## Introduction
 
@@ -11,9 +11,9 @@ BBox API helps developers building their own applications. The release format is
 ## Installation
 ----------
 
-Please import BBoxLiteAPI.dll from Visual Studio and use the following code segment to include the API.
+Please import BBoxAPI.dll from Visual Studio and use the following code segment to include the API.
 
-    using BBoxLiteAPI;
+    using BBoxAPI;
 
 
 ## Initialization
@@ -25,34 +25,23 @@ Please import BBoxLiteAPI.dll from Visual Studio and use the following code segm
 
 ## Control example
 ----------
-
-**Control PA gain**
-Power Amplifier (PA) can be setup at run-time. The recommended code snippet as below
-
-    // Following code setup channel 1's PA gain with valude 15
-    b.ControlCmd(b.GetTxRxMode(), 1, BBoxAPI.Control.PA_GAIN, (byte)15); 
-
 **Control Beam direction**
-The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 10 degrees
+The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 15 dB of each channel and 10 degrees. You also need to point out which BBox device used by serial number.
 
-    b.BeamSteer(b.GetTxRxMode(), 10.0);
+    b.BeamSteer("B191321000-24",b.GetTxRxMode(), 15.0, 10.0);
 
  ****
-**Read value** 
-
-    // This will return the LNA bias value out of channel 1
-    b.GetStepVal(b.GetTxRxMode(), 1, BBoxAPI.Control.LNA_BIAS);
 
 **Obtain Tx or Rx state**
-Use the following code to obtain the current Tx/Rx mode and store it in a variable m.
+Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
 
-    BBoxAPI.TxRxMode m = b.GetTxRxMode();
+    BBoxAPI.TxRxMode m = b.GetTxRxMode("B191321000-24");
 
 **Switch Tx & Rx mode**
-BBox is TDD based device. 
+BBox is TDD based device. You need to point out which BBox device used by serial number.
 
-    b.SwitchTxRxMode(BBoxAPI.TxRxMode.Tx); // Switch BBox to Tx mode
-    b.SwitchTxRxMode(BBoxAPI.TxRxMode.Rx); // Switch BBox to Rx mode
+    b.SwitchTxRxMode("B191321000-24", GetTxRxModeBBoxAPI.TxRxMode.Tx); // Switch BBox to Tx mode
+    b.SwitchTxRxMode("B191321000-24", BBoxAPI.TxRxMode.Rx); // Switch BBox to Rx mode
 
 
 
@@ -64,7 +53,7 @@ BBox is TDD based device.
 Please copy **BBoxLiteAPI.dll** and **MPSSELight.dll** to the project folder (e.g. root folder of the project or ./Debug). Add the following lines in the top of the .cpp file to include necessary DLL files. 
 
 
-    #using "..\Debug\BBoxLiteAPI.dll"
+    #using "..\Debug\BBoxAPI.dll"
     #using "..\Debug\MPSSELight.dll"
 
 
@@ -82,118 +71,60 @@ To be able to use the external referred DLL object, please use the following ins
 ----------
 
 **Obtain Tx or Rx state**
-Use the following code to obtain the current Tx/Rx mode and store it in a variable m.
+Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
 
-    BBoxAPI::TxRxMode m = b->GetTxRxMode();
+    BBoxAPI::TxRxMode m = b->GetTxRxMode("B191321000-24");
 
 **Switch Tx & Rx mode**
-BBox is TDD based device. 
+BBox is TDD based device. You need to point out which BBox device used by serial number.
 
-    b->SwitchTxRxMode(BBoxAPI::TxRxMode::Tx); // Switch BBox to Tx mode
-    b->SwitchTxRxMode(BBoxAPI::TxRxMode::Rx); // Switch BBox to Rx mode
+    b->SwitchTxRxMode("B191321000-24", BBoxAPI::TxRxMode::Tx); // Switch BBox to Tx mode
+    b->SwitchTxRxMode("B191321000-24", BBoxAPI::TxRxMode::Rx); // Switch BBox to Rx mode
 
-**Control PA gain**
-Power Amplifier (PA) can be setup at run-time. The recommended code snippet as below
-
-    // Following code setup channel 1's PA gain with valude 15
-    b->ControlCmd(BBoxAPI::TxRxMode::Tx, 1, BBoxAPI::Control::PA_GAIN, (byte)15); 
 
 **Control Beam direction**
-The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 10 degrees
+The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 15dB and 10 degrees. You need to point out which BBox device used by serial number.
 
-    b->BeamSteer(b->GetTxRxMode(), 10.0);
+
+    b->BeamSteer("B191321000-24", b->GetTxRxMode(), 15.0, 10.0);
 
  ****
-**Read value** 
-
-    // This will return the LNA bias value out of channel 1
-    b->GetStepVal(BBoxAPI::TxRxMode::Rx, 1, BBoxAPI::Control::LNA_BIAS);
-
 
 
 ----------
 # API parameters
-## ControlCmd
-    public int ControlCmd(int channel, Control ctrl, byte val);
-| Type | Name | Value                                 |
-| ------------ | ------------ | ----------------------------------------- |
-| int          | channel      | { 1 \| 2 \| 3 \| 4 } in BBox Lite            |
-| Control      | ctrl         | Please refer to Enumeration table below   |
-| byte         | val          | Please refer to Control range table below |
-
-----------
-## GetStepVal
-    public int GetStepVal(TxRxMode trmode, int channel, Control ctrl);
-| Type | Name | Value                                        |
-| ------------ | ------------ | ------------------------------------------------ |
-| TxRxMode     | trmode       | Please refer to Enumeration TxRxMode table below |
-| int          | channel      | { 1 \| 2 \| 3 \| 4 } in BBox Lite                   |
-| Control      | ctrl         | Please refer to Enumeration Control table below  |
-
 ----------
 ## GetTxRxMode
-    public TxRxMode GetTxRxMode(); // Get Tx/Rx Mode. Return TxRxMode table value.
+    public TxRxMode GetTxRxMode(String sn); // Get Tx/Rx Mode of device with SN. Return TxRxMode table value.
 ----------
 ## Init
     public int Init();
 ----------
 ## SwitchTxRxMode
-    public int SwitchTxRxMode(TxRxMode mode);
+    public int SwitchTxRxMode(String sn, TxRxMode mode);
 | Type | Name | Value                                        |
 | ------------ | ------------ | ------------------------------------------------ |
+| String       | sn           | device serial number |
 | TxRxMode     | mode         | Please refer to Enumeration TxRxMode table below |
 
 ----------
 ## BeamSteer
-    public int BeamSteer(TxRxMode mode, double angle);
+    public int BeamSteer(String sn, TxRxMode mode, double db, double angle);
 | Type | Name | Value                                        |
 | ------------ | ------------ | ------------------------------------------------ |
+| String       | sn           | device serial number |
 | TxRxMode     | mode         | Please refer to Enumeration TxRxMode table below |
+| double       | db           | gain value range: 25 - 15 dB in Tx mode and 10 - 0 dB in Rx mode for BBox Lite
 | double       | angle        | Angle value range: -26.5°~26.5° for BBox Lite                  |
 
 
 
 # Enumeration values
-    public enum Control
-    {
-        CHANNEL_POWER = 0,
-        PA_BIAS = 1,
-        PA_GAIN = 2,
-        VGA_BIAS = 3,
-        VGA_GAIN = 4,
-        PS_BIAS = 5,
-        PS_PHASE = 6,
-        LNA_BIAS = 7,
-        LNA_GAIN = 8
-    }
     public enum TxRxMode
     {
         Tx = 0,
         Rx = 1
     }
     
-
-
-
-# Control range
-## Tx Control range
-| PA_BIAS  | 0-7  |
-| -------- | ---- |
-| PA_GAIN  | 0-15 |
-| VGA_BIAS | 0-7  |
-| VGA_GAIN | 0-15 |
-| PS_BIAS  | 0-3  |
-| PS_PHASE | 0-63 |
-| CHANNEL_POWER | 0-1  // 0:ON 1:OFF|
-
-## Rx control range
-| LNA_BIAS | 0-7  |
-| -------- | ---- |
-| LNA_GAIN | 0-7  |
-| VGA_BIAS | 0-7  |
-| VGA_GAIN | 0-31 |
-| PS_BIAS  | 0-3  |
-| PS_PHASE | 0-63 |
-| CHANNEL_POWER | 0-1 // 0:ON 1:OFF|
 
 
