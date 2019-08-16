@@ -1,6 +1,6 @@
 # BBox API Document
-Version: v.1.0.0
-Release date: Aug 2, 2019 
+Version: v.1.0.1
+Release date: Aug 16, 2019 
 
 ## Introduction
 
@@ -50,11 +50,10 @@ BBox is TDD based device. You need to point out which BBox device used by serial
 ## Installation
 ----------
 
-Please copy **BBoxLiteAPI.dll** and **MPSSELight.dll** to the project folder (e.g. root folder of the project or ./Debug). Add the following lines in the top of the .cpp file to include necessary DLL files. 
+Please copy **BBoxAPI.dll** to the project folder (e.g. root folder of the project or ./Debug). Add the following lines in the top of the .cpp file to include necessary DLL files. 
 
 
     #using "..\Debug\BBoxAPI.dll"
-    #using "..\Debug\MPSSELight.dll"
 
 
 ## Initialization
@@ -62,8 +61,11 @@ Please copy **BBoxLiteAPI.dll** and **MPSSELight.dll** to the project folder (e.
 
 To be able to use the external referred DLL object, please use the following instantiation method to obtain an object and send the initialization code to BBox.
 
-    BBoxAPI ^b = gcnew BBoxAPI();
-    b->Init(); // This will send the init command to BBox
+    using namespace BBoxAPI;
+
+
+    BBoxLiteAPI ^b = gcnew BBoxLiteAPI();
+    b->Init(); // This will send the init command to BBoxLite
 
 
 
@@ -86,7 +88,7 @@ BBox is TDD based device. You need to point out which BBox device used by serial
 The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 15dB and 10 degrees. You need to point out which BBox device used by serial number.
 
 
-    b->BeamSteer("B191321000-24", b->GetTxRxMode(), 15.0, 10.0);
+    b->BeamSteer("B191321000-24", b->GetTxRxMode("B19131000-24"), 15.0, 10.0);
 
  ****
 
