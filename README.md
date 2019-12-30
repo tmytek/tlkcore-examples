@@ -1,6 +1,6 @@
 # BBox API Document
-Version: v1.2.3
-Release date: Oct 29, 2019 
+Version: v1.2.4
+Release date: Dec 26, 2019
 
 ## Introduction
 

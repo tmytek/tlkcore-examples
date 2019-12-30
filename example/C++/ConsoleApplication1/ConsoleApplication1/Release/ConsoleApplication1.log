@@ -1,0 +1,3 @@
+﻿  ConsoleApplication1.cpp
+z:\codebase\bbox-api\example\c++\consoleapplication1\consoleapplication1\consoleapplication1.cpp(56): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+  ConsoleApplication1.vcxproj -> Z:\Codebase\bbox-api\example\C++\ConsoleApplication1\Release\ConsoleApplication1.exe

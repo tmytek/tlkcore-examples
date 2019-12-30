@@ -1,0 +1,886 @@
+  FTD2XX_NET.Properties.Resources.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly BBoxAPI, Version=1.2.*, Culture=不因語言而異 (不因國別而異): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class BBoxOneCtrlWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Instance(String, String): PrivateScope, Public, HideBySig
+    getSN(): PrivateScope, Public, HideBySig
+    TxRxMode(Int32): PrivateScope, Public, HideBySig
+    getTxRxMode(): PrivateScope, Public, HideBySig
+    selectAntenna(AntennaType): PrivateScope, Public, HideBySig
+    setBeamX(Double, Int32): PrivateScope, Public, HideBySig
+    setBeamY(Double, Int32): PrivateScope, Public, HideBySig
+    setBeamXY(Double, Int32, Int32): PrivateScope, Public, HideBySig
+    switchChannelPower(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    setChannelGainPhase(Int32, Int32, Double, Int32): PrivateScope, Public, HideBySig
+    setControlParameters(Int32, Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    setPaLnaParameters(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    releaseInstance(): PrivateScope, Public, HideBySig
+Class ChipController: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(MPSSELight.MpsseDevice, MPSSELight.SpiDevice, Byte): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    IDT5280_ChipAddrQuery(): PrivateScope, Public, HideBySig
+    IDT5280_Init(): PrivateScope, Public, HideBySig
+    IDT5280_Control(Int32, Int32, Control, Byte): PrivateScope, Public, HideBySig
+    BBoxControlStepQuery(Int32, Int32, Control): PrivateScope, Public, HideBySig
+    TxStateQuery(): PrivateScope, Public, HideBySig
+    RxStateQuery(): PrivateScope, Public, HideBySig
+Class DevController: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Table_Loader(String): PrivateScope, Public, HideBySig
+    Offset_Query(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    Key_Query(Int32, String): PrivateScope, Public, HideBySig
+    DevChip_Control(Byte, Int32, Int32, Control, Byte): PrivateScope, Public, HideBySig
+    TxRxMode(Int32): PrivateScope, Public, HideBySig
+    TxRxModeQuery(): PrivateScope, Public, HideBySig
+    EnPinControl(Int32): PrivateScope, Public, HideBySig
+    ftdiSnRead(): PrivateScope, Public, HideBySig
+    devSnRead(): PrivateScope, Public, HideBySig
+Class Device: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InstanceInit(): PrivateScope, Public, HideBySig
+    InstanceRelease(): PrivateScope, Public, HideBySig
+    loadTable(): PrivateScope, Public, HideBySig
+    getSN(): PrivateScope, Public, HideBySig
+    getTxRxMode(): PrivateScope, Public, HideBySig
+    selectAntenna(AntennaType): PrivateScope, Public, HideBySig
+    matrixCalculate(Int32, Int32): PrivateScope, Public, HideBySig
+    matrixCalculate2D(Int32, Int32): PrivateScope, Public, HideBySig
+    angleShift(Int32): PrivateScope, Public, HideBySig
+    TxRxMode(Int32): PrivateScope, Public, HideBySig
+    setBeamX(Double, Int32): PrivateScope, Public, HideBySig
+    setBeamY(Double, Int32): PrivateScope, Public, HideBySig
+    setBeamXY(Double, Int32, Int32): PrivateScope, Public, HideBySig
+    switchChannelPower(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    setChannelGainPhase(Int32, Int32, Double, Int32): PrivateScope, Public, HideBySig
+    setControlParameters(Int32, Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    setPaLnaParameters(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+Class BBoxAPI.BBoxOneAPI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ScanningDevice(): PrivateScope, Public, HideBySig
+    getStringArray(): PrivateScope, Public, HideBySig
+    Init(String, Int32): PrivateScope, Public, HideBySig
+    selectAntenna(AntennaType, Int32): PrivateScope, Public, HideBySig
+    SwitchTxRxMode(Int32, Int32): PrivateScope, Public, HideBySig
+    getTxRxMode(Int32): PrivateScope, Public, HideBySig
+    setBeamX(Double, Int32, Int32): PrivateScope, Public, HideBySig
+    setBeamY(Double, Int32, Int32): PrivateScope, Public, HideBySig
+    setBeamXY(Double, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    releaseInstance(Int32): PrivateScope, Public, HideBySig
+Class BBoxAPI.BBoxLiteAPI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 numDev : Public, Static
+    DevController[] dev : Public, Static
+  Methods:
+    Init(): PrivateScope, Public, HideBySig
+    SwitchTxRxMode(String, TxRxMode): PrivateScope, Public, HideBySig
+    GetTxRxMode(String): PrivateScope, Public, HideBySig
+    BeamSteer(String, TxRxMode, Double, Double): PrivateScope, Public, HideBySig
+Class FTD2XX_NET.FTDI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean IsOpen 'get ' : 
+  Methods:
+    GetNumberOfDevices(UInt32&): PrivateScope, Public, HideBySig
+    GetDeviceList(FT_DEVICE_INFO_NODE[]): PrivateScope, Public, HideBySig
+    OpenByIndex(UInt32): PrivateScope, Public, HideBySig
+    OpenBySerialNumber(String): PrivateScope, Public, HideBySig
+    OpenByDescription(String): PrivateScope, Public, HideBySig
+    OpenByLocation(UInt32): PrivateScope, Public, HideBySig
+    Close(): PrivateScope, Public, HideBySig
+    Read(Byte[], UInt32, UInt32&): PrivateScope, Public, HideBySig
+    Read(String&(Out), UInt32, UInt32&): PrivateScope, Public, HideBySig
+    Write(Byte[], Int32, UInt32&): PrivateScope, Public, HideBySig
+    Write(Byte[], UInt32, UInt32&): PrivateScope, Public, HideBySig
+    Write(String, Int32, UInt32&): PrivateScope, Public, HideBySig
+    Write(String, UInt32, UInt32&): PrivateScope, Public, HideBySig
+    ResetDevice(): PrivateScope, Public, HideBySig
+    Purge(UInt32): PrivateScope, Public, HideBySig
+    SetEventNotification(UInt32, EventWaitHandle): PrivateScope, Public, HideBySig
+    StopInTask(): PrivateScope, Public, HideBySig
+    RestartInTask(): PrivateScope, Public, HideBySig
+    ResetPort(): PrivateScope, Public, HideBySig
+    CyclePort(): PrivateScope, Public, HideBySig
+    Rescan(): PrivateScope, Public, HideBySig
+    Reload(UInt16, UInt16): PrivateScope, Public, HideBySig
+    SetBitMode(Byte, Byte): PrivateScope, Public, HideBySig
+    GetPinStates(Byte&): PrivateScope, Public, HideBySig
+    ReadEEPROMLocation(UInt32, UInt16&): PrivateScope, Public, HideBySig
+    WriteEEPROMLocation(UInt32, UInt16): PrivateScope, Public, HideBySig
+    EraseEEPROM(): PrivateScope, Public, HideBySig
+    ReadFT232BEEPROM(FT232B_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    ReadFT2232EEPROM(FT2232_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    ReadFT232REEPROM(FT232R_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    ReadFT2232HEEPROM(FT2232H_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    ReadFT4232HEEPROM(FT4232H_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    ReadFT232HEEPROM(FT232H_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    ReadXSeriesEEPROM(FT_XSERIES_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    WriteFT232BEEPROM(FT232B_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    WriteFT2232EEPROM(FT2232_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    WriteFT232REEPROM(FT232R_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    WriteFT2232HEEPROM(FT2232H_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    WriteFT4232HEEPROM(FT4232H_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    WriteFT232HEEPROM(FT232H_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    WriteXSeriesEEPROM(FT_XSERIES_EEPROM_STRUCTURE): PrivateScope, Public, HideBySig
+    EEReadUserArea(Byte[], UInt32&): PrivateScope, Public, HideBySig
+    EEWriteUserArea(Byte[]): PrivateScope, Public, HideBySig
+    GetDeviceType(FT_DEVICE&): PrivateScope, Public, HideBySig
+    GetDeviceID(UInt32&): PrivateScope, Public, HideBySig
+    GetDescription(String&(Out)): PrivateScope, Public, HideBySig
+    GetSerialNumber(String&(Out)): PrivateScope, Public, HideBySig
+    GetRxBytesAvailable(UInt32&): PrivateScope, Public, HideBySig
+    GetTxBytesWaiting(UInt32&): PrivateScope, Public, HideBySig
+    GetEventType(UInt32&): PrivateScope, Public, HideBySig
+    GetModemStatus(Byte&): PrivateScope, Public, HideBySig
+    GetLineStatus(Byte&): PrivateScope, Public, HideBySig
+    SetBaudRate(UInt32): PrivateScope, Public, HideBySig
+    SetDataCharacteristics(Byte, Byte, Byte): PrivateScope, Public, HideBySig
+    SetFlowControl(UInt16, Byte, Byte): PrivateScope, Public, HideBySig
+    SetRTS(Boolean): PrivateScope, Public, HideBySig
+    SetDTR(Boolean): PrivateScope, Public, HideBySig
+    SetTimeouts(UInt32, UInt32): PrivateScope, Public, HideBySig
+    SetBreak(Boolean): PrivateScope, Public, HideBySig
+    SetResetPipeRetryCount(UInt32): PrivateScope, Public, HideBySig
+    GetDriverVersion(UInt32&): PrivateScope, Public, HideBySig
+    GetLibraryVersion(UInt32&): PrivateScope, Public, HideBySig
+    SetDeadmanTimeout(UInt32): PrivateScope, Public, HideBySig
+    SetLatency(Byte): PrivateScope, Public, HideBySig
+    GetLatency(Byte&): PrivateScope, Public, HideBySig
+    InTransferSize(UInt32): PrivateScope, Public, HideBySig
+    SetCharacters(Byte, Boolean, Byte, Boolean): PrivateScope, Public, HideBySig
+    EEUserAreaSize(UInt32&): PrivateScope, Public, HideBySig
+    GetCOMPort(String&(Out)): PrivateScope, Public, HideBySig
+    get_IsOpen(): PrivateScope, Public, HideBySig, SpecialName
+Struct MPSSELight.Ft2232dPin: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    MPSSELight.Ft2232dPin None = 0 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ADBUS0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ADBUS1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ADBUS2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ADBUS3 = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ADBUS4 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ADBUS5 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ADBUS6 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ADBUS7 = 128 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ACBUS0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ACBUS1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ACBUS2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232dPin ACBUS3 = 8 : Public, Static, Literal, HasDefault
+Class MPSSELight.FT2232D: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :MPSSELight.MpsseDevice
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, MpsseParams): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Struct MPSSELight.Ft2232hPin: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    MPSSELight.Ft2232hPin None = 0 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ADBUS0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ADBUS1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ADBUS2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ADBUS3 = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ADBUS4 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ADBUS5 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ADBUS6 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ADBUS7 = 128 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ACBUS0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ACBUS1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ACBUS2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ACBUS3 = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ACBUS4 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ACBUS5 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ACBUS6 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin ACBUS7 = 128 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BDBUS0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BDBUS1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BDBUS2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BDBUS3 = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BDBUS4 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BDBUS5 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BDBUS6 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BDBUS7 = 128 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BCBUS0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BCBUS1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BCBUS2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BCBUS3 = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BCBUS4 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BCBUS5 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BCBUS6 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft2232hPin BCBUS7 = 128 : Public, Static, Literal, HasDefault
+Class MPSSELight.FT2232H: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :MPSSELight.MpsseDeviceExtendedA
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, MpsseParams): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Struct MPSSELight.Ft232hPin: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    MPSSELight.Ft232hPin None = 0 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ADBUS0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ADBUS1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ADBUS2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ADBUS3 = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ADBUS4 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ADBUS5 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ADBUS6 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ADBUS7 = 128 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ACBUS0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ACBUS1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ACBUS2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ACBUS3 = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ACBUS4 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ACBUS5 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ACBUS6 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft232hPin ACBUS7 = 128 : Public, Static, Literal, HasDefault
+Class MPSSELight.FT232H: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :MPSSELight.MpsseDeviceExtendedB
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, MpsseParams): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Struct MPSSELight.Ft4232hPin: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    MPSSELight.Ft4232hPin None = 0 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin ADBUS0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin ADBUS1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin ADBUS2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin ADBUS3 = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin ADBUS4 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin ADBUS5 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin ADBUS6 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin ADBUS7 = 128 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin BDBUS0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin BDBUS1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin BDBUS2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin BDBUS3 = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin BDBUS4 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin BDBUS5 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin BDBUS6 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.Ft4232hPin BDBUS7 = 128 : Public, Static, Literal, HasDefault
+Class MPSSELight.FT4232H: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :MPSSELight.MpsseDeviceExtendedA
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, MpsseParams): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class MPSSELight.FtdiDevice: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(UInt32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    DataTransferEvent DataReadEvent : Public
+    DataTransferEvent DataWriteEvent : Public
+  Properties:
+    UInt32 inputLen 'get ' : 
+  Methods:
+    read(UInt32(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    write(Byte[]): PrivateScope, Public, HideBySig
+    get_inputLen(): PrivateScope, Public, HideBySig, SpecialName
+    clearInput(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    GetComPort(): PrivateScope, Public, HideBySig
+Class MPSSELight.FtdiInventory: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetDevices(): PrivateScope, Public, Static, HideBySig
+    DeviceListInfo(): PrivateScope, Public, Static, HideBySig
+Struct MPSSELight.FtdiPin: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    MPSSELight.FtdiPin None = 0 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin TCK = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin SK = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin TDI = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin DO = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin TDO = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin DI = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin TMS = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin CS = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOL0 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOL1 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOL2 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOL3 = 128 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOH0 = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOH1 = 2 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOH2 = 4 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOH3 = 8 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOH4 = 16 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOH5 = 32 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOH6 = 64 : Public, Static, Literal, HasDefault
+    MPSSELight.FtdiPin GPIOH7 = 128 : Public, Static, Literal, HasDefault
+Struct MPSSELight.Bit: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    MPSSELight.Bit One = 1 : Public, Static, Literal, HasDefault
+    MPSSELight.Bit Zero = 0 : Public, Static, Literal, HasDefault
+Class MPSSELight.MpsseDevice: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  :MPSSELight.FtdiDevice
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, MpsseParams): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean Loopback 'get set' : 
+    UInt16 ClkDivisor 'get set' : 
+    Double ClockFrequency 'get ' : 
+  Methods:
+    BytesOutOnPlusEdgeWithMsbFirst(Byte[]): PrivateScope, Public, HideBySig
+    BytesOutOnMinusEdgeWithMsbFirst(Byte[]): PrivateScope, Public, HideBySig
+    BitsOutOnPlusEdgeWithMsbFirst(Byte, Byte): PrivateScope, Public, HideBySig
+    BitsOutOnMinusEdgeWithMsbFirst(Byte, Byte): PrivateScope, Public, HideBySig
+    BytesInOnPlusEdgeWithMsbFirst(UInt32): PrivateScope, Public, HideBySig
+    BytesInOnMinusEdgeWithMsbFirst(UInt32): PrivateScope, Public, HideBySig
+    BitsInOnPlusEdgeWithMsbFirst(Byte): PrivateScope, Public, HideBySig
+    BitsInOnMinusEdgeWithMsbFirst(Byte): PrivateScope, Public, HideBySig
+    BytesInOnPlusOutOnMinusWithMsbFirst(Byte[]): PrivateScope, Public, HideBySig
+    BytesInOnMinusOutOnPlusWithMsbFirst(Byte[]): PrivateScope, Public, HideBySig
+    BitsInOnPlusOutOnMinusWithMsbFirst(Byte, Byte): PrivateScope, Public, HideBySig
+    BitsInOnMinusOutOnPlusWithMsbFirst(Byte, Byte): PrivateScope, Public, HideBySig
+    BytesOutOnPlusEdgeWithLsbFirst(Byte[]): PrivateScope, Public, HideBySig
+    BytesOutOnMinusEdgeWithLsbFirst(Byte[]): PrivateScope, Public, HideBySig
+    BitsOutOnPlusEdgeWithLsbFirst(Byte, Byte): PrivateScope, Public, HideBySig
+    BitsOutOnMinusEdgeWithLsbFirst(Byte, Byte): PrivateScope, Public, HideBySig
+    BytesInOnPlusEdgeWithLsbFirst(UInt32): PrivateScope, Public, HideBySig
+    BytesInOnMinusEdgeWithLsbFirst(UInt32): PrivateScope, Public, HideBySig
+    BitsInOnPlusEdgeWithLsbFirst(Byte): PrivateScope, Public, HideBySig
+    BitsInOnMinusEdgeWithLsbFirst(Byte): PrivateScope, Public, HideBySig
+    BytesInOnPlusOutOnMinusWithLsbFirst(Byte[]): PrivateScope, Public, HideBySig
+    BytesInOnMinusOutOnPlusWithLsbFirst(Byte[]): PrivateScope, Public, HideBySig
+    BitsInOnPlusOutOnMinusWithLsbFirst(Byte, Byte): PrivateScope, Public, HideBySig
+    BitsInOnMinusOutOnPlusWithLsbFirst(Byte, Byte): PrivateScope, Public, HideBySig
+    TmsOutOnPlusEdge(Byte, Byte): PrivateScope, Public, HideBySig
+    TmsOutOnMinusEdge(Byte, Byte): PrivateScope, Public, HideBySig
+    TmsInOutOnPlusEdge(Byte, Byte): PrivateScope, Public, HideBySig
+    TmsInOnMinusOutOnPlusEdge(Byte, Byte): PrivateScope, Public, HideBySig
+    TmsInOnPlusOutOnMinusEdge(Byte, Byte): PrivateScope, Public, HideBySig
+    TmsInOutOnMinusEdge(Byte, Byte): PrivateScope, Public, HideBySig
+    SetDataBitsLowByte(FtdiPin, FtdiPin): PrivateScope, Public, HideBySig
+    SetDataBitsHighByte(FtdiPin, FtdiPin): PrivateScope, Public, HideBySig
+    ReadDataBitsLowByte(): PrivateScope, Public, HideBySig
+    ReadDataBitsHighByte(): PrivateScope, Public, HideBySig
+    get_Loopback(): PrivateScope, Public, HideBySig, SpecialName
+    set_Loopback(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_ClkDivisor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ClkDivisor(UInt16): PrivateScope, Public, HideBySig, SpecialName
+    get_ClockFrequency(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    ReadShortAddress(Byte): PrivateScope, Public, HideBySig
+    ReadExtendedAddress(UInt16): PrivateScope, Public, HideBySig
+    WriteShortAddress(Byte, Byte): PrivateScope, Public, HideBySig
+    WriteExtendedAddress(UInt16, Byte): PrivateScope, Public, HideBySig
+    SendImmediate(): PrivateScope, Public, HideBySig
+    WaitOnIoHigh(): PrivateScope, Public, HideBySig
+    WaitOnIoLow(): PrivateScope, Public, HideBySig
+Class MPSSELight.MpsseDeviceExtendedA: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  :MPSSELight.MpsseDevice
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, MpsseParams): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean ClkDivideBy5 'get set' : 
+    Boolean ThreePhaseDataClocking 'get set' : 
+    Boolean AdaptiveClocking 'get set' : 
+    Double ClockFrequency 'get ' : 
+  Methods:
+    get_ClkDivideBy5(): PrivateScope, Public, HideBySig, SpecialName
+    set_ClkDivideBy5(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_ThreePhaseDataClocking(): PrivateScope, Public, HideBySig, SpecialName
+    set_ThreePhaseDataClocking(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_AdaptiveClocking(): PrivateScope, Public, HideBySig, SpecialName
+    set_AdaptiveClocking(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    ClockForNbitswithNoDataTransfer(Byte): PrivateScope, Public, HideBySig
+    ClockForNx8bitswithNoDataTransfer(UInt32): PrivateScope, Public, HideBySig
+    ClkContinuouslyAndWaitOnIoHigh(): PrivateScope, Public, HideBySig
+    ClkContinuouslyAndWaitOnIoLow(): PrivateScope, Public, HideBySig
+    ClockForNx8BitsWithNoDataTransferOrUntilGPIOL1isHigh(UInt32): PrivateScope, Public, HideBySig
+    ClockForNx8BitsWithNoDataTransferOrUntilGPIOL1isLow(UInt32): PrivateScope, Public, HideBySig
+    get_ClockFrequency(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+Class MPSSELight.MpsseDeviceExtendedB: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  :MPSSELight.MpsseDeviceExtendedA
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, MpsseParams): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    SetIoToOnlyDriveOn0andTristateOn1(FtdiPin, FtdiPin): PrivateScope, Public, HideBySig
+Class MPSSELight.SpiDevice: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(MPSSELight.MpsseDevice): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(MPSSELight.MpsseDevice, SpiParams): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    MPSSELight.Bit CS 'get set' : 
+    Boolean LoopbackEnabled 'get set' : 
+  Methods:
+    write(Byte[]): PrivateScope, Public, HideBySig
+    readWrite(Byte[]): PrivateScope, Public, HideBySig
+    writeThenRead(Byte[], UInt32): PrivateScope, Public, HideBySig
+    get_CS(): PrivateScope, Public, HideBySig, SpecialName
+    set_CS(Bit): PrivateScope, Public, HideBySig, SpecialName
+    get_LoopbackEnabled(): PrivateScope, Public, HideBySig, SpecialName
+    set_LoopbackEnabled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Struct ChipController+Control: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Control INIT_VALUE = 0 : Public, Static, Literal, HasDefault
+    Control CHANNEL_POWER = 1 : Public, Static, Literal, HasDefault
+    Control PA_BIAS = 2 : Public, Static, Literal, HasDefault
+    Control PA_GAIN = 3 : Public, Static, Literal, HasDefault
+    Control VGA_BIAS = 4 : Public, Static, Literal, HasDefault
+    Control VGA_GAIN = 5 : Public, Static, Literal, HasDefault
+    Control PS_BIAS = 6 : Public, Static, Literal, HasDefault
+    Control PS_PHASE = 7 : Public, Static, Literal, HasDefault
+    Control LNA_BIAS = 8 : Public, Static, Literal, HasDefault
+    Control LNA_GAIN = 9 : Public, Static, Literal, HasDefault
+    Control PTAT_INTERNAL_CURRENT_STATE = 10 : Public, Static, Literal, HasDefault
+    Control PTAT_CURRENT_GENERATOR_LEVEL_CTRL = 11 : Public, Static, Literal, HasDefault
+    Control PTAT_TX_MEM_ACCESS_CTRL = 12 : Public, Static, Literal, HasDefault
+    Control PTAT_RX_MEM_ACCESS_CTRL = 13 : Public, Static, Literal, HasDefault
+    Control LOCK = 14 : Public, Static, Literal, HasDefault
+    Control dB = 15 : Public, Static, Literal, HasDefault
+    Control Phi = 16 : Public, Static, Literal, HasDefault
+Struct Device+AntennaType: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    AntennaType FOURBYFOUR = 0 : Public, Static, Literal, HasDefault
+    AntennaType EIGHTBYEIGHT = 1 : Public, Static, Literal, HasDefault
+    AntennaType ER = 2 : Public, Static, Literal, HasDefault
+Struct BBoxAPI.BBoxLiteAPI+TxRxMode: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    TxRxMode Er = -1 : Public, Static, Literal, HasDefault
+    TxRxMode Tx = 0 : Public, Static, Literal, HasDefault
+    TxRxMode Rx = 1 : Public, Static, Literal, HasDefault
+Struct BBoxAPI.BBoxLiteAPI+Control: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Control CHANNEL_POWER = 0 : Public, Static, Literal, HasDefault
+    Control PA_BIAS = 1 : Public, Static, Literal, HasDefault
+    Control PA_GAIN = 2 : Public, Static, Literal, HasDefault
+    Control VGA_BIAS = 3 : Public, Static, Literal, HasDefault
+    Control VGA_GAIN = 4 : Public, Static, Literal, HasDefault
+    Control PS_BIAS = 5 : Public, Static, Literal, HasDefault
+    Control PS_PHASE = 6 : Public, Static, Literal, HasDefault
+    Control LNA_BIAS = 7 : Public, Static, Literal, HasDefault
+    Control LNA_GAIN = 8 : Public, Static, Literal, HasDefault
+Struct FTD2XX_NET.FTDI+FT_STATUS: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FT_STATUS FT_OK = 0 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_INVALID_HANDLE = 1 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_DEVICE_NOT_FOUND = 2 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_DEVICE_NOT_OPENED = 3 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_IO_ERROR = 4 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_INSUFFICIENT_RESOURCES = 5 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_INVALID_PARAMETER = 6 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_INVALID_BAUD_RATE = 7 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_DEVICE_NOT_OPENED_FOR_ERASE = 8 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_DEVICE_NOT_OPENED_FOR_WRITE = 9 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_FAILED_TO_WRITE_DEVICE = 10 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_EEPROM_READ_FAILED = 11 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_EEPROM_WRITE_FAILED = 12 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_EEPROM_ERASE_FAILED = 13 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_EEPROM_NOT_PRESENT = 14 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_EEPROM_NOT_PROGRAMMED = 15 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_INVALID_ARGS = 16 : Public, Static, Literal, HasDefault
+    FT_STATUS FT_OTHER_ERROR = 17 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_DATA_BITS: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_BITS_8 = 8 : Public, Static, Literal, HasDefault
+    Byte FT_BITS_7 = 7 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_STOP_BITS: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_STOP_BITS_1 = 0 : Public, Static, Literal, HasDefault
+    Byte FT_STOP_BITS_2 = 2 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_PARITY: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_PARITY_NONE = 0 : Public, Static, Literal, HasDefault
+    Byte FT_PARITY_ODD = 1 : Public, Static, Literal, HasDefault
+    Byte FT_PARITY_EVEN = 2 : Public, Static, Literal, HasDefault
+    Byte FT_PARITY_MARK = 3 : Public, Static, Literal, HasDefault
+    Byte FT_PARITY_SPACE = 4 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_FLOW_CONTROL: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt16 FT_FLOW_NONE = 0 : Public, Static, Literal, HasDefault
+    UInt16 FT_FLOW_RTS_CTS = 256 : Public, Static, Literal, HasDefault
+    UInt16 FT_FLOW_DTR_DSR = 512 : Public, Static, Literal, HasDefault
+    UInt16 FT_FLOW_XON_XOFF = 1024 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_PURGE: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_PURGE_RX = 1 : Public, Static, Literal, HasDefault
+    Byte FT_PURGE_TX = 2 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_MODEM_STATUS: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_CTS = 16 : Public, Static, Literal, HasDefault
+    Byte FT_DSR = 32 : Public, Static, Literal, HasDefault
+    Byte FT_RI = 64 : Public, Static, Literal, HasDefault
+    Byte FT_DCD = 128 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_LINE_STATUS: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_OE = 2 : Public, Static, Literal, HasDefault
+    Byte FT_PE = 4 : Public, Static, Literal, HasDefault
+    Byte FT_FE = 8 : Public, Static, Literal, HasDefault
+    Byte FT_BI = 16 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_EVENTS: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt32 FT_EVENT_RXCHAR = 1 : Public, Static, Literal, HasDefault
+    UInt32 FT_EVENT_MODEM_STATUS = 2 : Public, Static, Literal, HasDefault
+    UInt32 FT_EVENT_LINE_STATUS = 4 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_BIT_MODES: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_BIT_MODE_RESET = 0 : Public, Static, Literal, HasDefault
+    Byte FT_BIT_MODE_ASYNC_BITBANG = 1 : Public, Static, Literal, HasDefault
+    Byte FT_BIT_MODE_MPSSE = 2 : Public, Static, Literal, HasDefault
+    Byte FT_BIT_MODE_SYNC_BITBANG = 4 : Public, Static, Literal, HasDefault
+    Byte FT_BIT_MODE_MCU_HOST = 8 : Public, Static, Literal, HasDefault
+    Byte FT_BIT_MODE_FAST_SERIAL = 16 : Public, Static, Literal, HasDefault
+    Byte FT_BIT_MODE_CBUS_BITBANG = 32 : Public, Static, Literal, HasDefault
+    Byte FT_BIT_MODE_SYNC_FIFO = 64 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_CBUS_OPTIONS: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_CBUS_TXDEN = 0 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_PWRON = 1 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_RXLED = 2 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_TXLED = 3 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_TXRXLED = 4 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_SLEEP = 5 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_CLK48 = 6 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_CLK24 = 7 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_CLK12 = 8 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_CLK6 = 9 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_IOMODE = 10 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_BITBANG_WR = 11 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_BITBANG_RD = 12 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_232H_CBUS_OPTIONS: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_CBUS_TRISTATE = 0 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_RXLED = 1 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_TXLED = 2 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_TXRXLED = 3 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_PWREN = 4 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_SLEEP = 5 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_DRIVE_0 = 6 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_DRIVE_1 = 7 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_IOMODE = 8 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_TXDEN = 9 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_CLK30 = 10 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_CLK15 = 11 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_CLK7_5 = 12 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_XSERIES_CBUS_OPTIONS: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_CBUS_TRISTATE = 0 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_RXLED = 1 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_TXLED = 2 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_TXRXLED = 3 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_PWREN = 4 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_SLEEP = 5 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_Drive_0 = 6 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_Drive_1 = 7 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_GPIO = 8 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_TXDEN = 9 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_CLK24MHz = 10 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_CLK12MHz = 11 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_CLK6MHz = 12 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_BCD_Charger = 13 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_BCD_Charger_N = 14 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_I2C_TXE = 15 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_I2C_RXF = 16 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_VBUS_Sense = 17 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_BitBang_WR = 18 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_BitBang_RD = 19 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_Time_Stamp = 20 : Public, Static, Literal, HasDefault
+    Byte FT_CBUS_Keep_Awake = 21 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_FLAGS: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt32 FT_FLAGS_OPENED = 1 : Public, Static, Literal, HasDefault
+    UInt32 FT_FLAGS_HISPEED = 2 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_DRIVE_CURRENT: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte FT_DRIVE_CURRENT_4MA = 4 : Public, Static, Literal, HasDefault
+    Byte FT_DRIVE_CURRENT_8MA = 8 : Public, Static, Literal, HasDefault
+    Byte FT_DRIVE_CURRENT_12MA = 12 : Public, Static, Literal, HasDefault
+    Byte FT_DRIVE_CURRENT_16MA = 16 : Public, Static, Literal, HasDefault
+Struct FTD2XX_NET.FTDI+FT_DEVICE: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FT_DEVICE FT_DEVICE_BM = 0 : Public, Static, Literal, HasDefault
+    FT_DEVICE FT_DEVICE_AM = 1 : Public, Static, Literal, HasDefault
+    FT_DEVICE FT_DEVICE_100AX = 2 : Public, Static, Literal, HasDefault
+    FT_DEVICE FT_DEVICE_UNKNOWN = 3 : Public, Static, Literal, HasDefault
+    FT_DEVICE FT_DEVICE_2232 = 4 : Public, Static, Literal, HasDefault
+    FT_DEVICE FT_DEVICE_232R = 5 : Public, Static, Literal, HasDefault
+    FT_DEVICE FT_DEVICE_2232H = 6 : Public, Static, Literal, HasDefault
+    FT_DEVICE FT_DEVICE_4232H = 7 : Public, Static, Literal, HasDefault
+    FT_DEVICE FT_DEVICE_232H = 8 : Public, Static, Literal, HasDefault
+    FT_DEVICE FT_DEVICE_X_SERIES = 9 : Public, Static, Literal, HasDefault
+Class FTD2XX_NET.FTDI+FT_DEVICE_INFO_NODE: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt32 Flags : Public
+    FT_DEVICE Type : Public
+    UInt32 ID : Public
+    UInt32 LocId : Public
+    System.String SerialNumber : Public
+    System.String Description : Public
+    IntPtr ftHandle : Public
+Class FTD2XX_NET.FTDI+FT_EEPROM_DATA: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt16 VendorID : Public
+    UInt16 ProductID : Public
+    System.String Manufacturer : Public
+    System.String ManufacturerID : Public
+    System.String Description : Public
+    System.String SerialNumber : Public
+    UInt16 MaxPower : Public
+    Boolean SelfPowered : Public
+    Boolean RemoteWakeup : Public
+Class FTD2XX_NET.FTDI+FT232B_EEPROM_STRUCTURE: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :FTD2XX_NET.FTDI+FT_EEPROM_DATA
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean PullDownEnable : Public
+    Boolean SerNumEnable : Public
+    Boolean USBVersionEnable : Public
+    UInt16 USBVersion : Public
+Class FTD2XX_NET.FTDI+FT2232_EEPROM_STRUCTURE: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :FTD2XX_NET.FTDI+FT_EEPROM_DATA
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean PullDownEnable : Public
+    Boolean SerNumEnable : Public
+    Boolean USBVersionEnable : Public
+    UInt16 USBVersion : Public
+    Boolean AIsHighCurrent : Public
+    Boolean BIsHighCurrent : Public
+    Boolean IFAIsFifo : Public
+    Boolean IFAIsFifoTar : Public
+    Boolean IFAIsFastSer : Public
+    Boolean AIsVCP : Public
+    Boolean IFBIsFifo : Public
+    Boolean IFBIsFifoTar : Public
+    Boolean IFBIsFastSer : Public
+    Boolean BIsVCP : Public
+Class FTD2XX_NET.FTDI+FT232R_EEPROM_STRUCTURE: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :FTD2XX_NET.FTDI+FT_EEPROM_DATA
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean UseExtOsc : Public
+    Boolean HighDriveIOs : Public
+    Byte EndpointSize : Public
+    Boolean PullDownEnable : Public
+    Boolean SerNumEnable : Public
+    Boolean InvertTXD : Public
+    Boolean InvertRXD : Public
+    Boolean InvertRTS : Public
+    Boolean InvertCTS : Public
+    Boolean InvertDTR : Public
+    Boolean InvertDSR : Public
+    Boolean InvertDCD : Public
+    Boolean InvertRI : Public
+    Byte Cbus0 : Public
+    Byte Cbus1 : Public
+    Byte Cbus2 : Public
+    Byte Cbus3 : Public
+    Byte Cbus4 : Public
+    Boolean RIsD2XX : Public
+Class FTD2XX_NET.FTDI+FT2232H_EEPROM_STRUCTURE: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :FTD2XX_NET.FTDI+FT_EEPROM_DATA
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean PullDownEnable : Public
+    Boolean SerNumEnable : Public
+    Boolean ALSlowSlew : Public
+    Boolean ALSchmittInput : Public
+    Byte ALDriveCurrent : Public
+    Boolean AHSlowSlew : Public
+    Boolean AHSchmittInput : Public
+    Byte AHDriveCurrent : Public
+    Boolean BLSlowSlew : Public
+    Boolean BLSchmittInput : Public
+    Byte BLDriveCurrent : Public
+    Boolean BHSlowSlew : Public
+    Boolean BHSchmittInput : Public
+    Byte BHDriveCurrent : Public
+    Boolean IFAIsFifo : Public
+    Boolean IFAIsFifoTar : Public
+    Boolean IFAIsFastSer : Public
+    Boolean AIsVCP : Public
+    Boolean IFBIsFifo : Public
+    Boolean IFBIsFifoTar : Public
+    Boolean IFBIsFastSer : Public
+    Boolean BIsVCP : Public
+    Boolean PowerSaveEnable : Public
+Class FTD2XX_NET.FTDI+FT4232H_EEPROM_STRUCTURE: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :FTD2XX_NET.FTDI+FT_EEPROM_DATA
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean PullDownEnable : Public
+    Boolean SerNumEnable : Public
+    Boolean ASlowSlew : Public
+    Boolean ASchmittInput : Public
+    Byte ADriveCurrent : Public
+    Boolean BSlowSlew : Public
+    Boolean BSchmittInput : Public
+    Byte BDriveCurrent : Public
+    Boolean CSlowSlew : Public
+    Boolean CSchmittInput : Public
+    Byte CDriveCurrent : Public
+    Boolean DSlowSlew : Public
+    Boolean DSchmittInput : Public
+    Byte DDriveCurrent : Public
+    Boolean ARIIsTXDEN : Public
+    Boolean BRIIsTXDEN : Public
+    Boolean CRIIsTXDEN : Public
+    Boolean DRIIsTXDEN : Public
+    Boolean AIsVCP : Public
+    Boolean BIsVCP : Public
+    Boolean CIsVCP : Public
+    Boolean DIsVCP : Public
+Class FTD2XX_NET.FTDI+FT232H_EEPROM_STRUCTURE: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :FTD2XX_NET.FTDI+FT_EEPROM_DATA
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean PullDownEnable : Public
+    Boolean SerNumEnable : Public
+    Boolean ACSlowSlew : Public
+    Boolean ACSchmittInput : Public
+    Byte ACDriveCurrent : Public
+    Boolean ADSlowSlew : Public
+    Boolean ADSchmittInput : Public
+    Byte ADDriveCurrent : Public
+    Byte Cbus0 : Public
+    Byte Cbus1 : Public
+    Byte Cbus2 : Public
+    Byte Cbus3 : Public
+    Byte Cbus4 : Public
+    Byte Cbus5 : Public
+    Byte Cbus6 : Public
+    Byte Cbus7 : Public
+    Byte Cbus8 : Public
+    Byte Cbus9 : Public
+    Boolean IsFifo : Public
+    Boolean IsFifoTar : Public
+    Boolean IsFastSer : Public
+    Boolean IsFT1248 : Public
+    Boolean FT1248Cpol : Public
+    Boolean FT1248Lsb : Public
+    Boolean FT1248FlowControl : Public
+    Boolean IsVCP : Public
+    Boolean PowerSaveEnable : Public
+Class FTD2XX_NET.FTDI+FT_XSERIES_EEPROM_STRUCTURE: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :FTD2XX_NET.FTDI+FT_EEPROM_DATA
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean PullDownEnable : Public
+    Boolean SerNumEnable : Public
+    Boolean USBVersionEnable : Public
+    UInt16 USBVersion : Public
+    Byte ACSlowSlew : Public
+    Byte ACSchmittInput : Public
+    Byte ACDriveCurrent : Public
+    Byte ADSlowSlew : Public
+    Byte ADSchmittInput : Public
+    Byte ADDriveCurrent : Public
+    Byte Cbus0 : Public
+    Byte Cbus1 : Public
+    Byte Cbus2 : Public
+    Byte Cbus3 : Public
+    Byte Cbus4 : Public
+    Byte Cbus5 : Public
+    Byte Cbus6 : Public
+    Byte InvertTXD : Public
+    Byte InvertRXD : Public
+    Byte InvertRTS : Public
+    Byte InvertCTS : Public
+    Byte InvertDTR : Public
+    Byte InvertDSR : Public
+    Byte InvertDCD : Public
+    Byte InvertRI : Public
+    Byte BCDEnable : Public
+    Byte BCDForceCbusPWREN : Public
+    Byte BCDDisableSleep : Public
+    UInt16 I2CSlaveAddress : Public
+    UInt32 I2CDeviceId : Public
+    Byte I2CDisableSchmitt : Public
+    Byte FT1248Cpol : Public
+    Byte FT1248Lsb : Public
+    Byte FT1248FlowControl : Public
+    Byte RS485EchoSuppress : Public
+    Byte PowerSaveEnable : Public
+    Byte IsVCP : Public
+Class FTD2XX_NET.FTDI+FT_EXCEPTION: AutoLayout, AnsiClass, Class, NestedPublic, Serializable, BeforeFieldInit
+  :System.Exception
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class MPSSELight.FtdiDevice+DataTransferEvent: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Byte[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Byte[], AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class MPSSELight.MpsseDevice+MpsseParams: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt32 transferSize : Public
+    Byte EventChar : Public
+    Boolean EventCharEnable : Public
+    Byte ErrorChar : Public
+    Boolean ErrorCharEnable : Public
+    UInt32 ReadTimeout : Public
+    UInt32 WriteTimeout : Public
+    Byte Latency : Public
+    UInt16 clockDevisor : Public
+    DataTransferEvent DataReadEvent : Public
+    DataTransferEvent DataWriteEvent : Public
+Struct MPSSELight.SpiDevice+SpiMode: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    SpiMode Mode0 = 0 : Public, Static, Literal, HasDefault
+    SpiMode Mode2 = 1 : Public, Static, Literal, HasDefault
+Struct MPSSELight.SpiDevice+CsPolicy: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    CsPolicy CsActiveLow = 0 : Public, Static, Literal, HasDefault
+    CsPolicy CsActiveHigh = 1 : Public, Static, Literal, HasDefault
+    CsPolicy CsDefaultLow = 2 : Public, Static, Literal, HasDefault
+    CsPolicy CsDefaultHigh = 3 : Public, Static, Literal, HasDefault
+Class MPSSELight.SpiDevice+SpiParams: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    SpiMode Mode : Public
+    MPSSELight.FtdiPin ChipSelect : Public
+    CsPolicy ChipSelectPolicy : Public
