@@ -13,7 +13,7 @@ BBox API helps developers building their own applications. The release format is
 
 Please install pythonnet at first. It's necessary for using windows dll in python script.
 
-Please create a folder, named "files" under C://
+Please create a folder, named "files" under current path 
 ,and then put the BBoxLite beamsterring table in the folder.
 
 
