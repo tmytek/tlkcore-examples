@@ -4,11 +4,11 @@ import os
 
 # API version 1.2.4
 clr.AddReference('BBoxAPI')
-from BBoxLiteAPI import *
+from BBoxAPI import *
 
 
-bboxlite_sn = "BBoxLite_SN"
-instance = BBoxAPI()
+bboxlite_sn = "BBoxLite_SN" # Please replace it by yourself
+instance = BBoxLiteAPI()
 instance.Init()  
 # trmode default should be 0, tx mode
 trmode =  instance.GetTxRxMode(bboxlite_sn) 
@@ -20,4 +20,4 @@ instance.SwitchTxRxMode(bboxlite_sn, trmode) # switch to Rx
 
 db = 5.0
 angle = 30.0
-instance. BeamSteer(bboxlite_sn, trmode,  db, angle)
+instance.BeamSteer(bboxlite_sn, trmode, db, angle)
