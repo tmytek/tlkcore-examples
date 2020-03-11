@@ -3,7 +3,7 @@ import sys
 import os
 
 # API version 1.2.4
-clr.AddReference('BBoxLiteAPI')
+clr.AddReference('BBoxAPI')
 from BBoxLiteAPI import *
 
 
