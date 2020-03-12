@@ -4,10 +4,10 @@ import os
 
 # API version 1.2.4
 clr.AddReference('BBoxAPI')
-from BBoxAPI import *
+from BBoxAPI import *
 
 
-bboxlite_sn = "BBoxLite_SN" # Please replace it by yourself
+bboxlite_sn = "B19138100-24" # Please replace it by yourself
 instance = BBoxLiteAPI()
 instance.Init()  
 # trmode default should be 0, tx mode
