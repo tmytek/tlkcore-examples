@@ -50,7 +50,7 @@ BBox is TDD based device. You need to point out which BBox device used by serial
 ## Installation
 ----------
 
-Please copy **BBoxLiteAPI.dll** and **MPSSELight.dll** to the project folder (e.g. root folder of the project or ./Debug). Add the following lines in the top of the .cpp file to include necessary DLL files. 
+Please copy **BBoxLiteAPI.dll** and **MPSSELight.dll** to the project folder (e.g. root folder of the project or ./Debug). Add the following lines in the top of the .cpp file to include necessary DLL files. MPSSELight.dll is used for controlling BBox Lite devices, and it's not necessary for controlling BBox One devices.
 
 
     #using "..\Debug\BBoxAPI.dll"
