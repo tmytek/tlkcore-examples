@@ -1,69 +1,41 @@
 # BBox API Document
-Version: v1.2.3
-Release date: Oct 29, 2019 
+Version: v3.0.4
+Release date: July, 2020 
 
 ## Introduction
 
-BBox API helps developers building their own applications. The release format is DLL and currently only support Windows operating system. The tested environment is Visual Studio and LabView 2015.
+BBox API helps developers building their own applications. The release format is DLL and currently only support Windows operating system. The tested environment is Visual Studio.
 
 
 # Getting Started — C#
 ## Installation
 ----------
 
-Please import BBoxAPI.dll from Visual Studio and use the following code segment to include the API.
+Please copy **BBoxAPI.dll** to the project folder (e.g. root folder of the project or ./Release). Add the following DLL lib from Project References.
+Import BBoxAPI.dll from Visual Studio and use the following code segment to include the API.
 
     using BBoxAPI;
 
 
 ## Initialization
 ----------
-    BBoxAPI b = new BBoxAPI();
-    b.Init(); // This will send the init command to BBox
+     BBoxOneAPI b = new BBoxOneAPI();
 
+To obtain the device information, you need to call ScanningDevice. The return string contains device_sn and IP address, spliting by ','.  
+Ex : B19133200-24,192.168.100.121 
 
+    
+    string[] dev_info = b.ScanningDevice();
 
-## Control example
-----------
-**Control Beam direction**
-The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 15 dB of each channel and 10 degrees. You also need to point out which BBox device used by serial number.
+	// suppose only one bboxone device
+	string[] info = dev_info[0].Split(',');
 
-    b.BeamSteer("B191321000-24",b.GetTxRxMode(), 15.0, 10.0);
+	String sn = info[0]; // sn
+	String ip = info[1]; // ip
 
- ****
+Send the initialization code to BBoxOne. Parameter sn comes from the scanning results.
 
-**Obtain Tx or Rx state**
-Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
-
-    BBoxAPI.TxRxMode m = b.GetTxRxMode("B191321000-24");
-
-**Switch Tx & Rx mode**
-BBox is TDD based device. You need to point out which BBox device used by serial number.
-
-    b.SwitchTxRxMode("B191321000-24", GetTxRxModeBBoxAPI.TxRxMode.Tx); // Switch BBox to Tx mode
-    b.SwitchTxRxMode("B191321000-24", BBoxAPI.TxRxMode.Rx); // Switch BBox to Rx mode
-
-
-
-----------
-# Getting Started — VC++
-## Installation
-----------
-
-Please copy **BBoxLiteAPI.dll** and **MPSSELight.dll** to the project folder (e.g. root folder of the project or ./Debug). Add the following lines in the top of the .cpp file to include necessary DLL files. MPSSELight.dll is used for controlling BBox Lite devices, and it's not necessary for controlling BBox One devices.
-
-
-    #using "..\Debug\BBoxAPI.dll"
-    #using "..\Debug\MPSSELight.dll"
-
-
-## Initialization
-----------
-
-To be able to use the external referred DLL object, please use the following instantiation method to obtain an object and send the initialization code to BBox.
-
-    BBoxAPI ^b = gcnew BBoxAPI();
-    b->Init(); // This will send the init command to BBox
+	String s_info = b.Init(sn, 0/*BBoxOne*/, 0);
 
 
 
@@ -71,60 +43,57 @@ To be able to use the external referred DLL object, please use the following ins
 ----------
 
 **Obtain Tx or Rx state**
-Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
 
-    BBoxAPI::TxRxMode m = b->GetTxRxMode("B191321000-24");
+Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number. 
+
+    int m = b.getTxRxMode(sn); // 0 : Tx, 1 : Rx  
 
 **Switch Tx & Rx mode**
+
 BBox is TDD based device. You need to point out which BBox device used by serial number.
 
-    b->SwitchTxRxMode("B191321000-24", BBoxAPI::TxRxMode::Tx); // Switch BBox to Tx mode
-    b->SwitchTxRxMode("B191321000-24", BBoxAPI::TxRxMode::Rx); // Switch BBox to Rx mode
+    b.SwitchTxRxMode(sn, 0); // Switch BBox to Tx mode
+    b.SwitchTxRxMode(sn, 1); // Switch BBox to Rx mode
 
 
 **Control Beam direction**
-The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 15dB and 10 degrees. You need to point out which BBox device used by serial number.
 
+The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 15 dB, 10 degrees in x direction and  20 degrees in y direction. You need to point out which BBox device used by serial number.
 
-    b->BeamSteer("B191321000-24", b->GetTxRxMode(), 15.0, 10.0);
+    b.setBeamXY(15, 10, 20, sn);
 
  ****
 
 
-----------
 # API parameters
-----------
-## GetTxRxMode
-    public TxRxMode GetTxRxMode(String sn); // Get Tx/Rx Mode of device with SN. Return TxRxMode table value.
+
+## getTxRxMode
+    // Get Tx/Rx Mode of device with SN. Return TxRxMode table value.
+    public int getTxRxMode(String sn); 
+    
+return 0 if Tx mode, and 1 if Rx mode.
+    
 ----------
 ## Init
-    public int Init();
+    public String Init(sn, 0/*BBoxOne*/, 0);
+
+return initialized condition.
+
 ----------
 ## SwitchTxRxMode
-    public int SwitchTxRxMode(String sn, TxRxMode mode);
+    public int SwitchTxRxMode(int mode, String sn);
 | Type | Name | Value                                        |
 | ------------ | ------------ | ------------------------------------------------ |
+| int     | mode         | Tx : 0, Rx : 1 |
 | String       | sn           | device serial number |
-| TxRxMode     | mode         | Please refer to Enumeration TxRxMode table below |
+
 
 ----------
-## BeamSteer
-    public int BeamSteer(String sn, TxRxMode mode, double db, double angle);
+## setBeamXY
+    public string setBeamXY(double db, double angleX, double angleY, String sn);
 | Type | Name | Value                                        |
 | ------------ | ------------ | ------------------------------------------------ |
-| String       | sn           | device serial number |
-| TxRxMode     | mode         | Please refer to Enumeration TxRxMode table below |
-| double       | db           | gain value range: 25 - 15 dB in Tx mode and 10 - 0 dB in Rx mode for BBox Lite
-| double       | angle        | Angle value range: -26.5°~26.5° for BBox Lite                  |
-
-
-
-# Enumeration values
-    public enum TxRxMode
-    {
-        Tx = 0,
-        Rx = 1
-    }
-    
-
-
+| double       | db           | gain value
+| double       | angleX        | angle value in x direction
+| double       | angleY        | angle value in y direction
+| String      | sn           | device serial number |
