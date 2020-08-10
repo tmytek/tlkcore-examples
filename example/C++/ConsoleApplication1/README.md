@@ -1,6 +1,6 @@
 # BBox API Document
-Version: v3.0.4
-Release date: July, 2020 
+Version: v3.0.5
+Release date: Aug, 2020 
 
 ## Introduction
 
@@ -11,7 +11,7 @@ BBox API helps developers building their own applications. The release format is
 ## Installation
 ----------
 
-Please copy **BBoxAPI.dll** to the project folder (e.g. root folder of the project or ./Release). Add the following DLL lib from Project References.
+Please copy **BBoxAPI.dll** to the project folder (e.g. root folder of the project or ./Release). Add the following DLL lib from Project References. Please copy the calibration files into "files" folder in the same direction as *.cpp source. (ex. ConsoleApplication1\ConsoleApplication1\files)
 
 
 ## Initialization
