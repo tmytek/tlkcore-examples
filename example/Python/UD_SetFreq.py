@@ -4,7 +4,6 @@ import os
 
 print("start")
 
-
 # API version 3.0.8
 clr.AddReference('BBoxAPI')
 from BBoxAPI import *
@@ -13,12 +12,9 @@ os.chdir(".")
 
 instance = BBoxOneAPI()
 idx = 0
-trmode = 0 
-angx = 5
-angy = 10
 
 dev_info = instance.ScanningDevice(0)
-devone = dev_info[idx].split(",")   # suppose there is only one BBoxOne
+devone = dev_info[idx].split(",")   # Suppose there is only one device
 sn = devone[0]
 ip = devone[1]
 if len(devone) > 2:
@@ -28,12 +24,16 @@ else:
 print("SN:%s, IP:%s, Type:%d" %(sn, ip, dev_type))
 
 info = instance.Init(sn, dev_type, idx)
-        
-instance.SwitchTxRxMode(trmode,sn)# TX mode
-dr = instance.getDR(sn)
-s = instance.setBeamXY(dr[trmode,0], angx, angy, sn)
+print("Init: " + info)
 
-print(s)
+info = instance.GetState(0, sn)
+print("State(Lock): %d" %(info))
 
+info = instance.SetState(1, 0, sn)
+print("Set State(CH1 OFF): %d" %(info[1]))
 
- 
+info = instance.SetState(1, 1, sn)
+print("Set State(CH1 ON): %d" %(info[1]))
+
+info = instance.SetUDFreq(26000000, 28000000, 2000000, sn)
+print("Set Freq result: " + info.split(",")[1])
