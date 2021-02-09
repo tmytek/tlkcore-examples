@@ -62,7 +62,7 @@ BBox is TDD based device.
 | Type | Name | Value                                        |
 | ------------ | ------------ | ------------------------------------------------ |
 | string       | sn           | serial number of bbox one |
-| int          | dev_type     | bbox device type, ex. BBoxLite28A is 7   |
+| int          | dev_type     | fixed at 7   |
 | int          | idx          | bbox instance index   |
 
 ----------
@@ -115,17 +115,20 @@ BBox is TDD based device.
 ## Tx dynamic range
 | Gain  | 0.0 to 15.0 dB |
 | -------- | ---- |
+
 Resolution is 0.5 dB
 
 ## Rx dynamic range
 | Gain  | -3.0 to 12.0 dB |
 | -------- | ---- |
+
 Resolution is 0.5 dB
 
 
 ## Tx/Rx phase range
 | phase | 0-355  |
 | -------- | ---- |
+
 Resolution is 5 degrees
 
 
