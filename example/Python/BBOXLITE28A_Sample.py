@@ -116,13 +116,13 @@ class BBox_Control_Interface(object):
 
 			DR = self.instance.getDR(self.sn[i])
 			print("[BBox_Control_Interface][InitialDevice][%s] " % (self.sn[i]))
-			self.TX_MIN_GAIN.append(DR[0, 0])
+			self.RX_MIN_GAIN.append(DR[0, 0])
 			print("[BBox_Control_Interface][InitialDevice][%s] TX_MIN_GAIN : %f" % (self.sn[i], self.TX_MIN_GAIN[i]))
-			self.TX_MAX_GAIN.append(DR[0, 1])
+			self.RX_MAX_GAIN.append(DR[0, 1])
 			print("[BBox_Control_Interface][InitialDevice][%s] TX_MAX_GAIN : %f" % (self.sn[i], self.TX_MAX_GAIN[i]))
-			self.RX_MIN_GAIN.append(DR[1, 0])
+			self.TX_MIN_GAIN.append(DR[1, 0])
 			print("[BBox_Control_Interface][InitialDevice][%s] RX_MIN_GAIN : %f" % (self.sn[i], self.RX_MIN_GAIN[i]))
-			self.RX_MAX_GAIN.append(DR[1, 1])
+			self.TX_MAX_GAIN.append(DR[1, 1])
 			print("[BBox_Control_Interface][InitialDevice][%s] RX_MAX_GAIN : %f" % (self.sn[i], self.RX_MAX_GAIN[i]))
 			for j in range(0,4):
 				self.current_TX_gain_settings[i][j] = self.TX_MAX_GAIN[i]
