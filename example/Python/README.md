@@ -131,6 +131,28 @@ return 0 if Tx mode, and 1 if Rx mode.
 | double       | angleY      | angle value in y direction
 | String       | sn          | device serial number
 
+----------
+### setChannelGainPhase (BBoxOne only)
+    public string setChannelGainPhase(int board, int ch, double db, int phase, string sn);
+| Type  | Name  | Value |
+| -     | -     | -     |
+| int       | board       | Board number   : 1-4
+| int       | ch          | Channel number : 1-4
+| double    | db          | Target db
+| int       | phase       | Target deg
+| String    | sn          | device serial number
+
+----------
+### switchChannelPower (BBoxOne only)
+    public string switchChannelPower(int board, int ch, int sw, string sn);
+| Type  | Name  | Value |
+| -     | -     | -     |
+| int       | board       | Board number   : 1-4
+| int       | ch          | Channel number : 1-4
+| int       | sw          | switch value   : ON 0 , OFF 1
+| String    | sn          | device serial number
+
+----------
 ### GetState (UDBox only)
     public int GetState(int state_index, string sn)
 
