@@ -4,7 +4,6 @@ import time
 import csv
 import os
 import numpy as np
-import pandas as pd
 
 dll_dir = os.getcwd()
 
@@ -55,6 +54,8 @@ class BBox_Control_Interface(object):
 
 		self.TX_ELE_DYNAMIC_RANGE = []
 		self.RX_ELE_DYNAMIC_RANGE = []
+
+		self.AAkitList = []
 
 		self.mode = []
 
@@ -145,6 +146,10 @@ class BBox_Control_Interface(object):
 			print("[BBox_Control_Interface][InitialDevice][%s] TX_ELE_DYNAMIC_RANGE : %f" % (self.sn[i], self.TX_ELE_DYNAMIC_RANGE[i]))
 			self.RX_ELE_DYNAMIC_RANGE.append(ELEDR[0, 1])
 			print("[BBox_Control_Interface][InitialDevice][%s] RX_ELE_DYNAMIC_RANGE : %f" % (self.sn[i], self.RX_ELE_DYNAMIC_RANGE[i]))
+
+			self.AAkitList.append(self.instance.getAAKitNameList(self.sn[i]))
+			print(self.AAkitList[i][0])
+			self.instance.selectAAKit(self.AAkitList[i][0], self.sn[i])
 
 
 	def CheckElementDR(self, sn_idx, mode, gain_settings):
