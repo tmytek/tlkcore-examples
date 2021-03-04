@@ -61,9 +61,11 @@ class BBox_Control_Interface(object):
 
 		self.current_TX_gain_settings = [[0 for i in range(4)] for j in range(16)]
 		self.current_TX_phase_settings = [[0 for i in range(4)] for j in range(16)]
+		self.current_TX_BeamAngle_settings = [0 for i in range(16)]
 
 		self.current_RX_gain_settings = [[0 for i in range(4)] for j in range(16)]
 		self.current_RX_phase_settings = [[0 for i in range(4)] for j in range(16)]
+		self.current_RX_BeamAngle_settings = [0 for i in range(16)]
 
 		if self.GetDeviceStatus():
 			self.InitialDevice()
@@ -286,7 +288,7 @@ class BBox_Control_Interface(object):
 
 
 
-	def SetDeviceBeamSteering(self, sn, mode, db ,deg):
+	def SetDeviceBeamSteering(self, sn, mode, db ,ang_x):
 
 		sn_idx = self.Get_SN_Index(sn)
 		if sn_idx == -1:
@@ -295,8 +297,13 @@ class BBox_Control_Interface(object):
 		if self.CheckTRMode(sn_idx, mode) == False:
 			return False
 
+		if mode == self.TX:
+			self.current_TX_BeamAngle_settings[sn_idx] = ang_x
+		elif mode == self.RX:
+			self.current_RX_BeamAngle_settings[sn_idx] = ang_x
+
 		ang_y = 0
-		ret = self.instance.setBeamXY(db, deg, ang_y, sn)
+		ret = self.instance.setBeamXY(db, ang_x, ang_y, sn)
 		if ret != 0:
 			print("[BBox_Control_Interface][SetDeviceBeamSteering] SetDeviceBeamSteering failed : errorCode %d" % (ret))
 			return False
@@ -318,6 +325,9 @@ class BBox_Control_Interface(object):
 			if sn == self.sn[i]:
 				index = i
 				break
+
+		if index == -1:
+			print("[BBox_Control_Interface][Get_SN_Index] %s not exists" % (sn))
 
 		return index
 
@@ -355,6 +365,18 @@ class BBox_Control_Interface(object):
 			return [self.current_TX_phase_settings[sn_idx][0], self.current_TX_phase_settings[sn_idx][1], self.current_TX_phase_settings[sn_idx][2], self.current_TX_phase_settings[sn_idx][3]]
 		elif mode == self.RX:
 			return [self.current_RX_phase_settings[sn_idx][0], self.current_RX_phase_settings[sn_idx][1], self.current_RX_phase_settings[sn_idx][2], self.current_RX_phase_settings[sn_idx][3]]
+
+
+	def Get_BeamAngle_settings(self, sn, mode):
+
+		sn_idx = self.Get_SN_Index(sn)
+		if sn_idx == -1:
+			return None
+
+		if mode == self.TX:
+			return self.current_TX_BeamAngle_settings[sn_idx]
+		elif mode == self.RX:
+			return self.current_RX_BeamAngle_settings[sn_idx]
 
 
 if __name__ == '__main__':
