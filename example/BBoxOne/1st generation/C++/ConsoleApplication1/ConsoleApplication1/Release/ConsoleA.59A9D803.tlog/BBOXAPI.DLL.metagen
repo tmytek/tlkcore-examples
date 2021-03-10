@@ -1,7 +1,7 @@
   FTD2XX_NET.Properties.Resources.resources - Embedded, ContainedInManifestFile, 
   NLog.Resources.NLog.ico - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
-Assembly BBoxAPI, Version=3.0.*, Culture=Invariant Language (Invariant Country): 
+Assembly BBoxAPI, Version=3.1.*, Culture=不因語言而異 (不因國別而異): 
 	hash=SHA1, flags=PublicKey
 Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
@@ -27,16 +27,20 @@ Assembly System.IO.Compression, Version=4.0.0.0, Culture=neutral, PublicKeyToken
 	hash=None, flags=None
 Assembly System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Class <>f__AnonymousType0`33[<ScanningDevice>j__TPar,<Init>j__TPar,<SwitchTxRxMode>j__TPar,<getTxRxMode>j__TPar,<selectAntenna>j__TPar,<selectAAKit>j__TPar,<getFrequencyList>j__TPar,<getDR>j__TPar,<getAAKitNameList>j__TPar,<getAAKitInfo>j__TPar,<setAAKitInfo>j__TPar,<deleteAAKitInfo>j__TPar,<saveAAkitFile>j__TPar,<checkCaliTableLocation>j__TPar,<setOperatingFreq>j__TPar,<getOperatingFreq>j__TPar,<setChannelGainPhase>j__TPar,<switchChannelPower>j__TPar,<readBeamGainValues>j__TPar,<readBeamPhaseValues>j__TPar,<setAllGain>j__TPar,<setGainPhaseStep>j__TPar,<readSetting>j__TPar,<readSettingValues>j__TPar,<writeSetting>j__TPar,<setBeamXY>j__TPar,<QuerySN>j__TPar,<QueryMAC>j__TPar,<QueryFWV>j__TPar,<QueryHWV>j__TPar,<SetUDFreq>j__TPar,<GetState>j__TPar,<SetState>j__TPar]: AutoLayout, AnsiClass, Class, Sealed, BeforeFieldInit
+Class <>f__AnonymousType0`40[<ScanningDevice>j__TPar,<Init>j__TPar,<setStaticIP>j__TPar,<Reboot>j__TPar,<SwitchTxRxMode>j__TPar,<getTxRxMode>j__TPar,<selectAntenna>j__TPar,<selectAAKit>j__TPar,<getFrequencyList>j__TPar,<getDR>j__TPar,<getCOMDR>j__TPar,<getELEDR>j__TPar,<getAAKitList>j__TPar,<getAAKitInfo>j__TPar,<setAAKitInfo>j__TPar,<deleteAAKitInfo>j__TPar,<saveAAkitFile>j__TPar,<checkCaliTableLocation>j__TPar,<setOperatingFreq>j__TPar,<getOperatingFreq>j__TPar,<setChannelGainPhase>j__TPar,<switchChannelPower>j__TPar,<readBeamGainValues>j__TPar,<readBeamPhaseValues>j__TPar,<setAllGain>j__TPar,<setGainPhaseStep>j__TPar,<readSetting>j__TPar,<readSettingValues>j__TPar,<writeSetting>j__TPar,<setBeamXY>j__TPar,<QuerySN>j__TPar,<QueryMAC>j__TPar,<QueryFWV>j__TPar,<QueryHWV>j__TPar,<SetUDFreq>j__TPar,<GetState>j__TPar,<SetState>j__TPar,<GetUDDeltaFreq>j__TPar,<SwitchChannelPower>j__TPar,<ReadChannelSwitchValues>j__TPar]: AutoLayout, AnsiClass, Class, Sealed, BeforeFieldInit
   Type parameter: <ScanningDevice>j__TPar
   Type parameter: <Init>j__TPar
+  Type parameter: <setStaticIP>j__TPar
+  Type parameter: <Reboot>j__TPar
   Type parameter: <SwitchTxRxMode>j__TPar
   Type parameter: <getTxRxMode>j__TPar
   Type parameter: <selectAntenna>j__TPar
   Type parameter: <selectAAKit>j__TPar
   Type parameter: <getFrequencyList>j__TPar
   Type parameter: <getDR>j__TPar
-  Type parameter: <getAAKitNameList>j__TPar
+  Type parameter: <getCOMDR>j__TPar
+  Type parameter: <getELEDR>j__TPar
+  Type parameter: <getAAKitList>j__TPar
   Type parameter: <getAAKitInfo>j__TPar
   Type parameter: <setAAKitInfo>j__TPar
   Type parameter: <deleteAAKitInfo>j__TPar
@@ -61,17 +65,24 @@ Class <>f__AnonymousType0`33[<ScanningDevice>j__TPar,<Init>j__TPar,<SwitchTxRxMo
   Type parameter: <SetUDFreq>j__TPar
   Type parameter: <GetState>j__TPar
   Type parameter: <SetState>j__TPar
-    Void .ctor(<ScanningDevice>j__TPar, <Init>j__TPar, <SwitchTxRxMode>j__TPar, <getTxRxMode>j__TPar, <selectAntenna>j__TPar, <selectAAKit>j__TPar, <getFrequencyList>j__TPar, <getDR>j__TPar, <getAAKitNameList>j__TPar, <getAAKitInfo>j__TPar, <setAAKitInfo>j__TPar, <deleteAAKitInfo>j__TPar, <saveAAkitFile>j__TPar, <checkCaliTableLocation>j__TPar, <setOperatingFreq>j__TPar, <getOperatingFreq>j__TPar, <setChannelGainPhase>j__TPar, <switchChannelPower>j__TPar, <readBeamGainValues>j__TPar, <readBeamPhaseValues>j__TPar, <setAllGain>j__TPar, <setGainPhaseStep>j__TPar, <readSetting>j__TPar, <readSettingValues>j__TPar, <writeSetting>j__TPar, <setBeamXY>j__TPar, <QuerySN>j__TPar, <QueryMAC>j__TPar, <QueryFWV>j__TPar, <QueryHWV>j__TPar, <SetUDFreq>j__TPar, <GetState>j__TPar, <SetState>j__TPar): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Type parameter: <GetUDDeltaFreq>j__TPar
+  Type parameter: <SwitchChannelPower>j__TPar
+  Type parameter: <ReadChannelSwitchValues>j__TPar
+    Void .ctor(<ScanningDevice>j__TPar, <Init>j__TPar, <setStaticIP>j__TPar, <Reboot>j__TPar, <SwitchTxRxMode>j__TPar, <getTxRxMode>j__TPar, <selectAntenna>j__TPar, <selectAAKit>j__TPar, <getFrequencyList>j__TPar, <getDR>j__TPar, <getCOMDR>j__TPar, <getELEDR>j__TPar, <getAAKitList>j__TPar, <getAAKitInfo>j__TPar, <setAAKitInfo>j__TPar, <deleteAAKitInfo>j__TPar, <saveAAkitFile>j__TPar, <checkCaliTableLocation>j__TPar, <setOperatingFreq>j__TPar, <getOperatingFreq>j__TPar, <setChannelGainPhase>j__TPar, <switchChannelPower>j__TPar, <readBeamGainValues>j__TPar, <readBeamPhaseValues>j__TPar, <setAllGain>j__TPar, <setGainPhaseStep>j__TPar, <readSetting>j__TPar, <readSettingValues>j__TPar, <writeSetting>j__TPar, <setBeamXY>j__TPar, <QuerySN>j__TPar, <QueryMAC>j__TPar, <QueryFWV>j__TPar, <QueryHWV>j__TPar, <SetUDFreq>j__TPar, <GetState>j__TPar, <SetState>j__TPar, <GetUDDeltaFreq>j__TPar, <SwitchChannelPower>j__TPar, <ReadChannelSwitchValues>j__TPar): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
     <ScanningDevice>j__TPar ScanningDevice 'get ' : 
     <Init>j__TPar Init 'get ' : 
+    <setStaticIP>j__TPar setStaticIP 'get ' : 
+    <Reboot>j__TPar Reboot 'get ' : 
     <SwitchTxRxMode>j__TPar SwitchTxRxMode 'get ' : 
     <getTxRxMode>j__TPar getTxRxMode 'get ' : 
     <selectAntenna>j__TPar selectAntenna 'get ' : 
     <selectAAKit>j__TPar selectAAKit 'get ' : 
     <getFrequencyList>j__TPar getFrequencyList 'get ' : 
     <getDR>j__TPar getDR 'get ' : 
-    <getAAKitNameList>j__TPar getAAKitNameList 'get ' : 
+    <getCOMDR>j__TPar getCOMDR 'get ' : 
+    <getELEDR>j__TPar getELEDR 'get ' : 
+    <getAAKitList>j__TPar getAAKitList 'get ' : 
     <getAAKitInfo>j__TPar getAAKitInfo 'get ' : 
     <setAAKitInfo>j__TPar setAAKitInfo 'get ' : 
     <deleteAAKitInfo>j__TPar deleteAAKitInfo 'get ' : 
@@ -96,16 +107,23 @@ Class <>f__AnonymousType0`33[<ScanningDevice>j__TPar,<Init>j__TPar,<SwitchTxRxMo
     <SetUDFreq>j__TPar SetUDFreq 'get ' : 
     <GetState>j__TPar GetState 'get ' : 
     <SetState>j__TPar SetState 'get ' : 
+    <GetUDDeltaFreq>j__TPar GetUDDeltaFreq 'get ' : 
+    <SwitchChannelPower>j__TPar SwitchChannelPower 'get ' : 
+    <ReadChannelSwitchValues>j__TPar ReadChannelSwitchValues 'get ' : 
   Methods:
     get_ScanningDevice(): PrivateScope, Public, HideBySig, SpecialName
     get_Init(): PrivateScope, Public, HideBySig, SpecialName
+    get_setStaticIP(): PrivateScope, Public, HideBySig, SpecialName
+    get_Reboot(): PrivateScope, Public, HideBySig, SpecialName
     get_SwitchTxRxMode(): PrivateScope, Public, HideBySig, SpecialName
     get_getTxRxMode(): PrivateScope, Public, HideBySig, SpecialName
     get_selectAntenna(): PrivateScope, Public, HideBySig, SpecialName
     get_selectAAKit(): PrivateScope, Public, HideBySig, SpecialName
     get_getFrequencyList(): PrivateScope, Public, HideBySig, SpecialName
     get_getDR(): PrivateScope, Public, HideBySig, SpecialName
-    get_getAAKitNameList(): PrivateScope, Public, HideBySig, SpecialName
+    get_getCOMDR(): PrivateScope, Public, HideBySig, SpecialName
+    get_getELEDR(): PrivateScope, Public, HideBySig, SpecialName
+    get_getAAKitList(): PrivateScope, Public, HideBySig, SpecialName
     get_getAAKitInfo(): PrivateScope, Public, HideBySig, SpecialName
     get_setAAKitInfo(): PrivateScope, Public, HideBySig, SpecialName
     get_deleteAAKitInfo(): PrivateScope, Public, HideBySig, SpecialName
@@ -130,11 +148,16 @@ Class <>f__AnonymousType0`33[<ScanningDevice>j__TPar,<Init>j__TPar,<SwitchTxRxMo
     get_SetUDFreq(): PrivateScope, Public, HideBySig, SpecialName
     get_GetState(): PrivateScope, Public, HideBySig, SpecialName
     get_SetState(): PrivateScope, Public, HideBySig, SpecialName
+    get_GetUDDeltaFreq(): PrivateScope, Public, HideBySig, SpecialName
+    get_SwitchChannelPower(): PrivateScope, Public, HideBySig, SpecialName
+    get_ReadChannelSwitchValues(): PrivateScope, Public, HideBySig, SpecialName
     Equals(Object): PrivateScope, Public, Virtual, HideBySig
     GetHashCode(): PrivateScope, Public, Virtual, HideBySig
     ToString(): PrivateScope, Public, Virtual, HideBySig
 Class AAKitSupporter: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean isSelectAAKit : Public
   Methods:
     getAAKitInfoListNum(): PrivateScope, Public, HideBySig
     getCrrentAAKitInfo(): PrivateScope, Public, HideBySig
@@ -142,9 +165,10 @@ Class AAKitSupporter: AutoLayout, AnsiClass, Class, BeforeFieldInit
     getAAKitInfoIndexFromList(String): PrivateScope, Public, HideBySig
     getAAKitInfoObjectFromList(String): PrivateScope, Public, HideBySig
     getAAKitInfoObjectFromList(Int32): PrivateScope, Public, HideBySig
-    setAAKitInfo(String, Double[], Double[], Double[], Int32[], Int32[]): PrivateScope, Public, HideBySig
+    setAAKitInfo(String, Int32, Int32, Double[], Double[], Double[], Int32[], Int32[]): PrivateScope, Public, HideBySig
     addAAKitInfo(AAKitInfo): PrivateScope, Public, HideBySig
     deleteAAKitInfo(String): PrivateScope, Public, HideBySig
+    emptyAAKitInfoList(): PrivateScope, Public, HideBySig
     selectAntenna(AntennaType): PrivateScope, Public, HideBySig
     selectAAKit(String): PrivateScope, Public, HideBySig
 Class AAKitInfo: AutoLayout, AnsiClass, Class, BeforeFieldInit
@@ -156,17 +180,28 @@ Class AAKitInfo: AutoLayout, AnsiClass, Class, BeforeFieldInit
 Class BBoxDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
   :GeneralDevice
     Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    Boolean isResponse : Public
   Methods:
-    InstanceInit(Int32): PrivateScope, Public, HideBySig
-    InitTable(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    InstanceInit(): PrivateScope, Public, Virtual, HideBySig
+    InitDevice(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     getDataStream(String, String): PrivateScope, Public, HideBySig
+    isCaliTableLoaded(): PrivateScope, Public, HideBySig
     LoadCalibrationInfo(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getCaliTablePath(String): PrivateScope, Public, HideBySig
     LoadAAKitInfo(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    selectAntenna(AntennaType): PrivateScope, Public, HideBySig
+    selectAAKit(String): PrivateScope, Public, HideBySig
+    getAAKitList(): PrivateScope, Public, HideBySig
+    getAAKitTablePath(String): PrivateScope, Public, HideBySig
+    setAAKitInfo(String, Int32, Int32, Double[], Double[], Double[], Int32[], Int32[]): PrivateScope, Public, HideBySig
+    getAAKitInfo(String): PrivateScope, Public, HideBySig
+    deleteAAKitInfo(String): PrivateScope, Public, HideBySig
+    saveAAkitFile(): PrivateScope, Public, HideBySig
+    checkCaliTableLocation(String): PrivateScope, Public, HideBySig
+    setOperatingFreq(Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getOperatingFreq(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     DumpLog(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
-    getTxRxMode(): PrivateScope, Public, HideBySig
-    SwitchTxRxMode(Int32): PrivateScope, Public, HideBySig
+    getTxRxMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SwitchTxRxMode(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     setBeamX(Double, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     setBeamY(Double, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     setBeamXY(Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
@@ -174,22 +209,11 @@ Class BBoxOneDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
   :BBoxDevice
     Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    getAAKitTablePath(String): PrivateScope, Public, HideBySig
+    setStaticIP(String): PrivateScope, Public, HideBySig
     LoadAAKitInfo(): PrivateScope, Public, Virtual, HideBySig
-    getCaliTablePath(String): PrivateScope, Public, HideBySig
-    isCaliTableLoaded(): PrivateScope, Public, HideBySig
-    checkCaliTableLocation(String): PrivateScope, Public, HideBySig
     LoadCalibrationInfo(): PrivateScope, Public, Virtual, HideBySig
-    setOperatingFreq(Double): PrivateScope, Public, HideBySig
-    selectAntenna(AntennaType): PrivateScope, Public, HideBySig
-    selectAAKit(String): PrivateScope, Public, HideBySig
-    setAAKitInfo(String, Double[], Double[], Double[], Int32[], Int32[]): PrivateScope, Public, HideBySig
-    getAAKitInfo(String): PrivateScope, Public, HideBySig
-    deleteAAKitInfo(String): PrivateScope, Public, HideBySig
-    getAAKitNameList(): PrivateScope, Public, HideBySig
-    saveAAkitFile(): PrivateScope, Public, HideBySig
-    getOperatingFreq(): PrivateScope, Public, HideBySig
     getFrequencyList(): PrivateScope, Public, HideBySig
+    getAAKitNameList(): PrivateScope, Public, HideBySig
     getDR(): PrivateScope, Public, HideBySig
     matrixCalculate(Int32, Int32): PrivateScope, Public, HideBySig
     matrixCalculate2D(Int32, Int32): PrivateScope, Public, HideBySig
@@ -200,6 +224,37 @@ Class BBoxOneDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
     setChannelGainPhase(Int32, Int32, Double, Int32): PrivateScope, Public, HideBySig
     readBeamGainValues(): PrivateScope, Public, HideBySig
     readBeamPhaseValues(): PrivateScope, Public, HideBySig
+    setControlParameters(Int32, Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    diagnoseProbe(): PrivateScope, Public, HideBySig
+Class BBOXLITE28A: AutoLayout, AnsiClass, Class, BeforeFieldInit
+  :CustomA_BBoxDevice
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InitDevice(): PrivateScope, Public, Virtual, HideBySig
+    InitConfiguration(): PrivateScope, Public, Virtual, HideBySig
+    LoadCalibrationInfo(): PrivateScope, Public, Virtual, HideBySig
+    LoadAAKitInfo(): PrivateScope, Public, Virtual, HideBySig
+    getFrequencyList(): PrivateScope, Public, Virtual, HideBySig
+    getOperatingFreq(): PrivateScope, Public, Virtual, HideBySig
+    setOperatingFreq(Double): PrivateScope, Public, Virtual, HideBySig
+    getCOMDR(): PrivateScope, Public, Virtual, HideBySig
+    getELEDR(): PrivateScope, Public, Virtual, HideBySig
+Class BBOXLITE39A: AutoLayout, AnsiClass, Class, BeforeFieldInit
+  :CustomA_BBoxDevice
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InitDevice(): PrivateScope, Public, Virtual, HideBySig
+    InitConfiguration(): PrivateScope, Public, Virtual, HideBySig
+    LoadCalibrationInfo(): PrivateScope, Public, Virtual, HideBySig
+    captureInfoFromTable(StreamReader, Double[,]&): PrivateScope, Public, Virtual, HideBySig
+    LoadAAKitInfo(): PrivateScope, Public, Virtual, HideBySig
+    getFrequencyList(): PrivateScope, Public, Virtual, HideBySig
+    getOperatingFreq(): PrivateScope, Public, Virtual, HideBySig
+    setOperatingFreq(Double): PrivateScope, Public, Virtual, HideBySig
+    setChannelGainPhase(Int32, Int32, Double, Int32): PrivateScope, Public, Virtual, HideBySig
+    setBeamXY(Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
+    getCOMDR(): PrivateScope, Public, Virtual, HideBySig
+    getELEDR(): PrivateScope, Public, Virtual, HideBySig
 Class ChipController: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Void .ctor(MPSSELight.MpsseDevice, MPSSELight.SpiDevice, Byte): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -209,6 +264,20 @@ Class ChipController: AutoLayout, AnsiClass, Class, BeforeFieldInit
     BBoxControlStepQuery(Int32, Int32, Control): PrivateScope, Public, HideBySig
     TxStateQuery(): PrivateScope, Public, HideBySig
     RxStateQuery(): PrivateScope, Public, HideBySig
+Class Bulbul28A_CalibrationMap: AutoLayout, AnsiClass, Class, BeforeFieldInit
+  :CalibrationMap
+    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Double[,,] TX_gain_table : Public
+    Double[,,] RX_gain_table : Public
+    Double[,] TX_phase_table : Public
+    Double[,] RX_phase_table : Public
+  Methods:
+    setPhaseMap(Int32, Int32, Int32, Double): PrivateScope, Public, HideBySig
+    setGainMap(Int32, Int32, Int32, Int32, Double): PrivateScope, Public, HideBySig
+    GenerateGainMap(): PrivateScope, Public, HideBySig
+    SearchPhaseMap(Int32, Int32, Int32[,,]): PrivateScope, Public, HideBySig
+    SearchGainMap(Int32, Int32, Double[,,]): PrivateScope, Public, HideBySig
 Class BFIC_GEN1: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Void .ctor(Byte): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
@@ -258,77 +327,249 @@ Class BFIC_GEN1Parameters: AutoLayout, AnsiClass, Class, Abstract, Sealed, Befor
     Byte rxChSwbMask : Public, Static
     Byte rxChSwdMask : Public, Static
     Byte rxChSwsMask : Public, Static
-Class TMYNetwork: AutoLayout, AnsiClass, Class, BeforeFieldInit
-    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Bulbul39A_CalibrationMap: AutoLayout, AnsiClass, Class, BeforeFieldInit
+  :CalibrationMap
+    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    MeasurmentMap_3D[] TX_calibration_table : Public
+    MeasurmentMap_3D[] RX_calibration_table : Public
   Methods:
+    SetElementPhaseMap(Int32, Int32, Double[]): PrivateScope, Public, HideBySig
+    SetCommonPhaseMap(Int32, Int32, Double[]): PrivateScope, Public, HideBySig
+    SetElementGainMap(Int32, Int32, Double[]): PrivateScope, Public, HideBySig
+    SetCommonGainMap(Int32, Int32, Double[]): PrivateScope, Public, HideBySig
+    SetReferenceGainMap(Int32, Int32, Double[]): PrivateScope, Public, HideBySig
+    SetReferencePhaseMap(Int32, Int32, Double[]): PrivateScope, Public, HideBySig
+    GenerateAllMap(): PrivateScope, Public, HideBySig
+    calculatePhaseErr(Double, Double): PrivateScope, Public, HideBySig
+    Search_CalibrationMap(Int32, Int32, Double[,,], Int32[,,]): PrivateScope, Public, HideBySig
+Class CalibrationMap: AutoLayout, AnsiClass, Class, BeforeFieldInit
+    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32[,] TX_Offset : Public
+    Int32[,] RX_Offset : Public
+    Double TX_ELEMENT_DYNAMIC_RANGE : Public
+    Double RX_ELEMENT_DYNAMIC_RANGE : Public
+    Double[] TX_COMMON_DYNAMIC_RANGE : Public
+    Double[] RX_COMMON_DYNAMIC_RANGE : Public
+    Int32 GainTotalStep = 16 : Public, Static, Literal, HasDefault
+    Int32 PhaseTotalStep = 64 : Public, Static, Literal, HasDefault
+    Int32 CHANNELNUM = 4 : Public, Static, Literal, HasDefault
+  Properties:
+    Int32 IC_number 'get set' : 
+    Int32 module_number 'get set' : 
+    Double TX_COM_MIN_GAIN 'get set' : 
+    Double TX_COM_MAX_GAIN 'get set' : 
+    Double RX_COM_MIN_GAIN 'get set' : 
+    Double RX_COM_MAX_GAIN 'get set' : 
+    Int32 Default_TXC 'get set' : 
+    Int32 Default_TXQ 'get set' : 
+    Int32 Default_RXC 'get set' : 
+    Int32 Default_RXQ 'get set' : 
+  Methods:
+    get_IC_number(): PrivateScope, Public, HideBySig, SpecialName
+    set_IC_number(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_module_number(): PrivateScope, Public, HideBySig, SpecialName
+    set_module_number(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_TX_COM_MIN_GAIN(): PrivateScope, Public, HideBySig, SpecialName
+    set_TX_COM_MIN_GAIN(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_TX_COM_MAX_GAIN(): PrivateScope, Public, HideBySig, SpecialName
+    set_TX_COM_MAX_GAIN(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_RX_COM_MIN_GAIN(): PrivateScope, Public, HideBySig, SpecialName
+    set_RX_COM_MIN_GAIN(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_RX_COM_MAX_GAIN(): PrivateScope, Public, HideBySig, SpecialName
+    set_RX_COM_MAX_GAIN(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Default_TXC(): PrivateScope, Public, HideBySig, SpecialName
+    set_Default_TXC(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Default_TXQ(): PrivateScope, Public, HideBySig, SpecialName
+    set_Default_TXQ(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Default_RXC(): PrivateScope, Public, HideBySig, SpecialName
+    set_Default_RXC(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Default_RXQ(): PrivateScope, Public, HideBySig, SpecialName
+    set_Default_RXQ(Int32): PrivateScope, Public, HideBySig, SpecialName
+    setTxOffset(Int32[,]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    setRxOffset(Int32[,]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    setTxElementDR(Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    setRxElementDR(Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetTxElementDR(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetRxElementDR(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    setTxCommonDR(Double[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    setRxCommonDR(Double[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetTxCommonDR(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetRxCommonDR(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getTxOffset(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getRxOffset(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    roundUpBy5(Int32): PrivateScope, Public, Static, HideBySig
+    normalizeAng(Int32): PrivateScope, Public, Static, HideBySig
+    angleShift(Int32): PrivateScope, Public, Static, HideBySig
+    NormalizePhase(Double): PrivateScope, Public, Static, HideBySig
+Class Kirin40_BFIC_GEN: AutoLayout, AnsiClass, Class, BeforeFieldInit
+    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 module_number : Public
+    Int32 IC_number : Public
+    Int32 CHANNELNUM = 1 : Public, Static, Literal, HasDefault
+  Methods:
+    getTxOffset(): PrivateScope, Public, HideBySig
+    setTxOffset(Int32[,]): PrivateScope, Public, HideBySig
+    setTxDictionary(String, String): PrivateScope, Public, HideBySig
+    getTxDictionary(Double, Int32): PrivateScope, Public, HideBySig
+    clearTxDictionary(): PrivateScope, Public, HideBySig
+    angleShift(Int32): PrivateScope, Public, Static, HideBySig
+    NormalizePhase(Double): PrivateScope, Public, HideBySig
+Class CustomA_BBoxDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
+  :BBoxDevice
+    Void .ctor(System.String, System.String, Double, Int32, Int32, Int32, BBoxAPI.DEV_TYPE, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Collections.Generic.List`1[System.String] TABLE_FREQ_LIST : Public
+    UInt32 COM_CH_IDX : Public
+    Int32 TEMP_ADC : Public
+  Properties:
+    System.String AAKIT_SPECIFIC_SN 'get set' : 
+  Methods:
+    set_AAKIT_SPECIFIC_SN(String): PrivateScope, Public, HideBySig, SpecialName
+    get_AAKIT_SPECIFIC_SN(): PrivateScope, Public, HideBySig, SpecialName
+    InitConfiguration(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    InitDevice(): PrivateScope, Public, Virtual, HideBySig
+    getTxRxMode(): PrivateScope, Public, Virtual, HideBySig
+    captureInfoFromTable(StreamReader, Double[,]&): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    checkGainRange(Double&): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SwitchTxRxMode(Int32): PrivateScope, Public, Virtual, HideBySig
+    Module_Channel_Control(OPMODE, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    MODULE_TC_Control(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Store_Phase_BeamPattern(Int32, Int32[,], Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Store_Gain_BeamPattern(Int32, Int32[,], Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Store_Temp_BeamPattern(Int32, Int32[,], Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Fast_Beam_Steering(Int32, Int32, Int32, Int32[,]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    TemperatureCompensation_Switch(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    FsatBeamSteering_Switch(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SCPI_HW_Readback(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    switchChannelPower(Int32, Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    setChannelGainPhase(Int32, Int32, Double, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getFrequencyList(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    updateFreqList(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    setBeamXY(Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
+    setBeamX(Double, Int32): PrivateScope, Public, Virtual, HideBySig
+    setBeamY(Double, Int32): PrivateScope, Public, Virtual, HideBySig
+    matrixCalculate(Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    matrixCalculate2D(Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetModuleNumber(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetICNumber(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetChannelNumber(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getDR(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getCOMDR(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    getELEDR(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    readBeamPhaseValues(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ReadChannelSwitchValues(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ReadBeamPhaseValues(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Get_Gain_Control_Step(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Get_Phase_Control_Step(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    readBeamGainValues(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ReadBeamGainValues(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Dimension_convert_3Dto2D_int(Int32[,,], Int32, Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Dimension_convert_3Dto2D_double(Double[,,], Int32, Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SCPI_Send_Socket_Handler(String): PrivateScope, Public, HideBySig
+Class KIRIN40OE: AutoLayout, AnsiClass, Class, BeforeFieldInit
+  :CustomA_BBoxDevice
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String AAKIT_SPECIFIC_SN 'get set' : 
+  Methods:
+    set_AAKIT_SPECIFIC_SN(String): PrivateScope, Public, HideBySig, SpecialName
+    get_AAKIT_SPECIFIC_SN(): PrivateScope, Public, HideBySig, SpecialName
+    InitDevice(): PrivateScope, Public, Virtual, HideBySig
+    InitConfiguration(): PrivateScope, Public, Virtual, HideBySig
+    SwitchTxRxMode(Int32): PrivateScope, Public, Virtual, HideBySig
+    LoadCalibrationInfo(): PrivateScope, Public, Virtual, HideBySig
+    captureInfoFromTable(StreamReader, Double[,]&): PrivateScope, Public, Virtual, HideBySig
+    LoadAAKitInfo(): PrivateScope, Public, Virtual, HideBySig
+    getAAKitTablePath(String): PrivateScope, Public, HideBySig
+    checkGainRange(Double&): PrivateScope, Public, Virtual, HideBySig
+    getFrequencyList(): PrivateScope, Public, Virtual, HideBySig
+    getOperatingFreq(): PrivateScope, Public, Virtual, HideBySig
+    setOperatingFreq(Double): PrivateScope, Public, Virtual, HideBySig
+    switchChannelPower(Int32, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
+    setChannelGainPhase(Int32, Int32, Double, Int32): PrivateScope, Public, Virtual, HideBySig
+    setBeamXY(Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
+    matrixCalculate(Int32, Int32): PrivateScope, Public, Virtual, HideBySig
+    matrixCalculate2D(Int32, Int32): PrivateScope, Public, Virtual, HideBySig
+    readBeamPhaseValues(): PrivateScope, Public, Virtual, HideBySig
+    readBeamGainValues(): PrivateScope, Public, Virtual, HideBySig
+    ReadChannelSwitchValues(Int32): PrivateScope, Public, Virtual, HideBySig
+Class BBOXONE39A: AutoLayout, AnsiClass, Class, BeforeFieldInit
+  :CustomA_BBoxDevice
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String AAKIT_SPECIFIC_SN 'get set' : 
+  Methods:
+    set_AAKIT_SPECIFIC_SN(String): PrivateScope, Public, HideBySig, SpecialName
+    get_AAKIT_SPECIFIC_SN(): PrivateScope, Public, HideBySig, SpecialName
+    InitDevice(): PrivateScope, Public, Virtual, HideBySig
+    InitConfiguration(): PrivateScope, Public, Virtual, HideBySig
+    LoadCalibrationInfo(): PrivateScope, Public, Virtual, HideBySig
+    captureInfoFromTable(StreamReader, Double[,]&): PrivateScope, Public, Virtual, HideBySig
+    LoadAAKitInfo(): PrivateScope, Public, Virtual, HideBySig
+    getFrequencyList(): PrivateScope, Public, Virtual, HideBySig
+    getOperatingFreq(): PrivateScope, Public, Virtual, HideBySig
+    setOperatingFreq(Double): PrivateScope, Public, Virtual, HideBySig
+    getCOMDR(): PrivateScope, Public, Virtual, HideBySig
+    getELEDR(): PrivateScope, Public, Virtual, HideBySig
+    setChannelGainPhase(Int32, Int32, Double, Int32): PrivateScope, Public, Virtual, HideBySig
+    setBeamXY(Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
+Class Pipit18Device: AutoLayout, AnsiClass, Class, BeforeFieldInit
+  :BBoxDevice
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String AAKIT_SPECIFIC_SN 'get set' : 
+  Methods:
+    set_AAKIT_SPECIFIC_SN(String): PrivateScope, Public, HideBySig, SpecialName
+    get_AAKIT_SPECIFIC_SN(): PrivateScope, Public, HideBySig, SpecialName
+    getInitCmd(): PrivateScope, Public, HideBySig
+    getSwitchAllChannelsCmd(Int32): PrivateScope, Public, HideBySig
+    getBeamXYCmd(Double, Int32, Int32): PrivateScope, Public, HideBySig
+    LoadCalibrationInfo(): PrivateScope, Public, Virtual, HideBySig
+    getFrequencyList(): PrivateScope, Public, HideBySig
+    getDR(): PrivateScope, Public, HideBySig
+    LoadAAKitInfo(): PrivateScope, Public, Virtual, HideBySig
+    matrixCalculate(Int32, steeringDir): PrivateScope, Public, HideBySig
+    matrixCalculate2D(Int32, Int32): PrivateScope, Public, HideBySig
+    setBeamX(Double, Int32): PrivateScope, Public, HideBySig
+    setBeamY(Double, Int32): PrivateScope, Public, HideBySig
+    setBeamXY(Double, Int32, Int32): PrivateScope, Public, HideBySig
+    dumpChipsInfo(): PrivateScope, Public, HideBySig
+    switchChannelPower(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+Class Pipit24Device: AutoLayout, AnsiClass, Class, BeforeFieldInit
+  :BBoxDevice
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String AAKIT_SPECIFIC_SN 'get set' : 
+  Methods:
+    set_AAKIT_SPECIFIC_SN(String): PrivateScope, Public, HideBySig, SpecialName
+    get_AAKIT_SPECIFIC_SN(): PrivateScope, Public, HideBySig, SpecialName
+    LoadCalibrationInfo(): PrivateScope, Public, Virtual, HideBySig
+    LoadAAKitInfo(): PrivateScope, Public, Virtual, HideBySig
+    setOperatingFreq(Double): PrivateScope, Public, Virtual, HideBySig
+    Pipit24_power(Boolean): PrivateScope, Public, HideBySig
+    Pipit24_readback(Int32, Int32): PrivateScope, Public, HideBySig
+    Pipit24_GetICTemperature(): PrivateScope, Public, HideBySig
+    getTxRxMode(): PrivateScope, Public, HideBySig
+    SwitchTxRxMode(Int32): PrivateScope, Public, HideBySig
+    setControlParameters(Int32, Int32[][], Int32[][], Int32[][]): PrivateScope, Public, HideBySig
+    setBeamXY(Double, Int32, Int32): PrivateScope, Public, HideBySig
+Class TMYNetwork: AutoLayout, AnsiClass, Class, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Connect(String): PrivateScope, Public, HideBySig
     DeInit(): PrivateScope, Public, HideBySig
     SetReceiveBufferSize(Int32): PrivateScope, Public, HideBySig
     SetReceiveTimeout(Int32): PrivateScope, Public, HideBySig
     GetStream(): PrivateScope, Public, HideBySig
     GetTcpRsp(): PrivateScope, Public, HideBySig
     GetTcpByteRsp(): PrivateScope, Public, HideBySig
-Struct retCode: AutoLayout, AnsiClass, Class, Public, Sealed
-  :System.Enum
-  Fields:
-    Int32 value__ : Public, SpecialName, RTSpecialName
-    retCode OK = 0 : Public, Static, Literal, HasDefault
-    retCode WARNING = 1 : Public, Static, Literal, HasDefault
-    retCode ERROR = 2 : Public, Static, Literal, HasDefault
-Struct steeringDir: AutoLayout, AnsiClass, Class, Public, Sealed
-  :System.Enum
-  Fields:
-    Int32 value__ : Public, SpecialName, RTSpecialName
-    steeringDir X_DIR = 0 : Public, Static, Literal, HasDefault
-    steeringDir Y_DIR = 1 : Public, Static, Literal, HasDefault
-Struct DEV_TYPE: AutoLayout, AnsiClass, Class, Sealed
-  :System.Enum
-  Fields:
-    Int32 value__ : Public, SpecialName, RTSpecialName
-    DEV_TYPE DEV_UNKNOWN = -1 : Public, Static, Literal, HasDefault
-    DEV_TYPE DEV_BBOXONE = 0 : Public, Static, Literal, HasDefault
-    DEV_TYPE DEV_OEBOX = 1 : Public, Static, Literal, HasDefault
-    DEV_TYPE DEV_NGK = 2 : Public, Static, Literal, HasDefault
-    DEV_TYPE DEV_PIPIT18 = 3 : Public, Static, Literal, HasDefault
-    DEV_TYPE DEV_UD_00E = 4 : Public, Static, Literal, HasDefault
-    DEV_TYPE DEV_UD_00D = 5 : Public, Static, Literal, HasDefault
-Struct TRMODE: AutoLayout, AnsiClass, Class, Public, Sealed
-  :System.Enum
-  Fields:
-    Int32 value__ : Public, SpecialName, RTSpecialName
-    TRMODE TX = 0 : Public, Static, Literal, HasDefault
-    TRMODE RX = 1 : Public, Static, Literal, HasDefault
-Struct UD_STATE: AutoLayout, AnsiClass, Class, Sealed
-  :System.Enum
-  Fields:
-    Int32 value__ : Public, SpecialName, RTSpecialName
-    UD_STATE PLO_LOCK = 0 : Public, Static, Literal, HasDefault
-    UD_STATE CH1 = 1 : Public, Static, Literal, HasDefault
-    UD_STATE CH2 = 2 : Public, Static, Literal, HasDefault
-    UD_STATE OUT_10M = 3 : Public, Static, Literal, HasDefault
-    UD_STATE OUT_100M = 4 : Public, Static, Literal, HasDefault
-    UD_STATE SOURCE_100M = 5 : Public, Static, Literal, HasDefault
-    UD_STATE LED_100M = 6 : Public, Static, Literal, HasDefault
-    UD_STATE PWR_5V = 7 : Public, Static, Literal, HasDefault
-    UD_STATE PWR_9V = 8 : Public, Static, Literal, HasDefault
-    UD_STATE ERROR_CODE = 9 : Public, Static, Literal, HasDefault
-Struct OPMODE: AutoLayout, AnsiClass, Class, Public, Sealed
-  :System.Enum
-  Fields:
-    Int32 value__ : Public, SpecialName, RTSpecialName
-    OPMODE STANDBY = 0 : Public, Static, Literal, HasDefault
-    OPMODE TX = 1 : Public, Static, Literal, HasDefault
-    OPMODE RX = 2 : Public, Static, Literal, HasDefault
-    OPMODE SLEEP = 3 : Public, Static, Literal, HasDefault
-Struct AntennaType: AutoLayout, AnsiClass, Class, Public, Sealed
-  :System.Enum
-  Fields:
-    Int32 value__ : Public, SpecialName, RTSpecialName
-    AntennaType FOURBYFOUR = 0 : Public, Static, Literal, HasDefault
-    AntennaType EIGHTBYEIGHT = 1 : Public, Static, Literal, HasDefault
-    AntennaType ER = 2 : Public, Static, Literal, HasDefault
 Class DevController: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
+    Spi_Dispose(): PrivateScope, Public, HideBySig
     Table_Loader(String): PrivateScope, Public, HideBySig
     Offset_Query(Int32, Int32, Int32): PrivateScope, Public, HideBySig
     Key_Query(Int32, String): PrivateScope, Public, HideBySig
@@ -346,32 +587,38 @@ Class GeneralDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
     System.IDisposable
   Methods:
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
-    InstanceInit(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    InstanceInit(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     InstanceRelease(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
     SendCMD(String, Int32): PrivateScope, Public, HideBySig
     GetTcpRsp(): PrivateScope, Public, HideBySig
     GetTcpByteRsp(): PrivateScope, Public, HideBySig
     setSN(String): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
-    setIP(String): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    setStaticIP(String): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
     getSN(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
     getIP(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    QueryFWV(): PrivateScope, Public, HideBySig
+    Reboot(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
 Interface IDevice: AutoLayout, AnsiClass, Class, ClassSemanticsMask, Abstract
   Methods:
-    InstanceInit(Int32(Optional, HasDefault)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    InstanceInit(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
     InstanceRelease(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
     setSN(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
-    setIP(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    setStaticIP(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
     getSN(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
     getIP(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Reboot(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
 Class UDBoxDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
   :GeneralDevice
     Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
+    GetUDDeltaFreq(): PrivateScope, Public, HideBySig
+    setStaticIP(String): PrivateScope, Public, HideBySig
+    Reboot(): PrivateScope, Public, HideBySig
     QuerySN(): PrivateScope, Public, HideBySig
     QueryMAC(): PrivateScope, Public, HideBySig
     QueryFWV(): PrivateScope, Public, HideBySig
     QueryHWV(): PrivateScope, Public, HideBySig
-    SetUDFreq(Double, Double, Double): PrivateScope, Public, HideBySig
+    SetUDFreq(Double, Double, Double, Double): PrivateScope, Public, HideBySig
     GetState(): PrivateScope, Public, HideBySig
     GetState(Int32): PrivateScope, Public, HideBySig
     SetState(Int32[]): PrivateScope, Public, HideBySig
@@ -381,29 +628,6 @@ Class BBOX.ScanTable: AutoLayout, AnsiClass, Class, BeforeFieldInit
   Methods:
     GetStepVal(Double): PrivateScope, Public, HideBySig
     Deviation(Int32, Int32[]): PrivateScope, Public, HideBySig
-Class BBoxOneAPI.Pipit18Device: AutoLayout, AnsiClass, Class, BeforeFieldInit
-  :BBoxDevice
-    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Properties:
-    System.String AAKIT_SPECIFIC_SN 'get set' : 
-  Methods:
-    set_AAKIT_SPECIFIC_SN(String): PrivateScope, Public, HideBySig, SpecialName
-    get_AAKIT_SPECIFIC_SN(): PrivateScope, Public, HideBySig, SpecialName
-    getInitCmd(): PrivateScope, Public, HideBySig
-    getBeamXYCmd(Double, Int32, Int32): PrivateScope, Public, HideBySig
-    LoadCalibrationInfo(): PrivateScope, Public, Virtual, HideBySig
-    getCaliTablePath(String): PrivateScope, Public, HideBySig
-    setOperatingFreq(Double): PrivateScope, Public, HideBySig
-    getOperatingFreq(): PrivateScope, Public, HideBySig
-    getFrequencyList(): PrivateScope, Public, HideBySig
-    getDR(): PrivateScope, Public, HideBySig
-    LoadAAKitInfo(): PrivateScope, Public, Virtual, HideBySig
-    matrixCalculate(Int32, steeringDir): PrivateScope, Public, HideBySig
-    matrixCalculate2D(Int32, Int32): PrivateScope, Public, HideBySig
-    setBeamX(Double, Int32): PrivateScope, Public, HideBySig
-    setBeamY(Double, Int32): PrivateScope, Public, HideBySig
-    setBeamXY(Double, Int32, Int32): PrivateScope, Public, HideBySig
-    dumpChipsInfo(): PrivateScope, Public, HideBySig
 Class BBoxAPI.UdpState: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
@@ -413,9 +637,11 @@ Class BBoxAPI.Queryer: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     Start(): PrivateScope, Public, HideBySig
+    DestructClients(): PrivateScope, Public, HideBySig
     Stop(): PrivateScope, Public, HideBySig
+    GetSNIPConfig(): PrivateScope, Public, HideBySig
     ReceiveCallback(IAsyncResult): PrivateScope, Public, HideBySig
-    SendthenRead(String): PrivateScope, Public, HideBySig
+    SendthenRead(String, DEV_SCAN_MODE): PrivateScope, Public, HideBySig
     GetDevInfo(): PrivateScope, Public, HideBySig
     GetDevNum(): PrivateScope, Public, HideBySig
     GetIP(String): PrivateScope, Public, HideBySig
@@ -424,20 +650,25 @@ Class BBoxAPI.Queryer: AutoLayout, AnsiClass, Class, BeforeFieldInit
 Class BBoxAPI.BBoxOneAPI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    ScanningDevice(): PrivateScope, Public, HideBySig
+    ScanningDevice(DEV_SCAN_MODE): PrivateScope, Public, HideBySig
     GetCurrentPath(): PrivateScope, Public, HideBySig
     Init(String, Int32): PrivateScope, Public, HideBySig
     Init(String, Int32, Int32): PrivateScope, Public, HideBySig
+    DeInit(String): PrivateScope, Public, HideBySig
+    setStaticIP(String, String): PrivateScope, Public, HideBySig
+    Reboot(String): PrivateScope, Public, HideBySig
     DumpLog(String): PrivateScope, Public, HideBySig
     setOperatingFreq(Double, String): PrivateScope, Public, HideBySig
     getOperatingFreq(String): PrivateScope, Public, HideBySig
     selectAntenna(AntennaType, String): PrivateScope, Public, HideBySig
     selectAAKit(String, String): PrivateScope, Public, HideBySig
+    getAAKitList(String): PrivateScope, Public, HideBySig
     getFrequencyList(String): PrivateScope, Public, HideBySig
     getDR(String): PrivateScope, Public, HideBySig
-    getAAKitNameList(String): PrivateScope, Public, HideBySig
+    getCOMDR(String): PrivateScope, Public, HideBySig
+    getELEDR(String): PrivateScope, Public, HideBySig
     getAAKitInfo(String, String): PrivateScope, Public, HideBySig
-    setAAKitInfo(String, Double[], Double[], Double[], Int32[], Int32[], String): PrivateScope, Public, HideBySig
+    setAAKitInfo(String, Int32, Int32, Double[], Double[], Double[], Int32[], Int32[], String): PrivateScope, Public, HideBySig
     deleteAAKitInfo(String, String): PrivateScope, Public, HideBySig
     saveAAkitFile(String): PrivateScope, Public, HideBySig
     checkCaliTableLocation(String): PrivateScope, Public, HideBySig
@@ -451,22 +682,39 @@ Class BBoxAPI.BBoxOneAPI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     readSetting(String): PrivateScope, Public, HideBySig
     readSettingValues(String): PrivateScope, Public, HideBySig
     writeSetting(String): PrivateScope, Public, HideBySig
+    getInitCmd(String): PrivateScope, Public, HideBySig
+    getSwitchAllChannelsCmd(Int32, String): PrivateScope, Public, HideBySig
+    getBeamXYCmd(Double, Int32, Int32, String): PrivateScope, Public, HideBySig
     switchTxChannel(Int32, Int32, Int32, Int32, Int32, String): PrivateScope, Public, HideBySig
     switchRxChannel(Int32, Int32, Int32, Int32, Int32, String): PrivateScope, Public, HideBySig
     switchChannelPower(Int32, Int32, Int32, String): PrivateScope, Public, HideBySig
     setChannelGainPhase(Int32, Int32, Double, Int32, String): PrivateScope, Public, HideBySig
     readBeamGainValues(String): PrivateScope, Public, HideBySig
     readBeamPhaseValues(String): PrivateScope, Public, HideBySig
+    setControlParameters(Int32, Int32, Int32, Int32, Int32, Int32, String): PrivateScope, Public, HideBySig
+    diagnoseProbe(String): PrivateScope, Public, HideBySig
     releaseInstance(String): PrivateScope, Public, HideBySig
     QuerySN(String): PrivateScope, Public, HideBySig
     QueryMAC(String): PrivateScope, Public, HideBySig
     QueryFWV(String): PrivateScope, Public, HideBySig
     QueryHWV(String): PrivateScope, Public, HideBySig
-    SetUDFreq(Double, Double, Double, String): PrivateScope, Public, HideBySig
+    SetUDFreq(Double, Double, Double, Double, String): PrivateScope, Public, HideBySig
     GetState(String): PrivateScope, Public, HideBySig
     GetState(Int32, String): PrivateScope, Public, HideBySig
     SetState(Int32[], String): PrivateScope, Public, HideBySig
     SetState(Int32, Int32, String): PrivateScope, Public, HideBySig
+    GetUDDeltaFreq(String): PrivateScope, Public, HideBySig
+    Pipit24_power(Boolean, String): PrivateScope, Public, HideBySig
+    Pipit24_readback(Int32, Int32, String): PrivateScope, Public, HideBySig
+    Pipit24_GetICTemperature(String): PrivateScope, Public, HideBySig
+    setControlParameters(Int32, Int32[][], Int32[][], Int32[][], String): PrivateScope, Public, HideBySig
+    SwitchChannelPower(Int32, Int32, Int32, Int32, String): PrivateScope, Public, HideBySig
+    SetChannelGainPhase(Int32, Int32, Int32, Double, Int32, String): PrivateScope, Public, HideBySig
+    ReadChannelSwitchValues(Int32, String): PrivateScope, Public, HideBySig
+    ReadBeamGainValues(Int32, String): PrivateScope, Public, HideBySig
+    ReadBeamPhaseValues(Int32, String): PrivateScope, Public, HideBySig
+    Get_Gain_Control_Step(Int32, String): PrivateScope, Public, HideBySig
+    Get_Phase_Control_Step(Int32, String): PrivateScope, Public, HideBySig
 Class BBoxAPI.BBoxLiteAPI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -474,6 +722,122 @@ Class BBoxAPI.BBoxLiteAPI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     SwitchTxRxMode(String, TxRxMode): PrivateScope, Public, HideBySig
     GetTxRxMode(String): PrivateScope, Public, HideBySig
     BeamSteer(String, TxRxMode, Double, Double): PrivateScope, Public, HideBySig
+    DeviceClose(String): PrivateScope, Public, HideBySig
+Struct BBoxAPI.retCode: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BBoxAPI.retCode OK = 0 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode WARNING = 1 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR = 2 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode NO_RESPONSE = 3 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_GET_SN = 10 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_DEV_TYPE = 11 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_INIT_OBJECT = 12 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_DEV_NOT_INIT = 13 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_METHOD_NOT_FOUND = 14 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_REFLECTION = 15 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_POWER = 16 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_NETWORK_NOT_INIT = 20 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_NETWORK_INIT = 21 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_NETWORK_CONNECT_TIMEOUT = 22 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_DISCONNECT = 23 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_SOCKET = 24 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_SEND_CMD = 25 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_RESP_CMD = 26 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_DEV_COUNT_ZERO = 30 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_CMD = 40 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_CMD_INIT = 41 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_BF_AAKIT = 100 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_BF_NO_AAKIT = 101 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_BF_CALI_PATH = 102 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_BF_BEAMXY = 103 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_BF_GEN = 104 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_BF_TRMODE = 105 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode STATUS_BF_LOAD_CALI_INCOMPLTE = 106 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_BF_LOAD_CALI_PARSE_FAILED = 107 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_FREQ_EQUATION = 250 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_PLO_CRC = 251 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode WARNING_HARMONIC = 252 : Public, Static, Literal, HasDefault
+    BBoxAPI.retCode ERROR_HARMONIC_BLOCK = 253 : Public, Static, Literal, HasDefault
+Struct BBoxAPI.steeringDir: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BBoxAPI.steeringDir X_DIR = 0 : Public, Static, Literal, HasDefault
+    BBoxAPI.steeringDir Y_DIR = 1 : Public, Static, Literal, HasDefault
+Struct BBoxAPI.DEV_TYPE: AutoLayout, AnsiClass, Class, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BBoxAPI.DEV_TYPE DEV_UNKNOWN = -1 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_BBOXONE = 0 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_OEBOX = 1 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_NGK = 2 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_PIPIT18 = 3 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_UD_00E = 4 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_UD_00D = 5 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_PIPIT24 = 6 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_BBOXLITE28A = 7 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_BBOXLITE39A = 8 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_BBOXONE28A = 9 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_BBOXONE39A = 10 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_KIRIN40OE = 11 : Public, Static, Literal, HasDefault
+Struct BBoxAPI.DEV_SCAN_MODE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BBoxAPI.DEV_SCAN_MODE NORMAL = 0 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_SCAN_MODE FAST = 1 : Public, Static, Literal, HasDefault
+Struct BBoxAPI.TRMODE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BBoxAPI.TRMODE TX = 0 : Public, Static, Literal, HasDefault
+    BBoxAPI.TRMODE RX = 1 : Public, Static, Literal, HasDefault
+Struct BBoxAPI.PIPIT24_TRMODE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BBoxAPI.PIPIT24_TRMODE UD_STANDBY = 0 : Public, Static, Literal, HasDefault
+    BBoxAPI.PIPIT24_TRMODE UD_TX_LS = 1 : Public, Static, Literal, HasDefault
+    BBoxAPI.PIPIT24_TRMODE UD_TX_HS = 2 : Public, Static, Literal, HasDefault
+    BBoxAPI.PIPIT24_TRMODE UD_TX_BYPASS = 3 : Public, Static, Literal, HasDefault
+    BBoxAPI.PIPIT24_TRMODE UD_RX_LS = 4 : Public, Static, Literal, HasDefault
+    BBoxAPI.PIPIT24_TRMODE UD_RX_HS = 5 : Public, Static, Literal, HasDefault
+    BBoxAPI.PIPIT24_TRMODE UD_RX_BYPASS = 6 : Public, Static, Literal, HasDefault
+    BBoxAPI.PIPIT24_TRMODE UD_SLEEP = 7 : Public, Static, Literal, HasDefault
+    BBoxAPI.PIPIT24_TRMODE UD_LOFT_CAL_LS = 8 : Public, Static, Literal, HasDefault
+    BBoxAPI.PIPIT24_TRMODE UD_LOFT_CAL_HS = 9 : Public, Static, Literal, HasDefault
+Struct BBoxAPI.UD_STATE: AutoLayout, AnsiClass, Class, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BBoxAPI.UD_STATE PLO_LOCK = 0 : Public, Static, Literal, HasDefault
+    BBoxAPI.UD_STATE CH1 = 1 : Public, Static, Literal, HasDefault
+    BBoxAPI.UD_STATE CH2 = 2 : Public, Static, Literal, HasDefault
+    BBoxAPI.UD_STATE OUT_10M = 3 : Public, Static, Literal, HasDefault
+    BBoxAPI.UD_STATE OUT_100M = 4 : Public, Static, Literal, HasDefault
+    BBoxAPI.UD_STATE SOURCE_100M = 5 : Public, Static, Literal, HasDefault
+    BBoxAPI.UD_STATE LED_100M = 6 : Public, Static, Literal, HasDefault
+    BBoxAPI.UD_STATE PWR_5V = 7 : Public, Static, Literal, HasDefault
+    BBoxAPI.UD_STATE PWR_9V = 8 : Public, Static, Literal, HasDefault
+    BBoxAPI.UD_STATE ERROR_CODE = 9 : Public, Static, Literal, HasDefault
+Struct BBoxAPI.OPMODE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BBoxAPI.OPMODE STANDBY = 0 : Public, Static, Literal, HasDefault
+    BBoxAPI.OPMODE TX = 1 : Public, Static, Literal, HasDefault
+    BBoxAPI.OPMODE RX = 2 : Public, Static, Literal, HasDefault
+    BBoxAPI.OPMODE SLEEP = 3 : Public, Static, Literal, HasDefault
+Struct BBoxAPI.AntennaType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BBoxAPI.AntennaType FOURBYFOUR = 0 : Public, Static, Literal, HasDefault
+    BBoxAPI.AntennaType EIGHTBYEIGHT = 1 : Public, Static, Literal, HasDefault
+    BBoxAPI.AntennaType ER = 2 : Public, Static, Literal, HasDefault
 Class BBoxAPI.Startup: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
@@ -969,6 +1333,7 @@ Class MPSSELight.SpiDevice: AutoLayout, AnsiClass, Class, Public, BeforeFieldIni
     MPSSELight.Bit CS 'get set' : 
     Boolean LoopbackEnabled 'get set' : 
   Methods:
+    Dispose(): PrivateScope, Public, HideBySig
     write(Byte[]): PrivateScope, Public, HideBySig
     readWrite(Byte[]): PrivateScope, Public, HideBySig
     writeThenRead(Byte[], UInt32): PrivateScope, Public, HideBySig
@@ -8467,6 +8832,96 @@ Class JetBrains.Annotations.RazorWriteMethodAttribute: AutoLayout, AnsiClass, Cl
 Class JetBrains.Annotations.RazorWriteMethodParameterAttribute: AutoLayout, AnsiClass, Class, Sealed, BeforeFieldInit
   :System.Attribute
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Bulbul28A_CalibrationMap+Candidates_Set: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 channel 'get set' : 
+    Int32 com_step 'get set' : 
+    Int32 element_step 'get set' : 
+    Double accumulate_error_rate 'get set' : 
+  Methods:
+    get_channel(): PrivateScope, Public, HideBySig, SpecialName
+    set_channel(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_com_step(): PrivateScope, Public, HideBySig, SpecialName
+    set_com_step(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_element_step(): PrivateScope, Public, HideBySig, SpecialName
+    set_element_step(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_accumulate_error_rate(): PrivateScope, Public, HideBySig, SpecialName
+    set_accumulate_error_rate(Double): PrivateScope, Public, HideBySig, SpecialName
+Class Bulbul39A_CalibrationMap+Candidates_Set: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 com_step 'get set' : 
+    Int32 element_step 'get set' : 
+    Int32 phase_step 'get set' : 
+    Double measurement_db 'get set' : 
+    Double measurement_deg 'get set' : 
+  Methods:
+    get_com_step(): PrivateScope, Public, HideBySig, SpecialName
+    set_com_step(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_element_step(): PrivateScope, Public, HideBySig, SpecialName
+    set_element_step(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_phase_step(): PrivateScope, Public, HideBySig, SpecialName
+    set_phase_step(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_measurement_db(): PrivateScope, Public, HideBySig, SpecialName
+    set_measurement_db(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_measurement_deg(): PrivateScope, Public, HideBySig, SpecialName
+    set_measurement_deg(Double): PrivateScope, Public, HideBySig, SpecialName
+Class Bulbul39A_CalibrationMap+MeasurmentMap_3D: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :Bulbul39A_CalibrationMap+MeasurmentMap_2D
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    MeasurmentMap_2D[] Table3D : Public
+    Boolean isLoadRefGATable : Public
+    Boolean isLoadRefPSTable : Public
+    Boolean isLoadElementPSTable : Public
+    Boolean isLoadCommonPSTable : Public
+    Boolean isLoadElementGATable : Public
+    Boolean isLoadCommonGATable : Public
+    Int32 PhaseTotalStep = 64 : Public, Static, Literal, HasDefault
+    Int32 ref_step = 32 : Public, Static, Literal, HasDefault
+  Methods:
+    Set_Reference_Gain_Table(Double[]): PrivateScope, Public, HideBySig
+    Set_Reference_Phase_Table(Double[]): PrivateScope, Public, HideBySig
+    Set_ElementPhase_Base_Table(Double[]): PrivateScope, Public, HideBySig
+    Set_ElementGain_Base_Table(Double[]): PrivateScope, Public, HideBySig
+    Set_CommonPhase_Base_Table(Double[]): PrivateScope, Public, HideBySig
+    Set_CommonGain_Base_Table(Double[]): PrivateScope, Public, HideBySig
+    Generate_AllTable(): PrivateScope, Public, HideBySig
+    Search_CandidateMap(Int32): PrivateScope, Public, HideBySig
+    isAngleInRange(Double, Double, Double): PrivateScope, Public, HideBySig
+Class Bulbul39A_CalibrationMap+MeasurmentMap_2D: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :Bulbul39A_CalibrationMap+MeasurmentUnit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    MeasurmentUnit[,] Table2D : Public
+    Double min_deg : Public
+    Double max_deg : Public
+    Int32 GainTotalStep = 16 : Public, Static, Literal, HasDefault
+  Methods:
+    Generate_Table(Int32, Double[], Double[], Double[], Double[], Double[], Double[]): PrivateScope, Public, HideBySig
+Class Bulbul39A_CalibrationMap+MeasurmentUnit: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Double gain 'get set' : 
+    Double phase 'get set' : 
+  Methods:
+    get_gain(): PrivateScope, Public, HideBySig, SpecialName
+    set_gain(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_phase(): PrivateScope, Public, HideBySig, SpecialName
+    set_phase(Double): PrivateScope, Public, HideBySig, SpecialName
+Class Kirin40_BFIC_GEN+Step_settings: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 ch1_phase : Public
+    Int32 ch2_phase : Public
+    Int32 ch3_phase : Public
+    Int32 ch4_phase : Public
+    Int32 ch1_gain : Public
+    Int32 ch2_gain : Public
+    Int32 ch3_gain : Public
+    Int32 ch4_gain : Public
+    Int32 com_gain : Public
 Struct BBoxAPI.BBoxLiteAPI+TxRxMode: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
   :System.Enum
   Fields:

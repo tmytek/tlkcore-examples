@@ -23,7 +23,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="ConsoleApplication1.cpp">
+    <ClCompile Include="BBOXONE_DEMO.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
