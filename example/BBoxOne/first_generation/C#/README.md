@@ -1,12 +1,3 @@
-# BBox API Document
-Version: v3.0.4
-Release date: July, 2020 
-
-## Introduction
-
-BBox API helps developers building their own applications. The release format is DLL and currently only support Windows operating system. The tested environment is Visual Studio.
-
-
 # Getting Started — C#
 ## Installation
 ----------

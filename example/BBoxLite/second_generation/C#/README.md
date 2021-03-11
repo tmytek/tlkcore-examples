@@ -1,99 +1,140 @@
-# BBox API Document
-Version: v3.0.4
-Release date: July, 2020 
+# Getting Started — Python
 
-## Introduction
-
-BBox API helps developers building their own applications. The release format is DLL and currently only support Windows operating system. The tested environment is Visual Studio.
-
-
-# Getting Started — C#
 ## Installation
 ----------
 
-Please copy **BBoxAPI.dll** to the project folder (e.g. root folder of the project or ./Release). Add the following DLL lib from Project References.
-Import BBoxAPI.dll from Visual Studio and use the following code segment to include the API.
-
-    using BBoxAPI;
+- Please create a folder, named "files" under current path, and then put the BBox beamsterring table in the folder.
 
 
 ## Initialization
 ----------
-     BBoxOneAPI b = new BBoxOneAPI();
+    # Import BBoxAPI.dll
 
-To obtain the device information, you need to call ScanningDevice. The return string contains device_sn and IP address, spliting by ','.  
-Ex : B19133200-24,192.168.100.121 
+    using System;
+    using System.Linq;
+    using System.Collections.Generic;
+    using BBoxAPI;
 
-    
-    string[] dev_info = b.ScanningDevice();
+    # Scanning device in the same subnet
 
-	// suppose only one bboxone device
-	string[] info = dev_info[0].Split(',');
+    BBoxAPI::BBoxOneAPI ^instance = gcnew BBoxAPI::BBoxOneAPI();
+	array<String ^>^ dev_info = instance->ScanningDevice((BBoxAPI::DEV_SCAN_MODE)0);
+	dev_num = dev_info->Length;
 
-	String sn = info[0]; // sn
-	String ip = info[1]; // ip
+    # Initial all devices
 
-Send the initialization code to BBoxOne. Parameter sn comes from the scanning results.
+	BBoxOneAPI instance = new BBoxOneAPI();
 
-	String s_info = b.Init(sn, 0/*BBoxOne*/, 0);
+    dev_info = instance.ScanningDevice(scanning_mode);
+            
+    DEV_NUM = dev_info.Count();
 
-
+    for (int i = 0; i < DEV_NUM; i++)
+    {
+        string[] response_message = dev_info[i].Split(',');
+        sn = response_message[0];
+		ip = response_message[1];
+		DEV_TYPE = Convert.ToInt32(response_message[2]);
+        instance.Init(sn, DEV_TYPE, i);
+    }
 
 ## Control example
-----------
+****
+#### Running sample code
+    Open ConsoleApplication1.sln
+    Compile and run
+****
 
-**Obtain Tx or Rx state**
+### BBox
+##### Obtain Tx or Rx state
 
-Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number. 
+Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
 
-    int m = b.getTxRxMode(sn); // 0 : Tx, 1 : Rx  
+    mode = b.getTxRxMode(sn); // 1 : Tx, 2 : Rx  
 
-**Switch Tx & Rx mode**
+##### Switch Tx & Rx mode
 
 BBox is TDD based device. You need to point out which BBox device used by serial number.
 
-    b.SwitchTxRxMode(sn, 0); // Switch BBox to Tx mode
-    b.SwitchTxRxMode(sn, 1); // Switch BBox to Rx mode
+    b.SwitchTxRxMode(1, sn); // Switch BBox to Tx mode
+    b.SwitchTxRxMode(2, sn); // Switch BBox to Rx mode
 
 
-**Control Beam direction**
+##### Control Beam direction
 
 The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 15 dB, 10 degrees in x direction and  20 degrees in y direction. You need to point out which BBox device used by serial number.
 
     b.setBeamXY(15, 10, 20, sn);
 
- ****
-
+****
 
 # API parameters
 
-## getTxRxMode
-    // Get Tx/Rx Mode of device with SN. Return TxRxMode table value.
-    public int getTxRxMode(String sn); 
-    
-return 0 if Tx mode, and 1 if Rx mode.
-    
 ----------
-## Init
-    public String Init(sn, 0/*BBoxOne*/, 0);
+### ScanningDevice
+    public string[] ScanningDevice(DEV_SCAN_MODE scanMode)
+| Type | Name | Value |
+| - | - | - |
+| DEV_SCAN_MODE | scanMode | Normal : 0, Fast : 1 |
 
+return scan results from devices
+----------
+### Init
+    public String Init(sn, dev_type, idx);
+| Type | Name | Value |
+| - | - | - |
+| String     | sn         | Serial Numnber from scan result |
+| int     | dev_type         | Type from scan result |
+| int     | idx         | Index in scan result |
 return initialized condition.
 
 ----------
-## SwitchTxRxMode
-    public int SwitchTxRxMode(int mode, String sn);
-| Type | Name | Value                                        |
-| ------------ | ------------ | ------------------------------------------------ |
-| int     | mode         | Tx : 0, Rx : 1 |
-| String       | sn           | device serial number |
+### getTxRxMode
+Get Tx/Rx Mode of device with SN. Return TxRxMode table value.
 
+    public int getTxRxMode(String sn); 
+
+return 0 if Tx mode, and 1 if Rx mode.
 
 ----------
-## setBeamXY
+
+### SwitchTxRxMode
+    public int SwitchTxRxMode(int mode, String sn);
+| Type  | Name  | Value |
+| -     | -     | -     |
+| int   | mode  | Tx : 0, Rx : 1 |
+| String | sn   | device serial number
+
+----------
+### setBeamXY
     public string setBeamXY(double db, double angleX, double angleY, String sn);
-| Type | Name | Value                                        |
-| ------------ | ------------ | ------------------------------------------------ |
-| double       | db           | gain value
-| double       | angleX        | angle value in x direction
-| double       | angleY        | angle value in y direction
-| String      | sn           | device serial number |
+| Type  | Name  | Value |
+| -     | -     | -     |
+| double       | db          | gain value
+| double       | angleX      | angle value in x direction
+| double       | angleY      | angle value in y direction
+| String       | sn          | device serial number
+
+----------
+### setChannelGainPhase
+    public string setChannelGainPhase(int board, int ch, double db, int phase, string sn);
+| Type  | Name  | Value |
+| -     | -     | -     |
+| int       | board       | Board number   : 1-4
+| int       | ch          | Channel number : 1-4
+| double    | db          | Target db
+| int       | phase       | Target deg
+| String    | sn          | device serial number
+
+----------
+### switchChannelPower
+    public string switchChannelPower(int board, int ch, int sw, string sn);
+| Type  | Name  | Value |
+| -     | -     | -     |
+| int       | board       | Board number   : 1-4
+| int       | ch          | Channel number : 1-4
+| int       | sw          | switch value   : ON 0 , OFF 1
+| String    | sn          | device serial number
+
+----------
+

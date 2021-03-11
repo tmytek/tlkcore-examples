@@ -58,7 +58,15 @@ namespace BBOXONE_DEMO
 		        RX_MAX_GAIN = DR[1, 1];
 
                 AAkitList = instance.getAAKitList(sn);
-		        instance.selectAAKit(AAkitList[0], sn);
+
+				if (DEV_TYPE == 7)
+				{
+					instance.selectAAKit("TMYTEK_28LITE_4x4_C2104L020-28", sn);
+				}
+				else if (DEV_TYPE == 8)
+				{
+					instance.selectAAKit("TMYTEK_39LITE_4x4_A2104L004-39", sn);
+				}
 
                 Console.WriteLine("======================================================");
 		        Console.WriteLine("[DEMO1] Switch TX mode");

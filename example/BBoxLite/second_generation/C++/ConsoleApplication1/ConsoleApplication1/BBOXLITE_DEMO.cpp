@@ -78,7 +78,15 @@ int main()
 		RX_ELE_DR = ELE_DR[0, 1];
 
 		array<String ^> ^ AAkitList = instance->getAAKitList(sn);
-		instance->selectAAKit(AAkitList[0], sn);
+		
+		if (devtype == 7)
+		{
+			instance->selectAAKit("TMYTEK_28LITE_4x4_C2104L020-28", sn);
+		}
+		else if (devtype == 8)
+		{
+			instance->selectAAKit("TMYTEK_39LITE_4x4_A2104L004-39", sn);
+		}
 
 		Console::WriteLine("======================================================");
 		Console::WriteLine("[DEMO1] Switch TX mode");

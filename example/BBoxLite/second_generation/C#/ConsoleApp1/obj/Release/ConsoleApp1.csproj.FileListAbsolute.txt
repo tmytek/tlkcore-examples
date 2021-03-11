@@ -47,3 +47,4 @@ D:\Source\bbox-api\example\BBoxLite\second_generation\C#\ConsoleApp1\obj\Release
 D:\Source\bbox-api\example\BBoxLite\second_generation\C#\ConsoleApp1\obj\Release\ConsoleApp1.csproj.CopyComplete
 D:\Source\bbox-api\example\BBoxLite\second_generation\C#\ConsoleApp1\obj\Release\ConsoleApp1.exe
 D:\Source\bbox-api\example\BBoxLite\second_generation\C#\ConsoleApp1\obj\Release\ConsoleApp1.pdb
+D:\Source\bbox-api\example\BBoxLite\second_generation\C#\ConsoleApp1\obj\Release\ConsoleApp1.csprojAssemblyReference.cache
