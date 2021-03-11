@@ -11,14 +11,13 @@ os.chdir(os.path.abspath(dir_path))
 path = '.\\BBoxAPI.dll'
 clr.AddReference(os.path.abspath(path))
 
-
 from BBoxAPI import *
 
 if __name__ == '__main__':
 
-	TX = 1
-	RX = 2
- 
+	TX = 0
+	RX = 1
+
 	AAkitList = []
 
 	instance = BBoxOneAPI()
@@ -38,7 +37,7 @@ if __name__ == '__main__':
 			print("[BBoxOne_Control_Interface][GetDeviceStatus] SN : %s" % (sn))
 			print("[BBoxOne_Control_Interface][GetDeviceStatus] IP : %s" % (ip))
 			print("[BBoxOne_Control_Interface][GetDeviceStatus] dev_type : %d" % (dev_type))
-   
+
 			instance.Init(sn, dev_type, i)
 			print("[BBoxOne_Control_Interface][InitialDevice][%s]" % (sn))
 
@@ -56,19 +55,20 @@ if __name__ == '__main__':
 			DR = instance.getDR(sn)
 			print("[BBoxOne_Control_Interface][InitialDevice][%s] " % (sn))
 			TX_MIN_GAIN = DR[0, 0]
-			print("[BBoxOne_Control_Interface][InitialDevice][%s] TX_MIN_GAIN : %f" % (sn, TX_MIN_GAIN))
+			print("[BBoxOne_Control_Interface][InitialDevice][%s] TX_MIN_GAIN : %f" %
+			      (sn, TX_MIN_GAIN))
 			TX_MAX_GAIN = DR[0, 1]
-			print("[BBoxOne_Control_Interface][InitialDevice][%s] TX_MAX_GAIN : %f" % (sn, TX_MAX_GAIN))
+			print("[BBoxOne_Control_Interface][InitialDevice][%s] TX_MAX_GAIN : %f" %
+			      (sn, TX_MAX_GAIN))
 			RX_MIN_GAIN = DR[1, 0]
-			print("[BBoxOne_Control_Interface][InitialDevice][%s] RX_MIN_GAIN : %f" % (sn, RX_MIN_GAIN))
+			print("[BBoxOne_Control_Interface][InitialDevice][%s] RX_MIN_GAIN : %f" %
+			      (sn, RX_MIN_GAIN))
 			RX_MAX_GAIN = DR[1, 1]
-			print("[BBoxOne_Control_Interface][InitialDevice][%s] RX_MAX_GAIN : %f" % (sn, RX_MAX_GAIN))
+			print("[BBoxOne_Control_Interface][InitialDevice][%s] RX_MAX_GAIN : %f" %
+			      (sn, RX_MAX_GAIN))
 
 			AAkitList.append(instance.getAAKitList(sn))
-			if dev_type == 7:
-				instance.selectAAKit('TMYTEK_28LITE_4x4_C2104L020-28', sn)
-			elif dev_type == 8:
-				instance.selectAAKit('TMYTEK_39LITE_4x4_A2104L004-39', sn)
+			instance.selectAAKit("TMYTEK-4x4_NONE", sn)
 
 			print("======================================================")
 			print("[DEMO1] Switch TX mode")
