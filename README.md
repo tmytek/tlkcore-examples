@@ -26,11 +26,86 @@ Step 1 :
 
 Visual Studio version : 2019 community :  [Link](https://visualstudio.microsoft.com/zh-hant/downloads/)
 
-Step 2 : Select targets
+Step 2 : Select targets : Install and Update 
 ![](./images/image_1.png)
 
-Step 3 : Disable just my code : [Link](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)
+Step 3 : Disable Visual studio just my code : [Link](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)
 
 ![](./images/image_3.png)
 
 Final Step : Run sample code
+
+## Documentation
+
+### Python 
+
+[BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/Python)
+
+[BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/Python)
+
+### C++
+
+[BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/C%2B%2B)
+
+[BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/C%2B%2B)
+
+### C#
+
+[BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/C%23)
+
+[BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/C%23)
+
+### Labview
+
+
+----------
+# Paramters
+
+### ScanningDevice
+    public string[] ScanningDevice(DEV_SCAN_MODE scanMode)
+| Type | Name | Value |
+| - | - | - |
+| DEV_SCAN_MODE | scanMode | Normal : 0, Fast : 1 |
+
+----------
+### Init
+    public String Init(sn, dev_type, idx);
+| Type | Name | Value |
+| - | - | - |
+| String     | sn         | Serial Numnber from scan result |
+| int     | dev_type         | Type from scan result |
+| int     | idx         | Index in scan result |
+
+
+----------
+### setBeamXY
+    public string setBeamXY(double db, double angleX, double angleY, String sn);
+| Type  | Name  | Value |
+| -     | -     | -     |
+| double       | db          | gain value
+| double       | angleX      | angle value in x direction
+| double       | angleY      | angle value in y direction
+| String       | sn          | device serial number
+
+----------
+### setChannelGainPhase
+    public string setChannelGainPhase(int board, int ch, double db, int phase, string sn);
+| Type  | Name  | Value |
+| -     | -     | -     |
+| int       | board       | Board number   : 1-4
+| int       | ch          | Channel number : 1-4
+| double    | db          | Target db
+| int       | phase       | Target deg
+| String    | sn          | device serial number
+
+----------
+### switchChannelPower
+    public string switchChannelPower(int board, int ch, int sw, string sn);
+| Type  | Name  | Value |
+| -     | -     | -     |
+| int       | board       | Board number   : 1-4
+| int       | ch          | Channel number : 1-4
+| int       | sw          | switch value   : ON 0 , OFF 1
+| String    | sn          | device serial number
+
+----------

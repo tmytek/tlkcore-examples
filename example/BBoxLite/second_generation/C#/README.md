@@ -1,4 +1,4 @@
-# Getting Started — Python
+# Getting Started — C#
 
 ## Installation
 ----------
@@ -8,20 +8,20 @@
 
 ## Initialization
 ----------
-    # Import BBoxAPI.dll
+    // Import BBoxAPI.dll
 
     using System;
     using System.Linq;
     using System.Collections.Generic;
     using BBoxAPI;
 
-    # Scanning device in the same subnet
+    // Scanning device in the same subnet
 
     BBoxAPI::BBoxOneAPI ^instance = gcnew BBoxAPI::BBoxOneAPI();
 	array<String ^>^ dev_info = instance->ScanningDevice((BBoxAPI::DEV_SCAN_MODE)0);
 	dev_num = dev_info->Length;
 
-    # Initial all devices
+    // Initial all devices
 
 	BBoxOneAPI instance = new BBoxOneAPI();
 
