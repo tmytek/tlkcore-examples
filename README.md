@@ -1,8 +1,12 @@
-# BBox API Document
+# BBox API Documentation
 
-Version: v3.1.2.2
+Sample Code version : v1.2.0
+
+API Version: v3.1.2.2
 
 Release date: Mar., 2021
+
+Download Link : [Link](https://github.com/tmytek/bbox-api/releases/tag/v1.2.0)
 
 ## Introduction
 
