@@ -33,34 +33,47 @@ Visual Studio version : 2019 community :  [Link](https://visualstudio.microsoft.
 Step 2 : Select targets : Install and Update 
 ![](./images/image_1.png)
 
-Step 3 : Disable Visual studio just my code : [Link](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)
+Step 3 : Disable Visual_studio just my code : [Ref_Link](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)
 
 ![](./images/image_3.png)
 
-Final Step : Run sample code
+Final Step : Run sample code : [File_Link](https://github.com/tmytek/bbox-api/blob/master/example/BBoxLite/second_generation/Python/BBOXLITE_DEMO.py)
+
+    $ python BBOXLITE_DEMO.py
+
+    DEMO1 : Switch TX mode
+
+    DEMO2 : Off channel 1 power
+
+    DEMO 3 : Channel Gain/Phase control
+
+    DEMO 4 : Beam Steering control
 
 ## Documentation
 
 ### Python 
 
-[BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/Python)
+[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/Python)
 
-[BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/Python)
+[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/Python)
 
 ### C++
 
-[BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/C%2B%2B)
+[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/C%2B%2B)
 
-[BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/C%2B%2B)
+[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/C%2B%2B)
 
 ### C#
 
-[BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/C%23)
+[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/C%23)
 
-[BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/C%23)
+[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/C%23)
 
 ### Labview
 
+[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/LabView2017/BBoxLite28A)
+
+[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/LabView2019)
 
 ----------
 # Paramters
