@@ -45,9 +45,9 @@ Final Step : Run sample code : [File_Link](https://github.com/tmytek/bbox-api/bl
 
     DEMO2 : Off channel 1 power
 
-    DEMO 3 : Channel Gain/Phase control
+    DEMO3 : Channel Gain/Phase control
 
-    DEMO 4 : Beam Steering control
+    DEMO4 : Beam Steering control
 
 ## Documentation
 

@@ -3,7 +3,9 @@
 ## Installation
 ----------
 
-- Please create a folder, named "files" under current path, and then put the BBox beamsterring table in the folder.
+    Please add your BBox beamsterring table and AAkit table to the following path.
+
+    bbox-api\files\
 
 
 ## Initialization

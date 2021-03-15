@@ -2,7 +2,10 @@
 ## Installation
 ----------
 
-Please copy **BBoxAPI.dll** to the project folder (e.g. root folder of the project or ./Release). Add the following DLL lib from Project References.
+    Please add your BBox beamsterring table and AAkit table to the following path.
+
+    bbox-api\example\BBoxOne\first_generation\C#\ConsoleApp1\bin\Release\files\
+
 Import BBoxAPI.dll from Visual Studio and use the following code segment to include the API.
 
     using BBoxAPI;
