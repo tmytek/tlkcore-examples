@@ -24,7 +24,7 @@ Please import BBoxLiteAPI.dll from Visual Studio and use the following code segm
 
 
 ## Control example
-<img src="labView_Example.png"
+<img src="labView_Example.PNG"
      alt="labView_Example"
      style="float: left; margin-right: 10px;" />
 
