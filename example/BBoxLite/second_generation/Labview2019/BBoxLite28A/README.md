@@ -15,7 +15,7 @@ BBox API helps developers building their own applications. The release format is
 
 2. Add your calibration table (eg. D20462000-28.csv) and AAKIT table (eg. AAKIT_TMYTEK_28LITE_4x4_C2104L020-28.csv) into .\bbox-api\example\BBoxLite\second_generation\LabView2019\BBoxLite28A\files\
 
-3. Open LabView project file (Untitled Project 1.lvproj) and click BBoxLite28A.vi
+3. Open LabView project file (BBoxLite.lvproj) and click BBoxLite28A.vi
 
 4. Operate > Run
 
