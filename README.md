@@ -14,6 +14,12 @@ BBox API helps developers building their own applications. The release format is
 
 Every model has its own sample code. Please refer to the sample code inside each folder for different programming language.
 
+# Prerequisites : Network settings
+
+Check network connection : Open TMXLAB Kit to make sure device can be connected
+
+![](./images/image_5.png)
+
 
 ## Prerequisites : Python
 

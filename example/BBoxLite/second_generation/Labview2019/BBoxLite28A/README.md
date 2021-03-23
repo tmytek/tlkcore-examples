@@ -1,32 +1,27 @@
 # BBox API Document
-Version: v3.1.0
-Release date: Dec., 2020 
+Version: v3.1.2.2
+Release date: Mar., 2021 
 
 ## Introduction
 
-BBox API helps developers building their own applications. The release format is DLL and currently only support Windows operating system. The functions in DLL could be import in LabView. The tested environment and example is baseed on LabView2019.
+BBox API helps developers building their own applications. The release format is DLL and currently only support Windows operating system. The functions in DLL could be import in LabView. The tested environment and example is baseed on LabView2019 and LabView2020 SP1.
+
+## Running Sample Code
+
+1. Check network connection : Open TMXLAB Kit to make sure device can be connected
+
+    ![](../../../../../images/image_5.png)
 
 
-<!-- # Getting Started — LabView
-## Installation
-----------
+2. Add your calibration table (eg. D20462000-28.csv) and AAKIT table (eg. AAKIT_TMYTEK_28LITE_4x4_C2104L020-28.csv) into .\bbox-api\example\BBoxLite\second_generation\LabView2017\BBoxLite28A\files\
 
-Please import BBoxLiteAPI.dll from Visual Studio and use the following code segment to include the API.
+3. Open LabView project file (Untitled Project 1.lvproj) and click BBoxLite28A.vi
 
-    using BBoxLiteAPI;
+4. Operate > Run
 
+5. Result as below
 
-## Initialization
-----------
-    BBoxAPI b = new BBoxAPI();
-    b.Init(); // This will send the init command to BBox
- -->
-
-
-## Control example
-<img src="labView_Example.PNG"
-     alt="labView_Example"
-     style="float: left; margin-right: 10px;" />
+    ![](../../../../../images/image_4.png)
 
 ----------
 
@@ -71,7 +66,7 @@ BBox is TDD based device.
     public int SwitchTxRxMode(int trmode, string sn);
 | Type | Name | Value                                        |
 | ------------ | ------------ | ------------------------------------------------ |
-| int          | trmode         | Tx : 1, Rx : 2 |
+| int          | trmode         | Tx : 1 Rx : 2 |
 | string       | sn           | bbox sn   |
 
 ----------
@@ -79,7 +74,7 @@ BBox is TDD based device.
     public retCode selectAAKit(string AAKitName, string sn);
 | Type | Name | Value                                        |
 | ------------ | ------------ | ------------------------------------------------ |
-| string       | AAKitName    | ex. TMYTEK_28LITE_4x4 |
+| string       | AAKitName    | ex. TMYTEK_28LITE_4x4_C2104L020-28 |
 | string       | sn           | bbox sn   |
 
 
@@ -127,3 +122,21 @@ Resolution is 0.5 dB
 | -------- | ---- |
 Resolution is 5 degrees
 
+## Trouble shooting
+
+
+BBoxAPI.dll may be lock.
+----------
+Ans : Unlock BBoxAPI.dll
+
+![](../../../../../images/unlock.png)
+
+
+BBoxAPI.dll is missing in the project file
+----------
+Ans : [Ref_Link](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000kKgsSAE&l=zh-TW)
+
+
+BBoxLite28A.vi is missing in the project file
+----------
+Ans : [Ref_Link](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000kKgsSAE&l=zh-TW)
