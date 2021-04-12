@@ -4,7 +4,7 @@ import os
 
 print("start")
 
-# API version 3.0.8
+# API version 3.1.2.2
 clr.AddReference('BBoxAPI')
 from BBoxAPI import *
 # print(sys.executable)
@@ -24,16 +24,16 @@ else:
 print("SN:%s, IP:%s, Type:%d" %(sn, ip, dev_type))
 
 info = instance.Init(sn, dev_type, idx)
-print("Init: " + info)
+print("Init: %d" %info)
 
 info = instance.GetState(0, sn)
-print("State(Lock): %d" %(info))
+print("State(Lock): %d" %info)
 
 info = instance.SetState(1, 0, sn)
-print("Set State(CH1 OFF): %d" %(info[1]))
+print("Set State(CH1 OFF): %d" %info[1])
 
 info = instance.SetState(1, 1, sn)
-print("Set State(CH1 ON): %d" %(info[1]))
+print("Set State(CH1 ON): %d" %info[1])
 
-info = instance.SetUDFreq(26000000, 28000000, 2000000, sn)
-print("Set Freq result: " + info.split(",")[1])
+info = instance.SetUDFreq(26000000, 28000000, 2000000, 100000, sn)
+print("Set Freq result: %d" %info)
