@@ -1,6 +1,6 @@
 # BBox API Document
 API Version: v3.3.4
-Release date: Setp., 2021
+Release date: Sep., 2021
 
 ## Introduction
 
