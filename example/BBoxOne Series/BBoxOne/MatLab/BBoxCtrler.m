@@ -11,7 +11,7 @@ classdef BBoxCtrler
                 %please use the full path name instead of relevant path%
                 disp('API path : ' + string(api_path));
                 obj.bbox_library = NET.addAssembly(api_path);
-                obj.instance = BBoxAPI.BBoxOneAPI;
+                obj.instance = BBoxAPI.BBoxOneAPI();
             catch ex
                 disp(ex)
                % ex.ExceptionObject.LoaderExceptions.Get(0).Message
@@ -37,10 +37,11 @@ classdef BBoxCtrler
                 disp(ex)
             end
 
-            if bbox_type_str == 'BBoxOne'
+            if strcmp(bbox_type_str, 'BBoxOne') % previous version of BBox
                 div = 2
-            elseif bbox_type_str == 'BBoxOne-5G'
+            else % BBox 5G series(One,Lite, Board...)
                 div = 3
+
             end
 
             % init dev_sn list
@@ -54,8 +55,8 @@ classdef BBoxCtrler
 
                 if div == 2
                     dev_type(end + 1) = 0;
-                elseif div == 3
-                    dev_type(end + 1) = sn_ip_type((idx + 1)*div);
+                elseif div == 3 
+                    dev_type(end + 1) =  str2double(sn_ip_type((idx + 1)*div));
                 end
 
                 if obj.instance.Init(string(dev_sn(end)), dev_type(end), idx) == BBoxAPI.retCode.OK
@@ -82,7 +83,7 @@ classdef BBoxCtrler
 
             if isempty(find(double(freq_list) == freq)) == 1
                 disp('[Error] unsupport frequency')
-                exit
+                pause
             end
 
             ret = obj.instance.setOperatingFreq(freq, dev_sn);
@@ -96,7 +97,7 @@ classdef BBoxCtrler
             aakit_list = string(obj.instance.getAAKitList(dev_sn));
             if isempty(find((aakit_list) == aakit_name)) == 1
                 disp('[Error] unsupport aakit')
-                exit
+                pause
             end
             ret = obj.instance.selectAAKit(aakit_name, dev_sn);
         end
@@ -111,6 +112,10 @@ classdef BBoxCtrler
 
         function ret = setBeamAngle(obj, dev_sn, db, theta, phi)
             ret = obj.instance.setBeamAngle(db, theta, phi, dev_sn);
+        end
+        
+        function ret = getDR(obj, dev_sn)
+            ret = double(obj.instance.getDR(dev_sn));
         end
     end % end of methods
 end % end of class
