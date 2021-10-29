@@ -28,10 +28,12 @@ classdef BBoxCtrler
         function dev_sn = deviceInit(obj, bbox_type_str)
             % a string contains device information
             dev_info = string(obj.instance.ScanningDevice(BBoxAPI.DEV_SCAN_MODE.NORMAL));
+            disp("[Scanning Msg]" + dev_info)
 
             try
                 % in order to get, sn, ip, device type
                 sn_ip_type = split(dev_info,",");
+                disp("[sn_ip_type]" + sn_ip_type)
             catch ex
                 disp("[deviceInit] scanning failed")
                 disp(ex)
