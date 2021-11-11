@@ -82,6 +82,7 @@ classdef BBoxCtrler
         % select one frequency from frequency list
         function ret = setOperatingFreq(obj, dev_sn, freq)
             freq_list = string(obj.instance.getFrequencyList(dev_sn));
+            disp("freq_list:" + freq_list)
 
             if isempty(find(double(freq_list) == freq)) == 1
                 disp('[Error] unsupport frequency')
@@ -117,7 +118,25 @@ classdef BBoxCtrler
         end
         
         function ret = getDR(obj, dev_sn)
+            % Input :
+            %   obj    : api control object
+            %   dev_sn : serial number
+            % Output :
+            %   ret    : retCode 
             ret = double(obj.instance.getDR(dev_sn));
+        end
+        
+        function ret = switchChannelPower(obj, dev_sn, brdth, chth, sw)
+            % Input :
+            %   obj    : api control object
+            %   dev_sn : serial number
+            %   brdth  : board-th
+            %   chth   : channel-th
+            %   sw     : 1 indicates to power-off, 0 indicates to power-on
+            % Output :
+            %   ret    : retCode String
+   
+            ret = obj.instance.switchChannelPower(brdth, chth, sw, dev_sn);
         end
     end % end of methods
 end % end of class

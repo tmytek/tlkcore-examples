@@ -39,11 +39,16 @@ if setOperationMode(bbox_ctrl, sn, 1) ~= BBoxAPI.retCode.OK
     disp('[setoperationMode] failed')
 end
 
+brdth = 1
+chth = 1
+sw = 1 % 1 indicates to power-off, 0 indicates to power-on
+if switchChannelPower(bbox_ctrl, sn, brdth, chth, sw) ~= 'OK'
+    disp('[switchChannelPower] failed')
+end
 
-db = 10;
-theta = 0;
-phi = 0;
-
+db = 10; % dB
+theta = 0; % deg
+phi = 0; % deg
 
 % broadside direction
 if setBeamAngle(bbox_ctrl, sn, db, theta, phi) ~= BBoxAPI.retCode.OK
