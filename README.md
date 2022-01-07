@@ -1,12 +1,12 @@
 # BBox API Documentation
 
-Sample Code version : v1.2.0
+Sample Code version : v1.2.1
 
 API Version: v3.1.2.2
 
-Release date: Mar., 2021
+Release date: Oct., 2021
 
-Download Link : [Link](https://github.com/tmytek/bbox-api/releases/tag/v1.2.0)
+Download Link : [Link](https://github.com/tmytek/bbox-api/releases/tag/v1.2.1)
 
 ## Introduction
 
@@ -59,27 +59,27 @@ Final Step : Run sample code : [File_Link](https://github.com/tmytek/bbox-api/bl
 
 ### Python 
 
-[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/Python)
+[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne/Python)
 
-[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/Python)
+[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/Python)
 
 ### C++
 
-[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/C%2B%2B)
+[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne/C%2B%2B)
 
-[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/C%2B%2B)
+[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%2B%2B)
 
 ### C#
 
-[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/C%23)
+[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne/C%23)
 
-[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/C%23)
+[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%23)
 
 ### Labview
 
-[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/second_generation/LabView2017/BBoxLite28A)
+[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne/LabView2019)
 
-[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/first_generation/LabView2019)
+[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/LabView2017/BBoxLite28A)
 
 ----------
 # Paramters
