@@ -8,7 +8,7 @@ if __name__ == '__main__':
 
 	parser = argparse.ArgumentParser()
 
-	parser.add_argument("--sn", help="String_argument : D2046L001-28", type=str)
+	parser.add_argument("--sn", help="String_argument : D2104L011-28", type=str)
 	parser.add_argument("--mode", help="Integer_argument : (TX, 1) , (RX, 2)", type=int)
 
 	args = parser.parse_args()

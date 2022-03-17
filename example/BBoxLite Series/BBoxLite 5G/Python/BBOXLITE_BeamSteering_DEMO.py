@@ -14,18 +14,19 @@ if __name__ == '__main__':
 	timeout = 2
 
 	for i in range(0, device_num):
-		print("[MAIN][%s] index %d" % (sn[i], i))
+		print("[BBOXLITE_BeamSteering_DEMO][%s] Index %d" % (sn[i], i))
 
 		db = 15
+		phi = 0
 
-		min_angle = -30
-		max_angle = 40
-		angle_step = 10
+		min_theta = 0
+		max_theta = 30
+		theta_step = 5
 
 		while True:
-			for angle in np.arange(min_angle, max_angle, angle_step):
-				if obj.SetDeviceBeamSteering(sn[i], obj.TX, db, angle):
-					print("[MAIN][SetDeviceBeamSteering][%s] TX , %f db , %d angle" % (sn[i], db, angle))
+			for theta in np.arange(min_theta, max_theta, theta_step):
+				if obj.SetDeviceBeamSteering(sn[i], obj.TX, db, theta, phi):
+					print("[BBOXLITE_BeamSteering_DEMO][SetDeviceBeamSteering][%s] TX , %f db , theta : %d, phi : %d" % (sn[i], db, theta, phi))
 					time.sleep(timeout)
 
 

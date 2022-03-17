@@ -5,32 +5,26 @@
 
     Please add your BBox beamsterring table and AAkit table to the following path.
 
-    bbox-api\example\BBoxLite\second_generation\C#\ConsoleApp1\bin\Release\files\
+    bbox-api\example\BBoxLite Series\BBoxLite 5G\C#\ConsoleApp1\bin\Release\files
 
 
 ## Initialization
 ----------
-    // Import BBoxAPI.dll
-
     using System;
     using System.Linq;
     using System.Collections.Generic;
+
+    // Import BBoxAPI.dll
     using BBoxAPI;
 
     // Scanning device in the same subnet
-
-    BBoxAPI::BBoxOneAPI ^instance = gcnew BBoxAPI::BBoxOneAPI();
-	array<String ^>^ dev_info = instance->ScanningDevice((BBoxAPI::DEV_SCAN_MODE)0);
-	dev_num = dev_info->Length;
-
-    // Initial all devices
-
 	BBoxOneAPI instance = new BBoxOneAPI();
 
     dev_info = instance.ScanningDevice(scanning_mode);
             
     DEV_NUM = dev_info.Count();
 
+    // Initial all devices
     for (int i = 0; i < DEV_NUM; i++)
     {
         string[] response_message = dev_info[i].Split(',');
@@ -42,101 +36,108 @@
 
 ## Control example
 ****
-#### Running sample code
+### Running sample code
     Open ConsoleApplication1.sln
     Compile and run
 ****
 
-### BBox
-##### Obtain Tx or Rx state
-
+## BBoxLite 5G
+### Get Tx or Rx state
+---
 Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
 
-    mode = b.getTxRxMode(sn); // 1 : Tx, 2 : Rx  
+    TX = 1
+    RX = 2
+    mode = b.getTxRxMode(sn)
 
-##### Switch Tx & Rx mode
-
+### Switch Tx & Rx mode
+---
 BBox is TDD based device. You need to point out which BBox device used by serial number.
 
-    b.SwitchTxRxMode(1, sn); // Switch BBox to Tx mode
-    b.SwitchTxRxMode(2, sn); // Switch BBox to Rx mode
+    TX = 1
+    RX = 2
+    b.SwitchTxRxMode(TX, sn)
+    b.SwitchTxRxMode(RX, sn)
 
 
-##### Control Beam direction
+### Control Beam direction
+---
+The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 14.5 dB, theta value 15 and phi value : 0 . You need to point out which BBox device used by serial number.
 
-The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 15 dB, 10 degrees in x direction and  20 degrees in y direction. You need to point out which BBox device used by serial number.
-
-    b.setBeamXY(15, 10, 20, sn);
+    db = 14.5
+    theta = 15
+    phi = 0
+    instance.setBeamAngle(db, theta, phi, sn)
 
 ****
 
-# API parameters
-
-----------
+# API Usage
 ### ScanningDevice
+---
     public string[] ScanningDevice(DEV_SCAN_MODE scanMode)
-| Type | Name | Value |
-| - | - | - |
+| Type          | Name     | Value                |
+| -             | -        | -                    |
 | DEV_SCAN_MODE | scanMode | Normal : 0, Fast : 1 |
 
-return scan results from devices
-----------
-### Init
-    public String Init(sn, dev_type, idx);
-| Type | Name | Value |
-| - | - | - |
-| String     | sn         | Serial Numnber from scan result |
-| int     | dev_type         | Type from scan result |
-| int     | idx         | Index in scan result |
-return initialized condition.
+Return scan results from devices
 
-----------
+### Init
+---
+    public int Init(sn, dev_type, idx)
+| Type    | Name        | Value                           |
+| -       | -           | -                               |
+| String  | sn          | Serial Numnber from scan result |
+| int     | dev_type    | Type from scan result           |
+| int     | idx         | Index in scan result            |
+
+Return integer type status code.
+
 ### getTxRxMode
-Get Tx/Rx Mode of device with SN. Return TxRxMode table value.
+---
+    // Get Device Mode  with SN. Return integer type value.
 
     public int getTxRxMode(String sn); 
 
-return 0 if Tx mode, and 1 if Rx mode.
-
-----------
+Return 1 if Tx mode, and 2 if Rx mode.
 
 ### SwitchTxRxMode
-    public int SwitchTxRxMode(int mode, String sn);
-| Type  | Name  | Value |
-| -     | -     | -     |
-| int   | mode  | Tx : 0, Rx : 1 |
-| String | sn   | device serial number
+---
+    public int SwitchTxRxMode(int mode, String sn)
+| Type   | Name  | Value                |
+| -      | -     | -                    |
+| int    | mode  | Tx : 1, Rx : 2       |
+| String | sn    | Device serial number |
 
-----------
-### setBeamXY
-    public string setBeamXY(double db, double angleX, double angleY, String sn);
-| Type  | Name  | Value |
-| -     | -     | -     |
-| double       | db          | gain value
-| double       | angleX      | angle value in x direction
-| double       | angleY      | angle value in y direction
-| String       | sn          | device serial number
+## setBeamAngle
+---
+    public string setBeamAngle(double db, int theta, int phi, String sn)
+| Type         | Name        | Value                 |
+| -            | -           | -                     |
+| double       | db          | Gain value            |
+| int          | theta       | Theta value           |
+| int          | phi         | Phi value             |
+| String       | sn          | Device serial number  |
 
-----------
 ### setChannelGainPhase
-    public string setChannelGainPhase(int board, int ch, double db, int phase, string sn);
-| Type  | Name  | Value |
-| -     | -     | -     |
-| int       | board       | Board number   : 1-4
-| int       | ch          | Channel number : 1-4
-| double    | db          | Target db
-| int       | phase       | Target deg
-| String    | sn          | device serial number
+---
+    public string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
+| Type      | Name        | Value                |
+| -         | -           | -                    |
+| int       | board       | Board number   : 1   |
+| int       | ch          | Channel number : 1-4 |
+| double    | db          | Target db            |
+| int       | phase       | Target deg           |
+| String    | sn          | Device serial number |
 
 ----------
 ### switchChannelPower
-    public string switchChannelPower(int board, int ch, int sw, string sn);
-| Type  | Name  | Value |
-| -     | -     | -     |
-| int       | board       | Board number   : 1-4
-| int       | ch          | Channel number : 1-4
-| int       | sw          | switch value   : ON 0 , OFF 1
-| String    | sn          | device serial number
+    public string switchChannelPower(int board, int ch, int sw, string sn)
+| Type      | Name        | Value                         |
+| -         | -           | -                             |
+| int       | board       | Board number   : 1            |
+| int       | ch          | Channel number : 1-4          |
+| int       | sw          | switch value   : ON 0 , OFF 1 |
+| String    | sn          | Device serial number          |
 
-----------
+---
 
