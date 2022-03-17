@@ -1,12 +1,12 @@
 # BBox API Documentation
 
-Sample Code version : v1.2.1
+Sample Code version : v1.3.0
 
-API Version: v3.1.2.2
+API Version: v3.3.13
 
-Release date: Oct., 2021
+Release date: Mar., 2022
 
-Download Link : [Link](https://github.com/tmytek/bbox-api/releases/tag/v1.2.1)
+Download Link : [Link](https://github.com/tmytek/bbox-api/releases/tag/v1.3.0)
 
 ## Introduction
 
@@ -19,6 +19,8 @@ Every model has its own sample code. Please refer to the sample code inside each
 Check network connection : Open TMXLAB Kit to make sure device can be connected
 
 ![](./images/image_5.png)
+
+![](./images/image_6.png)
 
 
 ## Prerequisites : Python
@@ -59,76 +61,96 @@ Final Step : Run sample code : [File_Link](https://github.com/tmytek/bbox-api/bl
 
 ### Python 
 
-[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne/Python)
+[BBoxOne 5G Document](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/Python)
 
-[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/Python)
+[BBoxLite 5G Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/Python)
 
 ### C++
 
-[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne/C%2B%2B)
+[BBoxOne 5G Document](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/C%2B%2B)
 
-[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%2B%2B)
+[BBoxLite 5G Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%2B%2B)
 
 ### C#
 
-[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne/C%23)
+[BBoxOne 5G Document](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/C%23)
 
-[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%23)
+[BBoxLite 5G Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%23)
 
 ### Labview
 
-[BBoxOne Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne/LabView2019)
+[BBoxOne 5G Document](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/LabView2019)
 
-[BBoxLite Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/LabView2017/BBoxLite28A)
+[BBoxLite 5G Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/LabView2017/BBoxLite28A)
 
-----------
-# Paramters
 
+# BBoxOne 5G API Usage
 ### ScanningDevice
+---
     public string[] ScanningDevice(DEV_SCAN_MODE scanMode)
-| Type | Name | Value |
-| - | - | - |
+| Type          | Name     | Value                |
+| -             | -        | -                    |
 | DEV_SCAN_MODE | scanMode | Normal : 0, Fast : 1 |
 
-----------
+Return scan results from devices
+
 ### Init
-    public String Init(sn, dev_type, idx);
-| Type | Name | Value |
-| - | - | - |
-| String     | sn         | Serial Numnber from scan result |
-| int     | dev_type         | Type from scan result |
-| int     | idx         | Index in scan result |
+---
+    public int Init(sn, dev_type, idx)
+| Type    | Name        | Value                           |
+| -       | -           | -                               |
+| String  | sn          | Serial Numnber from scan result |
+| int     | dev_type    | Type from scan result           |
+| int     | idx         | Index in scan result            |
 
+Return integer type status code.
 
-----------
-### setBeamXY
-    public string setBeamXY(double db, double angleX, double angleY, String sn);
-| Type  | Name  | Value |
-| -     | -     | -     |
-| double       | db          | gain value
-| double       | angleX      | angle value in x direction
-| double       | angleY      | angle value in y direction
-| String       | sn          | device serial number
+### getTxRxMode
+---
+    // Get Device Mode  with SN. Return integer type value.
 
-----------
+    public int getTxRxMode(String sn); 
+
+Return 1 if Tx mode, and 2 if Rx mode.
+
+### SwitchTxRxMode
+---
+    public int SwitchTxRxMode(int mode, String sn)
+| Type   | Name  | Value                |
+| -      | -     | -                    |
+| int    | mode  | Tx : 1, Rx : 2       |
+| String | sn    | Device serial number |
+
+## setBeamAngle
+---
+    public string setBeamAngle(double db, int theta, int phi, String sn)
+| Type         | Name        | Value                 |
+| -            | -           | -                     |
+| double       | db          | Gain value            |
+| int          | theta       | Theta value           |
+| int          | phi         | Phi value             |
+| String       | sn          | Device serial number  |
+
 ### setChannelGainPhase
-    public string setChannelGainPhase(int board, int ch, double db, int phase, string sn);
-| Type  | Name  | Value |
-| -     | -     | -     |
-| int       | board       | Board number   : 1-4
-| int       | ch          | Channel number : 1-4
-| double    | db          | Target db
-| int       | phase       | Target deg
-| String    | sn          | device serial number
+---
+    public string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
+| Type      | Name        | Value                |
+| -         | -           | -                    |
+| int       | board       | Board number   : 1-4 |
+| int       | ch          | Channel number : 1-4 |
+| double    | db          | Target db            |
+| int       | phase       | Target deg           |
+| String    | sn          | Device serial number |
 
 ----------
 ### switchChannelPower
-    public string switchChannelPower(int board, int ch, int sw, string sn);
-| Type  | Name  | Value |
-| -     | -     | -     |
-| int       | board       | Board number   : 1-4
-| int       | ch          | Channel number : 1-4
-| int       | sw          | switch value   : ON 0 , OFF 1
-| String    | sn          | device serial number
+    public string switchChannelPower(int board, int ch, int sw, string sn)
+| Type      | Name        | Value                         |
+| -         | -           | -                             |
+| int       | board       | Board number   : 1-4          |
+| int       | ch          | Channel number : 1-4          |
+| int       | sw          | switch value   : ON 0 , OFF 1 |
+| String    | sn          | Device serial number          |
 
-----------
+---
+
