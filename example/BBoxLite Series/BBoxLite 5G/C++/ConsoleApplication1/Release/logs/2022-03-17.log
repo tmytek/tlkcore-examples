@@ -1,0 +1,102 @@
+2022-03-17 13:39:24.7962|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config: D:\tmytek\Source\bbox-api\example\BBoxLite Series\BBoxLite 5G\C++\ConsoleApplication1\Release\NLog.config
+2022-03-17 13:39:24.8342|INFO|main|[Queryer][Start] Init UDP client
+2022-03-17 13:39:24.8628|INFO|main|[Queryer][Remove_device_information] Remove all device information
+2022-03-17 13:39:24.8628|INFO|main|[Virtual_Device_Interface][read_configuration_files] Configuration directory was created at 2022/3/17 ¤U¤È 01:39:24.
+2022-03-17 13:39:25.0598|INFO|main|VirtualBox Host-Only Ethernet Adapter
+2022-03-17 13:39:25.0598|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.56.1
+2022-03-17 13:39:25.0598|INFO|main|Realtek PCIe GbE Family Controller
+2022-03-17 13:39:25.0668|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.100.222
+2022-03-17 13:39:25.0668|INFO|main|Intel(R) Wireless-AC 9462
+2022-03-17 13:39:25.0668|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.70.73
+2022-03-17 13:39:25.0668|INFO|main|Software Loopback Interface 1
+2022-03-17 13:39:25.0668|INFO|main|[Queryer][ConstructClients] UDP broadcast : 127.0.0.1
+2022-03-17 13:39:25.0668|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.56.1:5026
+2022-03-17 13:39:27.1803|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.100.222:5026
+2022-03-17 13:39:27.2993|INFO|main|[Queryer][Set_device_information] Add device information : SN D2104L011-28, IP 192.168.100.111, DEV_TYPE DEV_BBOXLITE28A, INFO D2104L011-28,192.168.100.111,7
+2022-03-17 13:39:27.4293|INFO|main|[Queryer][SendRecvClients] UDP current received: 1, 0/20
+2022-03-17 13:39:29.4499|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.70.73:5026
+2022-03-17 13:39:31.6444|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-03-17 13:39:31.7579|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.56.1
+2022-03-17 13:39:31.7579|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.100.222
+2022-03-17 13:39:31.7579|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.70.73
+2022-03-17 13:39:32.4764|INFO|main|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.100.111] InstanceInit return : OK
+2022-03-17 13:39:32.6344|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Phi-A mode
+2022-03-17 13:39:32.6434|INFO|main|[BBOXLITE28A][captureInfoFromTable][D2104L011-28] Current table version : 2.0.0 , at freqency 28
+2022-03-17 13:39:33.3074|INFO|main|[BBOXLITE28A][LoadCalibrationInfo][D2104L011-28] Load Calibration table Complete.
+2022-03-17 13:39:33.3074|INFO|main|[Beam_Pattern_Configuration][check_beam_table] Beam table directory was created at 2022/3/17 ¤U¤È 01:39:33.
+2022-03-17 13:39:33.3164|WARN|main|[Beam_Pattern_Configuration][check_beam_table] Beam table not exist
+2022-03-17 13:39:33.3975|INFO|main|[Beam_Pattern_Configuration][generate_default_beam_table] Generate default Beam_Configuration
+2022-03-17 13:39:33.4429|INFO|main|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2104L011-28_28GHz.json
+2022-03-17 13:39:33.8464|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Load Beam table into device complete
+2022-03-17 13:39:33.8464|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Firmware version : v1.2.10, Calibration table version : 2.0.0
+2022-03-17 13:39:33.8464|INFO|main|[BBOXLITE28A][LoadAAKitInfo][D2104L011-28] AAkit file path : files\AAKIT_TMYTEK_28LITE_4x4_C2104L020-28.csv
+2022-03-17 13:39:33.8624|INFO|main|[AAKitSupporter][addAAKitInfo] Add AAKIT : TMYTEK_28LITE_4x4_C2104L020-28
+2022-03-17 13:39:33.8624|INFO|main|[BBOXLITE28A][LoadAAKitInfo][D2104L011-28] AAkit file path : files\AAKIT_TMYTEK_39LITE_4x4_A2104L004-39.csv
+2022-03-17 13:39:33.8624|INFO|main|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-03-17 13:39:33.8624|INFO|main|[BBoxDevice][selectAAKit][D2104L011-28] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2022-03-17 13:39:37.6927|WARN|main|[BBOXLITE28A][setBeamXY][D2104L011-28] Deprecated function
+2022-03-17 13:39:37.6927|WARN|main|[BBOXLITE28A][setBeamXY][D2104L011-28] Deprecated function
+2022-03-17 13:40:39.8318|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config: D:\tmytek\Source\bbox-api\example\BBoxLite Series\BBoxLite 5G\C++\ConsoleApplication1\Release\NLog.config
+2022-03-17 13:40:39.8558|INFO|main|[Queryer][Start] Init UDP client
+2022-03-17 13:40:39.8658|INFO|main|[Queryer][Remove_device_information] Remove all device information
+2022-03-17 13:40:39.9928|INFO|main|VirtualBox Host-Only Ethernet Adapter
+2022-03-17 13:40:39.9928|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.56.1
+2022-03-17 13:40:39.9928|INFO|main|Realtek PCIe GbE Family Controller
+2022-03-17 13:40:39.9928|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.100.222
+2022-03-17 13:40:39.9928|INFO|main|Intel(R) Wireless-AC 9462
+2022-03-17 13:40:39.9928|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.70.73
+2022-03-17 13:40:39.9928|INFO|main|Software Loopback Interface 1
+2022-03-17 13:40:40.0028|INFO|main|[Queryer][ConstructClients] UDP broadcast : 127.0.0.1
+2022-03-17 13:40:40.0028|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.56.1:5026
+2022-03-17 13:40:42.1223|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.100.222:5026
+2022-03-17 13:40:42.2334|INFO|main|[Queryer][Set_device_information] Add device information : SN D2104L011-28, IP 192.168.100.111, DEV_TYPE DEV_BBOXLITE28A, INFO D2104L011-28,192.168.100.111,7
+2022-03-17 13:40:42.3698|INFO|main|[Queryer][SendRecvClients] UDP current received: 1, 0/20
+2022-03-17 13:40:44.3728|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.70.73:5026
+2022-03-17 13:40:46.4933|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-03-17 13:40:46.5603|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.56.1
+2022-03-17 13:40:46.5603|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.100.222
+2022-03-17 13:40:46.5603|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.70.73
+2022-03-17 13:40:46.8022|INFO|main|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.100.111] InstanceInit return : OK
+2022-03-17 13:40:46.9438|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Phi-A mode
+2022-03-17 13:40:46.9568|INFO|main|[BBOXLITE28A][captureInfoFromTable][D2104L011-28] Current table version : 2.0.0 , at freqency 28
+2022-03-17 13:40:47.3463|INFO|main|[BBOXLITE28A][LoadCalibrationInfo][D2104L011-28] Load Calibration table Complete.
+2022-03-17 13:40:47.4493|INFO|main|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2104L011-28_28GHz.json
+2022-03-17 13:40:47.8765|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Load Beam table into device complete
+2022-03-17 13:40:47.8775|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Firmware version : v1.2.10, Calibration table version : 2.0.0
+2022-03-17 13:40:47.8775|INFO|main|[BBOXLITE28A][LoadAAKitInfo][D2104L011-28] AAkit file path : files\AAKIT_TMYTEK_28LITE_4x4_C2104L020-28.csv
+2022-03-17 13:40:47.8775|INFO|main|[AAKitSupporter][addAAKitInfo] Add AAKIT : TMYTEK_28LITE_4x4_C2104L020-28
+2022-03-17 13:40:47.8775|INFO|main|[BBOXLITE28A][LoadAAKitInfo][D2104L011-28] AAkit file path : files\AAKIT_TMYTEK_39LITE_4x4_A2104L004-39.csv
+2022-03-17 13:40:47.8945|INFO|main|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-03-17 13:40:47.8945|INFO|main|[BBoxDevice][selectAAKit][D2104L011-28] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2022-03-17 13:47:03.9327|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config: D:\tmytek\Source\bbox-api\example\BBoxLite Series\BBoxLite 5G\C++\ConsoleApplication1\Release\NLog.config
+2022-03-17 13:47:03.9557|INFO|main|[Queryer][Start] Init UDP client
+2022-03-17 13:47:03.9557|INFO|main|[Queryer][Remove_device_information] Remove all device information
+2022-03-17 13:47:04.0497|INFO|main|VirtualBox Host-Only Ethernet Adapter
+2022-03-17 13:47:04.0497|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.56.1
+2022-03-17 13:47:04.0497|INFO|main|Realtek PCIe GbE Family Controller
+2022-03-17 13:47:04.0497|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.100.222
+2022-03-17 13:47:04.0497|INFO|main|Intel(R) Wireless-AC 9462
+2022-03-17 13:47:04.0497|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.70.73
+2022-03-17 13:47:04.0497|INFO|main|Software Loopback Interface 1
+2022-03-17 13:47:04.0497|INFO|main|[Queryer][ConstructClients] UDP broadcast : 127.0.0.1
+2022-03-17 13:47:04.0497|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.56.1:5026
+2022-03-17 13:47:06.1871|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.100.222:5026
+2022-03-17 13:47:06.3037|INFO|main|[Queryer][Set_device_information] Add device information : SN D2104L011-28, IP 192.168.100.111, DEV_TYPE DEV_BBOXLITE28A, INFO D2104L011-28,192.168.100.111,7
+2022-03-17 13:47:06.4363|INFO|main|[Queryer][SendRecvClients] UDP current received: 1, 0/20
+2022-03-17 13:47:08.4504|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.70.73:5026
+2022-03-17 13:47:10.5662|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-03-17 13:47:10.6328|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.56.1
+2022-03-17 13:47:10.6328|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.100.222
+2022-03-17 13:47:10.6328|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.70.73
+2022-03-17 13:47:10.8721|INFO|main|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.100.111] InstanceInit return : OK
+2022-03-17 13:47:11.0063|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Phi-A mode
+2022-03-17 13:47:11.0343|INFO|main|[BBOXLITE28A][captureInfoFromTable][D2104L011-28] Current table version : 2.0.0 , at freqency 28
+2022-03-17 13:47:11.4367|INFO|main|[BBOXLITE28A][LoadCalibrationInfo][D2104L011-28] Load Calibration table Complete.
+2022-03-17 13:47:11.5387|INFO|main|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2104L011-28_28GHz.json
+2022-03-17 13:47:12.0220|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Load Beam table into device complete
+2022-03-17 13:47:12.0220|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Firmware version : v1.2.10, Calibration table version : 2.0.0
+2022-03-17 13:47:12.0220|INFO|main|[BBOXLITE28A][LoadAAKitInfo][D2104L011-28] AAkit file path : files\AAKIT_TMYTEK_28LITE_4x4_C2104L020-28.csv
+2022-03-17 13:47:12.0370|INFO|main|[AAKitSupporter][addAAKitInfo] Add AAKIT : TMYTEK_28LITE_4x4_C2104L020-28
+2022-03-17 13:47:12.0370|INFO|main|[BBOXLITE28A][LoadAAKitInfo][D2104L011-28] AAkit file path : files\AAKIT_TMYTEK_39LITE_4x4_A2104L004-39.csv
+2022-03-17 13:47:12.0370|INFO|main|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-03-17 13:47:12.0370|INFO|main|[BBoxDevice][selectAAKit][D2104L011-28] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT

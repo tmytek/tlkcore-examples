@@ -1,0 +1,51 @@
+2022-03-17 15:28:31.8782|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config: D:\tmytek\Source\bbox-api\example\BBoxOne Series\BBoxOne  5G\C++\ConsoleApplication1\Release\NLog.config
+2022-03-17 15:28:32.0292|INFO|main|[Queryer][Start] Init UDP client
+2022-03-17 15:28:32.0412|INFO|main|[Queryer][Remove_device_information] Remove all device information
+2022-03-17 15:28:32.0412|INFO|main|[Virtual_Device_Interface][read_configuration_files] Configuration directory was created at 2022/3/17 ¤U¤È 03:28:32.
+2022-03-17 15:28:32.2442|INFO|main|VirtualBox Host-Only Ethernet Adapter
+2022-03-17 15:28:32.2442|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.56.1
+2022-03-17 15:28:32.2442|INFO|main|Realtek PCIe GbE Family Controller
+2022-03-17 15:28:32.2442|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.100.222
+2022-03-17 15:28:32.2442|INFO|main|Intel(R) Wireless-AC 9462
+2022-03-17 15:28:32.2442|INFO|main|[Queryer][ConstructClients] UDP broadcast : 192.168.70.73
+2022-03-17 15:28:32.2442|INFO|main|Software Loopback Interface 1
+2022-03-17 15:28:32.2532|INFO|main|[Queryer][ConstructClients] UDP broadcast : 127.0.0.1
+2022-03-17 15:28:32.2532|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.56.1:5026
+2022-03-17 15:28:34.3736|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.100.222:5026
+2022-03-17 15:28:34.4836|INFO|main|[Queryer][Set_device_information] Add device information : SN D2152E038-28, IP 192.168.100.111, DEV_TYPE DEV_BBOXONE28A, INFO D2152E038-28,192.168.100.111,9
+2022-03-17 15:28:34.5924|INFO|main|[Queryer][SendRecvClients] UDP current received: 1, 0/20
+2022-03-17 15:28:36.5957|INFO|main|[Queryer][SendRecvClients] Source IP:Port : 192.168.70.73:5026
+2022-03-17 15:28:41.6029|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-03-17 15:28:41.7210|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.56.1
+2022-03-17 15:28:41.7230|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.100.222
+2022-03-17 15:28:41.7807|INFO|main|[Queryer][DestructClients] Destruct udp client 192.168.70.73
+2022-03-17 15:28:41.9651|INFO|main|[BBoxOneAPI][Initial_process][D2152E038-28][192.168.100.111] InstanceInit return : OK
+2022-03-17 15:28:42.1212|INFO|main|[BBOXONE28A][setOperatingFreq][D2152E038-28] Phi-A mode
+2022-03-17 15:28:42.1212|INFO|main|[BBOXONE28A][captureInfoFromTable][D2152E038-28] Current table version : 2.0.0 , at freqency 28
+2022-03-17 15:28:43.8638|INFO|main|[BBOXONE28A][LoadCalibrationInfo][D2152E038-28] Load Calibration table Complete.
+2022-03-17 15:28:43.8638|INFO|main|[Beam_Pattern_Configuration][check_beam_table] Beam table directory was created at 2022/3/17 ¤U¤È 03:28:43.
+2022-03-17 15:28:43.8638|WARN|main|[Beam_Pattern_Configuration][check_beam_table] Beam table not exist
+2022-03-17 15:28:43.9418|INFO|main|[Beam_Pattern_Configuration][generate_default_beam_table] Generate default Beam_Configuration
+2022-03-17 15:28:43.9858|INFO|main|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2152E038-28_28GHz.json
+2022-03-17 15:28:44.7652|INFO|main|[BBOXONE28A][setOperatingFreq][D2152E038-28] Load Beam table into device complete
+2022-03-17 15:28:44.7652|INFO|main|[BBOXONE28A][setOperatingFreq][D2152E038-28] Firmware version : v1.2.10, Calibration table version : 2.0.0
+2022-03-17 15:28:44.7732|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] AAkit file path : files\AAKIT_TMYTEK_28ONE_4x4_C2104L020-28.csv
+2022-03-17 15:28:44.7732|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 0, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7732|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 1, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7732|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 2, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7732|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 3, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7732|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 4, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7732|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 5, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7732|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 6, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7732|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 7, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7732|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 8, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7845|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 9, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7845|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 10, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7845|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 11, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7845|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 12, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7845|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 13, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7845|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 14, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7845|INFO|main|[BBOXONE28A][LoadAAKitInfo][D2152E038-28] Channel : 15, AAkit_TX_offset : 0
+2022-03-17 15:28:44.7845|INFO|main|[AAKitSupporter][addAAKitInfo] Add AAKIT : TMYTEK_28ONE_4x4_C2104L020-28
+2022-03-17 15:28:44.7845|INFO|main|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-03-17 15:28:44.7845|INFO|main|[BBoxDevice][selectAAKit][D2152E038-28] Set TMYTEK_28ONE_4x4_C2104L020-28 AAKIT

@@ -67,12 +67,14 @@ class BBOXLITE_Control_Interface(object):
 		self.current_TX_switch_settings = [[0 for i in range(4)] for j in range(16)]
 		self.current_TX_gain_settings = [[0 for i in range(4)] for j in range(16)]
 		self.current_TX_phase_settings = [[0 for i in range(4)] for j in range(16)]
-		self.current_TX_BeamAngle_settings = [0 for i in range(16)]
+		self.current_TX_Theta_settings = [0 for i in range(16)]
+		self.current_TX_Phi_settings = [0 for i in range(16)]
 
 		self.current_RX_switch_settings = [[0 for i in range(4)] for j in range(16)]
 		self.current_RX_gain_settings = [[0 for i in range(4)] for j in range(16)]
 		self.current_RX_phase_settings = [[0 for i in range(4)] for j in range(16)]
-		self.current_RX_BeamAngle_settings = [0 for i in range(16)]
+		self.current_RX_Theta_settings = [0 for i in range(16)]
+		self.current_RX_Phi_settings = [0 for i in range(16)]
 
 		if self.GetDeviceStatus():
 			self.InitialDevice()
@@ -302,7 +304,7 @@ class BBOXLITE_Control_Interface(object):
 
 
 
-	def SetDeviceBeamSteering(self, sn, mode, db ,ang_x):
+	def Deprecated_SetDeviceBeamSteering(self, sn, mode, db ,ang_x):
 
 		sn_idx = self.Get_SN_Index(sn)
 		if sn_idx == -1:
@@ -326,6 +328,38 @@ class BBOXLITE_Control_Interface(object):
 
 		ang_y = 0
 		ret = self.instance.setBeamXY(db, ang_x, ang_y, sn)
+		if ret != 0:
+			print("[BBox_Control_Interface][Deprecated_SetDeviceBeamSteering][%s] Deprecated_SetDeviceBeamSteering failed : errorCode %d" % (sn, ret))
+			return False
+
+		return True
+
+	def SetDeviceBeamSteering(self, sn, mode, db , theta, phi):
+
+		sn_idx = self.Get_SN_Index(sn)
+		if sn_idx == -1:
+			return False
+
+		if self.CheckTRMode(sn_idx, mode) == False:
+			return False
+
+		if mode == self.TX:
+			self.current_TX_Theta_settings[sn_idx] = theta
+			self.current_TX_Phi_settings[sn_idx] = phi
+			self.current_TX_gain_settings[sn_idx][self.channel_1] = db
+			self.current_TX_gain_settings[sn_idx][self.channel_2] = db
+			self.current_TX_gain_settings[sn_idx][self.channel_3] = db
+			self.current_TX_gain_settings[sn_idx][self.channel_4] = db
+		elif mode == self.RX:
+			self.current_RX_Theta_settings[sn_idx] = theta
+			self.current_RX_Phi_settings[sn_idx] = phi
+			self.current_RX_gain_settings[sn_idx][self.channel_1] = db
+			self.current_RX_gain_settings[sn_idx][self.channel_2] = db
+			self.current_RX_gain_settings[sn_idx][self.channel_3] = db
+			self.current_RX_gain_settings[sn_idx][self.channel_4] = db
+
+		ang_y = 0
+		ret = self.instance.setBeamAngle(db, theta, phi, sn)
 		if ret != 0:
 			print("[BBox_Control_Interface][SetDeviceBeamSteering][%s] SetDeviceBeamSteering failed : errorCode %d" % (sn, ret))
 			return False
@@ -435,7 +469,8 @@ class BBOXLITE_Control_Interface(object):
 			print("[BBox_Control_Interface][GetDevice_settings][%s] Channel_4 Switch settings  : %d" % (sn, self.current_TX_switch_settings[sn_idx][self.channel_4]))
 			print("[BBox_Control_Interface][GetDevice_settings][%s] Channel_4 Gain settings    : %f" % (sn, self.current_TX_gain_settings[sn_idx][self.channel_4]))
 			print("[BBox_Control_Interface][GetDevice_settings][%s] Channel_4 Phase settings   : %f\n" % (sn, self.current_TX_phase_settings[sn_idx][self.channel_4]))
-			print("[BBox_Control_Interface][GetDevice_settings][%s] Beam angle settings        : %d" % (sn, self.current_TX_BeamAngle_settings[sn_idx]))
+			print("[BBox_Control_Interface][GetDevice_settings][%s] Beam Theta settings        : %d" % (sn, self.current_TX_Theta_settings[sn_idx]))
+			print("[BBox_Control_Interface][GetDevice_settings][%s] Beam Phi settings          : %d" % (sn, self.current_TX_Phi_settings[sn_idx]))
 		elif mode == self.RX:
 			print("[BBox_Control_Interface][GetDevice_settings][%s] RX mode")
 			print("[BBox_Control_Interface][GetDevice_settings][%s] Dynamic_range Minimum Gain : %f" % (sn, self.RX_MIN_GAIN[sn_idx]))
@@ -452,7 +487,8 @@ class BBOXLITE_Control_Interface(object):
 			print("[BBox_Control_Interface][GetDevice_settings][%s] Channel_4 Switch settings  : %d" % (sn, self.current_RX_switch_settings[sn_idx][self.channel_4]))
 			print("[BBox_Control_Interface][GetDevice_settings][%s] Channel_4 Gain settings    : %f" % (sn, self.current_RX_gain_settings[sn_idx][self.channel_4]))
 			print("[BBox_Control_Interface][GetDevice_settings][%s] Channel_4 Phase settings   : %f\n" % (sn, self.current_RX_phase_settings[sn_idx][self.channel_4]))
-			print("[BBox_Control_Interface][GetDevice_settings][%s] Beam angle settings        : %d" % (sn, self.current_RX_BeamAngle_settings[sn_idx]))
+			print("[BBox_Control_Interface][GetDevice_settings][%s] Beam Theta settings        : %d" % (sn, self.current_RX_Theta_settings[sn_idx]))
+			print("[BBox_Control_Interface][GetDevice_settings][%s] Beam Phi settings          : %d" % (sn, self.current_RX_Phi_settings[sn_idx]))
 
 
 if __name__ == '__main__':

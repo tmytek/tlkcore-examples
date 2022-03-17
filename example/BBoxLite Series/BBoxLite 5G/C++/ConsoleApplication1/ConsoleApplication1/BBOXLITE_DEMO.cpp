@@ -89,70 +89,73 @@ int main()
 		}
 
 		Console::WriteLine("======================================================");
-		Console::WriteLine("[DEMO1] Switch TX mode");
+		Console::WriteLine("[{0}][DEMO1] Switch TX mode", sn);
 		system("pause");
 
 		instance->SwitchTxRxMode(TX, sn);
 		int mode = instance->getTxRxMode(sn);
-		Console::WriteLine("[DEMO1] Mode : " + mode);
+		Console::WriteLine("[{0}][DEMO1] Mode : " + mode, sn);
 
 		Console::WriteLine("======================================================");
-		Console::WriteLine("[DEMO2] Channel power control : Off channel 1 power");
+		Console::WriteLine("[{0}][DEMO2] Channel power control : Off channel 1 power", sn);
 		system("pause");
 
 		int board = 1;
 		int channel = 1;
 		int sw = 1;
 		instance->switchChannelPower(board, channel, sw, sn);
-		Console::WriteLine("[DEMO2] Channel 1 power off");
+		Console::WriteLine("[{0}][DEMO2] Channel 1 power off", sn);
+
+		double Target_db = 15;
+		int Target_ch1_deg = 15;
+		int Target_ch2_deg = 30;
+		int Target_ch3_deg = 45;
+		int Target_ch4_deg = 60;
 
 		Console::WriteLine("======================================================");
-		Console::WriteLine("[DEMO3] Channel Gain/Phase Control");
-		Console::WriteLine("[DEMO3] Channel_1 gain  : 15 db");
-		Console::WriteLine("[DEMO3] Channel_1 phase : 15 deg");
-		Console::WriteLine("[DEMO3] Channel_2 gain  : 15 db");
-		Console::WriteLine("[DEMO3] Channel_2 phase : 30 deg");
-		Console::WriteLine("[DEMO3] Channel_3 gain  : 15 db");
-		Console::WriteLine("[DEMO3] Channel_3 phase : 45 deg");
-		Console::WriteLine("[DEMO3] Channel_4 gain  : 15 db");
-		Console::WriteLine("[DEMO3] Channel_4 phase : 60 deg");
+		Console::WriteLine("[{0}][DEMO3] Channel Gain/Phase Control", sn);
+		Console::WriteLine("[{0}][DEMO3] Channel_1 gain  : {1} db", sn, Target_db);
+		Console::WriteLine("[{0}][DEMO3] Channel_1 phase : 15 deg", sn, Target_ch1_deg);
+		Console::WriteLine("[{0}][DEMO3] Channel_2 gain  : {1} db", sn, Target_db);
+		Console::WriteLine("[{0}][DEMO3] Channel_2 phase : 30 deg", sn, Target_ch2_deg);
+		Console::WriteLine("[{0}][DEMO3] Channel_3 gain  : {1} db", sn, Target_db);
+		Console::WriteLine("[{0}][DEMO3] Channel_3 phase : 45 deg", sn, Target_ch3_deg);
+		Console::WriteLine("[{0}][DEMO3] Channel_4 gain  : {1} db", sn, Target_db);
+		Console::WriteLine("[{0}][DEMO3] Channel_4 phase : 60 deg", sn, Target_ch4_deg);
 		system("pause");
 
 		board = 1;
 
 		channel = 1;
-		double Target_db = 15;
-		int Target_deg = 15;
-		instance->setChannelGainPhase(board, channel, Target_db, Target_deg, sn);
+		instance->setChannelGainPhase(board, channel, Target_db, Target_ch1_deg, sn);
 
 		channel = 2;
-		Target_db = 15;
-		Target_deg = 30;
-		instance->setChannelGainPhase(board, channel, Target_db, Target_deg, sn);
+		instance->setChannelGainPhase(board, channel, Target_db, Target_ch2_deg, sn);
 
 		channel = 3;
-		Target_db = 15;
-		Target_deg = 45;
-		instance->setChannelGainPhase(board, channel, Target_db, Target_deg, sn);
+		instance->setChannelGainPhase(board, channel, Target_db, Target_ch3_deg, sn);
 
 		channel = 4;
-		Target_db = 15;
-		Target_deg = 60;
-		instance->setChannelGainPhase(board, channel, Target_db, Target_deg, sn);
+		instance->setChannelGainPhase(board, channel, Target_db, Target_ch4_deg, sn);
 
 		Console::WriteLine("======================================================");
-		Console::WriteLine("[DEMO4] BeamSteering Control");
+		Console::WriteLine("[{0}][DEMO4] BeamSteering Control", sn);
 		system("pause");
-		Console::WriteLine("[DEMO4] Channel gain  : 12 db");
-		Console::WriteLine("[DEMO4] Beam angle : 15 ");
 
 		Target_db = 12;
-		int Target_angle_x = 15;
-		int Target_angle_y = 0;
-		instance->setBeamXY(Target_db, Target_angle_x, Target_angle_y, sn);
+		int Target_theta = 15;
+		int Target_phi = 0;
+
+		Console::WriteLine("[{0}][DEMO4] Channel gain  : {1} db", sn, Target_db);
+		Console::WriteLine("[{0}][DEMO4] Theta : {1} ", sn, Target_theta);
+		Console::WriteLine("[{0}][DEMO4] Phi : {1} ", sn, Target_phi);
+
+		instance->setBeamAngle(Target_db, Target_theta, Target_phi, sn);
 	}
 
 	Console::WriteLine("======================================================");
 	Console::WriteLine("[DEMO] End");
 	system("pause");
+
+	return 0;
 }
