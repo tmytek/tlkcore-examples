@@ -1,156 +1,258 @@
-# BBox API Documentation
+# **BBox API Documentation**
 
-Sample Code version : v1.4.0
+## **Getting Started**
 
-API Version: v3.3.15.10
+- Sample Code version : v1.4.0
 
-Release date: June., 2022
+- API Version: v3.3.15.10
 
-Download Link : [Link](https://github.com/tmytek/bbox-api/releases/tag/v1.3.1)
+- Release date: June., 2022
 
-## Introduction
+- Latest release : [Download Link](https://github.com/tmytek/bbox-api/releases/tag/v1.4.0)
+
+<!-- toc -->
+- Overview
+    - [Introduction](#Introduction)
+    - [Prerequisites](#Prerequisites)
+        - [Network settings](#Network-settings)
+        - [Python Environment Setup](#Python-Environment-Setup)
+        - [Visual C++ and Visual C# Environment](#Visual-C++-and-Visual-C#-Environment)
+    - [Documentation](#Documentation)
+        - [Python](#Python)
+        - [C++](#C++)
+        - [C#](#C#)
+        - [Labview](#Labview)
+    - [BBox 5G Series API Usage](#BBox-5G-Series-API-Usage)
+        - [ScanningDevice : Query the Active Devices Information on Ethernet](#ScanningDevice-:-Query-the-Active-Devices-Information-on-Ethernet) 
+        - [Initialize the Default Device Settings](#Initialize-the-Default-Device-Settings) 
+        - [getTxRxMode : Query Device Operating Mode](#getTxRxMode-:-Query-Device-Operating-Mode) 
+        - [SwitchTxRxMode : Set Device Operating Mode](#SwitchTxRxMode-:-Set-Device-Operating-Mode) 
+        - [setBeamAngle : Set Device Beam Steering Angle](#setBeamAngle-:-Set-Device-Beam-Steering-Angle) 
+        - [setChannelGainPhase : Set Device channel Gain and Phase settings](#setChannelGainPhase-:-Set-Device-channel-Gain-and-Phase-settings)
+        - [switchChannelPower : Set Device channel power on or off](#switchChannelPower-:-Set-Device-channel-power-on-or-off) 
+
+
+<!-- tocstop -->
+
+## **Introduction**
 
 BBox API helps developers building their own applications. The release format is DLL and currently only support Windows operating system. The tested environment is Visual Studio community 2019 and LabView 2019.
 
 Every model has its own sample code. Please refer to the sample code inside each folder for different programming language.
 
-# Prerequisites : Network settings
+## **Prerequisites**
 
-Check network connection : Open TMXLAB Kit to make sure device can be connected
+### **Network settings**
 
-![](./images/image_5.png)
+- Check network connection : Open TMXLAB Kit to make sure device can be connected
 
-![](./images/image_6.png)
+    ![](./images/image_5.png)
 
-
-## Prerequisites : Python
-
-Python version  : python-3.7.7 32-bit : [Link](https://www.python.org/downloads/release/python-377/)
-
-External modules can be install with Setup.bat in pre-install/
-You also could install pythonnet by launching <pre><code>pre-install\Setup.bat</code></pre> 
-    ![](./images/image_2.png)
+    ![](./images/image_6.png)
 
 
-## Prerequisites : Visual C++ and Visual C#
+### **Python Environment Setup**
 
-Step 1 :
+- Python version  : python-3.7.7 32-bit : [Download Link](https://www.python.org/downloads/release/python-377/)
 
-Visual Studio version : 2019 community :  [Link](https://visualstudio.microsoft.com/zh-hant/downloads/)
+- External modules can be install with Setup.bat in pre-install/
 
-Step 2 : Select targets : Install and Update 
+<pre><code>$ bbox-api\pre-install\Setup.bat</code></pre> 
+
+![](./images/image_2.png)
+
+
+### **Visual C++ and Visual C# Environment**
+
+- Step 1 :
+Visual Studio version : 2019 community : [[Download Link](https://visualstudio.microsoft.com/zh-hant/downloads/)]
+
+- Step 2 : Select targets : Install and Update 
 ![](./images/image_1.png)
 
-Step 3 : Disable Visual_studio just my code : [Ref_Link](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)
-
+- Step 3 : Disable Visual_studio just my code : [[Ref_Link](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)]
 ![](./images/image_3.png)
 
-Final Step : Run sample code : [File_Link](https://github.com/tmytek/bbox-api/blob/master/example/BBoxLite/second_generation/Python/BBOXLITE_DEMO.py)
+- Final Step : BBoxLite 5G sample code : [[Download Link](https://github.com/tmytek/bbox-api/blob/master/example/BBoxLite/second_generation/Python/BBOXLITE_DEMO.py)]
 
-    $ python BBOXLITE_DEMO.py
+```
+"""
+DEMO1 : Switch TX Mode
 
-    DEMO1 : Switch TX mode
+DEMO2 : Channel 1 Power Off
 
-    DEMO2 : Off channel 1 power
+DEMO3 : Channel Gain/Phase Control
 
-    DEMO3 : Channel Gain/Phase control
+DEMO4 : Device Beam Steering Control
+"""
 
-    DEMO4 : Beam Steering control
+$ python BBOXLITE_DEMO.py
+```
 
-## Documentation
+## **Documentation**
 
-### Python 
+### *Python** 
 
-[BBoxOne 5G Document](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/Python)
+- [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/Python)
 
-[BBoxLite 5G Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/Python)
-
-### C++
-
-[BBoxOne 5G Document](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/C%2B%2B)
-
-[BBoxLite 5G Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%2B%2B)
-
-### C#
-
-[BBoxOne 5G Document](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/C%23)
-
-[BBoxLite 5G Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%23)
-
-### Labview
-
-[BBoxOne 5G Document](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/LabView2019)
-
-[BBoxLite 5G Document](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/LabView2017/BBoxLite28A)
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/Python)
 
 
-# BBoxOne 5G API Usage
-### ScanningDevice
+### **C++**
+
+- [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%2B%2B)
+
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/C%2B%2B)
+
+
+
+### **C#**
+
+- [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%23)
+
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/C%23)
+
+### **Labview**
+
+- [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/LabView2017/BBoxLite28A)
+
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/LabView2019)
+
+
 ---
-    public string[] ScanningDevice(DEV_SCAN_MODE scanMode)
-| Type          | Name     | Value                |
-| -             | -        | -                    |
-| DEV_SCAN_MODE | scanMode | Normal : 0, Fast : 1 |
-
-Return scan results from devices
-
-### Init
+## **BBox 5G Series API Usage**
+### **ScanningDevice : Query the Active Devices Information on Ethernet**
 ---
-    public int Init(sn, dev_type, idx)
-| Type    | Name        | Value                           |
-| -       | -           | -                               |
-| String  | sn          | Serial Numnber from scan result |
-| int     | dev_type    | Type from scan result           |
-| int     | idx         | Index in scan result            |
 
-Return integer type status code.
+```
+public string[] ScanningDevice(DEV_SCAN_MODE scanMode)
+```
 
-### getTxRxMode
+### ***Function definition***
+
+| Parameter Type          | Name     | value    | Note        |
+| ---                     | ---      | ---      | ---         |
+| Integer (DEV_SCAN_MODE) | scanMode | 0        | Normal mode |
+
+
+| Return Value Type      | Name        | Value                              | Note |
+| ---                    | ---         | ---                                | ---  |
+| String Array           | Device Info | { "D2104L011-28,192.168.100.111,9", "D2104L012-28,192.168.100.112,9" } | { "Device1_SN,Device1_IP,Device1_type", "Device2_SN,Device2_IP,Device2_type" } |
+
+### **Init : Initialize the Default Device Settings**
 ---
-    // Get Device Mode  with SN. Return integer type value.
 
-    public int getTxRxMode(String sn); 
+```
+public int Init(sn, dev_type, idx)
+```
 
-Return 1 if Tx mode, and 2 if Rx mode.
+### ***Function definition***
 
-### SwitchTxRxMode
+| Parameter Type          | Name     | value          | Note            |
+| ---                     | ---      | ---            | ---             |
+| String                  | sn       | "D2104L011-28" | Serial Numnber from ScanningDevice return sn value |
+| int                     | dev_type | 9              | Device Type from ScanningDevice return Device type value |
+| int                     | idx      | 0              | default value   |
+
+
+| Return Value Type      | Name        | Value                              | Note          |
+| ---                    | ---         | ---                                | ---           |
+| Integer                | Return Code | 0                                  | API status OK |
+
+
+### **getTxRxMode : Query Device Operating Mode**
 ---
-    public int SwitchTxRxMode(int mode, String sn)
-| Type   | Name  | Value                |
-| -      | -     | -                    |
-| int    | mode  | Tx : 1, Rx : 2       |
-| String | sn    | Device serial number |
 
-## setBeamAngle
----
-    public string setBeamAngle(double db, int theta, int phi, String sn)
-| Type         | Name        | Value                 |
-| -            | -           | -                     |
-| double       | db          | Gain value            |
-| int          | theta       | Theta value           |
-| int          | phi         | Phi value             |
-| String       | sn          | Device serial number  |
+```
+public int getTxRxMode(String sn); 
+```
 
-### setChannelGainPhase
+| Parameter Type          | Name     | value          | Note            |
+| ---                     | ---      | ---            | ---             |
+| String                  | sn       | "D2104L011-28" | Serial Numnber from ScanningDevice return sn value |
+
+
+| Return Value Type      | Name        | Value        | Note          |
+| ---                    | ---         | ---          | ---           |
+| Integer                | Mode        | 1            | Standby : 0, TX : 1, RX : 2 |
+
+### **SwitchTxRxMode : Set Device Operating Mode**
 ---
-    public string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
-| Type      | Name        | Value                |
-| -         | -           | -                    |
-| int       | board       | Board number   : 1-4 |
-| int       | ch          | Channel number : 1-4 |
-| double    | db          | Target db            |
-| int       | phase       | Target deg           |
-| String    | sn          | Device serial number |
+
+```
+public int SwitchTxRxMode(int mode, String sn)
+```
+
+### ***Function definition***
+
+| Parameter Type          | Name     | value          | Note                 |
+| ---                     | ---      | ---            | ---                  |
+| Integer                 | mode     | 1              | Tx : 1, Rx : 2       |
+| String                  | sn       | "D2104L011-28" | Device serial number |
+
+| Return Value Type      | Name        | Value        | Note          |
+| ---                    | ---         | ---          | ---           |
+| Integer                | Return Code | 0            | API status OK |
+
+### **setBeamAngle : Set Device Beam Steering Angle**
+---
+
+```
+public int setBeamAngle(double db, int theta, int phi, String sn)
+```
+
+### ***Function definition***
+
+| Parameter Type          | Name     | value                 | Note                 |
+| ---                     | ---      | ---                   | ---                  |
+| double                  | db       | 10                    | DB in dynamic range  |
+| int                     | theta    | 15                    | Theta value          |
+| int                     | phi      | 180                   | Phi value            |
+| String                  | sn       | "D2104L011-28"        | Device serial number |
+
+| Return Value Type      | Name        | Value        | Note          |
+| ---                    | ---         | ---          | ---           |
+| Integer                | Return Code | 0            | API status OK |
+
+### **setChannelGainPhase : Set Device channel Gain and Phase settings**
+---
+
+```
+public string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
+```
+
+### ***Function definition***
+
+| Parameter Type          | Name            | value           | Note                                                                |
+| ---                     | ---             | ---             | ---                                                                 |
+| int                     | board           | 1               | (BBoxLite) Board number : 1 , (BBoxOne) Board number in range(1, 4) |
+| int                     | ch              | 1               | (BBoxLite/BBoxOne) Channel number in range(1,4)                     |
+| double                  | db              | 10              | db in dynamic range                                                 |
+| int                     | phase           | 45              | deg in range(0,355,5)                                               |
+| String                  | sn              | "D2104L011-28"  | Device serial number                                                |
+
+| Return Value Type      | Name          | Value           | Note          |
+| ---                    | ---           | ---             | ---           |
+| String                 | Return Status | "OK"            | API status OK |
 
 ----------
-### switchChannelPower
-    public string switchChannelPower(int board, int ch, int sw, string sn)
-| Type      | Name        | Value                         |
-| -         | -           | -                             |
-| int       | board       | Board number   : 1-4          |
-| int       | ch          | Channel number : 1-4          |
-| int       | sw          | switch value   : ON 0 , OFF 1 |
-| String    | sn          | Device serial number          |
+### **switchChannelPower : Set Device channel power on or off**
+---
+
+```
+public string switchChannelPower(int board, int ch, int sw, string sn)
+```
+
+| Parameter Type          | Name            | value           | Note                                                                |
+| ---                     | ---             | ---             | ---                                                                 |
+| int                     | board           | 1               | (BBoxLite) Board number : 1 , (BBoxOne) Board number in range(1, 4) |
+| int                     | ch              | 1               | (BBoxLite/BBoxOne) Channel number in range(1,4)                     |
+| int                     | sw              | 1               | (BBoxLite/BBoxOne) Channel On/Off : ON - 0 , OFF - 1                |
+| String                  | sn              | "D2104L011-28 " | Device serial number                                                |
+
+| Return Value Type      | Name          | Value           | Note          |
+| ---                    | ---           | ---             | ---           |
+| String                 | Return Status | "OK"            | API status OK |
 
 ---
 
