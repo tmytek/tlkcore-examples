@@ -1,4 +1,4 @@
-# **BBox API Documentation**
+# **BBox API Documentation** 
 
 ## **Getting Started**
 
@@ -8,9 +8,10 @@
 
 - Release date: June., 2022
 
-- Latest release : [Download Link](https://github.com/tmytek/bbox-api/releases/tag/v1.4.0)
+- Latest release : [[Download Link](https://github.com/tmytek/bbox-api/releases/tag/v1.4.0)]
 
 <!-- toc -->
+
 - Overview
     - [Introduction](#Introduction)
     - [Prerequisites](#Prerequisites)
@@ -38,7 +39,6 @@
         - [switchChannelPower](#switchChannelPower)
             - [Set Device channel power on or off](#Set-Device-channel-power-on-or-off) 
 
-
 <!-- tocstop -->
 
 ## **Introduction**
@@ -60,7 +60,7 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 ### **Python Environment Setup**
 
-- Python version  : python-3.7.7 32-bit : [Download Link](https://www.python.org/downloads/release/python-377/)
+- Python version  : python-3.7.7 32-bit : [[Download Link](https://www.python.org/downloads/release/python-377/)]
 
 - External modules can be install with Setup.bat in pre-install/
 
@@ -74,10 +74,7 @@ Every model has its own sample code. Please refer to the sample code inside each
 - Step 1 :
 Visual Studio version : 2019 community : [[Download Link](https://visualstudio.microsoft.com/zh-hant/downloads/)]
 
-- Step 2 : Select targets : Install and Update 
-![](./images/image_1.png)
-
-- Step 3 : Disable Visual_studio just my code : [[Ref_Link](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)]
+- Step 2 : Disable Visual_studio just my code : [[Ref_Link](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)]
 ![](./images/image_3.png)
 
 - Final Step : BBoxLite 5G sample code : [[Download Link](https://github.com/tmytek/bbox-api/blob/master/example/BBoxLite/second_generation/Python/BBOXLITE_DEMO.py)]
@@ -215,12 +212,12 @@ public int setBeamAngle(double db, int theta, int phi, String sn)
 
 ### ***Function definition***
 
-| Parameter Type          | Name     | value                 | Note                 |
-| ---                     | ---      | ---                   | ---                  |
-| double                  | db       | 10                    | DB in dynamic range  |
-| int                     | theta    | 15                    | Theta value          |
-| int                     | phi      | 180                   | Phi value            |
-| String                  | sn       | "D2104L011-28"        | Device serial number |
+| Parameter Type          | Name     | value                 | Note                                                             |
+| ---                     | ---      | ---                   | ---                                                              |
+| double                  | db       | 10                    | db in dynamic range                                              |
+| int                     | theta    | 15                    | (BBoxLite/BBoxOne)Theta value in range(0, 45)                    |
+| int                     | phi      | 180                   | (BBoxLite)Phi value 0 or 180, (BBoxOne)Phi value in range(0, 180)|
+| String                  | sn       | "D2104L011-28"        | Device serial number                                             |
 
 | Return Value Type      | Name        | Value        | Note          |
 | ---                    | ---         | ---          | ---           |
