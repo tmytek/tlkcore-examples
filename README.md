@@ -23,13 +23,20 @@
         - [C#](#C#)
         - [Labview](#Labview)
     - [BBox 5G Series API Usage](#BBox-5G-Series-API-Usage)
-        - [ScanningDevice : Query the Active Devices Information on Ethernet](#ScanningDevice-:-Query-the-Active-Devices-Information-on-Ethernet) 
-        - [Initialize the Default Device Settings](#Initialize-the-Default-Device-Settings) 
-        - [getTxRxMode : Query Device Operating Mode](#getTxRxMode-:-Query-Device-Operating-Mode) 
-        - [SwitchTxRxMode : Set Device Operating Mode](#SwitchTxRxMode-:-Set-Device-Operating-Mode) 
-        - [setBeamAngle : Set Device Beam Steering Angle](#setBeamAngle-:-Set-Device-Beam-Steering-Angle) 
-        - [setChannelGainPhase : Set Device channel Gain and Phase settings](#setChannelGainPhase-:-Set-Device-channel-Gain-and-Phase-settings)
-        - [switchChannelPower : Set Device channel power on or off](#switchChannelPower-:-Set-Device-channel-power-on-or-off) 
+        - [ScanningDevice](#ScanningDevice)
+            - [Query the Active Devices Information on Ethernet](#Query-the-Active-Devices-Information-on-Ethernet)
+        - [Init](#Init)
+            - [Initialize the Default Device Settings](#Initialize-the-Default-Device-Settings) 
+        - [getTxRxMode](#getTxRxMode)
+            - [Query Device Operating Mode](#Query-Device-Operating-Mode)
+        - [SwitchTxRxMode](#SwitchTxRxMode)
+            - [Set Device Operating Mode](#Set-Device-Operating-Mode) 
+        - [setBeamAngle](#setBeamAngle)
+            - [Set Device Beam Steering Angle](#Set-Device-Beam-Steering-Angle) 
+        - [setChannelGainPhase](#setChannelGainPhase)
+            - [Set Device channel Gain and Phase settings](#Set-Device-channel-Gain-and-Phase-settings)
+        - [switchChannelPower](#switchChannelPower)
+            - [Set Device channel power on or off](#Set-Device-channel-power-on-or-off) 
 
 
 <!-- tocstop -->
@@ -121,14 +128,15 @@ $ python BBOXLITE_DEMO.py
 
 ---
 ## **BBox 5G Series API Usage**
-### **ScanningDevice : Query the Active Devices Information on Ethernet**
+### ***ScanningDevice***
+#### **Query the Active Devices Information on Ethernet**
 ---
 
 ```
 public string[] ScanningDevice(DEV_SCAN_MODE scanMode)
 ```
 
-### ***Function definition***
+#### ***Function definition***
 
 | Parameter Type          | Name     | value    | Note        |
 | ---                     | ---      | ---      | ---         |
@@ -139,14 +147,15 @@ public string[] ScanningDevice(DEV_SCAN_MODE scanMode)
 | ---                    | ---         | ---                                | ---  |
 | String Array           | Device Info | { "D2104L011-28,192.168.100.111,9", "D2104L012-28,192.168.100.112,9" } | { "Device1_SN,Device1_IP,Device1_type", "Device2_SN,Device2_IP,Device2_type" } |
 
-### **Init : Initialize the Default Device Settings**
+### **Init**
+#### ***Initialize the Default Device Settings***
 ---
 
 ```
 public int Init(sn, dev_type, idx)
 ```
 
-### ***Function definition***
+#### ***Function definition***
 
 | Parameter Type          | Name     | value          | Note            |
 | ---                     | ---      | ---            | ---             |
@@ -160,7 +169,8 @@ public int Init(sn, dev_type, idx)
 | Integer                | Return Code | 0                                  | API status OK |
 
 
-### **getTxRxMode : Query Device Operating Mode**
+### **getTxRxMode**
+#### ***Query Device Operating Mode***
 ---
 
 ```
@@ -176,14 +186,15 @@ public int getTxRxMode(String sn);
 | ---                    | ---         | ---          | ---           |
 | Integer                | Mode        | 1            | Standby : 0, TX : 1, RX : 2 |
 
-### **SwitchTxRxMode : Set Device Operating Mode**
+### **SwitchTxRxMode**
+#### ***Set Device Operating Mode***
 ---
 
 ```
 public int SwitchTxRxMode(int mode, String sn)
 ```
 
-### ***Function definition***
+#### ***Function definition***
 
 | Parameter Type          | Name     | value          | Note                 |
 | ---                     | ---      | ---            | ---                  |
@@ -194,7 +205,8 @@ public int SwitchTxRxMode(int mode, String sn)
 | ---                    | ---         | ---          | ---           |
 | Integer                | Return Code | 0            | API status OK |
 
-### **setBeamAngle : Set Device Beam Steering Angle**
+### **setBeamAngle**
+#### ***Set Device Beam Steering Angle***
 ---
 
 ```
@@ -214,7 +226,8 @@ public int setBeamAngle(double db, int theta, int phi, String sn)
 | ---                    | ---         | ---          | ---           |
 | Integer                | Return Code | 0            | API status OK |
 
-### **setChannelGainPhase : Set Device channel Gain and Phase settings**
+### **setChannelGainPhase**
+#### ***Set Device channel Gain and Phase settings***
 ---
 
 ```
@@ -236,7 +249,8 @@ public string setChannelGainPhase(int board, int ch, double db, int phase, strin
 | String                 | Return Status | "OK"            | API status OK |
 
 ----------
-### **switchChannelPower : Set Device channel power on or off**
+### **switchChannelPower**
+#### ***Set Device channel power on or off***
 ---
 
 ```
