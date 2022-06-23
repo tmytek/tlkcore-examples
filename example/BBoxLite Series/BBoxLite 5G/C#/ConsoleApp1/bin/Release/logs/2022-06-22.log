@@ -1,0 +1,44 @@
+2022-06-22 18:28:18.8156|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxLite Series\BBoxLite 5G\C#\ConsoleApp1\bin\Release\NLog.config
+2022-06-22 18:28:18.8346|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-06-22 18:28:18.8346|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-06-22 18:28:18.8346|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][Remove_device_information] Remove all device information
+2022-06-22 18:28:18.9317|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][SendRecvClients] Source_IP:Port : 172.25.208.1:0
+2022-06-22 18:28:21.0566|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][SendRecvClients] Source_IP:Port : 192.168.56.1:0
+2022-06-22 18:28:23.1687|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][SendRecvClients] Source_IP:Port : 192.168.100.222:0
+2022-06-22 18:28:25.2844|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2022-06-22 18:28:25.2844|ERROR|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][Init] Init failed : Couldn't find SN from device list
+2022-06-22 18:28:25.3108|ERROR|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][ReflectFunction][Result] No device exists
+2022-06-22 18:32:55.8910|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxLite Series\BBoxLite 5G\C#\ConsoleApp1\bin\Release\NLog.config
+2022-06-22 18:32:55.9100|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-06-22 18:32:55.9100|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-06-22 18:32:55.9100|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][Remove_device_information] Remove all device information
+2022-06-22 18:32:55.9923|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][SendRecvClients] Source_IP:Port : 172.25.208.1:0
+2022-06-22 18:32:58.1159|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][SendRecvClients] Source_IP:Port : 192.168.56.1:0
+2022-06-22 18:33:00.2352|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][SendRecvClients] Source_IP:Port : 192.168.100.222:0
+2022-06-22 18:33:00.3474|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][Set_device_information] Add device information :
+2022-06-22 18:33:00.3474|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2022-06-22 18:33:02.4637|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-06-22 18:33:02.6142|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2022-06-22 18:34:58.9830|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxLite Series\BBoxLite 5G\C#\ConsoleApp1\bin\Release\NLog.config
+2022-06-22 18:34:59.0070|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-06-22 18:34:59.0070|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-06-22 18:34:59.0070|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][Remove_device_information] Remove all device information
+2022-06-22 18:34:59.1310|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][SendRecvClients] Source_IP:Port : 172.25.208.1:0
+2022-06-22 18:35:01.2546|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][SendRecvClients] Source_IP:Port : 192.168.56.1:0
+2022-06-22 18:35:03.3743|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][SendRecvClients] Source_IP:Port : 192.168.100.222:0
+2022-06-22 18:35:03.4954|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][Set_device_information] Add device information :
+2022-06-22 18:35:03.4954|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2022-06-22 18:35:05.5994|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-06-22 18:35:05.7130|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2022-06-22 18:35:05.7130|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2022-06-22 18:35:05.7269|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2022-06-22 18:35:06.1092|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2022-06-22 18:35:06.1142|WARN|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Beam_Pattern_Configuration][check_beam_table] Beam table not exist
+2022-06-22 18:35:06.1827|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Beam_Pattern_Configuration][generate_default_beam_table] Generate default Beam_Configuration
+2022-06-22 18:35:06.2258|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D00000000-00_28GHz.json
+2022-06-22 18:35:06.6652|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2022-06-22 18:35:06.6652|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.11, Calibration table version : 2.0.0
+2022-06-22 18:35:06.6652|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE28A][LoadAAKitInfo][D00000000-00] AAkit file path : files\AAKIT_TMYTEK_28LITE_4x4_C2104L020-28.csv
+2022-06-22 18:35:06.6773|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE28A][LoadAAKitInfo][D00000000-00] AAkit file path : files\AAKIT_TMYTEK_39LITE_4x4_A2104L004-39.csv
+2022-06-22 18:35:06.6773|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-06-22 18:35:06.6773|INFO|BBOXONE_DEMO.BBOXONE_CONTROL_DEMO|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
