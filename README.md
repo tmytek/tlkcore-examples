@@ -95,7 +95,7 @@ $ python BBOXLITE_DEMO.py
 
 ## **Documentation**
 
-### *Python** 
+### **Python** 
 
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/Python)
 
