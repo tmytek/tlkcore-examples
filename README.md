@@ -20,7 +20,7 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 ## **Getting Started**
 
-- Sample Code Version : v1.4.1
+- Sample Code Version : v1.5.0
 
 - API Version: v3.3.15.14
 
