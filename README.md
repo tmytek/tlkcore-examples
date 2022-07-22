@@ -2,7 +2,7 @@
 
 ## **Introduction**
 
-TMYTEK Box Series API helps developing mmwave(n257/n260) beamforming and beam steering applications with BBox 5G Series and UDBox 5G Series(mmwave Up-down converter). 
+TMYTEK Box Series API helps developing mmwave(n257/n260) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**. 
 
 The .dll format release is windows shared library and test on visual studio community 2019 and labView 2019.
 
@@ -33,25 +33,25 @@ Every model has its own sample code. Please refer to the sample code inside each
         - [C++](#C++)
         - [C#](#C#)
         - [Labview](#Labview)
-    - [BBox Common API Usage](#BBox-Series-Common-API-Usage)
-        - [ScanningDevice](#ScanningDevice) : Query the Active Devices Information on Ethernet
-        - [Init](#Init) : Initialize the Default Device Settings
-        - [getTxRxMode](#getTxRxMode) : Query Device Operating Mode
-        - [SwitchTxRxMode](#SwitchTxRxMode) : Set Device Operating Mode
-    - [BBoard 5G Series API Usage](#BBox-5G-Series-API-Usage)
-        - [switchChannelPower](#switchChannelPower)   : Set Device channel power on or off
-        - [setChannelPhaseStep](#setChannelPhaseStep) : Set Device channel eleemnt phase step
-        - [setChannelGainStep](#setChannelGainStep)   : Set Device channel element gain step
-        - [setCommonGainStep](#setCommonGainStep)     : Set Device Common common gain step
-        - [getTemperatureADC](#getTemperatureADC)     : Get Device RF board temperature adc value 
-    - [BBox Lite 5G Series API Usage](#BBox-5G-Series-API-Usage)
-        - [switchChannelPower](#switchChannelPower) : Set Device channel power on or off
-        - [setChannelGainPhase](#setChannelGainPhase) : Set Device channel Gain and Phase settings
-        - [setBeamAngle](#setBeamAngle) : Set Device Beam Steering Angle
-    - [BBox One 5G Series API Usage](#BBox-5G-Series-API-Usage)
-        - [switchChannelPower](#switchChannelPower) : Set Device channel power on or off
-        - [setChannelGainPhase](#setChannelGainPhase) : Set Device channel Gain and Phase settings
-        - [setBeamAngle](#setBeamAngle) : Set Device Beam Steering Angle
+    - [BBox Series Common API Usage](#BBox-Series-Common-API-Usage)
+        - [ ScanningDevice ]      : Query the Active Devices Information on Ethernet
+        - [ Init ]                : Initialize the Default Device Settings
+        - [ getTxRxMode ]         : Query Device Operating Mode
+        - [ SwitchTxRxMode ]      : Set Device Operating Mode
+    - [BBoard 5G Series API Usage](#BBoard-5G-Series-API-Usage)
+        - [ switchChannelPower ]  : Set Device channel power on or off
+        - [ setChannelPhaseStep ] : Set Device channel eleemnt phase step
+        - [ setChannelGainStep ]  : Set Device channel element gain step
+        - [ setCommonGainStep ]   : Set Device Common common gain step
+        - [ getTemperatureADC ]   : Get Device RF board temperature adc value 
+    - [BBoxLite 5G Series API Usage](#BBoxLite-5G-Series-API-Usage)
+        - [ switchChannelPower ]  : Set Device channel power on or off
+        - [ setChannelGainPhase ] : Set Device channel Gain and Phase settings
+        - [ setBeamAngle ] : Set Device Beam Steering Angle
+    - [BBoxOne 5G Series API Usage](#BBoxOne-5G-Series-API-Usage)
+        - [ switchChannelPower ]  : Set Device channel power on or off
+        - [ setChannelGainPhase ] : Set Device channel Gain and Phase settings
+        - [ setBeamAngle ]        : Set Device Beam Steering Angle
     - [UDBox API Usage](#)
 
 
