@@ -1,0 +1,19 @@
+2022-07-22 12:41:15.9886|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxLite Series\BBoxLite 5G\C++\ConsoleApplication1\Release\NLog.config
+2022-07-22 12:41:16.0076|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-07-22 12:41:16.0076|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-07-22 12:41:16.0076|INFO|main|[Queryer][Remove_device_information] Remove all device information
+2022-07-22 12:41:16.0166|INFO|main|[Virtual_Device_Interface][read_configuration_files] Configuration directory was created at 7/22/2022 12:41:16 PM.
+2022-07-22 12:41:16.1136|INFO|main|[Queryer][SendRecvClients] Source_IP:Port : 192.168.100.222:0
+2022-07-22 12:41:16.2416|INFO|main|[Queryer][Set_device_information] SN : D2104L011-28, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2022-07-22 12:41:18.3598|INFO|main|[Queryer][SendRecvClients] Source_IP:Port : 192.168.56.1:0
+2022-07-22 12:41:20.4701|INFO|main|[Queryer][SendRecvClients] Source_IP:Port : 172.24.240.1:0
+2022-07-22 12:41:22.5851|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-07-22 12:41:23.0209|INFO|main|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.100.111] InstanceInit return : OK
+2022-07-22 12:41:23.0209|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Phi-A mode
+2022-07-22 12:41:23.1336|INFO|main|[BBOXLITE28A][captureInfoFromTable][D2104L011-28] Current table version : 2.0.0 , at freqency 28
+2022-07-22 12:41:23.5673|INFO|main|[BBOXLITE28A][LoadCalibrationInfo][D2104L011-28] Load Calibration table Complete.
+2022-07-22 12:41:23.6803|INFO|main|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2104L011-28_28GHz.json
+2022-07-22 12:41:24.2265|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Load Beam table into device complete
+2022-07-22 12:41:24.2265|INFO|main|[BBOXLITE28A][setOperatingFreq][D2104L011-28] Firmware version : v1.2.11, Calibration table version : 2.0.0
+2022-07-22 12:41:24.2405|INFO|main|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-07-22 12:41:24.2405|INFO|main|[BBoxDevice][selectAAKit][D2104L011-28] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT

@@ -5,12 +5,8 @@ import csv
 import os
 import numpy as np
 
-dir_path = '..\\..\\..\\..\\'
-os.chdir(os.path.abspath(dir_path))
-
 path = '.\\BBoxAPI.dll'
 clr.AddReference(os.path.abspath(path))
-
 
 
 from BBoxAPI import *

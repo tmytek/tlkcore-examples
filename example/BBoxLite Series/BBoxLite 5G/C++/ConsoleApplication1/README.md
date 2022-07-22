@@ -52,39 +52,3 @@ The core function of BBox is to control beam steering. The following code snippe
     b.setBeamAngle(15, 15, 0, sn);
 
  ****
-
-
-# API Usage
-## Init
----
-    public String^ Init(sn, 0/*BBoxOne*/, 0);
-
-Return integer type status code.
-
-## getTxRxMode
----
-    // Get Tx/Rx Mode of device with SN. Return TxRxMode table value.
-    public int getTxRxMode(String^ sn); 
-    
-Return 1 if Tx mode, and 2 if Rx mode.
-
-## SwitchTxRxMode
----
-    public int SwitchTxRxMode(int mode, String^ sn);
-| Type          | Name    | Value                |
-| -             | -       | -                    |
-| int           | mode    | Tx : 1, Rx : 2       |
-| String^       | sn      | Device serial number |
-
-## setBeamAngle
----
-    public string setBeamAngle(double db, int theta, int phi, String sn);
-| Type         | Name        | Value                 |
-| -            | -           | -                     |
-| double       | db          | Gain value            |
-| int          | theta       | Theta value           |
-| int          | phi         | Phi value             |
-| String^      | sn          | Device serial number  |
-
-
-
