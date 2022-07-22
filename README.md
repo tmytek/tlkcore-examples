@@ -2,9 +2,8 @@
 
 ## **Introduction**
 
-[![Watch the video](https://img.youtube.com/vi/TRZwXUKOqUU/default.jpg)](https://www.youtube.com/watch?v=TRZwXUKOqUU&t=27s)
 
-TMYTEK Box Series API helps developing mmwave(n257/n260) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**. 
+TMYTEK Box Series API helps developing mmwave( n257 / n260 ) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**. 
 
 The .dll format release is windows shared library and test on visual studio community 2019 and labView 2019.
 
@@ -12,6 +11,12 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 ![](./images/support_languages.png)
 
+
+[[ Product Video1 ](https://www.youtube.com/watch?v=-koKf-OOsVA)]
+[[ Product Video2 ](https://www.youtube.com/watch?v=TRZwXUKOqUU)]
+[[ Product Video3 ](https://www.youtube.com/watch?v=bnvj6L9CLHs)]
+
+---
 
 ## **Getting Started**
 
