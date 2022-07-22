@@ -53,7 +53,10 @@ Every model has its own sample code. Please refer to the sample code inside each
         - [ switchChannelPower ]  : Set Device channel power on or off
         - [ setChannelGainPhase ] : Set Device channel Gain and Phase settings
         - [ setBeamAngle ]        : Set Device Beam Steering Angle
-    - [UDBox API Usage](#)
+    - [UDBox API Usage](#UDBox-5G-Series-API-Usage)
+        - [ GetState ] : Get output state
+        - [ SetState ] : Set output state
+        - [ Set Freq ] : Set LO/RF/IF/Bandwidth in KHz
 
 
 <!-- tocstop -->
@@ -109,14 +112,14 @@ DEMO4 : Device Beam Steering Control
 
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/Python)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/Python)
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%20%205G/Python)
 
 
 ### **C++**
 
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%2B%2B)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/C%2B%2B)
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%20%205G/C%2B%2B)
 
 
 
@@ -124,14 +127,18 @@ DEMO4 : Device Beam Steering Control
 
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%23)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/C%23)
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/master/example/BBoxOne%20Series/BBoxOne%20%205G/C%23)
 
+
+### **Matlab**
+
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%20%205G/MatLab)
 
 ### **Labview**
 
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/LabView2017/BBoxLite28A)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/LabView2019)
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%20%205G/LabView2019)
 
 
 ## **BBox Series Common API Usage**
@@ -453,3 +460,62 @@ int setBeamAngle(double db, int theta, int phi, string sn)
 | Integer                 | Return Code   | 0            | Status OK     |
 
 ---
+
+## **UDBox 5G Series API Usage**
+
+## **GetState**
+
+```
+int GetState(int state_index, string sn)
+```
+
+### ***Function definition***
+
+| Param Type    | Param Name  | Param Value                                                                                                       |
+| ------        | ----------- | ----------------------------------------------------------------------------------------------------------------- |
+| int           | state_index | 0: Lock<br>1: CH1<br>2: CH2<br>3: 10M output<br>4: 100M output<br>5: 100M source<br>6: LED 100M<br>7: 5V<br>8: 9V |
+| string        | sn          | Device Serial Number                                                                                              |
+
+| Return Value Type       | Name          | Value        | Note          |
+| ---                     | ---           | ---          | ---           |
+| Integer                 | Return state  | 0            | state_index   |
+
+## **SetState**
+
+```
+int SetState(int state_index, int value, string sn)
+```
+
+### ***Function definition***
+
+| Param Type    | Param Name  | Param Value                                                                                                       |
+| ------        | ----------- | ----------------------------------------------------------------------------------------------------------------- |
+| int           | state_index | 0: Lock<br>1: CH1<br>2: CH2<br>3: 10M output<br>4: 100M output<br>5: 100M source<br>6: LED 100M<br>7: 5V<br>8: 9V |
+| int           | value       | value                                                                                                             |
+| string        | sn          | Device Serial Number                                                                                              |
+
+return state from the state_index
+
+| Return Value Type       | Name          | Value        | Note          |
+| ---                     | ---           | ---          | ---           |
+| Integer                 | Return state  | 0            | state_index   |
+
+## **Set Freq**
+
+```
+string SetUDFreq(double freq_ud, double freq_rf, double freq_if, double freq_bandwidth, string sn)
+```
+
+### ***Function definition***
+
+| Param Type    | Param Name     | Param Value              |
+| ------        | -------------- | ------------------------ |
+| double        | freq_ud        | UD/LO frequency(KHz)     |
+| double        | freq_rf        | RF frequency(KHz)        |
+| double        | freq_if        | IF frequency(KHz)        |
+| double        | freq_bandwidth | Bandwidth frequency(KHz) |
+| string        | sn             | Device Serial Number     |
+
+| Return Value Type       | Name          | Value        | Note          |
+| ---                     | ---           | ---          | ---           |
+| Integer                 | Return Code   | 0            | Status OK     |
