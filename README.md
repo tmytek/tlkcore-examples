@@ -33,6 +33,7 @@ Every model has its own sample code. Please refer to the sample code inside each
         - [C++](#C++)
         - [C#](#C#)
         - [Labview](#Labview)
+        - [Matlab](#Matlab)
     - [BBox Series Common API Usage](#BBox-Series-Common-API-Usage)
         - [ ScanningDevice ]      : Query the Active Devices Information on Ethernet
         - [ Init ]                : Initialize the Default Device Settings
