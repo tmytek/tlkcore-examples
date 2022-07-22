@@ -1,5 +1,15 @@
 # **TMYTEK Box Series API Documentation** 
 
+## **Introduction**
+
+TMYTEK Box Series API helps developing mmwave(n257/n260) beamforming and beam steering applications with BBox 5G Series and UDBox 5G Series(mmwave Up-down converter). 
+
+The .dll format release is windows shared library and test on visual studio community 2019 and labView 2019.
+
+Every model has its own sample code. Please refer to the sample code inside each folder for the specific programming language.
+
+![](./images/support_languages.png)
+
 ## **Getting Started**
 
 - Sample Code Version : v1.4.1
@@ -18,18 +28,22 @@
         - [Network settings](#Network-settings)
         - [Python Environment Setup](#Python-Environment-Setup)
         - [Visual C++ and Visual C# Environment](#Visual-C++-and-Visual-C#-Environment)
-    - [Documentation](#Documentation)
+    - [Sample Code Description](#Sample-Code-Description)
         - [Python](#Python)
         - [C++](#C++)
         - [C#](#C#)
         - [Labview](#Labview)
-    - [Common API Usage](#)
+    - [BBox Common API Usage](#BBox-Series-Common-API-Usage)
         - [ScanningDevice](#ScanningDevice) : Query the Active Devices Information on Ethernet
         - [Init](#Init) : Initialize the Default Device Settings
         - [getTxRxMode](#getTxRxMode) : Query Device Operating Mode
         - [SwitchTxRxMode](#SwitchTxRxMode) : Set Device Operating Mode
     - [BBoard 5G Series API Usage](#BBox-5G-Series-API-Usage)
-        - [switchChannelPower](#switchChannelPower) : Set Device channel power on or off
+        - [switchChannelPower](#switchChannelPower)   : Set Device channel power on or off
+        - [setChannelPhaseStep](#setChannelPhaseStep) : Set Device channel eleemnt phase step
+        - [setChannelGainStep](#setChannelGainStep)   : Set Device channel element gain step
+        - [setCommonGainStep](#setCommonGainStep)     : Set Device Common common gain step
+        - [getTemperatureADC](#getTemperatureADC)     : Get Device RF board temperature adc value 
     - [BBox Lite 5G Series API Usage](#BBox-5G-Series-API-Usage)
         - [switchChannelPower](#switchChannelPower) : Set Device channel power on or off
         - [setChannelGainPhase](#setChannelGainPhase) : Set Device channel Gain and Phase settings
@@ -38,18 +52,11 @@
         - [switchChannelPower](#switchChannelPower) : Set Device channel power on or off
         - [setChannelGainPhase](#setChannelGainPhase) : Set Device channel Gain and Phase settings
         - [setBeamAngle](#setBeamAngle) : Set Device Beam Steering Angle
+    - [UDBox API Usage](#)
+
 
 <!-- tocstop -->
 
-## **Introduction**
-
-TMYTEK Box Series API helps developers building their own applications. 
-
-The release format is DLL shared libraray and currently only support Windows operating system with visual studio community 2019 and labView 2019.
-
-Every model has its own sample code. Please refer to the sample code inside each folder for the specific programming language.
-
-![](./images/support_languages.png)
 
 ## **Prerequisites**
 
@@ -126,8 +133,8 @@ DEMO4 : Device Beam Steering Control
 - [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/BXO28A-315/Upgrade-API-Version/example/BBoxOne%20Series/BBoxOne%20%205G/LabView2019)
 
 
----
-## **BBoxOne 5G Series API Usage**
+## **BBox Series Common API Usage**
+
 ## ***ScanningDevice***
 #### **Query the Active Devices Information on Ethernet**
 ---
@@ -145,7 +152,7 @@ string[] ScanningDevice(DEV_SCAN_MODE scanMode)
 
 | Return Type             | Name           | Return Value                                                           | Note |
 | ---                     | ---            | ---                                                                    | ---  |
-| String Array            | Device Info    | { "D2104L011-28,192.168.100.111,9", "D2104L012-28,192.168.100.112,9" } | { "Device1_SN,Device1_IP,Device1_type", "Device2_SN,Device2_IP,Device2_type" } |
+| string Array            | Device Info    | { "D2104L011-28,192.168.100.111,9", "D2104L012-28,192.168.100.112,9" } | { "Device1_SN,Device1_IP,Device1_type", "Device2_SN,Device2_IP,Device2_type" } |
 
 ## **Init**
 #### ***Initialize the Default Device Settings***
@@ -159,7 +166,7 @@ int Init(sn, dev_type, idx)
 
 | Param Type              | Param Name    | Param Value    | Note                                                     |
 | ---                     | ---           | ---            | ---                                                      |
-| String                  | sn            | "D2104L011-28" | Serial Numnber from ScanningDevice return value       |
+| string                  | sn            | "D2104L011-28" | Serial Numnber from ScanningDevice return value          |
 | int                     | dev_type      | 9              | Device Type from ScanningDevice return Device type value |
 | int                     | idx           | 0              | default value                                            |
 
@@ -174,12 +181,12 @@ int Init(sn, dev_type, idx)
 ---
 
 ```
-int getTxRxMode(String sn)
+int getTxRxMode(string sn)
 ```
 
 | Param Type              | Param Name    | Param Value    | Note                                               |
 | ---                     | ---           | ---            | ---                                                |
-| String                  | sn            | "D2104L011-28" | Serial Numnber from ScanningDevice return value |
+| string                  | sn            | "D2104L011-28" | Serial Numnber from ScanningDevice return value    |
 
 
 | Return Type             | Name           | Return Value   | Note                                               |
@@ -191,7 +198,7 @@ int getTxRxMode(String sn)
 ---
 
 ```
-int SwitchTxRxMode(int mode, String sn)
+int SwitchTxRxMode(int mode, string sn)
 ```
 
 #### ***Function definition***
@@ -199,7 +206,7 @@ int SwitchTxRxMode(int mode, String sn)
 | Param Type              | Param Name    | Param Value    | Note                              |
 | ---                     | ---           | ---            | ---                               |
 | Integer                 | mode          | 1              | Standby : 0, Tx : 1, Rx : 2       |
-| String                  | sn            | "D2104L011-28" | Device serial number              |
+| string                  | sn            | "D2104L011-28" | Device Serial Number              |
 
 
 | Return Type             | Name           | Return Value   | Note                              |
@@ -207,152 +214,9 @@ int SwitchTxRxMode(int mode, String sn)
 | Integer                 | Return Code    | 0              | Status OK                         |
 
 
-## **switchChannelPower**
-#### ***Set Device channel power on or off***
----
-
-```
-string switchChannelPower(int board, int ch, int sw, string sn)
-```
-
-| Parameter Type          | Name            | value           | Note                                    |
-| ---                     | ---             | ---             | ---                                     |
-| int                     | board           | 1               | Board number in range(1, 4)             |
-| int                     | ch              | 1               | Channel number in range(1, 4)           |
-| int                     | sw              | 1               | Channel On/Off : ON - 0 , OFF - 1       |
-| String                  | sn              | "D2104L011-28"  | Device serial number                    |
-
-| Return Value Type       | Name            | Value           | Note          |
-| ---                     | ---             | ---             | ---           |
-| String                  | Return Status   | "OK"            | Status OK     |
-
-
-## **setChannelGainPhase**
-#### ***Set Device channel Gain and Phase settings***
----
-
-```
-string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
-```
-
-### ***Function definition***
-
-| Parameter Type          | Name            | value           | Note                                  |
-| ---                     | ---             | ---             | ---                                   |
-| int                     | board           | 1               | Board number in range(1, 4)           |
-| int                     | ch              | 1               | Channel number in range(1, 4)         |
-| double                  | db              | 10              | db in dynamic range                   |
-| int                     | phase           | 45              | deg in range(0, 355, 5)               |
-| String                  | sn              | "D2104L011-28"  | Device serial number                  |
-
-| Return Value Type       | Name            | Value           | Note          |
-| ---                     | ---             | ---             | ---           |
-| String                  | Return Status   | "OK"            | Status OK     |
-
-
-
-## **setBeamAngle**
-#### ***Set Device Beam Steering Angle***
----
-
-```
-int setBeamAngle(double db, int theta, int phi, String sn)
-```
-
-### ***Function definition***
-
-| Param Type              | Param Name    | Param Value           | Note                          |
-| ---                     | ---           | ---                   | ---                           |
-| double                  | db            | 10                    | DB in dynamic range           |
-| int                     | theta         | 15                    | Theta value in range(0, 45)   |
-| int                     | phi           | 180                   | Phi value in range (0, 180)   |
-| String                  | sn            | "D2104L011-28"        | Device serial number          |
-
-| Return Value Type       | Name          | Value        | Note          |
-| ---                     | ---           | ---          | ---           |
-| Integer                 | Return Code   | 0            | Status OK     |
 
 ---
-
-## **BBoxLite 5G Series API Usage**
-## ***ScanningDevice***
-#### **Query the Active Devices Information on Ethernet**
----
-
-```
-string[] ScanningDevice(DEV_SCAN_MODE scanMode)
-```
-
-#### ***Function definition***
-
-| Param Type              | Param Name    | Param Value    | Note        |
-| ---                     | ---           | ---            | ---         |
-| Integer (DEV_SCAN_MODE) | scanMode      | 0              | Normal mode |
-
-
-| Return Type             | Name           | Return Value                                                           | Note |
-| ---                     | ---            | ---                                                                    | ---  |
-| String Array            | Device Info    | { "D2104L011-28,192.168.100.111,9", "D2104L012-28,192.168.100.112,9" } | { "Device1_SN,Device1_IP,Device1_type", "Device2_SN,Device2_IP,Device2_type" } |
-
-## **Init**
-#### ***Initialize the Default Device Settings***
----
-
-```
-int Init(sn, dev_type, idx)
-```
-
-#### ***Function definition***
-
-| Param Type              | Param Name    | Param Value    | Note                                                     |
-| ---                     | ---           | ---            | ---                                                      |
-| String                  | sn            | "D2104L011-28" | Serial Numnber from ScanningDevice return value          |
-| int                     | dev_type      | 9              | Device Type from ScanningDevice return Device type value |
-| int                     | idx           | 0              | default value                                            |
-
-
-| Return Type             | Name           | Return Value                       | Note          |
-| ---                     | ---            | ---                                | ---           |
-| Integer                 | Return Code    | 0                                  | Status OK     |
-
-
-## **getTxRxMode**
-#### ***Query Device Operating Mode***
----
-
-```
-int getTxRxMode(String sn)
-```
-
-| Param Type              | Param Name    | Param Value    | Note                                               |
-| ---                     | ---           | ---            | ---                                                |
-| String                  | sn            | "D2104L011-28" | Serial Numnber from ScanningDevice return value    |
-
-
-| Return Type             | Name           | Return Value   | Note                                               |
-| ---                     | ---            | ---            | ---                                                |
-| Integer                 | Mode           | 1              | Standby : 0, TX : 1, RX : 2                        |
-
-## **SwitchTxRxMode**
-#### ***Set Device Operating Mode***
----
-
-```
-int SwitchTxRxMode(int mode, String sn)
-```
-
-#### ***Function definition***
-
-| Param Type              | Param Name    | Param Value    | Note                              |
-| ---                     | ---           | ---            | ---                               |
-| Integer                 | mode          | 1              | Standby : 0, Tx : 1, Rx : 2       |
-| String                  | sn            | "D2104L011-28" | Device serial number              |
-
-
-| Return Type             | Name           | Return Value   | Note                              |
-| ---                     | ---            | ---            | ---                               |
-| Integer                 | Return Code    | 0              | Status OK                         |
-
+## **BBoard 5G Series API Usage**
 
 ## **switchChannelPower**
 #### ***Set Device channel power on or off***
@@ -367,11 +231,111 @@ string switchChannelPower(int board, int ch, int sw, string sn)
 | int                     | board           | 1               | Board number : 1                        |
 | int                     | ch              | 1               | Channel number in range(1, 4)           |
 | int                     | sw              | 1               | Channel On/Off : ON - 0 , OFF - 1       |
-| String                  | sn              | "D2104L011-28"  | Device serial number                    |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
 
 | Return Value Type       | Name            | Value           | Note          |
 | ---                     | ---             | ---             | ---           |
-| String                  | Return Status   | "OK"            | Status OK     |
+| string                  | Return Status   | "OK"            | Status OK     |
+
+
+## **setChannelPhaseStep**
+#### ***Set Device channel element phase step***
+---
+
+```
+int setChannelPhaseStep(int board, int ch, int phase_step, string sn)
+```
+
+| Parameter Type          | Name            | value           | Note                                                    |
+| ---                     | ---             | ---             | ---                                                     |
+| int                     | board           | 1               | Board number : 1                                        |
+| int                     | ch              | 1               | Channel number in range(1, 4)                           |
+| int                     | phase_step      | 0               | Element gain step in range(0, 15), 5.625 deg per step   |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                                    |
+
+| Return Value Type       | Name            | Value           | Note          |
+| ---                     | ---             | ---             | ---           |
+| int                     | Return Status   | 0               | Status OK     |
+
+
+## **setChannelGainStep**
+#### ***Set Device channel element gain step***
+---
+
+```
+int setChannelGainStep(int board, int ch, int gain_step, string sn)
+```
+
+| Parameter Type          | Name            | value           | Note                                                |
+| ---                     | ---             | ---             | ---                                                 |
+| int                     | board           | 1               | Board number : 1                                    |
+| int                     | ch              | 1               | Channel number in range(1, 4)                       |
+| int                     | gain_step       | 0               | Element gain step in range(0, 15), 0.5db per step   |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                                |
+
+| Return Value Type       | Name            | Value           | Note          |
+| ---                     | ---             | ---             | ---           |
+| int                     | Return Status   | 0               | Status OK     |
+
+
+## **setCommonGainStep**
+#### ***Set Device channel common gain step***
+---
+
+```
+int setCommonGainStep(int board, int ch, int gain_step, string sn)
+```
+
+| Parameter Type          | Name            | value           | Note                                    |
+| ---                     | ---             | ---             | ---                                     |
+| int                     | board           | 1               | Board number : 1                        |
+| int                     | ch              | 1               | Channel number in range(1, 4)           |
+| int                     | gain_step       | 0               | Common gain step in range(0, 15)        |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
+
+| Return Value Type       | Name            | Value           | Note          |
+| ---                     | ---             | ---             | ---           |
+| int                     | Return Status   | 0               | Status OK     |
+
+
+## **getTemperatureADC**
+#### ***Get Device RF board temperature adc value***
+---
+
+```
+int[] getTemperatureADC(string sn)
+```
+
+| Parameter Type          | Name            | value           | Note                                    |
+| ---                     | ---             | ---             | ---                                     |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
+
+| Return Value Type       | Name            | Value           | Note                      |
+| ---                     | ---             | ---             | ---                       |
+| int[]                   | Board ADC       | 0               | Temperatrue ADC sensor    |
+
+
+---
+## **BBoxLite 5G Series API Usage**
+
+## **switchChannelPower**
+#### ***Set Device channel power on or off***
+---
+
+```
+string switchChannelPower(int board, int ch, int sw, string sn)
+```
+
+| Parameter Type          | Name            | value           | Note                                    |
+| ---                     | ---             | ---             | ---                                     |
+| int                     | board           | 1               | Board number : 1                        |
+| int                     | ch              | 1               | Channel number in range(1, 4)           |
+| int                     | sw              | 1               | Channel On/Off : ON - 0 , OFF - 1       |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
+
+| Return Value Type       | Name            | Value           | Note          |
+| ---                     | ---             | ---             | ---           |
+| string                  | Return Status   | "OK"            | Status OK     |
 
 
 ## **setChannelGainPhase**
@@ -390,11 +354,11 @@ string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
 | int                     | ch              | 1               | Channel number in range(1, 4)         |
 | double                  | db              | 10              | db in dynamic range                   |
 | int                     | phase           | 45              | deg in range(0, 355, 5)               |
-| String                  | sn              | "D2104L011-28"  | Device serial number                  |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                  |
 
 | Return Value Type       | Name            | Value           | Note          |
 | ---                     | ---             | ---             | ---           |
-| String                  | Return Status   | "OK"            | Status OK     |
+| string                  | Return Status   | "OK"            | Status OK     |
 
 
 ## **setBeamAngle**
@@ -402,7 +366,7 @@ string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
 ---
 
 ```
-int setBeamAngle(double db, int theta, int phi, String sn)
+int setBeamAngle(double db, int theta, int phi, string sn)
 ```
 
 ### ***Function definition***
@@ -412,13 +376,79 @@ int setBeamAngle(double db, int theta, int phi, String sn)
 | double                  | db            | 10                    | DB in dynamic range           |
 | int                     | theta         | 15                    | Theta value in range(0, 45)   |
 | int                     | phi           | 180                   | Phi value 0 or 180            |
-| String                  | sn            | "D2104L011-28"        | Device serial number          |
+| string                  | sn            | "D2104L011-28"        | Device Serial Number          |
 
 | Return Value Type       | Name          | Value        | Note          |
 | ---                     | ---           | ---          | ---           |
 | Integer                 | Return Code   | 0            | Status OK     |
 
 
+---
+## **BBoxOne 5G Series API Usage**
 
+## **switchChannelPower**
+#### ***Set Device channel power on or off***
 ---
 
+```
+string switchChannelPower(int board, int ch, int sw, string sn)
+```
+
+| Parameter Type          | Name            | value           | Note                                    |
+| ---                     | ---             | ---             | ---                                     |
+| int                     | board           | 1               | Board number in range(1, 4)             |
+| int                     | ch              | 1               | Channel number in range(1, 4)           |
+| int                     | sw              | 1               | Channel On/Off : ON - 0 , OFF - 1       |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
+
+| Return Value Type       | Name            | Value           | Note          |
+| ---                     | ---             | ---             | ---           |
+| string                  | Return Status   | "OK"            | Status OK     |
+
+
+## **setChannelGainPhase**
+#### ***Set Device channel Gain and Phase settings***
+---
+
+```
+string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
+```
+
+### ***Function definition***
+
+| Parameter Type          | Name            | value           | Note                                  |
+| ---                     | ---             | ---             | ---                                   |
+| int                     | board           | 1               | Board number in range(1, 4)           |
+| int                     | ch              | 1               | Channel number in range(1, 4)         |
+| double                  | db              | 10              | db in dynamic range                   |
+| int                     | phase           | 45              | deg in range(0, 355, 5)               |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                  |
+
+| Return Value Type       | Name            | Value           | Note          |
+| ---                     | ---             | ---             | ---           |
+| string                  | Return Status   | "OK"            | Status OK     |
+
+
+
+## **setBeamAngle**
+#### ***Set Device Beam Steering Angle***
+---
+
+```
+int setBeamAngle(double db, int theta, int phi, string sn)
+```
+
+### ***Function definition***
+
+| Param Type              | Param Name    | Param Value           | Note                          |
+| ---                     | ---           | ---                   | ---                           |
+| double                  | db            | 10                    | DB in dynamic range           |
+| int                     | theta         | 15                    | Theta value in range(0, 45)   |
+| int                     | phi           | 180                   | Phi value in range (0, 180)   |
+| string                  | sn            | "D2104L011-28"        | Device Serial Number          |
+
+| Return Value Type       | Name          | Value        | Note          |
+| ---                     | ---           | ---          | ---           |
+| Integer                 | Return Code   | 0            | Status OK     |
+
+---
