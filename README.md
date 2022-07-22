@@ -2,6 +2,8 @@
 
 ## **Introduction**
 
+[![Watch the video](https://img.youtube.com/vi/TRZwXUKOqUU/default.jpg)](https://www.youtube.com/watch?v=TRZwXUKOqUU&t=27s)
+
 TMYTEK Box Series API helps developing mmwave(n257/n260) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**. 
 
 The .dll format release is windows shared library and test on visual studio community 2019 and labView 2019.
@@ -9,6 +11,7 @@ The .dll format release is windows shared library and test on visual studio comm
 Every model has its own sample code. Please refer to the sample code inside each folder for the specific programming language.
 
 ![](./images/support_languages.png)
+
 
 ## **Getting Started**
 
@@ -54,8 +57,8 @@ Every model has its own sample code. Please refer to the sample code inside each
         - [ setChannelGainPhase ] : Set Device channel Gain and Phase settings
         - [ setBeamAngle ]        : Set Device Beam Steering Angle
     - [UDBox API Usage](#UDBox-5G-Series-API-Usage)
-        - [ GetState ] : Get output state
-        - [ SetState ] : Set output state
+        - [ GetState ] : Get UDBox device settings
+        - [ SetState ] : Set UDBox device settings
         - [ Set Freq ] : Set LO/RF/IF/Bandwidth in KHz
 
 
@@ -110,12 +113,16 @@ DEMO4 : Device Beam Steering Control
 
 ### **Python** 
 
+- [BBoard 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoard%20Series/Python)
+
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/Python)
 
 - [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%20%205G/Python)
 
 
 ### **C++**
+
+- [BBoard 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoard%20Series/C%2B%2B)
 
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%2B%2B)
 
@@ -124,6 +131,8 @@ DEMO4 : Device Beam Steering Control
 
 
 ### **C#**
+
+- [BBoard 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoard%20Series/C%23)
 
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%23)
 
