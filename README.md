@@ -26,7 +26,7 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 - Release Date: July., 2022
 
-- Latest Release : [[Download Link](https://github.com/tmytek/bbox-api/releases/tag/v1.4.0)]
+- Latest Release : [[Download Link](https://github.com/tmytek/bbox-api/releases/tag/v1.5.0)]
 
 <!-- toc -->
 
