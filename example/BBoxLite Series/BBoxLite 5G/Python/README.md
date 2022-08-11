@@ -3,37 +3,40 @@
 ## Installation
 ----------
 
-    Please add your BBox beamsterring table and AAkit table to the following path.
+    Please add your BBox calibration table and AAkit table to the following path.
 
     bbox-api\files\
 
 
 ## Initialization
 ----------
-    # Import BBoxAPI.dll
 
-    dir_path = '..\\..\\..\\..\\'
-    os.chdir(os.path.abspath(dir_path))
+```python
+# Import BBoxAPI.dll
 
-    path = '.\\BBoxAPI.dll'
-    clr.AddReference(os.path.abspath(path))
+dir_path = '..\\..\\..\\..\\'
+os.chdir(os.path.abspath(dir_path))
 
-    # Scanning device in the same subnet
+path = '.\\BBoxAPI.dll'
+clr.AddReference(os.path.abspath(path))
 
-    dev_info = instance.ScanningDevice(0)
-	device_num = len(dev_info)
+# Scanning device in the same subnet
 
-    # Initial all devices
+dev_info = instance.ScanningDevice(0)
+device_num = len(dev_info)
 
-	for i in range(0, device_num, 1):
+# Initial all devices
 
-		response_message = dev_info[i].split(",")
-		sn = response_message[0]
-		ip = response_message[1]
-		val = response_message[2].split("\x00")
-		dev_type = int(val[0])
+for i in range(0, device_num, 1):
 
-		instance.Init(sn, dev_type, i)
+	response_message = dev_info[i].split(",")
+	sn = response_message[0]
+	ip = response_message[1]
+	val = response_message[2].split("\x00")
+	dev_type = int(val[0])
+
+	instance.Init(sn, dev_type, i)
+```
 
 ## Control example
 ****
@@ -43,30 +46,36 @@
 ## BBoxLite 5G
 ### Obtain Tx or Rx state
 ---
-Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
+You need to control BBox device with its serial number.
 
-    TX = 1
-    RX = 2
-    mode = instance.getTxRxMode(sn)
-
+```python
+sn = "D2104L001-28"
+TX = 1
+RX = 2
+mode = instance.getTxRxMode(sn)
+```
 ### Switch Tx & Rx mode
 ---
-BBox is TDD based device. You need to point out which BBox device used by serial number.
+You need to control BBox device with its serial number.
 
-    TX = 1
-    RX = 2
-    instance.SwitchTxRxMode(TX, sn)
-    instance.SwitchTxRxMode(RX, sn)
-
+```python
+sn = "D2104L001-28"
+TX = 1
+RX = 2
+instance.SwitchTxRxMode(TX, sn)
+instance.SwitchTxRxMode(RX, sn)
+```
 
 ### Control Beam direction
 ---
 The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 14.5 dB, theta value 15 and phi value : 0 . You need to point out which BBox device used by serial number.
 
-    db = 14.5
-    theta = 15
-    phi = 0
-    instance.setBeamAngle(db, theta, phi, sn)
+```python
+db = 14.5
+theta = 15
+phi = 0
+instance.setBeamAngle(db, theta, phi, sn)
+```
 
 ****
 
@@ -84,7 +93,7 @@ Return scan results from devices
     public int Init(sn, dev_type, idx)
 | Type    | Name        | Value                           |
 | -       | -           | -                               |
-| String  | sn          | Serial Numnber from scan result |
+| String  | sn          | Serial Number from scan result |
 | int     | dev_type    | Type from scan result           |
 | int     | idx         | Index in scan result            |
 

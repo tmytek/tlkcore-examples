@@ -3,7 +3,7 @@
 ## **Introduction**
 
 
-TMYTEK Box Series API helps developing mm-wave( n257 / n260 ) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**. 
+TMYTEK Box Series API helps developing mmwave( n257 / n260 ) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**. 
 
 The .dll format release is windows shared library and test on visual studio community 2019 and labView 2019.
 
@@ -248,14 +248,14 @@ int SwitchTxRxMode(int mode, string sn)
 string switchChannelPower(int board, int ch, int sw, string sn)
 ```
 
-| Parameter Type          | Name            | value           | Note                                    |
+| Param Type              | Param Name      | Param Value     | Note                                    |
 | ---                     | ---             | ---             | ---                                     |
 | int                     | board           | 1               | Board Number : 1                        |
 | int                     | ch              | 1               | Channel Number in range(1, 4)           |
 | int                     | sw              | 1               | Channel On/Off : ON - 0 , OFF - 1       |
 | string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
 
-| Return Value Type       | Name            | Value           | Note          |
+| Return Type             | Name            | Return Value    | Note          |
 | ---                     | ---             | ---             | ---           |
 | string                  | Return Status   | "OK"            | Status OK     |
 
@@ -268,14 +268,14 @@ string switchChannelPower(int board, int ch, int sw, string sn)
 int setChannelPhaseStep(int board, int ch, int phase_step, string sn)
 ```
 
-| Parameter Type          | Name            | value           | Note                                                    |
+| Param Type              | Param Name      | Param Value     | Note                                                    |
 | ---                     | ---             | ---             | ---                                                     |
 | int                     | board           | 1               | Board Number : 1                                        |
 | int                     | ch              | 1               | Channel Number in range(1, 4)                           |
 | int                     | phase_step      | 0               | Element Gain step in range(0, 15), 5.625 deg per step   |
 | string                  | sn              | "D2104L011-28"  | Device Serial Number                                    |
 
-| Return Value Type       | Name            | Value           | Note          |
+| Return Type             | Name            | Return Value    | Note          |
 | ---                     | ---             | ---             | ---           |
 | int                     | Return Status   | 0               | Status OK     |
 
@@ -288,14 +288,14 @@ int setChannelPhaseStep(int board, int ch, int phase_step, string sn)
 int setChannelGainStep(int board, int ch, int gain_step, string sn)
 ```
 
-| Parameter Type          | Name            | value           | Note                                                |
+| Param Type              | Param Name      | Param Value     | Note                                                |
 | ---                     | ---             | ---             | ---                                                 |
 | int                     | board           | 1               | Board Number : 1                                    |
 | int                     | ch              | 1               | Channel Number in range(1, 4)                       |
 | int                     | gain_step       | 0               | Element Gain step in range(0, 15), 0.5db per step   |
 | string                  | sn              | "D2104L011-28"  | Device Serial Number                                |
 
-| Return Value Type       | Name            | Value           | Note          |
+| Return Type             | Name            | Return Value    | Note          |
 | ---                     | ---             | ---             | ---           |
 | int                     | Return Status   | 0               | Status OK     |
 
@@ -308,14 +308,14 @@ int setChannelGainStep(int board, int ch, int gain_step, string sn)
 int setCommonGainStep(int board, int ch, int gain_step, string sn)
 ```
 
-| Parameter Type          | Name            | value           | Note                                    |
+| Param Type              | Param Name      | Param Value     | Note                                    |
 | ---                     | ---             | ---             | ---                                     |
 | int                     | board           | 1               | Board Number : 1                        |
 | int                     | ch              | 1               | Channel Number in range(1, 4)           |
 | int                     | gain_step       | 0               | Common Gain Step in range(0, 15)        |
 | string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
 
-| Return Value Type       | Name            | Value           | Note          |
+| Return Type             | Name            | Return Value    | Note          |
 | ---                     | ---             | ---             | ---           |
 | int                     | Return Status   | 0               | Status OK     |
 
@@ -328,11 +328,11 @@ int setCommonGainStep(int board, int ch, int gain_step, string sn)
 int[] getTemperatureADC(string sn)
 ```
 
-| Parameter Type          | Name            | value           | Note                                    |
+| Param Type              | Param Name      | Param Value     | Note                                    |
 | ---                     | ---             | ---             | ---                                     |
 | string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
 
-| Return Value Type       | Name            | Value           | Note                           |
+| Return Type             | Name            | Return Value    | Note                           |
 | ---                     | ---             | ---             | ---                            |
 | int[]                   | Board ADC       | 0               | Temperature ADC sensor value   |
 
@@ -348,14 +348,14 @@ int[] getTemperatureADC(string sn)
 string switchChannelPower(int board, int ch, int sw, string sn)
 ```
 
-| Parameter Type          | Name            | value           | Note                                    |
+| Param Type              | Param Name      | Param Value     | Note                                    |
 | ---                     | ---             | ---             | ---                                     |
 | int                     | board           | 1               | Board Number : 1                        |
 | int                     | ch              | 1               | Channel Number in range(1, 4)           |
 | int                     | sw              | 1               | Channel On/Off : ON - 0 , OFF - 1       |
 | string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
 
-| Return Value Type       | Name            | Value           | Note          |
+| Return Type             | Name            | Return Value    | Note          |
 | ---                     | ---             | ---             | ---           |
 | string                  | Return Status   | "OK"            | Status OK     |
 
@@ -370,7 +370,7 @@ string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
 
 ### ***Function definition***
 
-| Parameter Type          | Name            | value           | Note                                  |
+| Param Type              | Param Name      | Param Value     | Note                                  |
 | ---                     | ---             | ---             | ---                                   |
 | int                     | board           | 1               | Board Number : 1                      |
 | int                     | ch              | 1               | Channel Number in range(1, 4)         |
@@ -378,7 +378,7 @@ string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
 | int                     | phase           | 45              | deg in range(0, 355, 5)               |
 | string                  | sn              | "D2104L011-28"  | Device Serial Number                  |
 
-| Return Value Type       | Name            | Value           | Note          |
+| Return Type             | Name            | Return Value    | Note          |
 | ---                     | ---             | ---             | ---           |
 | string                  | Return Status   | "OK"            | Status OK     |
 
@@ -400,7 +400,7 @@ int setBeamAngle(double db, int theta, int phi, string sn)
 | int                     | phi           | 180                   | Phi value 0 or 180            |
 | string                  | sn            | "D2104L011-28"        | Device Serial Number          |
 
-| Return Value Type       | Name          | Value        | Note          |
+| Return Type             | Name          | Return Value | Note          |
 | ---                     | ---           | ---          | ---           |
 | Integer                 | Return Code   | 0            | Status OK     |
 
@@ -416,14 +416,14 @@ int setBeamAngle(double db, int theta, int phi, string sn)
 string switchChannelPower(int board, int ch, int sw, string sn)
 ```
 
-| Parameter Type          | Name            | value           | Note                                    |
+| Param Type              | Param Name      | Param Value     | Note                                    |
 | ---                     | ---             | ---             | ---                                     |
 | int                     | board           | 1               | Board Number in range(1, 4)             |
 | int                     | ch              | 1               | Channel Number in range(1, 4)           |
 | int                     | sw              | 1               | Channel On/Off : ON - 0 , OFF - 1       |
 | string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
 
-| Return Value Type       | Name            | Value           | Note          |
+| Return Type             | Name            | Return Value    | Note          |
 | ---                     | ---             | ---             | ---           |
 | string                  | Return Status   | "OK"            | Status OK     |
 
@@ -438,7 +438,7 @@ string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
 
 ### ***Function definition***
 
-| Parameter Type          | Name            | value           | Note                                  |
+| Param Type              | Param Name      | Param Value     | Note                                  |
 | ---                     | ---             | ---             | ---                                   |
 | int                     | board           | 1               | Board Number in range(1, 4)           |
 | int                     | ch              | 1               | Channel Number in range(1, 4)         |
@@ -446,7 +446,7 @@ string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
 | int                     | phase           | 45              | deg in range(0, 355, 5)               |
 | string                  | sn              | "D2104L011-28"  | Device Serial Number                  |
 
-| Return Value Type       | Name            | Value           | Note          |
+| Return Type             | Name            | Return Value    | Note          |
 | ---                     | ---             | ---             | ---           |
 | string                  | Return Status   | "OK"            | Status OK     |
 
@@ -469,7 +469,7 @@ int setBeamAngle(double db, int theta, int phi, string sn)
 | int                     | phi           | 180                   | Phi value in range (0, 180)   |
 | string                  | sn            | "D2104L011-28"        | Device Serial Number          |
 
-| Return Value Type       | Name          | Value        | Note          |
+| Return Type             | Name          | Return Value | Note          |
 | ---                     | ---           | ---          | ---           |
 | Integer                 | Return Code   | 0            | Status OK     |
 
@@ -490,7 +490,7 @@ int GetState(int state_index, string sn)
 | int           | state_index | 0: Lock<br>1: CH1<br>2: CH2<br>3: 10M output<br>4: 100M output<br>5: 100M source<br>6: LED 100M<br>7: 5V<br>8: 9V |
 | string        | sn          | Device Serial Number                                                                                              |
 
-| Return Value Type       | Name          | Value        | Note          |
+| Return Type             | Name          | Return Value | Note          |
 | ---                     | ---           | ---          | ---           |
 | Integer                 | Return state  | 0            | state_index   |
 
@@ -510,7 +510,7 @@ int SetState(int state_index, int value, string sn)
 
 return state from the state_index
 
-| Return Value Type       | Name          | Value        | Note          |
+| Return Type             | Name          | Return Value | Note          |
 | ---                     | ---           | ---          | ---           |
 | Integer                 | Return state  | 0            | state_index   |
 
@@ -530,6 +530,6 @@ string SetUDFreq(double freq_ud, double freq_rf, double freq_if, double freq_ban
 | double        | freq_bandwidth | Bandwidth frequency(KHz) |
 | string        | sn             | Device Serial Number     |
 
-| Return Value Type       | Name          | Value        | Note          |
+| Return Type             | Name          | Return Value | Note          |
 | ---                     | ---           | ---          | ---           |
 | Integer                 | Return Code   | 0            | Status OK     |

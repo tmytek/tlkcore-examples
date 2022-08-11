@@ -8,39 +8,40 @@
 
 ## Initialization
 ----------
-    // Import BBoxAPI.dll
 
-    #include <array>
-    #include <msclr/marshal.h>
-    #include <msclr/marshal_cppstd.h>
+```C++
+// Import BBoxAPI.dll
 
-    using namespace System;
-    using namespace BBoxAPI;
-    using namespace msclr::interop;
+#include <array>
+#include <msclr/marshal.h>
+#include <msclr/marshal_cppstd.h>
 
-    // Scanning device in the same subnet
+using namespace System;
+using namespace BBoxAPI;
+using namespace msclr::interop;
 
-    BBoxAPI::BBoxOneAPI ^instance = gcnew BBoxAPI::BBoxOneAPI();
-	array<String ^>^ dev_info = instance->ScanningDevice((BBoxAPI::DEV_SCAN_MODE)0);
-	dev_num = dev_info->Length;
+// Construct object and scan devices
+BBoxAPI::BBoxOneAPI ^instance = gcnew BBoxAPI::BBoxOneAPI();
+array<String ^>^ dev_info = instance->ScanningDevice((BBoxAPI::DEV_SCAN_MODE)0);
+dev_num = dev_info->Length;
 
-    // Initial all devices
+// Initializing all devices
 
-	for (int i = 0; i < dev_num; i++)
-	{
-		array<String ^> ^ response_message = dev_info[i]->Split(',');	
+for (int i = 0; i < dev_num; i++)
+{
+	array<String ^> ^ response_message = dev_info[i]->Split(',');	
 
-		String ^ sn = response_message[0];
-		std::string SN = msclr::interop::marshal_as<std::string>(sn);
-		String ^ ip = response_message[1];
-		std::string IP = msclr::interop::marshal_as<std::string>(ip);
-		String ^ dev_type = response_message[2];
-		std::string DEV_TYPE = msclr::interop::marshal_as<std::string>(dev_type);
-		int devtype = std::stoi(DEV_TYPE);
+	String ^ sn = response_message[0];
+	std::string SN = msclr::interop::marshal_as<std::string>(sn);
+	String ^ ip = response_message[1];
+	std::string IP = msclr::interop::marshal_as<std::string>(ip);
+	String ^ dev_type = response_message[2];
+	std::string DEV_TYPE = msclr::interop::marshal_as<std::string>(dev_type);
+	int devtype = std::stoi(DEV_TYPE);
 
-		ret = instance->Init(sn, devtype, i);
-    }
-
+	ret = instance->Init(sn, devtype, i);
+}
+```
 
 ## Control example
 ****
@@ -54,52 +55,61 @@
 ---
 Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
 
-    mode = b.getTxRxMode(sn)
-
+```C++
+ret = instance->getTxRxMode(sn);
+```
 
 ### Switch Tx & Rx mode
 ---
-BBox is TDD based device. You need to point out which BBox device used by serial number.
+You need to control BBox device with its serial number.
 
-    TX = 1
-    RX = 2
-    b.SwitchTxRxMode(TX, sn)
-    b.SwitchTxRxMode(RX, sn)
-
+```C++
+int TX = 1;
+int RX = 2;
+ret = instance->SwitchTxRxMode(TX, sn);
+ret = instance->SwitchTxRxMode(RX, sn);
+```
 
 ### Control Element Phase Step
 ---
 Set the specific channel element-arm phase step : 5.625 deg per step
 
-    phase_step = 1
-	channel = 1;
-	b.setChannelPhaseStep(board, channel, phase_step, sn)
-
+```C++
+int board = 1;
+int channel = 1;
+int phase_step = 1;
+ret = instance->setChannelPhaseStep(board, channel, phase_step, sn);
+```
 
 ### Control Element Gain Step
 ---
 Set the specific channel element-arm gain step : 0.5 db per step
 
-    gain_step = 1
-	channel = 1;
-	b.setChannelGainStep(board, channel, gain_step, sn)
-
+```C++
+int board = 1;
+int channel = 1;
+int gain_step = 1;
+ret = instance->setChannelGainStep(board, channel, gain_step, sn);
+```
 
 ### Control Common Gain Step
 ---
 Set common-arm step : 1 db per step with all channels
 
-    gain_step = 1
-	channel = 1;
-	b.setCommonGainStep(board, gain_step, sn)
-
+```C++
+int board = 1;
+int gain_step = 1;
+ret = instance->setCommonGainStep(board, gain_step, sn);
+```
 
 ### Get Temperature ADC
 ---
-    Get device current temperature adc value
+Get device current temperature adc value
 
-    int[] ret;
-	ret = b.getTemperatureADC(sn)
+```C++
+// int[] ret;
+ret = instance->getTemperatureADC(sn)
+``` 
 
 ****
 

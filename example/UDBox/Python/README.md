@@ -73,7 +73,7 @@ return scan results from devices
     public String Init(sn, dev_type, idx);
 | Type   | Name     | Value                           |
 | ------ | -------- | ------------------------------- |
-| String | sn       | Serial Numnber from scan result |
+| String | sn       | Serial Number from scan result |
 | int    | dev_type | Type from scan result           |
 | int    | idx      | Index in scan result            |
 return initialized condition.

@@ -14,29 +14,32 @@
 
 ## Initialization
 ----------
-    using System;
-    using System.Linq;
-    using System.Collections.Generic;
 
-    // Import BBoxAPI.dll
-    using BBoxAPI;
+```C#
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
-    // Scanning device in the same subnet
-	BBoxOneAPI instance = new BBoxOneAPI();
+// Import BBoxAPI.dll
+using BBoxAPI;
 
-    dev_info = instance.ScanningDevice(scanning_mode);
+// Scanning device in the same subnet
+BBoxOneAPI instance = new BBoxOneAPI();
+
+var dev_info = instance.ScanningDevice(scanning_mode);
             
-    DEV_NUM = dev_info.Count();
+DEV_NUM = dev_info.Count();
 
-    // Initial all devices
-    for (int i = 0; i < DEV_NUM; i++)
-    {
-        string[] response_message = dev_info[i].Split(',');
-        sn = response_message[0];
-		ip = response_message[1];
-		DEV_TYPE = Convert.ToInt32(response_message[2]);
-        instance.Init(sn, DEV_TYPE, i);
-    }
+// Initial all devices
+for (int i = 0; i < DEV_NUM; i++)
+{
+    string[] response_message = dev_info[i].Split(',');
+    sn = response_message[0];
+	ip = response_message[1];
+	DEV_TYPE = Convert.ToInt32(response_message[2]);
+    instance.Init(sn, DEV_TYPE, i);
+}
+```
 
 ## Control example
 ****
@@ -48,30 +51,35 @@
 ## BBoxLite 5G
 ### Get Tx or Rx state
 ---
-Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
+You need to control BBox device with its serial number.
 
-    TX = 1
-    RX = 2
-    mode = b.getTxRxMode(sn)
+```C#
+int TX = 1;
+int RX = 2;
+int mode = instance.getTxRxMode(sn);
+```
 
 ### Switch Tx & Rx mode
 ---
-BBox is TDD based device. You need to point out which BBox device used by serial number.
+You need to control BBox device with its serial number.
 
-    TX = 1
-    RX = 2
-    b.SwitchTxRxMode(TX, sn)
-    b.SwitchTxRxMode(RX, sn)
-
+```C#
+int TX = 1;
+int RX = 2;
+instance.SwitchTxRxMode(TX, sn);
+instance.SwitchTxRxMode(RX, sn);
+```
 
 ### Control Beam direction
 ---
 The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 14.5 dB, theta value 15 and phi value : 0 . You need to point out which BBox device used by serial number.
 
-    db = 14.5
-    theta = 15
-    phi = 0
-    instance.setBeamAngle(db, theta, phi, sn)
+```C#
+double db = 14.5;
+int theta = 15;
+int phi = 0;
+instance.setBeamAngle(db, theta, phi, sn);
+```
 
 ****
 
