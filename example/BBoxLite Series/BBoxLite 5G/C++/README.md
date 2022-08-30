@@ -44,11 +44,11 @@ for (int i = 0; i < dev_num; i++)
 ```
 
 ## Control example
-****
+---
 #### Running sample code
     Open ConsoleApplication1.sln
     Compile and run
-****
+---
 
 ## BBoxLite 5G
 ### Get Tx or Rx state
@@ -81,4 +81,12 @@ double db = 14.5;
 int theta = 15;
 int phi = 0;
 instance->setBeamAngle(db, theta, phi, sn)
-****
+```
+
+### Get Temperature Sensor ADC Value
+---
+Board-based Temperature Sensor. Lite has only one board.
+
+```C++
+int adc = instance->getTemperatureADC(sn)[0];
+```

@@ -148,3 +148,11 @@ return 1 if Tx mode, and 2 if Rx mode.
 | String    | sn          | Device serial number           |
 
 
+## getTemperatureADC
+---
+    int[] getTemperatureADC(string sn)
+
+| Type      | Name        | Value                                  |
+| ---       | ---         | ---                                    |
+| string    | sn          | Device Serial Number : "D2104L011-28"  |
+

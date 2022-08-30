@@ -146,6 +146,14 @@ namespace BBOXONE_DEMO
 		        Console.WriteLine("[DEMO4][{0}] Phi : {1} ", sn, Target_phi);
 
 		        instance.setBeamAngle(Target_db, Target_theta, Target_phi, sn);
+
+                Console.ReadKey();
+
+		        var ret = instance.getTemperatureADC(sn);
+                Console.WriteLine("[{0}][DEMO5] Get board_1 temperature adc : {1}", sn, ret[0]);
+                Console.WriteLine("[{0}][DEMO5] Get board_2 temperature adc : {1}", sn, ret[1]);
+                Console.WriteLine("[{0}][DEMO5] Get board_3 temperature adc : {1}", sn, ret[2]);
+                Console.WriteLine("[{0}][DEMO5] Get board_4 temperature adc : {1}", sn, ret[3]);
             }
 
             Console.WriteLine("======================================================");

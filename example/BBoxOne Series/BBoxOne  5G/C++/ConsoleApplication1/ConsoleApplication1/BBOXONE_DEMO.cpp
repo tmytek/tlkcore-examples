@@ -151,6 +151,12 @@ int main()
 
 		instance->setBeamAngle(Target_db, Target_theta, Target_phi, sn);
 
+        system("pause");
+        Console::WriteLine("[{0}][DEMO5] Get board_1 temperature adc : {1}", sn, instance->getTemperatureADC(sn)[0]);
+        Console::WriteLine("[{0}][DEMO5] Get board_2 temperature adc : {1}", sn, instance->getTemperatureADC(sn)[1]);
+        Console::WriteLine("[{0}][DEMO5] Get board_3 temperature adc : {1}", sn, instance->getTemperatureADC(sn)[2]);
+        Console::WriteLine("[{0}][DEMO5] Get board_4 temperature adc : {1}", sn, instance->getTemperatureADC(sn)[3]);
+
 	}
 
 	Console::WriteLine("======================================================");

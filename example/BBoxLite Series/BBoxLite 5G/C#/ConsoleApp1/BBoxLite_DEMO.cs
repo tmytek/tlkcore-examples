@@ -129,6 +129,11 @@ namespace BBoxLite_DEMO
 				Console.WriteLine("[{0}][DEMO4] Phi : {1} ", sn, Target_phi);
 
 		        instance.setBeamAngle(Target_db, Target_theta, Target_phi, sn);
+
+                Console.ReadKey();
+
+		        var ret = instance.getTemperatureADC(sn);
+                Console.WriteLine("[{0}][DEMO5] Get temperature adc : {1}", sn, ret[0]);
             }
 
             Console.WriteLine("======================================================");

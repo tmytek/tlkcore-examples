@@ -42,11 +42,11 @@ for (int i = 0; i < DEV_NUM; i++)
 ```
 
 ## Control example
-****
+---
 ### Running sample code
     Open ConsoleApplication1.sln
     Compile and run
-****
+---
 
 ## BBoxLite 5G
 ### Get Tx or Rx state
@@ -81,6 +81,13 @@ int phi = 0;
 instance.setBeamAngle(db, theta, phi, sn);
 ```
 
-****
+### Get Temperature Sensor ADC Value
+---
+Board-based Temperature Sensor. Lite has only one board.
+
+```C#
+int[] ret = instance.getTemperatureADC(sn);
+int adc = ret[0];
+```
 
 
