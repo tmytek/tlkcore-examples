@@ -65,5 +65,15 @@ int phi = 30;
 instance.setBeamAngle(db, theta, phi, sn);
 ```
 
- ****
+### Get Temperature Sensor ADC Value
+---
+Board-based Temperature Sensor. Lite has only one board.
+
+```C#
+int[] ret = instance.getTemperatureADC(sn);
+int board_1_adc = ret[0];
+int board_2_adc = ret[1];
+int board_3_adc = ret[2];
+int board_4_adc = ret[3];
+```
 

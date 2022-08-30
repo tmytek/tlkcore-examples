@@ -52,15 +52,17 @@ Every model has its own sample code. Please refer to the sample code inside each
         - [ setChannelPhaseStep ] : Set Device channel element phase step
         - [ setChannelGainStep ]  : Set Device channel element gain step
         - [ setCommonGainStep ]   : Set Device Common common gain step
-        - [ getTemperatureADC ]   : Get Device RF board temperature adc value 
+        - [ getTemperatureADC ]   : Get Device RF board temperature adc value
     - [BBoxLite 5G Series API Usage](#BBoxLite-5G-Series-API-Usage)
         - [ switchChannelPower ]  : Set Device channel power on or off
         - [ setChannelGainPhase ] : Set Device channel Gain and Phase settings
         - [ setBeamAngle ]        : Set Device Beam Steering Angle
+        - [ getTemperatureADC ]   : Get Device RF board temperature adc value
     - [BBoxOne 5G Series API Usage](#BBoxOne-5G-Series-API-Usage)
         - [ switchChannelPower ]  : Set Device channel power on or off
         - [ setChannelGainPhase ] : Set Device channel Gain and Phase settings
         - [ setBeamAngle ]        : Set Device Beam Steering Angle
+        - [ getTemperatureADC ]   : Get Device RF board temperature adc value
     - [UDBox API Usage](#UDBox-5G-Series-API-Usage)
         - [ GetState ] : Get UDBox device settings
         - [ SetState ] : Set UDBox device settings
@@ -332,9 +334,9 @@ int[] getTemperatureADC(string sn)
 | ---                     | ---             | ---             | ---                                     |
 | string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
 
-| Return Type             | Name            | Return Value    | Note                           |
-| ---                     | ---             | ---             | ---                            |
-| int[]                   | Board ADC       | 0               | Temperature ADC sensor value   |
+| Return Type             | Name            | Return Value    | Note                                             |
+| ---                     | ---             | ---             | ---                                              |
+| int[]                   | Board ADC       | {0}             | BBoard : Board_1 Temperature Sensor ADC Value    |
 
 
 ---
@@ -405,6 +407,24 @@ int setBeamAngle(double db, int theta, int phi, string sn)
 | Integer                 | Return Code   | 0            | Status OK     |
 
 
+## **getTemperatureADC**
+#### ***Get Device RF board temperature adc value***
+---
+
+```
+int[] getTemperatureADC(string sn)
+```
+
+| Param Type              | Param Name      | Param Value     | Note                                    |
+| ---                     | ---             | ---             | ---                                     |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
+
+| Return Type             | Name            | Return Value    | Note                                              |
+| ---                     | ---             | ---             | ---                                               |
+| int[]                   | Board ADC       | {0}             | BBoxLite : Board_1 Temperature Sensor ADC Value   |
+
+
+
 ---
 ## **BBoxOne 5G Series API Usage**
 
@@ -472,6 +492,25 @@ int setBeamAngle(double db, int theta, int phi, string sn)
 | Return Type             | Name          | Return Value | Note          |
 | ---                     | ---           | ---          | ---           |
 | Integer                 | Return Code   | 0            | Status OK     |
+
+
+## **getTemperatureADC**
+#### ***Get Device RF board temperature adc value***
+---
+
+```
+int[] getTemperatureADC(string sn)
+```
+
+| Param Type              | Param Name      | Param Value     | Note                                    |
+| ---                     | ---             | ---             | ---                                     |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                    |
+
+| Return Type             | Name            | Return Value    | Note                                                                          |
+| ---                     | ---             | ---             | ---                                                                           |
+| int[]                   | Board ADC       | {0,0,0,0}       | BBoxOne : {Board_1, Board_2, Board_3, Board_4} Temperature Sensor ADC Value   |
+
+
 
 ---
 

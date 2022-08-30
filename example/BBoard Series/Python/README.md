@@ -100,9 +100,9 @@ Get device current temperature adc value
 
 ```python
 sn = 'D2104L001-28'
-
-# int[] ret
 ret = b.getTemperatureADC(sn)
+print(ret[0])
+
 ```
 ****
 

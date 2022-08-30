@@ -66,8 +66,8 @@ You need to control BBox device with its serial number.
 ```C++
 int TX = 1;
 int RX = 2;
-instance.SwitchTxRxMode(TX, sn);
-instance.SwitchTxRxMode(RX, sn);
+instance->SwitchTxRxMode(TX, sn);
+instance->SwitchTxRxMode(RX, sn);
 ```
 
 ### Control Beam direction
@@ -78,7 +78,17 @@ The core function of BBox is to control beam steering. The following code snippe
 double db = 14.5;
 int theta = 15;
 int phi = 30;
-instance.setBeamAngle(db, theta, phi, sn);
+instance->setBeamAngle(db, theta, phi, sn);
 ```
 
-****
+### Get Temperature Sensor ADC Value
+---
+Board-based Temperature Sensor. Lite has only one board.
+
+```C++
+int board1_adc = instance->getTemperatureADC(sn)[0];
+int board2_adc = instance->getTemperatureADC(sn)[1];
+int board3_adc = instance->getTemperatureADC(sn)[2];
+int board4_adc = instance->getTemperatureADC(sn)[3];
+```
+

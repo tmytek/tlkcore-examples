@@ -56,7 +56,7 @@ for (int i = 0; i < dev_num; i++)
 Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
 
 ```C++
-ret = instance->getTxRxMode(sn);
+int ret = instance->getTxRxMode(sn);
 ```
 
 ### Switch Tx & Rx mode
@@ -107,8 +107,7 @@ ret = instance->setCommonGainStep(board, gain_step, sn);
 Get device current temperature adc value
 
 ```C++
-// int[] ret;
-ret = instance->getTemperatureADC(sn)
+int[] ret = instance->getTemperatureADC(sn);
 ``` 
 
 ****
