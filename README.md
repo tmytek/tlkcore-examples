@@ -2,7 +2,6 @@
 
 ## **Introduction**
 
-
 TMYTEK Box Series API helps developing mmwave( n257 / n260 ) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**. 
 
 The .dll format release is windows shared library and test on visual studio community 2019 and labView 2019.
@@ -20,13 +19,13 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 ## **Getting Started**
 
-- Sample Code Version : v1.5.0
+- Sample Code Version : v1.5.1
 
-- API Version: v3.3.15.14
+- API Version: v3.3.15.16
 
-- Release Date: July., 2022
+- Release Date: August., 2022
 
-- Latest Release : [[Download Link](https://github.com/tmytek/bbox-api/releases/tag/v1.5.0)]
+- Latest Release : [[Download Link](https://github.com/tmytek/bbox-api/releases/tag/v1.5.1)]
 
 <!-- toc -->
 
