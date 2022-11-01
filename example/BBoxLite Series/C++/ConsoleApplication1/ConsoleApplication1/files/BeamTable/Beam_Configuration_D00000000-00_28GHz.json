@@ -1,0 +1,1800 @@
+{
+  "version": "v1.0.0",
+  "SN": "D00000000-00",
+  "TX_beam_list": [
+    {
+      "beamId": 1,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 2,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 3,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 4,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 5,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 6,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 7,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 8,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 9,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 10,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 11,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 12,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 13,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 14,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 15,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 16,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 17,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 18,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 19,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 20,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 21,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 22,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 23,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 24,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 25,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 26,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 27,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 28,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 29,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 30,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 31,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 32,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 33,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 34,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 35,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 36,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 37,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 38,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 39,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 40,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 41,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 42,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 43,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 44,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 45,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 46,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 47,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 48,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 49,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 50,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 51,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 52,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 53,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 54,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 55,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 56,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 57,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 58,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 59,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 60,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 61,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 62,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 63,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 64,
+      "mode": 1,
+      "db": 19.0,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    }
+  ],
+  "RX_beam_list": [
+    {
+      "beamId": 1,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 2,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 3,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 4,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 5,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 6,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 7,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 8,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 9,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 10,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 11,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 12,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 13,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 14,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 15,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 16,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 17,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 18,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 19,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 20,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 21,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 22,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 23,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 24,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 25,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 26,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 27,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 28,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 29,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 30,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 31,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 32,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 33,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 34,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 35,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 36,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 37,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 38,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 39,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 40,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 41,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 42,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 43,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 44,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 45,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 46,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 47,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 48,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 49,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 50,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 51,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 52,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 53,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 54,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 55,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 56,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 57,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 58,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 59,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 60,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 61,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 62,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 63,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    },
+    {
+      "beamId": 64,
+      "mode": 2,
+      "db": 13.5,
+      "theta": 0,
+      "phi": 0,
+      "channel_switch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "dev_type": 7
+    }
+  ]
+}
