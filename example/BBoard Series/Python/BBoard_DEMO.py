@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     TX = 1
     RX = 2
- 
+
     AAkitList = []
 
     instance = BBoxOneAPI()
@@ -36,7 +36,7 @@ if __name__ == '__main__':
             print("[BBoard_DEMO][GetDeviceStatus] SN : %s" % (sn))
             print("[BBoard_DEMO][GetDeviceStatus] IP : %s" % (ip))
             print("[BBoard_DEMO][GetDeviceStatus] dev_type : %d" % (dev_type))
-   
+
             instance.Init(sn, dev_type, i)
             print("[BBoard_DEMO][InitialDevice][%s]" % (sn))
 
@@ -58,7 +58,7 @@ if __name__ == '__main__':
             instance.switchChannelPower(board, channel, sw, sn)
             print("[BBoard_DEMO][DEMO2] Channel 1 power off")
 
-            
+
             gain_step = 1
             print("======================================================");
             print("[BBoard_DEMO][DEMO3] Channel Element Gain Step Control")
@@ -122,7 +122,7 @@ if __name__ == '__main__':
             os.system("pause")
 
             ret = instance.getTemperatureADC(sn)
-            print("[BBoard_DEMO][DEMO5] Get temperature adc : %d", ret[0])
+            print("[BBoard_DEMO][DEMO5] Get temperature adc : %d" %ret[0])
 
 
     print("======================================================")

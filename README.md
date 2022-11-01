@@ -1,8 +1,8 @@
-# **TMYTEK Box Series API Documentation** 
+# **TMYTEK Box Series API Documentation**
 
 ## **Introduction**
 
-TMYTEK Box Series API helps developing mmwave( n257 / n260 ) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**. 
+TMYTEK Box Series API helps developing mmwave( n257 / n260 ) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**.
 
 The .dll format release is windows shared library and test on visual studio community 2019 and labView 2019.
 
@@ -19,13 +19,13 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 ## **Getting Started**
 
-- Sample Code Version : v1.5.1
+- Sample Code Version : v1.6.0
 
 - API Version: v3.3.15.16
 
 - Release Date: August., 2022
 
-- Latest Release : [[Download Link](https://github.com/tmytek/bbox-api/releases/tag/v1.5.1)]
+- Latest Release : [[Download Link](https://github.com/tmytek/bbox-api/releases/tag/v1.6)]
 
 <!-- toc -->
 
@@ -39,7 +39,7 @@ Every model has its own sample code. Please refer to the sample code inside each
         - [ Python ]
         - [ C++ ]
         - [ C# ]
-        - [ Labview ]
+        - [ LabVIEW ]
         - [ Matlab ]
     - [BBox Series Common API Usage](#BBox-Series-Common-API-Usage)
         - [ ScanningDevice ]      : Query the Active Devices Information on Ethernet
@@ -65,7 +65,7 @@ Every model has its own sample code. Please refer to the sample code inside each
     - [UDBox API Usage](#UDBox-5G-Series-API-Usage)
         - [ GetState ] : Get UDBox device settings
         - [ SetState ] : Set UDBox device settings
-        - [ Set Freq ] : Set LO/RF/IF/Bandwidth in KHz
+        - [ SetUDFreq ] : Set LO/RF/IF/Bandwidth in KHz
 
 
 <!-- tocstop -->
@@ -88,7 +88,7 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 - External modules can be installed with Setup.bat in pre-install/
 
-<pre><code>$ bbox-api\pre-install\Setup.bat</code></pre> 
+<pre><code>$ bbox-api\pre-install\Setup.bat</code></pre>
 
 ![](./images/image_2.png)
 
@@ -117,13 +117,13 @@ DEMO4 : Device Beam Steering Control
 
 ## **Sample Code Description**
 
-### **Python** 
+### **Python**
 
 - [BBoard 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoard%20Series/Python)
 
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/Python)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%20%205G/Python)
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%205G/Python)
 
 
 ### **C++**
@@ -132,7 +132,7 @@ DEMO4 : Device Beam Steering Control
 
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%2B%2B)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%20%205G/C%2B%2B)
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%205G/C%2B%2B)
 
 
 
@@ -142,18 +142,18 @@ DEMO4 : Device Beam Steering Control
 
 - [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/C%23)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/master/example/BBoxOne%20Series/BBoxOne%20%205G/C%23)
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/master/example/BBoxOne%20Series/BBoxOne%205G/C%23)
 
 
-### **Matlab**
+### **MATLAB**
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%20%205G/MatLab)
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%205G/MatLab)
 
-### **Labview**
+### **LabVIEW**
 
-- [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/LabView2017/BBoxLite28A)
+- [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/BBoxLite%205G/LabVIEW/BBoxLite28A)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%20%205G/LabView2019)
+- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/BBoxOne%205G/LabVIEW)
 
 
 ## **BBox Series Common API Usage**
@@ -552,7 +552,7 @@ return state from the state_index
 | ---                     | ---           | ---          | ---           |
 | Integer                 | Return state  | 0            | state_index   |
 
-## **Set Freq**
+## **SetUDFreq**
 
 ```
 string SetUDFreq(double freq_ud, double freq_rf, double freq_if, double freq_bandwidth, string sn)
