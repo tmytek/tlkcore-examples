@@ -10,7 +10,7 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="UDBox5G_sample.vi" Type="VI" URL="../UDBox5G_sample.vi"/>
+		<Item Name="UDBox5G.vi" Type="VI" URL="../UDBox5G.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="BBoxAPI.dll" Type="Document" URL="../BBoxAPI.dll"/>
 		</Item>
