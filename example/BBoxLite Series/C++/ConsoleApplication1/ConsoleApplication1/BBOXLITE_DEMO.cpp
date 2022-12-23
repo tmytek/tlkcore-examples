@@ -79,14 +79,7 @@ int main()
 
 		array<String ^> ^ AAkitList = instance->getAAKitList(sn);
 		
-		if (devtype == 7)
-		{
-			instance->selectAAKit("TMYTEK_28LITE_4x4_C2104L020-28", sn);
-		}
-		else if (devtype == 8)
-		{
-			instance->selectAAKit("TMYTEK_39LITE_4x4_A2104L004-39", sn);
-		}
+		instance->selectAAKit(AAkitList[0], sn);
 
 		Console::WriteLine("======================================================");
 		Console::WriteLine("[{0}][DEMO1] Switch TX mode", sn);
@@ -106,7 +99,7 @@ int main()
 		instance->switchChannelPower(board, channel, sw, sn);
 		Console::WriteLine("[{0}][DEMO2] Channel 1 power off", sn);
 
-		double Target_db = 15;
+		double Target_db = TX_MAX_GAIN;
 		int Target_ch1_deg = 15;
 		int Target_ch2_deg = 30;
 		int Target_ch3_deg = 45;
@@ -142,7 +135,7 @@ int main()
 		Console::WriteLine("[{0}][DEMO4] BeamSteering Control", sn);
 		system("pause");
 
-		Target_db = 12;
+		Target_db = TX_MAX_GAIN;
 		int Target_theta = 15;
 		int Target_phi = 0;
 

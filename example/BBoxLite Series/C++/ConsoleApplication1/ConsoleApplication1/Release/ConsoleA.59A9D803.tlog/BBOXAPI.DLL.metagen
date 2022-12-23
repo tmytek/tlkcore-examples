@@ -31,7 +31,7 @@ Assembly System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b
 	hash=None, flags=None
 Assembly System.IO.Compression, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Class <>f__AnonymousType0`84[<ScanningDevice>j__TPar,<Init>j__TPar,<DeInit>j__TPar,<setStaticIP>j__TPar,<Reboot>j__TPar,<SwitchTxRxMode>j__TPar,<getTxRxMode>j__TPar,<selectAntenna>j__TPar,<selectAAKit>j__TPar,<getFrequencyList>j__TPar,<getDR>j__TPar,<getCOMDR>j__TPar,<getELEDR>j__TPar,<getAAKitList>j__TPar,<getAAKitInfo>j__TPar,<setAAKitInfo>j__TPar,<deleteAAKitInfo>j__TPar,<saveAAkitFile>j__TPar,<checkCaliTableLocation>j__TPar,<setOperatingFreq>j__TPar,<getOperatingFreq>j__TPar,<setChannelGainPhase>j__TPar,<setAllChannelGain>j__TPar,<switchChannelPower>j__TPar,<readBeamGainValues>j__TPar,<readBeamPhaseValues>j__TPar,<setAllGain>j__TPar,<setGainPhaseStep>j__TPar,<readSetting>j__TPar,<readSettingValues>j__TPar,<writeSetting>j__TPar,<setBeamXY>j__TPar,<QuerySN>j__TPar,<QueryMAC>j__TPar,<QueryFWV>j__TPar,<QueryHWV>j__TPar,<SetUDFreq>j__TPar,<SetUDFreqForce>j__TPar,<GetState>j__TPar,<SetState>j__TPar,<GetUDDeltaFreq>j__TPar,<GetRecommendLo>j__TPar,<GetLoWithRecommend>j__TPar,<GetUDCurrentFreq>j__TPar,<GetHarmonic>j__TPar,<ReadChannelSwitchValues>j__TPar,<setBeamAngle>j__TPar,<setChannelGainStep>j__TPar,<setCommonGainStep>j__TPar,<setChannelPhaseStep>j__TPar,<getTemperatureADC>j__TPar,<get_TC_Status>j__TPar,<set_TC_Params>j__TPar,<getTemperatureParams>j__TPar,<Set_Fast_Beam_Steering>j__TPar,<Set_BeamPattern_Config>j__TPar,<Get_BeamPattern_Config_by_ID>j__TPar,<Set_Fast_Parallel_Mode>j__TPar,<Get_Fast_Parallel_Mode_Status>j__TPar,<Query_Static_IP>j__TPar,<Query_API_Version>j__TPar,<Query_Calibration_Version>j__TPar,<QueryLoaderVER>j__TPar,<firmware_upgrade>j__TPar,<ScanningVirtualDevice>j__TPar,<Virtual_checkCaliTableLocation>j__TPar,<Virtual_getFrequencyList>j__TPar,<Virtual_setOperatingFreq>j__TPar,<Virtual_getFrequencyInfo>j__TPar,<Virtual_getAAKitList>j__TPar,<Virtual_selectAAKit>j__TPar,<Virtual_getAAKitInfo>j__TPar,<Virtual_setAAKitInfo>j__TPar,<Virtual_deleteAAKitInfo>j__TPar,<Virtual_saveAAkitFile>j__TPar,<Virtual_SwitchTxRxMode>j__TPar,<Virtual_getTxRxMode>j__TPar,<Virtual_setChannelGainPhase>j__TPar,<Virtual_setDeviceGain>j__TPar,<Virtual_switchDevicePower>j__TPar,<Virtual_setDevicePhase>j__TPar,<Virtual_switchChannelPower>j__TPar,<Virtual_setBeamAngle>j__TPar,<Virtual_ReadChannelSettings>j__TPar]: AutoLayout, AnsiClass, Class, Sealed, BeforeFieldInit
+Class <>f__AnonymousType0`85[<ScanningDevice>j__TPar,<Init>j__TPar,<DeInit>j__TPar,<setStaticIP>j__TPar,<Reboot>j__TPar,<SwitchTxRxMode>j__TPar,<getTxRxMode>j__TPar,<selectAntenna>j__TPar,<selectAAKit>j__TPar,<getFrequencyList>j__TPar,<getDR>j__TPar,<getCOMDR>j__TPar,<getELEDR>j__TPar,<getAAKitList>j__TPar,<getAAKitInfo>j__TPar,<setAAKitInfo>j__TPar,<deleteAAKitInfo>j__TPar,<saveAAkitFile>j__TPar,<checkCaliTableLocation>j__TPar,<setOperatingFreq>j__TPar,<getOperatingFreq>j__TPar,<setChannelGainPhase>j__TPar,<setAllChannelGain>j__TPar,<switchChannelPower>j__TPar,<readBeamGainValues>j__TPar,<readBeamPhaseValues>j__TPar,<setAllGain>j__TPar,<setGainPhaseStep>j__TPar,<readSetting>j__TPar,<readSettingValues>j__TPar,<writeSetting>j__TPar,<setBeamXY>j__TPar,<QuerySN>j__TPar,<QueryMAC>j__TPar,<QueryFWV>j__TPar,<QueryHWV>j__TPar,<SetUDFreq>j__TPar,<SetUDFreqForce>j__TPar,<GetState>j__TPar,<SetState>j__TPar,<GetUDDeltaFreq>j__TPar,<GetRecommendLo>j__TPar,<GetLoWithRecommend>j__TPar,<GetUDCurrentFreq>j__TPar,<GetHarmonic>j__TPar,<ReadChannelSwitchValues>j__TPar,<setBeamAngle>j__TPar,<setChannelGainStep>j__TPar,<setCommonGainStep>j__TPar,<setChannelPhaseStep>j__TPar,<getTemperatureADC>j__TPar,<get_TC_Status>j__TPar,<set_TC_Params>j__TPar,<getTemperatureParams>j__TPar,<Set_Fast_Beam_Steering>j__TPar,<Set_BeamPattern_Config>j__TPar,<Get_BeamPattern_Config_by_ID>j__TPar,<Set_Fast_Parallel_Mode>j__TPar,<Get_Fast_Parallel_Mode_Status>j__TPar,<Query_Current_IP>j__TPar,<Query_Static_IP>j__TPar,<Query_API_Version>j__TPar,<Query_Calibration_Version>j__TPar,<QueryLoaderVER>j__TPar,<firmware_upgrade>j__TPar,<ScanningVirtualDevice>j__TPar,<Virtual_checkCaliTableLocation>j__TPar,<Virtual_getFrequencyList>j__TPar,<Virtual_setOperatingFreq>j__TPar,<Virtual_getFrequencyInfo>j__TPar,<Virtual_getAAKitList>j__TPar,<Virtual_selectAAKit>j__TPar,<Virtual_getAAKitInfo>j__TPar,<Virtual_setAAKitInfo>j__TPar,<Virtual_deleteAAKitInfo>j__TPar,<Virtual_saveAAkitFile>j__TPar,<Virtual_SwitchTxRxMode>j__TPar,<Virtual_getTxRxMode>j__TPar,<Virtual_setChannelGainPhase>j__TPar,<Virtual_setDeviceGain>j__TPar,<Virtual_switchDevicePower>j__TPar,<Virtual_setDevicePhase>j__TPar,<Virtual_switchChannelPower>j__TPar,<Virtual_setBeamAngle>j__TPar,<Virtual_ReadChannelSettings>j__TPar]: AutoLayout, AnsiClass, Class, Sealed, BeforeFieldInit
   Type parameter: <ScanningDevice>j__TPar
   Type parameter: <Init>j__TPar
   Type parameter: <DeInit>j__TPar
@@ -91,6 +91,7 @@ Class <>f__AnonymousType0`84[<ScanningDevice>j__TPar,<Init>j__TPar,<DeInit>j__TP
   Type parameter: <Get_BeamPattern_Config_by_ID>j__TPar
   Type parameter: <Set_Fast_Parallel_Mode>j__TPar
   Type parameter: <Get_Fast_Parallel_Mode_Status>j__TPar
+  Type parameter: <Query_Current_IP>j__TPar
   Type parameter: <Query_Static_IP>j__TPar
   Type parameter: <Query_API_Version>j__TPar
   Type parameter: <Query_Calibration_Version>j__TPar
@@ -116,7 +117,7 @@ Class <>f__AnonymousType0`84[<ScanningDevice>j__TPar,<Init>j__TPar,<DeInit>j__TP
   Type parameter: <Virtual_switchChannelPower>j__TPar
   Type parameter: <Virtual_setBeamAngle>j__TPar
   Type parameter: <Virtual_ReadChannelSettings>j__TPar
-    Void .ctor(<ScanningDevice>j__TPar, <Init>j__TPar, <DeInit>j__TPar, <setStaticIP>j__TPar, <Reboot>j__TPar, <SwitchTxRxMode>j__TPar, <getTxRxMode>j__TPar, <selectAntenna>j__TPar, <selectAAKit>j__TPar, <getFrequencyList>j__TPar, <getDR>j__TPar, <getCOMDR>j__TPar, <getELEDR>j__TPar, <getAAKitList>j__TPar, <getAAKitInfo>j__TPar, <setAAKitInfo>j__TPar, <deleteAAKitInfo>j__TPar, <saveAAkitFile>j__TPar, <checkCaliTableLocation>j__TPar, <setOperatingFreq>j__TPar, <getOperatingFreq>j__TPar, <setChannelGainPhase>j__TPar, <setAllChannelGain>j__TPar, <switchChannelPower>j__TPar, <readBeamGainValues>j__TPar, <readBeamPhaseValues>j__TPar, <setAllGain>j__TPar, <setGainPhaseStep>j__TPar, <readSetting>j__TPar, <readSettingValues>j__TPar, <writeSetting>j__TPar, <setBeamXY>j__TPar, <QuerySN>j__TPar, <QueryMAC>j__TPar, <QueryFWV>j__TPar, <QueryHWV>j__TPar, <SetUDFreq>j__TPar, <SetUDFreqForce>j__TPar, <GetState>j__TPar, <SetState>j__TPar, <GetUDDeltaFreq>j__TPar, <GetRecommendLo>j__TPar, <GetLoWithRecommend>j__TPar, <GetUDCurrentFreq>j__TPar, <GetHarmonic>j__TPar, <ReadChannelSwitchValues>j__TPar, <setBeamAngle>j__TPar, <setChannelGainStep>j__TPar, <setCommonGainStep>j__TPar, <setChannelPhaseStep>j__TPar, <getTemperatureADC>j__TPar, <get_TC_Status>j__TPar, <set_TC_Params>j__TPar, <getTemperatureParams>j__TPar, <Set_Fast_Beam_Steering>j__TPar, <Set_BeamPattern_Config>j__TPar, <Get_BeamPattern_Config_by_ID>j__TPar, <Set_Fast_Parallel_Mode>j__TPar, <Get_Fast_Parallel_Mode_Status>j__TPar, <Query_Static_IP>j__TPar, <Query_API_Version>j__TPar, <Query_Calibration_Version>j__TPar, <QueryLoaderVER>j__TPar, <firmware_upgrade>j__TPar, <ScanningVirtualDevice>j__TPar, <Virtual_checkCaliTableLocation>j__TPar, <Virtual_getFrequencyList>j__TPar, <Virtual_setOperatingFreq>j__TPar, <Virtual_getFrequencyInfo>j__TPar, <Virtual_getAAKitList>j__TPar, <Virtual_selectAAKit>j__TPar, <Virtual_getAAKitInfo>j__TPar, <Virtual_setAAKitInfo>j__TPar, <Virtual_deleteAAKitInfo>j__TPar, <Virtual_saveAAkitFile>j__TPar, <Virtual_SwitchTxRxMode>j__TPar, <Virtual_getTxRxMode>j__TPar, <Virtual_setChannelGainPhase>j__TPar, <Virtual_setDeviceGain>j__TPar, <Virtual_switchDevicePower>j__TPar, <Virtual_setDevicePhase>j__TPar, <Virtual_switchChannelPower>j__TPar, <Virtual_setBeamAngle>j__TPar, <Virtual_ReadChannelSettings>j__TPar): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(<ScanningDevice>j__TPar, <Init>j__TPar, <DeInit>j__TPar, <setStaticIP>j__TPar, <Reboot>j__TPar, <SwitchTxRxMode>j__TPar, <getTxRxMode>j__TPar, <selectAntenna>j__TPar, <selectAAKit>j__TPar, <getFrequencyList>j__TPar, <getDR>j__TPar, <getCOMDR>j__TPar, <getELEDR>j__TPar, <getAAKitList>j__TPar, <getAAKitInfo>j__TPar, <setAAKitInfo>j__TPar, <deleteAAKitInfo>j__TPar, <saveAAkitFile>j__TPar, <checkCaliTableLocation>j__TPar, <setOperatingFreq>j__TPar, <getOperatingFreq>j__TPar, <setChannelGainPhase>j__TPar, <setAllChannelGain>j__TPar, <switchChannelPower>j__TPar, <readBeamGainValues>j__TPar, <readBeamPhaseValues>j__TPar, <setAllGain>j__TPar, <setGainPhaseStep>j__TPar, <readSetting>j__TPar, <readSettingValues>j__TPar, <writeSetting>j__TPar, <setBeamXY>j__TPar, <QuerySN>j__TPar, <QueryMAC>j__TPar, <QueryFWV>j__TPar, <QueryHWV>j__TPar, <SetUDFreq>j__TPar, <SetUDFreqForce>j__TPar, <GetState>j__TPar, <SetState>j__TPar, <GetUDDeltaFreq>j__TPar, <GetRecommendLo>j__TPar, <GetLoWithRecommend>j__TPar, <GetUDCurrentFreq>j__TPar, <GetHarmonic>j__TPar, <ReadChannelSwitchValues>j__TPar, <setBeamAngle>j__TPar, <setChannelGainStep>j__TPar, <setCommonGainStep>j__TPar, <setChannelPhaseStep>j__TPar, <getTemperatureADC>j__TPar, <get_TC_Status>j__TPar, <set_TC_Params>j__TPar, <getTemperatureParams>j__TPar, <Set_Fast_Beam_Steering>j__TPar, <Set_BeamPattern_Config>j__TPar, <Get_BeamPattern_Config_by_ID>j__TPar, <Set_Fast_Parallel_Mode>j__TPar, <Get_Fast_Parallel_Mode_Status>j__TPar, <Query_Current_IP>j__TPar, <Query_Static_IP>j__TPar, <Query_API_Version>j__TPar, <Query_Calibration_Version>j__TPar, <QueryLoaderVER>j__TPar, <firmware_upgrade>j__TPar, <ScanningVirtualDevice>j__TPar, <Virtual_checkCaliTableLocation>j__TPar, <Virtual_getFrequencyList>j__TPar, <Virtual_setOperatingFreq>j__TPar, <Virtual_getFrequencyInfo>j__TPar, <Virtual_getAAKitList>j__TPar, <Virtual_selectAAKit>j__TPar, <Virtual_getAAKitInfo>j__TPar, <Virtual_setAAKitInfo>j__TPar, <Virtual_deleteAAKitInfo>j__TPar, <Virtual_saveAAkitFile>j__TPar, <Virtual_SwitchTxRxMode>j__TPar, <Virtual_getTxRxMode>j__TPar, <Virtual_setChannelGainPhase>j__TPar, <Virtual_setDeviceGain>j__TPar, <Virtual_switchDevicePower>j__TPar, <Virtual_setDevicePhase>j__TPar, <Virtual_switchChannelPower>j__TPar, <Virtual_setBeamAngle>j__TPar, <Virtual_ReadChannelSettings>j__TPar): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
     <ScanningDevice>j__TPar ScanningDevice 'get ' : 
     <Init>j__TPar Init 'get ' : 
@@ -177,6 +178,7 @@ Class <>f__AnonymousType0`84[<ScanningDevice>j__TPar,<Init>j__TPar,<DeInit>j__TP
     <Get_BeamPattern_Config_by_ID>j__TPar Get_BeamPattern_Config_by_ID 'get ' : 
     <Set_Fast_Parallel_Mode>j__TPar Set_Fast_Parallel_Mode 'get ' : 
     <Get_Fast_Parallel_Mode_Status>j__TPar Get_Fast_Parallel_Mode_Status 'get ' : 
+    <Query_Current_IP>j__TPar Query_Current_IP 'get ' : 
     <Query_Static_IP>j__TPar Query_Static_IP 'get ' : 
     <Query_API_Version>j__TPar Query_API_Version 'get ' : 
     <Query_Calibration_Version>j__TPar Query_Calibration_Version 'get ' : 
@@ -262,6 +264,7 @@ Class <>f__AnonymousType0`84[<ScanningDevice>j__TPar,<Init>j__TPar,<DeInit>j__TP
     get_Get_BeamPattern_Config_by_ID(): PrivateScope, Public, HideBySig, SpecialName
     get_Set_Fast_Parallel_Mode(): PrivateScope, Public, HideBySig, SpecialName
     get_Get_Fast_Parallel_Mode_Status(): PrivateScope, Public, HideBySig, SpecialName
+    get_Query_Current_IP(): PrivateScope, Public, HideBySig, SpecialName
     get_Query_Static_IP(): PrivateScope, Public, HideBySig, SpecialName
     get_Query_API_Version(): PrivateScope, Public, HideBySig, SpecialName
     get_Query_Calibration_Version(): PrivateScope, Public, HideBySig, SpecialName
@@ -303,7 +306,7 @@ Class AAKitSupporter: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Int32 STEERING_V_Length = 3 : Public, Static, Literal, HasDefault
   Methods:
     getAAKitInfoListNum(): PrivateScope, Public, HideBySig
-    getCrrentAAKitInfo(): PrivateScope, Public, HideBySig
+    getCurrentAAKitInfo(): PrivateScope, Public, HideBySig
     getAAKitNameList(): PrivateScope, Public, HideBySig
     getAAKitInfoIndexFromList(String): PrivateScope, Public, HideBySig
     getAAKitInfoObjectFromList(String): PrivateScope, Public, HideBySig
@@ -324,7 +327,7 @@ Class Virtual_AAKitSupporter: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Boolean isSelectAAKit : Public
   Methods:
     Virutal_getAAKitInfoListNum(): PrivateScope, Public, HideBySig
-    Virtual_getCrrentAAKitInfo(): PrivateScope, Public, HideBySig
+    Virtual_getCurrentAAKitInfo(): PrivateScope, Public, HideBySig
     Virtual_getAAKitNameList(): PrivateScope, Public, HideBySig
     Virtual_getAAKitInfoObjectFromList(String): PrivateScope, Public, HideBySig
     Virtual_setAAKitInfo(VIRTUAL_AAKIT_INFO): PrivateScope, Public, HideBySig
@@ -689,7 +692,6 @@ Class BBOARD26A: AutoLayout, AnsiClass, Class, BeforeFieldInit
     LoadAAKitInfo(): PrivateScope, Public, Virtual, HideBySig
     getOperatingFreq(): PrivateScope, Public, Virtual, HideBySig
     setOperatingFreq(Double): PrivateScope, Public, Virtual, HideBySig
-    checkElementDR(Int32, Double, Double, Double, Double): PrivateScope, Public, HideBySig
     setAllChannelGain(Int32, Double, Double, Double, Double): PrivateScope, Public, Virtual, HideBySig
     setChannelGainPhase(Int32, Int32, Double, Int32): PrivateScope, Public, Virtual, HideBySig
     setBeamAngle(Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
@@ -725,38 +727,33 @@ Class BBOXONE26A: AutoLayout, AnsiClass, Class, BeforeFieldInit
     setBeamXY(Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
     matrixCalculate(Int32, Int32): PrivateScope, Public, Virtual, HideBySig
     matrixCalculate2D(Int32, Int32): PrivateScope, Public, Virtual, HideBySig
-    checkBoardGainRange(Int32, Double&): PrivateScope, Public, Virtual, HideBySig
     SCPI_Store_Gain_BeamPattern(OPMODE, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
     SCPI_Store_Phase_BeamPattern(OPMODE, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
 Class Beam_Pattern_Configuration: AutoLayout, AnsiClass, Class, BeforeFieldInit
-    Void .ctor(System.String, BBoxAPI.DEV_TYPE, Double, Double, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, BBoxAPI.DEV_TYPE, Int32, Double, Double, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Boolean isBeamTableLoad : Public
-    Boolean isUserBeamTableLoad : Public
+    Int32[,,] pattern1_switch_settings : Public
     Double[,,] pattern1_gain_settings : Public
-    Double[,,] pattern2_gain_settings : Public
     Int32[,,] pattern1_phase_settings : Public
+    Int32[,,] pattern2_switch_settings : Public
+    Double[,,] pattern2_gain_settings : Public
     Int32[,,] pattern2_phase_settings : Public
     System.Collections.Generic.List`1[Beam_Pattern_Configuration+IC_Step_Configuration] pattern1_config_list : Public
     System.Collections.Generic.List`1[Beam_Pattern_Configuration+IC_Step_Configuration] pattern2_config_list : Public
     Beam_Configuration beam_tbl : Public
-    User_Beam_Configuration user_beam_tbl : Public
+    Int32 maximum_beam_num = 64 : Public, Static, Literal, HasDefault
     Int32 minimum_beamId = 1 : Public, Static, Literal, HasDefault
     Int32 maximum_beamId = 64 : Public, Static, Literal, HasDefault
     Int32 minimum_SCPI_beamId = 0 : Public, Static, Literal, HasDefault
     Int32 maximum_SCPI_beamId = 63 : Public, Static, Literal, HasDefault
-    Int32 maximum_beam_num = 64 : Public, Static, Literal, HasDefault
   Methods:
     check_beamId_InRange(Int32): PrivateScope, Public, HideBySig
     check_beam_table(): PrivateScope, Public, HideBySig
-    check_user_defined_beam_table(): PrivateScope, Public, HideBySig
     store_beam_pattern(Beam_Pattern): PrivateScope, Public, HideBySig
-    store_user_beam_pattern(User_Defined_BeamPattern): PrivateScope, Public, HideBySig
     load_beam_pattern(Int32, OPMODE): PrivateScope, Public, HideBySig
     load_beam_pattern_json_string(Int32, OPMODE): PrivateScope, Public, HideBySig
     save_beam_table(): PrivateScope, Public, HideBySig
-    load_user_beam_pattern(Int32, OPMODE): PrivateScope, Public, HideBySig
-    test_command(): PrivateScope, Public, HideBySig
 Class DeviceConfiguration: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CustomA_BBoxDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
@@ -770,8 +767,10 @@ Class CustomA_BBoxDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Int32 CHANNEL_GAIN_CTRL_PER_PATTERN : Public
     Int32 CHANNEL_PHASE_CTRL_PER_PATTERN : Public
     Boolean is_preload_beam_table : Public
+    Int32 TMYTEK_MINIMUM_THETA = 0 : Public, Static, Literal, HasDefault
+    Int32 TMYTEK_MAXIMUM_THETA = 45 : Public, Static, Literal, HasDefault
     Int32 MINIMUM_THETA = 0 : Public, Static, Literal, HasDefault
-    Int32 MAXIMUM_THETA = 60 : Public, Static, Literal, HasDefault
+    Int32 MAXIMUM_THETA = 359 : Public, Static, Literal, HasDefault
     Int32 MINIMUM_PHI = 0 : Public, Static, Literal, HasDefault
     Int32 MAXIMUM_PHI = 359 : Public, Static, Literal, HasDefault
   Properties:
@@ -787,16 +786,17 @@ Class CustomA_BBoxDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
     captureInfoFromTable(StreamReader, Double[,]&): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     checkGainRange(Double&): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     apply_Gain_Boundary(OPMODE, Double&): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
-    checkBoardGainRange(Int32, Double&): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    checkBoardGainRange(OPMODE, Int32, Double&): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     SwitchTxRxMode(Int32): PrivateScope, Public, Virtual, HideBySig
     SCPI_store_UserConfig_BeamPattern(OPMODE): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     SCPI_apply_UserConfig_BeamPattern(OPMODE): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     Module_Channel_Control(OPMODE, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     MODULE_TC_Control(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     Load_BeamPattern_Table(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Apply_BeamPattern_Table(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     Set_BeamPattern_Config(Int32, Int32, Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Set_BeamPattern_Config(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     Get_BeamPattern_Config_by_ID(Int32, Int32): PrivateScope, Public, Virtual, HideBySig
-    Store_BeamPattern(Int32, Int32, Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     Set_Fast_Parallel_Mode(Boolean): PrivateScope, Public, Virtual, HideBySig
     Get_Fast_Parallel_Mode_Status(): PrivateScope, Public, Virtual, HideBySig
     Set_Fast_Beam_Steering(Int32, Int32): PrivateScope, Public, Virtual, HideBySig
@@ -841,8 +841,8 @@ Class CustomA_BBoxDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
     Get_Phase_Control_Step(Int32): PrivateScope, Public, Virtual, HideBySig
     readBeamGainValues(): PrivateScope, Public, Virtual, HideBySig
     ReadBeamGainValues(Int32): PrivateScope, Public, Virtual, HideBySig
+    checkElementDR(OPMODE, Int32, Double, Double, Double, Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     SCPI_Send_Socket_Handler(String): PrivateScope, Public, HideBySig
-    validate_beam_settings(OPMODE, Double&, Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     QueryMAC(): PrivateScope, Public, Virtual, HideBySig
     switchDevicePower(OPMODE, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     setDeviceGain(OPMODE, Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
@@ -952,7 +952,6 @@ Class BBOXONE39A: AutoLayout, AnsiClass, Class, BeforeFieldInit
     setBeamXY(Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
     matrixCalculate(Int32, Int32): PrivateScope, Public, Virtual, HideBySig
     matrixCalculate2D(Int32, Int32): PrivateScope, Public, Virtual, HideBySig
-    checkBoardGainRange(Int32, Double&): PrivateScope, Public, Virtual, HideBySig
     SCPI_Store_Gain_BeamPattern(OPMODE, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
     SCPI_Store_Phase_BeamPattern(OPMODE, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
 Class BBOXONE28A: AutoLayout, AnsiClass, Class, BeforeFieldInit
@@ -981,7 +980,6 @@ Class BBOXONE28A: AutoLayout, AnsiClass, Class, BeforeFieldInit
     setBeamXY(Double, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
     matrixCalculate(Int32, Int32): PrivateScope, Public, Virtual, HideBySig
     matrixCalculate2D(Int32, Int32): PrivateScope, Public, Virtual, HideBySig
-    checkBoardGainRange(Int32, Double&): PrivateScope, Public, Virtual, HideBySig
     SCPI_Store_Gain_BeamPattern(OPMODE, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
     SCPI_Store_Phase_BeamPattern(OPMODE, Int32, Int32): PrivateScope, Public, Virtual, HideBySig
 Class Pipit18Device: AutoLayout, AnsiClass, Class, BeforeFieldInit
@@ -1026,7 +1024,7 @@ Class Pipit24Device: AutoLayout, AnsiClass, Class, BeforeFieldInit
     setControlParameters(Int32, Int32[][], Int32[][], Int32[][]): PrivateScope, Public, HideBySig
     setBeamXY(Double, Int32, Int32): PrivateScope, Public, HideBySig
 Class TMYNetwork: AutoLayout, AnsiClass, Class, BeforeFieldInit
-    Void .ctor(Boolean, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Boolean, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     Connect(String): PrivateScope, Public, HideBySig
     DeInit(): PrivateScope, Public, HideBySig
@@ -1110,6 +1108,7 @@ Class GeneralDevice: AutoLayout, AnsiClass, Class, BeforeFieldInit
     checkCaliTableLocation(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     Get_Fast_Parallel_Mode_Status(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     get_TC_Status(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Query_Current_IP(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     Query_Static_IP(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     QueryHWV(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
     QueryLoaderVER(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
@@ -1814,6 +1813,35 @@ Class Tftp.Net.Transfer.States.StateWithNetworkTimeout: AutoLayout, AnsiClass, C
   Methods:
     OnStateEnter(): PrivateScope, Public, Virtual, HideBySig
     OnTimer(): PrivateScope, Public, Virtual, HideBySig
+Class BBoxAPI.Beam_Pattern_Settings: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Double, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Double db  'get set' : 
+    Int32 theta 'get set' : 
+    Int32 phi  'get set' : 
+  Methods:
+    get_db(): PrivateScope, Public, HideBySig, SpecialName
+    set_db(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_theta(): PrivateScope, Public, HideBySig, SpecialName
+    set_theta(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_phi(): PrivateScope, Public, HideBySig, SpecialName
+    set_phi(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class BBoxAPI.Channel_Settings: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, Double, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 channel 'get set' : 
+    Int32 sw   'get set' : 
+    Double db  'get set' : 
+    Int32 deg  'get set' : 
+  Methods:
+    get_channel(): PrivateScope, Public, HideBySig, SpecialName
+    set_channel(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_sw(): PrivateScope, Public, HideBySig, SpecialName
+    set_sw(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_db(): PrivateScope, Public, HideBySig, SpecialName
+    set_db(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_deg(): PrivateScope, Public, HideBySig, SpecialName
+    set_deg(Int32): PrivateScope, Public, HideBySig, SpecialName
 Class BBoxAPI.Command_Argument: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.String, System.Object[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
@@ -1934,9 +1962,11 @@ Class BBoxAPI.BBoxOneAPI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     getTemperatureParams(String): PrivateScope, Public, HideBySig
     Set_Fast_Beam_Steering(Int32, Int32, String): PrivateScope, Public, HideBySig
     Set_BeamPattern_Config(Int32, Int32, Double, Int32, Int32, String): PrivateScope, Public, HideBySig
+    Set_BeamPattern_Config(String, String): PrivateScope, Public, HideBySig
     Get_BeamPattern_Config_by_ID(Int32, Int32, String): PrivateScope, Public, HideBySig
     Set_Fast_Parallel_Mode(Boolean, String): PrivateScope, Public, HideBySig
     Get_Fast_Parallel_Mode_Status(String): PrivateScope, Public, HideBySig
+    Query_Current_IP(String): PrivateScope, Public, HideBySig
     Query_Static_IP(String): PrivateScope, Public, HideBySig
     Query_API_Version(String): PrivateScope, Public, HideBySig
     Query_Calibration_Version(String): PrivateScope, Public, HideBySig
@@ -2000,13 +2030,13 @@ Class BBoxAPI.Device_Information: AutoLayout, AnsiClass, Class, Public, BeforeFi
 Class BBoxAPI.Queryer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    Start(): PrivateScope, Public, HideBySig
+    ScanDevice(DEV_SCAN_MODE): PrivateScope, Public, HideBySig
+    Receive_Task(IAsyncResult, Int32): PrivateScope, Public, Static, HideBySig
+    Receive_Async(IAsyncResult, Int32): PrivateScope, Public, Static, HideBySig
     DestructClients(): PrivateScope, Public, HideBySig
     Stop(): PrivateScope, Public, HideBySig
     GetSNIPConfig(): PrivateScope, Public, HideBySig
     ReceiveCallback(IAsyncResult): PrivateScope, Public, HideBySig
-    ScanDevice(DEV_SCAN_MODE): PrivateScope, Public, HideBySig
-    SendthenRead(String, DEV_SCAN_MODE): PrivateScope, Public, HideBySig
     GetDevInfo(): PrivateScope, Public, HideBySig
     GetDevNum(): PrivateScope, Public, HideBySig
     GetIP(String): PrivateScope, Public, HideBySig
@@ -2018,6 +2048,9 @@ Class BBoxAPI.Queryer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Get_active_device(String): PrivateScope, Public, HideBySig
     Set_device_active(String, Object): PrivateScope, Public, HideBySig
     Set_device_inactive(String): PrivateScope, Public, HideBySig
+    Get_device_active_status(String): PrivateScope, Public, HideBySig
+    DeInit(String): PrivateScope, Public, HideBySig
+    DeInitAll(): PrivateScope, Public, HideBySig
     get_device_info_from_calibration_table(): PrivateScope, Public, HideBySig
     ReflectFunction(String, String, Object[]): PrivateScope, Public, HideBySig
     check_upgrade_precondiction(String, String, String): PrivateScope, Public, HideBySig
@@ -2108,11 +2141,14 @@ Struct BBoxAPI.DEV_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed
     BBoxAPI.DEV_TYPE DEV_BBOARD28A = 12 : Public, Static, Literal, HasDefault
     BBoxAPI.DEV_TYPE DEV_BBOARD39A = 13 : Public, Static, Literal, HasDefault
     BBoxAPI.DEV_TYPE DEV_UD_00F = 14 : Public, Static, Literal, HasDefault
-    BBoxAPI.DEV_TYPE DEV_UD_00G = 15 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_UD_5G = 15 : Public, Static, Literal, HasDefault
     BBoxAPI.DEV_TYPE DEV_UD_DEMO_AD = 16 : Public, Static, Literal, HasDefault
     BBoxAPI.DEV_TYPE DEV_BBOARD26A = 17 : Public, Static, Literal, HasDefault
     BBoxAPI.DEV_TYPE DEV_BBOXLITE26A = 18 : Public, Static, Literal, HasDefault
     BBoxAPI.DEV_TYPE DEV_BBOXONE26A = 19 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_BBOXLITE28A_NI = 20 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_BBOXONE28A_NI = 21 : Public, Static, Literal, HasDefault
+    BBoxAPI.DEV_TYPE DEV_POWERDETECTOR = 22 : Public, Static, Literal, HasDefault
     BBoxAPI.DEV_TYPE DEV_ANALOG_BEAMFORM = 1000 : Public, Static, Literal, HasDefault
     BBoxAPI.DEV_TYPE DEV_DIGITAL_BEAMFORM = 1001 : Public, Static, Literal, HasDefault
     BBoxAPI.DEV_TYPE DEV_HYBRID_BEAMFORM = 1002 : Public, Static, Literal, HasDefault
@@ -15378,67 +15414,38 @@ Class Kirin40_BFIC_GEN+Step_settings: AutoLayout, AnsiClass, Class, NestedPublic
     Int32 ch4_gain : Public
     Int32 com_gain : Public
 Class Beam_Pattern_Configuration+Beam_Pattern: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
-    Void .ctor(Int32, BBoxAPI.OPMODE, BBoxAPI.DEV_TYPE, Double, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, BBoxAPI.OPMODE, BBoxAPI.DEV_TYPE, Int32, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
+    Int32 beam_type 'get set' : 
     Int32 beamId 'get set' : 
     BBoxAPI.OPMODE mode 'get set' : 
-    Double db  'get set' : 
-    Int32 theta 'get set' : 
-    Int32 phi  'get set' : 
-    System.Collections.Generic.List`1[System.Int32] channel_switch 'get set' : 
+    BBoxAPI.Beam_Pattern_Settings beam_config 'get set' : 
+    System.Collections.Generic.List`1[BBoxAPI.Channel_Settings] channel_config 'get set' : 
     BBoxAPI.DEV_TYPE dev_type 'get set' : 
   Methods:
+    get_beam_type(): PrivateScope, Public, HideBySig, SpecialName
+    set_beam_type(Int32): PrivateScope, Public, HideBySig, SpecialName
     get_beamId(): PrivateScope, Public, HideBySig, SpecialName
     set_beamId(Int32): PrivateScope, Public, HideBySig, SpecialName
     get_mode(): PrivateScope, Public, HideBySig, SpecialName
     set_mode(OPMODE): PrivateScope, Public, HideBySig, SpecialName
-    get_db(): PrivateScope, Public, HideBySig, SpecialName
-    set_db(Double): PrivateScope, Public, HideBySig, SpecialName
-    get_theta(): PrivateScope, Public, HideBySig, SpecialName
-    set_theta(Int32): PrivateScope, Public, HideBySig, SpecialName
-    get_phi(): PrivateScope, Public, HideBySig, SpecialName
-    set_phi(Int32): PrivateScope, Public, HideBySig, SpecialName
-    get_channel_switch(): PrivateScope, Public, HideBySig, SpecialName
-    set_channel_switch(List`1): PrivateScope, Public, HideBySig, SpecialName
+    get_beam_config(): PrivateScope, Public, HideBySig, SpecialName
+    set_beam_config(Beam_Pattern_Settings): PrivateScope, Public, HideBySig, SpecialName
+    get_channel_config(): PrivateScope, Public, HideBySig, SpecialName
+    set_channel_config(List`1): PrivateScope, Public, HideBySig, SpecialName
     get_dev_type(): PrivateScope, Public, HideBySig, SpecialName
     set_dev_type(DEV_TYPE): PrivateScope, Public, HideBySig, SpecialName
-Class Beam_Pattern_Configuration+User_Defined_BeamPattern: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
-  :Beam_Pattern_Configuration+Beam_Pattern
-    Void .ctor(Int32, BBoxAPI.OPMODE, BBoxAPI.DEV_TYPE, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Properties:
-    System.Collections.Generic.List`1[System.Double] channel_db 'get set' : 
-    System.Collections.Generic.List`1[System.Int32] channel_deg 'get set' : 
-  Methods:
-    get_channel_db(): PrivateScope, Public, HideBySig, SpecialName
-    set_channel_db(List`1): PrivateScope, Public, HideBySig, SpecialName
-    get_channel_deg(): PrivateScope, Public, HideBySig, SpecialName
-    set_channel_deg(List`1): PrivateScope, Public, HideBySig, SpecialName
+    set_beam_config(Double, Int32, Int32): PrivateScope, Public, HideBySig
+    set_channel_config(Int32, Int32, Double, Int32): PrivateScope, Public, HideBySig
 Class Beam_Pattern_Configuration+Beam_Configuration: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
     Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String version : Public
   Properties:
-    System.String version 'get set' : 
     System.String SN 'get set' : 
     System.Collections.Generic.List`1[Beam_Pattern_Configuration+Beam_Pattern] TX_beam_list 'get set' : 
     System.Collections.Generic.List`1[Beam_Pattern_Configuration+Beam_Pattern] RX_beam_list 'get set' : 
   Methods:
-    get_version(): PrivateScope, Public, HideBySig, SpecialName
-    set_version(String): PrivateScope, Public, HideBySig, SpecialName
-    get_SN(): PrivateScope, Public, HideBySig, SpecialName
-    set_SN(String): PrivateScope, Public, HideBySig, SpecialName
-    get_TX_beam_list(): PrivateScope, Public, HideBySig, SpecialName
-    set_TX_beam_list(List`1): PrivateScope, Public, HideBySig, SpecialName
-    get_RX_beam_list(): PrivateScope, Public, HideBySig, SpecialName
-    set_RX_beam_list(List`1): PrivateScope, Public, HideBySig, SpecialName
-Class Beam_Pattern_Configuration+User_Beam_Configuration: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
-    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Properties:
-    System.String version 'get set' : 
-    System.String SN 'get set' : 
-    System.Collections.Generic.List`1[Beam_Pattern_Configuration+User_Defined_BeamPattern] TX_beam_list 'get set' : 
-    System.Collections.Generic.List`1[Beam_Pattern_Configuration+User_Defined_BeamPattern] RX_beam_list 'get set' : 
-  Methods:
-    get_version(): PrivateScope, Public, HideBySig, SpecialName
-    set_version(String): PrivateScope, Public, HideBySig, SpecialName
     get_SN(): PrivateScope, Public, HideBySig, SpecialName
     set_SN(String): PrivateScope, Public, HideBySig, SpecialName
     get_TX_beam_list(): PrivateScope, Public, HideBySig, SpecialName
@@ -15507,6 +15514,46 @@ Class Beam_Pattern_Configuration+StatusMessage: AutoLayout, AnsiClass, Class, Ne
     set_Error_Message(String): PrivateScope, Public, HideBySig, SpecialName
     get_data(): PrivateScope, Public, HideBySig, SpecialName
     set_data(Beam_Pattern): PrivateScope, Public, HideBySig, SpecialName
+Class Beam_Pattern_Configuration+Deprecated_Beam_Configuration: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String version : Public
+  Properties:
+    System.String SN 'get set' : 
+    System.Collections.Generic.List`1[Beam_Pattern_Configuration+Deprecated_Beam_Pattern] TX_beam_list 'get set' : 
+    System.Collections.Generic.List`1[Beam_Pattern_Configuration+Deprecated_Beam_Pattern] RX_beam_list 'get set' : 
+  Methods:
+    get_SN(): PrivateScope, Public, HideBySig, SpecialName
+    set_SN(String): PrivateScope, Public, HideBySig, SpecialName
+    get_TX_beam_list(): PrivateScope, Public, HideBySig, SpecialName
+    set_TX_beam_list(List`1): PrivateScope, Public, HideBySig, SpecialName
+    get_RX_beam_list(): PrivateScope, Public, HideBySig, SpecialName
+    set_RX_beam_list(List`1): PrivateScope, Public, HideBySig, SpecialName
+Class Beam_Pattern_Configuration+Deprecated_Beam_Pattern: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(Int32, BBoxAPI.OPMODE, BBoxAPI.DEV_TYPE, Double, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 beamId 'get set' : 
+    BBoxAPI.OPMODE mode 'get set' : 
+    Double db  'get set' : 
+    Int32 theta 'get set' : 
+    Int32 phi  'get set' : 
+    System.Collections.Generic.List`1[System.Int32] channel_switch 'get set' : 
+    BBoxAPI.DEV_TYPE dev_type 'get set' : 
+  Methods:
+    get_beamId(): PrivateScope, Public, HideBySig, SpecialName
+    set_beamId(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_mode(): PrivateScope, Public, HideBySig, SpecialName
+    set_mode(OPMODE): PrivateScope, Public, HideBySig, SpecialName
+    get_db(): PrivateScope, Public, HideBySig, SpecialName
+    set_db(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_theta(): PrivateScope, Public, HideBySig, SpecialName
+    set_theta(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_phi(): PrivateScope, Public, HideBySig, SpecialName
+    set_phi(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_channel_switch(): PrivateScope, Public, HideBySig, SpecialName
+    set_channel_switch(List`1): PrivateScope, Public, HideBySig, SpecialName
+    get_dev_type(): PrivateScope, Public, HideBySig, SpecialName
+    set_dev_type(DEV_TYPE): PrivateScope, Public, HideBySig, SpecialName
 Class DeviceConfiguration+Software_Version: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
     Void .ctor(System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:

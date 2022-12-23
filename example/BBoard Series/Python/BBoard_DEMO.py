@@ -24,7 +24,7 @@ if __name__ == '__main__':
     dev_info = instance.ScanningDevice(0)
     device_num = len(dev_info)
 
-    if device_num > 0:
+    if device_num > 0 and dev_info[0] != "Result,NoDeviceFound,-1":
         for i in range(0, device_num, 1):
 
             response_message = dev_info[i].split(",")
@@ -117,13 +117,14 @@ if __name__ == '__main__':
             instance.setChannelPhaseStep(board, channel, phase_step, sn)
 
             print("======================================================")
-            print("[BBoard_DEMO][DEMO5] Get temperature adc")
+            print("[BBoard_DEMO][DEMO6] Get temperature adc")
 
             os.system("pause")
 
             ret = instance.getTemperatureADC(sn)
-            print("[BBoard_DEMO][DEMO5] Get temperature adc : %d" %ret[0])
-
+            print("[BBoard_DEMO][DEMO6] Get temperature adc : %d" %ret[0])
+    else:
+        print("[BBoard_DEMO][DEMO] No device found")
 
     print("======================================================")
     print("[BBoard_DEMO][DEMO] End")

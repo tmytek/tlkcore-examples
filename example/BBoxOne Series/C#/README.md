@@ -1,79 +1,171 @@
-# Getting Started — C#
-## Installation
-----------
+# Getting Started with Python Sample Code
 
-    Please add your BBox Calibration table and AAkit table to the following path.
+## Prerequisites
 
-    bbox-api\example\BBoxOne Series\BBoxOne  5G\C#\ConsoleApp1\bin\Release\files
+    1. Install visual studio 2022 community
+    2. Open project file and rebuild solution
+    3. Execute bbox-api\example\BBoxOne Series\C#\ConsoleApp1\bin\ReleaseConsoleApp1.exe
 
-## Initialization
-----------
+## Commandline
+
+---
+    None
+
+## Start : Query Device information and Init Device
+
+---
+
+- Scan the device information from ethernet.
+- sn from the scan result is the parameter for api call.
 
 ```C#
-/*
-To obtain the device information, you need to call ScanningDevice. The return string contains device_sn and IP address, spliting by ','.  
-Ex : B19133200-28,192.168.100.111,9
-*/
+
+using System;
+using System.Linq;
+using BBoxAPI;
+
+```
+
+- Init all devices
+
+```C#
 
 BBoxOneAPI instance = new BBoxOneAPI();
 
-string[] dev_info = instance.ScanningDevice(0);
+dev_info = instance.ScanningDevice(scanning_mode);
 
-// Get first device in scan result
-string[] info = dev_info[0].Split(',');
+DEV_NUM = dev_info.Count();
 
-String sn = info[0]; 
-String ip = info[1]; 
+if(DEV_NUM > 0 && dev_info[0] != "Result,NoDeviceFound,-1")
+{
+    for (int i = 0; i < DEV_NUM; i++)
+    {
+        string[] response_message = dev_info[i].Split(',');
+        sn = response_message[0];
+        ip = response_message[1];
+        DEV_TYPE = Convert.ToInt32(response_message[2]);
+        
+        instance.Init(sn, DEV_TYPE, i);
 
+        string[] freq_list = instance.getFrequencyList(sn);
 
-instance.Init(sn, 0, 0);
+        instance.setOperatingFreq(Convert.ToDouble(freq_list[0]), sn);
+
+        DR = instance.getDR(sn);
+        TX_MIN_GAIN = DR[0, 0];
+        TX_MAX_GAIN = DR[0, 1];
+        RX_MIN_GAIN = DR[1, 0];
+        RX_MAX_GAIN = DR[1, 1];
+
+        var AAkitList = instance.getAAKitList(sn);
+
+        if (AAkitList.Length > 0)
+        {
+            instance.selectAAKit(AAkitList[0], sn);
+        }
+    }
+}
+
 ```
 
-## Control example
-----------
+## DEMO1 : Get/Set Device Operating Mode
 
-## BBoxOne5G
-### Get Device mode
 ---
-You need to control BBox device with its serial number.
+Get/Set the device operating mode.
 
 ```C#
-int TX = 1;
-int RX = 2;
-int mode = instance.getTxRxMode(sn);
-```
 
-### Switch Tx or Rx mode
----
-You need to control BBox device with its serial number.
-
-```C#
-int TX = 1;
-int RX = 2;
 instance.SwitchTxRxMode(TX, sn);
-instance.SwitchTxRxMode(RX, sn);
+int mode = instance.getTxRxMode(sn);
+Console.WriteLine("[{0}][DEMO1] Mode : " + mode, sn);
+
 ```
 
-### Control Beam direction
+## DEMO2 : Power Off Channel 1 and channel 5
+
 ---
-The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 14.5 dB, theta value 15 and phi value : 30 . You need to point out which BBox device used by serial number.
+Power Off the specific channel.
 
 ```C#
-double db = 14.5;
-int theta = 15;
-int phi = 30;
-instance.setBeamAngle(db, theta, phi, sn);
+
+/*
+sw = 0 is power-on
+sw = 1 is power-off
+*/
+
+int board = 1;
+int channel = 1;
+int sw = 1;
+
+instance.switchChannelPower(board, channel, sw, sn);
+
+
+board = 1;
+channel = 5;
+sw = 1;
+
+instance.switchChannelPower(board, channel, sw, sn);
+
 ```
 
-### Get Temperature Sensor ADC Value
+## DEMO3 : Control the specific Channel gain in db and phase in deg
+
 ---
-Board-based Temperature Sensor. Lite has only one board.
+Set the specific channel db and deg
 
 ```C#
-int[] ret = instance.getTemperatureADC(sn);
-int board_1_adc = ret[0];
-int board_2_adc = ret[1];
-int board_3_adc = ret[2];
-int board_4_adc = ret[3];
+
+double Target_db = TX_MAX_GAIN;
+int Target_ch1_deg = 15;
+int Target_ch2_deg = 30;
+int Target_ch3_deg = 45;
+int Target_ch4_deg = 60;
+
+board = 1;
+
+channel = 1;
+instance.setChannelGainPhase(board, channel, Target_db, Target_ch1_deg, sn);
+
+channel = 2;
+instance.setChannelGainPhase(board, channel, Target_db, Target_ch2_deg, sn);
+
+channel = 3;
+instance.setChannelGainPhase(board, channel, Target_db, Target_ch3_deg, sn);
+
+channel = 4;
+instance.setChannelGainPhase(board, channel, Target_db, Target_ch4_deg, sn);
+
+
 ```
 
+## DEMO4 : BeamSteering Control
+
+---
+Control beam direction with spherical coordinate system (theta, phi)
+
+```C#
+
+double Target_db = TX_MAX_GAIN;
+
+int Target_theta = 15;
+int Target_phi = 0;
+
+
+instance.setBeamAngle(Target_db, Target_theta, Target_phi, sn);
+
+```
+
+## DEMO5 : Get Device Temperature ADC Value
+
+---
+Get device current temperature adc value
+
+```C#
+
+var ret = instance.getTemperatureADC(sn);
+Console.WriteLine("[{0}][DEMO5] Get board_1 temperature adc : {1}", sn, ret[0]);
+Console.WriteLine("[{0}][DEMO5] Get board_2 temperature adc : {1}", sn, ret[1]);
+Console.WriteLine("[{0}][DEMO5] Get board_3 temperature adc : {1}", sn, ret[2]);
+Console.WriteLine("[{0}][DEMO5] Get board_4 temperature adc : {1}", sn, ret[3]);
+
+```

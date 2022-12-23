@@ -23,7 +23,7 @@ if __name__ == '__main__':
     dev_info = instance.ScanningDevice(0)
     device_num = len(dev_info)
 
-    if device_num > 0:
+    if device_num > 0 and dev_info[0] != "Result,NoDeviceFound,-1":
         for i in range(0, device_num, 1):
 
             response_message = dev_info[i].split(",")
@@ -61,8 +61,9 @@ if __name__ == '__main__':
             RX_MAX_GAIN = DR[1, 1]
             print("[BBoxOne_DEMO][InitialDevice][%s] RX_MAX_GAIN : %f" % (sn, RX_MAX_GAIN))
 
-            AAkitList.append(instance.getAAKitList(sn))
-            instance.selectAAKit(AAkitList[0][0], sn)
+            AAkitList = instance.getAAKitList(sn)
+            if len(AAkitList) > 0:
+                instance.selectAAKit(AAkitList[0], sn)
 
             print("======================================================")
             print("[BBoxOne_DEMO][DEMO1][%s] Switch TX mode" % (sn))
@@ -72,7 +73,7 @@ if __name__ == '__main__':
             print("[BBoxOne_DEMO][DEMO1][%s] Mode : %d" % (sn, mode))
 
             print("======================================================")
-            print("[BBoxOne_DEMO][DEMO2][%s] Channel power control : Off channel 1 power" % (sn))
+            print("[BBoxOne_DEMO][DEMO2][%s] Channel power control : Power Off ch 1 and ch 5" % (sn))
             os.system("pause")
 
             board = 1
@@ -80,6 +81,13 @@ if __name__ == '__main__':
             sw = 1
             instance.switchChannelPower(board, channel, sw, sn)
             print("[BBoxOne_DEMO][DEMO2][%s] Channel 1 power off" % (sn))
+
+            board = 2
+            channel = 1
+            sw = 1
+            instance.switchChannelPower(board, channel, sw, sn)
+            print("[BBoxOne_DEMO][DEMO2][%s] Channel 5 power off" % (sn))
+
 
             Target_db = TX_MAX_GAIN
             Target_ch1_deg = 15
@@ -161,10 +169,12 @@ if __name__ == '__main__':
             os.system("pause")
 
             adc_ret = instance.getTemperatureADC(sn)
-            print("[BBOXLITE_DEMO][DEMO5] Get board_1 temperature adc : %d" %adc_ret[0])
-            print("[BBOXLITE_DEMO][DEMO5] Get board_2 temperature adc : %d" %adc_ret[1])
-            print("[BBOXLITE_DEMO][DEMO5] Get board_3 temperature adc : %d" %adc_ret[2])
-            print("[BBOXLITE_DEMO][DEMO5] Get board_4 temperature adc : %d" %adc_ret[3])
+            print("[BBoxOne_DEMO][DEMO5] Get board_1 temperature adc : %d" %(adc_ret[0]))
+            print("[BBoxOne_DEMO][DEMO5] Get board_2 temperature adc : %d" %(adc_ret[1]))
+            print("[BBoxOne_DEMO][DEMO5] Get board_3 temperature adc : %d" %(adc_ret[2]))
+            print("[BBoxOne_DEMO][DEMO5] Get board_4 temperature adc : %d" %(adc_ret[3]))
+    else:
+        print("[BBoxOne_DEMO][DEMO] No device found")
 
 
     print("======================================================")

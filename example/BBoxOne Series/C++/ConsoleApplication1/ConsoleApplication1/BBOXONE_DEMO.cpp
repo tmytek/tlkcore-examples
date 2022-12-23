@@ -65,7 +65,7 @@ int main()
 		Console::WriteLine("[DEMO1][{0}] Mode : " + mode, sn);
 
 		Console::WriteLine("======================================================");
-		Console::WriteLine("[DEMO2][{0}] Channel power control : Off channel 1 power", sn);
+		Console::WriteLine("[DEMO2][{0}] Channel power control : Off channel 1 and channel 5 power", sn);
 		system("pause");
 
 		int board = 1;
@@ -73,6 +73,13 @@ int main()
 		int sw = 1;
 		instance->switchChannelPower(board, channel, sw, sn);
 		Console::WriteLine("[DEMO2][{0}] Channel 1 power off", sn);
+
+		board = 2;
+		channel = 1;
+		sw = 1;
+		instance->switchChannelPower(board, channel, sw, sn);
+		Console::WriteLine("[DEMO2][{0}] Channel 5 power off", sn);
+
 
 		double Target_db = TX_MAX_GAIN;
 		int Target_ch1_deg = 15;
