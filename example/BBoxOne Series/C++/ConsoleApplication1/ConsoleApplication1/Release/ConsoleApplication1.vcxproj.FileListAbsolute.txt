@@ -8,3 +8,6 @@ D:\Source\bbox-api\example\BBoxOne\first_generation\C++\ConsoleApplication1\Cons
 D:\tmytek\Source\bbox-api\example\BBoxOne Series\BBoxOne  5G\C++\ConsoleApplication1\ConsoleApplication1\Release\ConsoleApplication1.vcxproj.CopyComplete
 D:\tmytek\Source\bbox-api\example\BBoxOne Series\BBoxOne  5G\C++\ConsoleApplication1\ConsoleApplication1\Release\ConsoleApplication1.vcxproj.AssemblyReference.cache
 D:\tmytek\Source\bbox-api\example\BBoxOne Series\BBoxOne  5G\C++\ConsoleApplication1\ConsoleApplication1\Release\ConsoleApplication1.vcxproj.SuggestedBindingRedirects.cache
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C++\ConsoleApplication1\ConsoleApplication1\Release\ConsoleApplication1.vcxproj.AssemblyReference.cache
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C++\ConsoleApplication1\ConsoleApplication1\Release\ConsoleApplication1.vcxproj.SuggestedBindingRedirects.cache
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C++\ConsoleApplication1\ConsoleApplication1\Release\ConsoleApplication1.vcxproj.CopyComplete

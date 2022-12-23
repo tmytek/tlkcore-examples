@@ -10,10 +10,11 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 ![](./images/support_languages.png)
 
-
-[[ Product Video1 ](https://www.youtube.com/watch?v=-koKf-OOsVA)]
-[[ Product Video2 ](https://www.youtube.com/watch?v=TRZwXUKOqUU)]
-[[ Product Video3 ](https://www.youtube.com/watch?v=bnvj6L9CLHs)]
+- Product Video
+  - [[ TMYTEK | Perform HD video streaming with Developer Kit and UD Box ](https://www.youtube.com/watch?v=-koKf-OOsVA)]
+  - [[ TMYTEK｜Beamforming device designed for antenna developers ](https://www.youtube.com/watch?v=TRZwXUKOqUU)]
+  - [[ TMYTEK｜mmWave beam tracking algorithm development based on USRP with BBox & UD Box ](https://www.youtube.com/watch?v=bnvj6L9CLHs)]
+  - [[ TMYTEK | UD Box 5G - Your Winning Choice for Up/Down Frequency Converter ](https://www.youtube.com/watch?v=C5jxUVBDYsw)]
 
 ---
 
@@ -23,10 +24,10 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 - Release Date: December., 2022
 
-- Latest Release : [[Download Link](https://github.com/tmytek/bbox-api/releases)]
+- Latest Release : [[ Download Link ](https://github.com/tmytek/bbox-api/releases)]
 
-- TMYTEK Box Series API Reference Guide
-  - PDF Document : [Download Link](https://github.com/tmytek/bbox-api/blob/master/doc/Official%20BBox%20API%20Reference%20Guide.pdf)
+- [TMYTEK Box Series API Reference Guide](https://github.com/tmytek/bbox-api/blob/master/doc/Official%20BBox%20API%20Reference%20Guide.pdf)
+  - [PDF Download Link](https://github.com/tmytek/bbox-api/raw/master/doc/Official%20BBox%20API%20Reference%20Guide.pdf)
   - Overview
     - [Introduction](#Introduction)
     - [Prerequisites](#Prerequisites)
@@ -85,21 +86,19 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 ### **Python Environment Setup**
 
-- Python version  : python-3.7.7 32-bit : [[Download Link](https://www.python.org/downloads/release/python-377/)]
+- Python version  : python-3.7.7 32-bit : [[ Download Link ](https://www.python.org/downloads/release/python-377/)]
 
-- External modules can be installed with Setup.bat in pre-install/
-
-<pre><code>$ bbox-api\pre-install\Setup.bat</code></pre>
+- External modules can be installed with pre-install/python/Setup.bat
 
     ![](./images/image_2.png)
 
 
 ### **Visual C++ and Visual C# Environment**
 
-- Step 1 : Visual Studio version : 2019 community : [[Download Link](https://visualstudio.microsoft.com/zh-hant/downloads/)]
+- Step 1 : Visual Studio version : 2019 community : [[ Download Link ](https://visualstudio.microsoft.com/zh-hant/downloads/)]
   - Visual Studio 2019 build tools version : v143
 
-- Step 2 : Disable Visual_studio just my code : [[Link](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)]
+- Step 2 : Disable Visual_studio just my code : [[ Link ](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)]
     ![](./images/image_3.png)
 
 

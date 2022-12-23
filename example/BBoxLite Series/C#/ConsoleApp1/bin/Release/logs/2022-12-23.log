@@ -1,0 +1,71 @@
+2022-12-23 16:07:53.8928|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 16:07:53.9518|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2022-12-23 16:07:53.9518|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 16:07:53.9538|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 16:07:53.9538|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[Virtual_Device_Interface][read_configuration_files] Configuration directory was created at 12/23/2022 4:07:53 PM.
+2022-12-23 16:07:54.9389|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2022-12-23 16:08:03.4932|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 16:08:03.5412|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2022-12-23 16:08:03.5412|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 16:08:03.5412|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 16:08:04.4829|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2022-12-23 16:08:09.6890|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 16:08:09.7850|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2022-12-23 16:08:09.7850|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 16:08:09.7850|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 16:08:10.0540|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][Set_device_information] SN : B00000000-00, IP : 192.168.212.36, DEV_TYPE : DEV_BBOXLITE39A
+2022-12-23 16:08:10.7626|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2022-12-23 16:08:11.7056|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-12-23 16:08:11.8187|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][Initial_process][B00000000-00] Create instance : BBOXLITE39A, firmware version : v1.2.15
+2022-12-23 16:08:11.8187|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][Initial_process][B00000000-00][192.168.212.36] InstanceInit return : OK
+2022-12-23 16:08:11.8187|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][setOperatingFreq][B00000000-00] Phi-A mode
+2022-12-23 16:08:11.8187|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][LoadCalibrationInfo][B00000000-00] Path :files\B00000000-00_39GHz.csv
+2022-12-23 16:08:11.8331|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][captureInfoFromTable][B00000000-00] Current calibration table version : 2.0.0 , at freqency 39
+2022-12-23 16:08:11.8331|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][captureInfoFromTable][B00000000-00] Current table version : 2.0.0 , at freqency 39
+2022-12-23 16:08:12.2546|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][LoadCalibrationInfo][B00000000-00] Load Calibration table Complete. 
+2022-12-23 16:08:12.3685|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[Beam_Pattern_Configuration][check_beam_table] Beam table directory was created at 12/23/2022 4:08:12 PM.
+2022-12-23 16:08:12.3685|WARN|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[Beam_Pattern_Configuration][check_beam_table] Beam table not exist
+2022-12-23 16:08:12.4798|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[Beam_Pattern_Configuration][generate_default_beam_table] Generate default Beam_Configuration
+2022-12-23 16:08:12.5309|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_B00000000-00_39GHz.json 
+2022-12-23 16:08:12.5469|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][setOperatingFreq][B00000000-00] Load Beam table into device complete
+2022-12-23 16:08:12.5469|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][setOperatingFreq][B00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2022-12-23 16:08:12.5469|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-12-23 16:08:12.5639|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxDevice][selectAAKit][B00000000-00] Set TMYTEK_39LITE_4x4_A2104L004-39 AAKIT
+2022-12-23 16:08:53.8981|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 16:08:53.9450|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2022-12-23 16:08:53.9450|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 16:08:53.9450|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 16:08:54.2270|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][Set_device_information] SN : B00000000-00, IP : 192.168.212.36, DEV_TYPE : DEV_BBOXLITE39A
+2022-12-23 16:08:54.9453|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2022-12-23 16:08:55.8559|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-12-23 16:08:55.9782|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][Initial_process][B00000000-00] Create instance : BBOXLITE39A, firmware version : v1.2.15
+2022-12-23 16:08:55.9782|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxOneAPI][Initial_process][B00000000-00][192.168.212.36] InstanceInit return : OK
+2022-12-23 16:08:55.9782|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][setOperatingFreq][B00000000-00] Phi-A mode
+2022-12-23 16:08:55.9782|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][LoadCalibrationInfo][B00000000-00] Path :files\B00000000-00_39GHz.csv
+2022-12-23 16:08:55.9902|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][captureInfoFromTable][B00000000-00] Current calibration table version : 2.0.0 , at freqency 39
+2022-12-23 16:08:55.9902|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][captureInfoFromTable][B00000000-00] Current table version : 2.0.0 , at freqency 39
+2022-12-23 16:08:56.4083|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][LoadCalibrationInfo][B00000000-00] Load Calibration table Complete. 
+2022-12-23 16:08:56.5149|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_B00000000-00_39GHz.json 
+2022-12-23 16:08:56.5249|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][setOperatingFreq][B00000000-00] Load Beam table into device complete
+2022-12-23 16:08:56.5249|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBOXLITE39A][setOperatingFreq][B00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2022-12-23 16:08:56.5349|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-12-23 16:08:56.5349|INFO|BBoxLite_DEMO.BBOXONE_CONTROL_DEMO|[BBoxDevice][selectAAKit][B00000000-00] Set TMYTEK_39LITE_4x4_A2104L004-39 AAKIT
+2022-12-23 16:09:29.2094|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 16:09:29.2694|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2022-12-23 16:09:29.2694|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 16:09:29.2694|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 16:09:29.5336|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : B00000000-00, IP : 192.168.212.36, DEV_TYPE : DEV_BBOXLITE39A
+2022-12-23 16:09:30.2586|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2022-12-23 16:09:31.2512|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-12-23 16:09:31.4255|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][B00000000-00] Create instance : BBOXLITE39A, firmware version : v1.2.15
+2022-12-23 16:09:31.4255|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][B00000000-00][192.168.212.36] InstanceInit return : OK
+2022-12-23 16:09:31.4255|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE39A][setOperatingFreq][B00000000-00] Phi-A mode
+2022-12-23 16:09:31.4255|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE39A][LoadCalibrationInfo][B00000000-00] Path :files\B00000000-00_39GHz.csv
+2022-12-23 16:09:31.4375|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE39A][captureInfoFromTable][B00000000-00] Current calibration table version : 2.0.0 , at freqency 39
+2022-12-23 16:09:31.4375|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE39A][captureInfoFromTable][B00000000-00] Current table version : 2.0.0 , at freqency 39
+2022-12-23 16:09:31.8218|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE39A][LoadCalibrationInfo][B00000000-00] Load Calibration table Complete. 
+2022-12-23 16:09:31.9300|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_B00000000-00_39GHz.json 
+2022-12-23 16:09:31.9410|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE39A][setOperatingFreq][B00000000-00] Load Beam table into device complete
+2022-12-23 16:09:31.9410|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE39A][setOperatingFreq][B00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2022-12-23 16:09:31.9540|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-12-23 16:09:31.9540|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxDevice][selectAAKit][B00000000-00] Set TMYTEK_39LITE_4x4_A2104L004-39 AAKIT

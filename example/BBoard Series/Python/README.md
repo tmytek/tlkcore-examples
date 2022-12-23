@@ -1,109 +1,169 @@
-# Getting Started — Python
+# Getting Started with Python Sample Code
 
-## Installation
-----------
-    None
+## Prerequisites
 
-## Initialization
+    1. Install python from bbox-api/pre-install/python-3.7.7-webinstall.exe
+    2. Install pip packages from bbox-api/pre-install/Setup.bat
+
+## Commandline
 ----------
+    $ python BBoard_DEMO.py
+
+## Start : Query Device information and Init Device
+---
+- Scan the device information from ethernet.
+- sn from the scan result is the parameter for api call.
 
 ```python
-# pip install pythonnet
-# clr Import BBoxAPI.dll
 
+# Import dll
 path = '.\\BBoxAPI.dll'
 clr.AddReference(os.path.abspath(path))
 
-# Scanning device in the same subnet
 
+# Scanning all the devices in the same subnet
 dev_info = instance.ScanningDevice(0)
 device_num = len(dev_info)
 
-# Initial all devices
-
+# Init all the devices
 for i in range(0, device_num, 1):
 
-	response_message = dev_info[i].split(",")
-	sn = response_message[0]
-	ip = response_message[1]
-	val = response_message[2].split("\x00")
-	dev_type = int(val[0])
+    response_message = dev_info[i].split(",")
+    sn = response_message[0]
+    ip = response_message[1]
+    val = response_message[2].split("\x00")
+    dev_type = int(val[0])
 
-	instance.Init(sn, dev_type, i)
+    print("[BBoard_DEMO][GetDeviceStatus] SN : %s" % (sn))
+    print("[BBoard_DEMO][GetDeviceStatus] IP : %s" % (ip))
+    print("[BBoard_DEMO][GetDeviceStatus] dev_type : %d" % (dev_type))
+
+    instance.Init(sn, dev_type, i)
+    print("[BBoard_DEMO][InitialDevice][%s]" % (sn))
+
 ```
 
-## Control example
-****
-#### Running sample code
-    $ python BBoard_DEMO.py
-****
-
-## BBoard 5G
-### Get Tx or Rx state
+## DEMO1 : Get/Set Device Operating Mode
 ---
-Use the following code to obtain the current Tx/Rx mode and store it in a variable m. You need to point out which BBox device used by serial number.
+Get/Set the device operating mode.
 
 ```python
-mode = instance.getTxRxMode(sn)
-```
 
-### Switch Tx & Rx mode
----
-You need to control BBox device with its serial number.
-
-```python
-sn = 'D2104L001-28'
-TX = 1
-RX = 2
+# Set device operating mode as TX
 instance.SwitchTxRxMode(TX, sn)
-instance.SwitchTxRxMode(RX, sn)
+
+# Get device operating mode
+mode = instance.getTxRxMode(sn)
+
 ```
 
-### Control Element Phase Step
+## DEMO2 : Power Off Channel 1
 ---
-Set the specific channel element-arm phase step : 5.625 deg per step
-
+Power Off the specific channel.
 ```python
-sn = 'D2104L001-28'
+
+"""
+sw = 0 is power-on
+sw = 1 is power-off
+"""
+sw = 1
+
 board = 1
 channel = 1
-phase_step = 1
-instance.setChannelPhaseStep(board, channel, phase_step, sn)
+
+instance.switchChannelPower(board, channel, sw, sn)
+
 ```
 
-### Control Element Gain Step
+## DEMO3 : Control Channel Element Gain Step
 ---
-Set the specific channel element-arm gain step : 0.5 db per step
+Set the specific channel gain step : 0.5 db per step
 
 ```python
-sn = 'D2104L001-28'
-board = 1
-channel = 1
+
 gain_step = 1
+
+board = 1
+
+# Control channel_1 
+channel = 1
 instance.setChannelGainStep(board, channel, gain_step, sn)
+
+
+# Control channel_2
+channel = 2
+instance.setChannelGainStep(board, channel, gain_step, sn)
+
+
+# Control channel_3
+channel = 3
+instance.setChannelGainStep(board, channel, gain_step, sn)
+
+
+# Control channel_4
+channel = 4
+instance.setChannelGainStep(board, channel, gain_step, sn)
+
 ```
 
-### Control Common Gain Step
+## DEMO4 : Control Common Gain Step
 ---
 Set common-arm step : 1 db per step with all channels
 
 ```python
-sn = 'D2104L001-28'
-board = 1
+
 gain_step = 1
+
+board = 1
+
 instance.setCommonGainStep(board, gain_step, sn)
+
 ```
 
-### Get Temperature ADC
+## DEMO5 : Control Element Phase Step
+
+---
+Set the specific channel phase step : 5.625 deg per step
+
+```python
+
+phase_step = 1
+
+board = 1
+
+# Control channel_1
+ 
+channel = 1
+instance.setChannelPhaseStep(board, channel, phase_step, sn)
+
+
+# Control channel_2
+ 
+channel = 2
+instance.setChannelPhaseStep(board, channel, phase_step, sn)
+
+
+# Control channel_3
+ 
+channel = 3
+instance.setChannelPhaseStep(board, channel, phase_step, sn)
+
+# Control channel_4
+ 
+channel = 4
+instance.setChannelPhaseStep(board, channel, phase_step, sn)
+
+```
+
+
+## DEMO6 : Get Device Temperature ADC Value
 ---
 Get device current temperature adc value
 
 ```python
-sn = 'D2104L001-28'
-ret = b.getTemperatureADC(sn)
-print(ret[0])
+
+adc = instance.getTemperatureADC(sn)
+
+print(adc[0])
 
 ```
-****
-
-

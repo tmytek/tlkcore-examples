@@ -1,18 +1,31 @@
-# Getting Started — C++
+# Getting Started with C++ Sample Code
 
-## Installation
-----------
+## Prerequisites
 
-    Please add your BBox calibration table and AAkit table to the following path.
-    
-    bbox-api\example\BBoxLite Series\BBoxLite 5G\C++\ConsoleApplication1\ConsoleApplication1\files
+    1. Install visual studio 2022 community
+    2. Open project file and rebuild solution
+    3. Put your calibration table into bbox-api\example\BBoxLite Series\C++\ConsoleApplication1\Release\files\
+    4. Execute bbox-api\example\BBoxLite Series\C++\ConsoleApplication1\Release\ConsoleApp1.exe
 
+## Commandline
 
-## Initialization
-----------
+---
+    None
+
+## Start : Query Device information and Init Device
+
+---
+
+- Scan the device information from ethernet.
+- sn from the scan result is the parameter for api call.
 
 ```C++
-// Import BBoxAPI.dll
+
+#include "stdio.h"
+#include "pch.h"
+
+#include <iostream>
+#include <string>
 #include <array>
 #include <msclr/marshal.h>
 #include <msclr/marshal_cppstd.h>
@@ -21,72 +34,140 @@ using namespace System;
 using namespace BBoxAPI;
 using namespace msclr::interop;
 
-// Construct instance and scan device
+```
+
+- Init all devices
+
+```C++
+
+// GetDeviceStatus
 BBoxAPI::BBoxOneAPI ^instance = gcnew BBoxAPI::BBoxOneAPI();
+
 array<String ^>^ dev_info = instance->ScanningDevice((BBoxAPI::DEV_SCAN_MODE)0);
 dev_num = dev_info->Length;
 
-// Initial all devices
 for (int i = 0; i < dev_num; i++)
 {
-	array<String ^> ^ response_message = dev_info[i]->Split(',');	
+    array<String ^> ^ response_message = dev_info[i]->Split(','); 
 
-	String ^ sn = response_message[0];
-	std::string SN = msclr::interop::marshal_as<std::string>(sn);
-	String ^ ip = response_message[1];
-	std::string IP = msclr::interop::marshal_as<std::string>(ip);
-	String ^ dev_type = response_message[2];
-	std::string DEV_TYPE = msclr::interop::marshal_as<std::string>(dev_type);
-	int devtype = std::stoi(DEV_TYPE);
+    String ^ sn = response_message[0];
+    std::string SN = msclr::interop::marshal_as<std::string>(sn);
+    String ^ ip = response_message[1];
+    std::string IP = msclr::interop::marshal_as<std::string>(ip);
+    String ^ dev_type = response_message[2];
+    std::string DEV_TYPE = msclr::interop::marshal_as<std::string>(dev_type);
+    int devtype = std::stoi(DEV_TYPE);
 
-	ret = instance->Init(sn, devtype, i);
-}
+    ret = instance->Init(sn, devtype, i);
+
+    array<String ^> ^ freq_list = instance->getFrequencyList(sn);
+    String ^ freq = freq_list[0];
+    std::string FREQ = msclr::interop::marshal_as<std::string>(freq);
+    double operating_freq = std::stod(FREQ);
+    ret = instance->setOperatingFreq(operating_freq, sn);
+
+    array<Double, 2> ^ DR = instance->getDR(sn);
+    TX_MIN_GAIN = DR[0, 0];
+    TX_MAX_GAIN = DR[0, 1];
+    RX_MIN_GAIN = DR[1, 0];
+    RX_MAX_GAIN = DR[1, 1];
+
+    array<Double, 2> ^ COM_DR = instance->getCOMDR(sn);
+    TX_COM_MIN_GAIN = COM_DR[0, 0];
+    TX_COM_MAX_GAIN = COM_DR[0, 1];
+    RX_COM_MIN_GAIN = COM_DR[1, 0];
+    RX_COM_MAX_GAIN = COM_DR[1, 1];
+
+    array<Double, 2> ^ ELE_DR = instance->getELEDR(sn);
+    TX_ELE_DR = ELE_DR[0, 0];
+    RX_ELE_DR = ELE_DR[0, 1];
+
+    array<String ^> ^ AAkitList = instance->getAAKitList(sn);
+
+    instance->selectAAKit(AAkitList[0], sn);
+
+ }
+
 ```
 
-## Control example
----
-#### Running sample code
-    Open ConsoleApplication1.sln
-    Compile and run
----
+## DEMO1 : Get/Set Device Operating Mode
 
-## BBoxLite 5G
-### Get Tx or Rx state
 ---
-You need to control BBox device with its serial number.
+Get/Set the device operating mode.
 
 ```C++
-int TX = 1;
-int RX = 2;
-int mode = instance->getTxRxMode(sn);
-```
 
-### Switch Tx & Rx mode
----
-You need to control BBox device with its serial number.
-
-```C++
-int TX = 1;
-int RX = 2;
 instance->SwitchTxRxMode(TX, sn);
-instance->SwitchTxRxMode(RX, sn);
+int mode = instance->getTxRxMode(sn);
+Console::WriteLine("[{0}][DEMO1] Mode : " + mode, sn);
+
 ```
 
-### Control Beam direction
+## DEMO2 : Power Off Channel 1
+
 ---
-The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 14.5 dB, theta value 15 and phi value : 0 . You need to point out which BBox device used by serial number.
+Power Off the specific channel.
 
 ```C++
-double db = 14.5;
-int theta = 15;
-int phi = 0;
-instance->setBeamAngle(db, theta, phi, sn)
+
+int board = 1;
+int channel = 1;
+int sw = 1;
+instance->switchChannelPower(board, channel, sw, sn);
+
 ```
 
-### Get Temperature Sensor ADC Value
+## DEMO3 : Control the specific Channel gain in db and phase in deg
+
 ---
-Board-based Temperature Sensor. Lite has only one board.
+Set the specific channel db and deg
 
 ```C++
-int adc = instance->getTemperatureADC(sn)[0];
+
+double Target_db = TX_MAX_GAIN;
+int Target_ch1_deg = 15;
+int Target_ch2_deg = 30;
+int Target_ch3_deg = 45;
+int Target_ch4_deg = 60;
+
+board = 1;
+
+channel = 1;
+instance->setChannelGainPhase(board, channel, Target_db, Target_ch1_deg, sn);
+
+channel = 2;
+instance->setChannelGainPhase(board, channel, Target_db, Target_ch2_deg, sn);
+
+channel = 3;
+instance->setChannelGainPhase(board, channel, Target_db, Target_ch3_deg, sn);
+
+channel = 4;
+instance->setChannelGainPhase(board, channel, Target_db, Target_ch4_deg, sn);
+
+```
+
+## DEMO4 : BeamSteering Control
+
+---
+Control beam direction with spherical coordinate system (theta, phi)
+
+```C++
+
+Target_db = TX_MAX_GAIN;
+int Target_theta = 15;
+int Target_phi = 0;
+
+instance->setBeamAngle(Target_db, Target_theta, Target_phi, sn);
+
+```
+
+## DEMO5 : Get Device Temperature ADC Value
+
+---
+Get device current temperature adc value
+
+```C++
+
+Console::WriteLine("[{0}][DEMO5] Get temperature adc : {1}", sn, instance->getTemperatureADC(sn)[0]);
+
 ```

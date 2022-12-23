@@ -1,158 +1,187 @@
-# Getting Started — Python
+# Getting Started with Python Sample Code
 
-## Installation
+## Prerequisites
+
+    1. Install python from bbox-api/pre-install/python-3.7.7-webinstall.exe
+    2. Install pip packages from bbox-api/pre-install/Setup.bat
+    3. Put your calibration table into bbox-api/example/BBoxOne Series/Python/files/
+
+## Commandline
+
 ----------
+    $ python BBoxLite_DEMO.py
 
-    Please add your BBox calibration table and AAkit table to the following path.
+## Start : Query Device information and Init Device
 
-    bbox-api\files\
+---
 
-
-## Initialization
-----------
+- Scan the device information from ethernet.
+- sn from the scan result is the parameter for api call.
 
 ```python
-# Import BBoxAPI.dll
 
-dir_path = '..\\..\\..\\..\\'
-os.chdir(os.path.abspath(dir_path))
-
+# Import dll
 path = '.\\BBoxAPI.dll'
 clr.AddReference(os.path.abspath(path))
 
-# Scanning device in the same subnet
 
+# Scanning all the devices in the same subnet
 dev_info = instance.ScanningDevice(0)
 device_num = len(dev_info)
 
-# Initial all devices
 
 for i in range(0, device_num, 1):
 
-	response_message = dev_info[i].split(",")
-	sn = response_message[0]
-	ip = response_message[1]
-	val = response_message[2].split("\x00")
-	dev_type = int(val[0])
+    response_message = dev_info[i].split(",")
+    sn = response_message[0]
+    ip = response_message[1]
+    val = response_message[2].split("\x00")
+    dev_type = int(val[0])
 
-	instance.Init(sn, dev_type, i)
+    print("[BBoxLite_DEMO][GetDeviceStatus] SN : %s" % (sn))
+    print("[BBoxLite_DEMO][GetDeviceStatus] IP : %s" % (ip))
+    print("[BBoxLite_DEMO][GetDeviceStatus] dev_type : %d" % (dev_type))
+
+
+    # Init all the devices
+    instance.Init(sn, dev_type, i)
+    print("[BBoxLite_DEMO][InitialDevice][%s]" % (sn))
+
+
+    # Choose the frequency point from calibration tables
+    freq_list = instance.getFrequencyList(sn)
+    if len(freq_list) == 0:
+        print("[BBoxLite_DEMO][InitialDevice][%s] failed : return null" % (sn))
+    else:
+       for item in freq_list:
+            print("[BBoxLite_DEMO][InitialDevice][%s] getFrequencyList: list %s" % (sn, item))
+
+    ret = instance.setOperatingFreq(freq_list[0], sn)
+    if ret != 0:
+       print("[BBoxLite_DEMO][InitialDevice][%s] setOperatingFreq failed : error_code %d" % (sn, ret))
+
+    # Gain dynamic range
+    DR = instance.getDR(sn)
+    print("[BBoxLite_DEMO][InitialDevice][%s] " % (sn))
+    TX_MIN_GAIN = DR[0, 0]
+    print("[BBoxLite_DEMO][InitialDevice][%s] TX_MIN_GAIN : %f" % (sn, TX_MIN_GAIN))
+    TX_MAX_GAIN = DR[0, 1]
+    print("[BBoxLite_DEMO][InitialDevice][%s] TX_MAX_GAIN : %f" % (sn, TX_MAX_GAIN))
+    RX_MIN_GAIN = DR[1, 0]
+    print("[BBoxLite_DEMO][InitialDevice][%s] RX_MIN_GAIN : %f" % (sn, RX_MIN_GAIN))
+    RX_MAX_GAIN = DR[1, 1]
+    print("[BBoxLite_DEMO][InitialDevice][%s] RX_MAX_GAIN : %f" % (sn, RX_MAX_GAIN))
+
+
+    # Get/Set AAKIT
+    AAkitList = instance.getAAKitList(sn)
+    if len(AAkitList) > 0:
+        instance.selectAAKit(AAkitList[0], sn)
+
 ```
 
-## Control example
-****
-#### Running sample code
-    $ python .\BBoxOne_DEMO.py
-****
-## BBoxLite 5G
-### Obtain Tx or Rx state
+## DEMO1 : Get/Set Device Operating Mode
+
 ---
-You need to control BBox device with its serial number.
+Get/Set the device operating mode.
 
 ```python
-sn = "D2104L001-28"
-TX = 1
-RX = 2
-mode = instance.getTxRxMode(sn)
-```
-### Switch Tx & Rx mode
----
-You need to control BBox device with its serial number.
 
-```python
-sn = "D2104L001-28"
-TX = 1
-RX = 2
+# Set device operating mode as TX
 instance.SwitchTxRxMode(TX, sn)
-instance.SwitchTxRxMode(RX, sn)
+
+# Get device operating mode
+mode = instance.getTxRxMode(sn)
+
 ```
 
-### Control Beam direction
+## DEMO2 : Power Off Channel 1
+
 ---
-The core function of BBox is to control beam steering. The following code snippet steers beam to be off broadside with 14.5 dB, theta value 15 and phi value : 0 . You need to point out which BBox device used by serial number.
+Power Off the specific channel.
 
 ```python
-db = 14.5
-theta = 15
-phi = 0
-instance.setBeamAngle(db, theta, phi, sn)
+
+"""
+sw = 0 is power-on
+sw = 1 is power-off
+"""
+sw = 1
+
+board = 1
+channel = 1
+
+instance.switchChannelPower(board, channel, sw, sn)
+
 ```
 
-****
+## DEMO3 : Control the specific Channel gain in db and phase in deg
 
-# API Usage
-## ScanningDevice
 ---
-    public string[] ScanningDevice(DEV_SCAN_MODE scanMode)
-| Type          | Name     | Value                |
-| -             | -        | -                    |
-| DEV_SCAN_MODE | scanMode | Normal : 0, Fast : 1 |
+Set the specific channel db and deg
 
-Return scan results from devices
-## Init
+```python
+
+Target_db = TX_MAX_GAIN   # read from instance.getDR(sn)
+
+board = 1
+
+
+# Control channel_1 
+
+channel = 1
+
+Target_ch1_deg = 15
+instance.setChannelGainPhase(board, channel, Target_db, Target_ch1_deg, sn)
+
+
+# Control channel_2
+
+channel = 2
+
+Target_ch2_deg = 30
+instance.setChannelGainPhase(board, channel, Target_db, Target_ch2_deg, sn)
+
+
+# Control channel_3
+
+channel = 3
+Target_ch3_deg = 45
+instance.setChannelGainPhase(board, channel, Target_db, Target_ch3_deg, sn)
+
+
+# Control channel_4
+
+channel = 4
+Target_ch4_deg = 60
+instance.setChannelGainPhase(board, channel, Target_db, Target_ch4_deg, sn)
+
+```
+
+## DEMO4 : BeamSteering Control
+
 ---
-    public int Init(sn, dev_type, idx)
-| Type    | Name        | Value                           |
-| -       | -           | -                               |
-| String  | sn          | Serial Number from scan result |
-| int     | dev_type    | Type from scan result           |
-| int     | idx         | Index in scan result            |
+Control beam direction with spherical coordinate system (theta, phi)
 
-Return integer type status code.
+```python
 
-## getTxRxMode
+    Target_db = TX_MAX_GAIN
+    
+    Target_theta = 15
+    Target_phi = 0
+
+    instance.setBeamAngle(Target_db, Target_theta, Target_phi, sn)
+
+```
+
+## DEMO5 : Get Device Temperature ADC Value
+
 ---
-Get Tx/Rx Mode of device with SN. Return TxRxMode table value.
+Get device current temperature adc value
 
-    public int getTxRxMode(String sn); 
+```python
 
-return 1 if Tx mode, and 2 if Rx mode.
+ret = instance.getTemperatureADC(sn)
+print(ret[0])
 
-## SwitchTxRxMode
----
-    public int SwitchTxRxMode(int mode, String sn)
-| Type   | Name  | Value                |
-| -      | -     | -                    |
-| int    | mode  | Tx : 1, Rx : 2       |
-| String | sn    | device serial number |
-
-## setBeamAngle
----
-    public int setBeamAngle(double db, int theta, int phi, String sn)
-| Type         | Name        | Value                 |
-| -            | -           | -                     |
-| double       | db          | Gain value            |
-| int          | theta       | Theta value           |
-| int          | phi         | Phi value             |
-| String       | sn          | Device serial number  |
-
-
-## setChannelGainPhase
----
-    public string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
-| Type      | Name        | Value                 |
-| -         | -           | -                     |
-| int       | board       | Board number   : 1    |
-| int       | ch          | Channel number : 1-4  |
-| double    | db          | Target db             |
-| int       | phase       | Target deg            |
-| String    | sn          | Device serial number  |
-
-## switchChannelPower
----
-    public string switchChannelPower(int board, int ch, int sw, string sn)
-| Type      | Name        | Value                          |
-| -         | -           | -                              |
-| int       | board       | Board number   : 1             |
-| int       | ch          | Channel number : 1-4           |
-| int       | sw          | ON/OFF value   : ON 0 , OFF 1  |
-| String    | sn          | Device serial number           |
-
-
-## getTemperatureADC
----
-    int[] getTemperatureADC(string sn)
-
-| Type      | Name        | Value                                  |
-| ---       | ---         | ---                                    |
-| string    | sn          | Device Serial Number : "D2104L011-28"  |
-
+```
