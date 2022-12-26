@@ -1,8 +1,39 @@
+# **TMYTEK Box API Sample Code v1.6.5 Release Note**
+
+Software version    | 1.6.5
+--------------      |:-----:
+Release date        | Dec 26, 2022
+Applicable Models   | BBoxLite28A, BBoxLite39A, BBoard28A, BBoard39A, BBoxOne28A, BBoxOne39A, UDBox 5G
+
+<font color=#EA0000>Bugfix
+---
+
+- None
+</font>
+
+<font color=#00AEAE>New Features
+---
+
+- None
+</font>
+
+<font color=#7373B9>Improvements
+---
+
+- Update readme
+</font>
+
+<font color=#7373B9>Known Issues
+---
+
+- None
+</font>
+
 # **TMYTEK Box API Sample Code v1.6.4 Release Note**
 
 Software version    | 1.6.4
 --------------      |:-----:
-Release date        | Dec 5, 2022
+Release date        | Dec 23, 2022
 Applicable Models   | BBoxLite28A, BBoxLite39A, BBoard28A, BBoard39A, BBoxOne28A, BBoxOne39A, UDBox 5G
 
 <font color=#EA0000>Bugfix
