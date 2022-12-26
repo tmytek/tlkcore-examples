@@ -4,7 +4,8 @@
 
     1. Install visual studio 2022 community
     2. Open project file and rebuild solution
-    3. Execute bbox-api\example\BBoxLite Series\C#\ConsoleApp1\bin\ReleaseConsoleApp1.exe
+    3. Put your calibration table into bbox-api\example\BBoxLite Series\C#\ConsoleApp1\bin\Release\files
+    4. Execute bbox-api\example\BBoxLite Series\C#\ConsoleApp1\bin\ReleaseConsoleApp1.exe
 
 ## Commandline
 

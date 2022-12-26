@@ -20,10 +20,6 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 ## **Getting Started**
 
-- API Version: v3.3.15.16
-
-- Release Date: December., 2022
-
 - Latest Release : [[ Download Link ](https://github.com/tmytek/bbox-api/releases)]
 
 - [TMYTEK Box Series API Reference Guide](https://github.com/tmytek/bbox-api/blob/master/doc/Official%20BBox%20API%20Reference%20Guide.pdf)
