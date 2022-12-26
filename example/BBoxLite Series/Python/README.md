@@ -2,9 +2,9 @@
 
 ## Prerequisites
 
-    1. Install python from bbox-api/pre-install/python-3.7.7-webinstall.exe
-    2. Install pip packages from bbox-api/pre-install/Setup.bat
-    3. Put your calibration table into bbox-api/example/BBoxOne Series/Python/files/
+    1. Install python from bbox-api\pre-install\python-3.7.7-webinstall.exe
+    2. Install pip packages from bbox-api\pre-install\Setup.bat
+    3. Put your calibration table into bbox-api\example\BBoxLite Series\Python\files
 
 ## Commandline
 
