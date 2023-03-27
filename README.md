@@ -64,12 +64,14 @@ Every model has its own sample code. Please refer to the sample code inside each
     - [BBoxLite 5G Series API Usage](#BBoxLite-5G-Series-API-Usage)
       - [ switchChannelPower ]  : Set Device channel power on or off
       - [ setChannelGainPhase ] : Set Device channel Gain and Phase settings
+      - [ setAllChannelGain ] : Set Device All Channel Gain settings on the same board
       - [ setBeamAngle ]        : Set Device Beam Steering Angle
       - [ getTemperatureADC ]   : Get Device RF board temperature adc value
 
     - [BBoxOne 5G Series API Usage](#BBoxOne-5G-Series-API-Usage)
       - [ switchChannelPower ]  : Set Device channel power on or off
       - [ setChannelGainPhase ] : Set Device channel Gain and Phase settings
+      - [ setAllChannelGain ] : Set Device All Channel Gain settings on the same board
       - [ setBeamAngle ]        : Set Device Beam Steering Angle
       - [ getTemperatureADC ]   : Get Device RF board temperature adc value
 
@@ -387,6 +389,31 @@ string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
 | string                  | Return Status   | "OK"            | Status OK     |
 
 
+## **setAllChannelGain**
+
+#### **Set Device All Channel Gain settings on the same board**
+---
+
+```
+int setAllChannelGain(int board, double ch1_db, double ch2_db, double ch3_db, double ch4_db, string sn)
+```
+
+### **Function Definition**
+
+| Param Type              | Param Name      | Param Value     | Note                                                       |
+| ---                     | ---             | ---             | ---                                                        |
+| int                     | board           | 1               | Board Number : 1                                           |
+| double                  | ch1_db          | 10              | db in dynamic range and ch settings cannot exceed elementDR |
+| double                  | ch2_db          | 10              | db in dynamic range and ch settings cannot exceed elementDR |
+| double                  | ch3_db          | 10              | db in dynamic range and ch settings cannot exceed elementDR |
+| double                  | ch4_db          | 10              | db in dynamic range and ch settings cannot exceed elementDR |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                                       |
+
+| Return Type             | Name            | Return Value    | Note          |
+| ---                     | ---             | ---             | ---           |
+| Integer                 | Return Code     | 0               | Status OK     |
+
+
 ## **setBeamAngle**
 #### **Set Device Beam Steering Angle**
 ---
@@ -472,6 +499,31 @@ string setChannelGainPhase(int board, int ch, double db, int phase, string sn)
 | ---                     | ---             | ---             | ---           |
 | string                  | Return Status   | "OK"            | Status OK     |
 
+
+## **setAllChannelGain**
+
+#### **Set Device All Channel Gain settings on the same board**
+
+---
+
+```
+int setAllChannelGain(int board, double ch1_db, double ch2_db, double ch3_db, double ch4_db, string sn)
+```
+
+### **Function Definition**
+
+| Param Type              | Param Name      | Param Value     | Note                                                              |
+| ---                     | ---             | ---             | ---                                                               |
+| int                     | board           | 1               | Board Number in range(1, 4)                                       |
+| double                  | ch1_db          | 10              | db in dynamic range and ch settings cannot exceed board elementDR |
+| double                  | ch2_db          | 10              | db in dynamic range and ch settings cannot exceed board elementDR |
+| double                  | ch3_db          | 10              | db in dynamic range and ch settings cannot exceed board elementDR |
+| double                  | ch4_db          | 10              | db in dynamic range and ch settings cannot exceed board elementDR |
+| string                  | sn              | "D2104L011-28"  | Device Serial Number                                              |
+
+| Return Type             | Name            | Return Value    | Note          |
+| ---                     | ---             | ---             | ---           |
+| Integer                 | Return Code     | 0               | Status OK     |
 
 
 ## **setBeamAngle**

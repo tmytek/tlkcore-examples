@@ -59,6 +59,20 @@ BBox API helps developers building their own applications. The release format is
 
 ----------
 
+## setAllChannelGain
+
+    int setAllChannelGain(int board, double ch1_db, double ch2_db, double ch3_db, double ch4_db, string sn)
+| Type         | Name         | Value                                                 |
+| ------------ | ------------ | ----------------------------------------------------- |
+| int          | board        | range from 1                                          |
+| double       | ch1_db       | range from max_gain to min_gain in tx mode or rx mode and ch settings cannot exceed elementDR (Detailed in BBoxLite.vi) |
+| double       | ch2_db       | range from max_gain to min_gain in tx mode or rx mode and ch settings cannot exceed elementDR (Detailed in BBoxLite.vi)  |
+| double       | ch3_db       | range from max_gain to min_gain in tx mode or rx mode and ch settings cannot exceed elementDR (Detailed in BBoxLite.vi)  |
+| double       | ch4_db       | range from max_gain to min_gain in tx mode or rx mode and ch settings cannot exceed elementDR (Detailed in BBoxLite.vi)  |
+| string       | sn           | sn                                                    |
+
+----------
+
 ## setBeamAngle
 
     int setBeamAngle(double db, int theta, int phi, string sn)
