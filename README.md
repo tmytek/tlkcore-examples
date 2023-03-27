@@ -4,17 +4,27 @@
 
 TMYTEK Box Series API helps developing mmwave( n257 / n260 ) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**.
 
-The .dll format release is windows shared library and test on visual studio community 2019 and labView 2019.
+The .dll format release is windows shared library and test on visual studio community 2022 and labView 2021.
 
 Every model has its own sample code. Please refer to the sample code inside each folder for the specific programming language.
 
-![](./images/support_languages.png)
+- Beam Forming and Steering Application DEMO
+  - BBox Lite
+    - ![](./images/BBoxLite.gif)
+  - BBoxOne
+    - ![](./images/BBoxOne.gif)
+
+
 
 - Product Video
   - [[ TMYTEK | Perform HD video streaming with Developer Kit and UD Box ](https://www.youtube.com/watch?v=-koKf-OOsVA)]
   - [[ TMYTEK｜Beamforming device designed for antenna developers ](https://www.youtube.com/watch?v=TRZwXUKOqUU)]
   - [[ TMYTEK｜mmWave beam tracking algorithm development based on USRP with BBox & UD Box ](https://www.youtube.com/watch?v=bnvj6L9CLHs)]
   - [[ TMYTEK | UD Box 5G - Your Winning Choice for Up/Down Frequency Converter ](https://www.youtube.com/watch?v=C5jxUVBDYsw)]
+
+
+- API support languages
+  - ![](./images/support_languages.png)
 
 ---
 
