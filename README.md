@@ -94,7 +94,7 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 ### **Python Environment Setup**
 
-- Python version  : python-3.7.7 32-bit : [[ Download Link ](https://www.python.org/downloads/release/python-377/)]
+- Python version  : python-3.8.0 64-bit : [[ Download Link ](https://www.python.org/downloads/release/python-380/)]
 
 - External modules can be installed with pre-install/python/Setup.bat
 
