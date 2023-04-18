@@ -46,6 +46,8 @@ Every model has its own sample code. Please refer to the sample code inside each
       - [ C++ ]
       - [ C# ]
       - [ LabVIEW ]
+        - [BBoxLite Getting Started](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/LabVIEW)
+        - [BBoxOne Getting Started](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/LabVIEW)
       - [ Matlab ]
 
     - [BBox Series Common API Usage](#BBox-Series-Common-API-Usage)
@@ -103,8 +105,8 @@ Every model has its own sample code. Please refer to the sample code inside each
 
 ### **Visual C++ and Visual C# Environment**
 
-- Step 1 : Visual Studio version : 2019 community : [[ Download Link ](https://visualstudio.microsoft.com/zh-hant/downloads/)]
-  - Visual Studio 2019 build tools version : v143
+- Step 1 : Visual Studio community : [[ Download Link ](https://visualstudio.microsoft.com/zh-hant/downloads/)]
+  - Visual Studio build tools version : v143
 
 - Step 2 : Disable Visual_studio just my code : [[ Link ](https://docs.microsoft.com/zh-tw/visualstudio/debugger/just-my-code?view=vs-2019)]
     ![](./images/image_3.png)
