@@ -1,3 +1,35 @@
+# **TMYTEK Box API Sample Code v1.6.7 Release Note**
+
+Software version    | 1.6.7
+--------------      |:-----:
+Release date        | April 18, 2023
+Applicable Models   | BBoxLite28A, BBoxLite39A, BBoard28A, BBoard39A, BBoxOne28A, BBoxOne39A, UDBox 5G
+
+<font color=#EA0000>Bugfix
+---
+
+- [Recommended Python version does not support recommended numpy version](https://github.com/tmytek/bbox-api/issues/15)
+- [setOperatingFreq always returns "Generic Error" (code 2) when invoking method from LabVIEW](https://github.com/tmytek/bbox-api/issues/16)
+</font>
+
+<font color=#00AEAE>New Features
+---
+
+- None
+</font>
+
+<font color=#7373B9>Improvements
+---
+
+- Update readme
+</font>
+
+<font color=#7373B9>Known Issues
+---
+
+- None
+</font>
+
 # **TMYTEK Box API Sample Code v1.6.5 Release Note**
 
 Software version    | 1.6.5
