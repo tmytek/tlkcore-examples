@@ -2,18 +2,19 @@
 
 BBox API helps developers building their own applications. The release format is DLL and currently only support Windows operating system. The functions in DLL could be import in LabView. The tested environment and example is based on LabView2021.
 
-## Getting Started
+## Labview Getting Started
 
    
 1. Add your calibration table (eg. D20462000-28.csv) and AAKIT table (eg. AAKIT_TMYTEK_28LITE_4x4_C2104L020-28.csv) into .\bbox-api\example\BBoxLite Series\LabVIEW\files\
 
 2. Open LabView project file (BBoxLite.lvproj) and click BBoxLite.vi
 
-3. Operate > Run
+3. Set current working directory path such as .\bbox-api\example\BBoxLite Series\LabVIEW\
 
-4. Result as below
+4. Operate > Run
 
-    [Block Diagram](./BBoxLite.html)
+![](../../../images/BBoxLite_Labview_FrontPanel.PNG)
+
 
 # API Description
 
