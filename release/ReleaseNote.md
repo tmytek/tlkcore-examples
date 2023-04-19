@@ -1,3 +1,35 @@
+# **TMYTEK Box API Sample Code v1.6.8 Release Note**
+
+Software version    | 1.6.8
+--------------      |:-----:
+Release date        | April 19, 2023
+Applicable Models   | BBoxLite28A, BBoxLite39A, BBoard28A, BBoard39A, BBoxOne28A, BBoxOne39A, UDBox 5G
+
+<font color=#EA0000>Bugfix
+---
+
+- [LabVIEW Examples in latest release (1.6.7) are saved in LabVIEW 2022 Q3](https://github.com/tmytek/bbox-api/issues/20)
+  - [Labview][BBox Series] Downgrade project settings into Labview2021
+</font>
+
+<font color=#00AEAE>New Features
+---
+
+- None
+</font>
+
+<font color=#7373B9>Improvements
+---
+
+- None
+</font>
+
+<font color=#7373B9>Known Issues
+---
+
+- None
+</font>
+
 # **TMYTEK Box API Sample Code v1.6.7 Release Note**
 
 Software version    | 1.6.7
