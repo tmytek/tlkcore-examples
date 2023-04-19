@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Project Type="Project" LVVersion="22308000">
+<Project Type="Project" LVVersion="21008000">
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
@@ -87,10 +87,10 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">2</Property>
-				<Property Name="TgtF_companyName" Type="Str">稜研科技 TMYTEK | 5G mmWave | Taiwan 5G Solution Provider</Property>
+				<Property Name="TgtF_companyName" Type="Str">???? TMYTEK | 5G mmWave | Taiwan 5G Solution Provider</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">My Application</Property>
 				<Property Name="TgtF_internalName" Type="Str">My Application</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright ?2023 稜研科技 TMYTEK | 5G mmWave | Taiwan 5G Solution Provider</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright ?2023 ???? TMYTEK | 5G mmWave | Taiwan 5G Solution Provider</Property>
 				<Property Name="TgtF_productName" Type="Str">My Application</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{B658753B-C8AB-412B-8CE6-6AC70395C3FA}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">Application.exe</Property>

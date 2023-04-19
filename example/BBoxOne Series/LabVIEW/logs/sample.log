@@ -1,0 +1,67 @@
+2023-04-18 15:41:58.4385|INFO|ClrFuncReflectionWrap|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2023-04-18 15:41:58.4715|INFO|ClrFuncReflectionWrap|[BBoxOneAPI][.ctor] Default Nlog config folder : C:\Program Files (x86)\TMYTEK\TMXLAB Kit\
+2023-04-18 15:41:58.4715|INFO|ClrFuncReflectionWrap|[BBoxOneAPI][.ctor] Current culture is English (United States) : en-US
+2023-04-18 15:41:58.4715|INFO|ClrFuncReflectionWrap|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-04-18 15:42:02.4108|INFO|ClrFuncReflectionWrap|[Queryer][Set_device_information] SN : D2252E058-28, IP : 192.168.200.11, DEV_TYPE : DEV_BBOXONE28A
+2023-04-18 15:42:03.0144|INFO|ClrFuncReflectionWrap|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-04-18 15:42:03.6838|INFO|ClrFuncReflectionWrap|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-04-18 15:42:04.0832|INFO|ClrFuncReflectionWrap|[BBoxOneAPI][Initial_process][D2252E058-28] Create instance : BBOXONE28A, firmware version : v1.2.15
+2023-04-18 15:42:04.0832|INFO|ClrFuncReflectionWrap|[BBoxOneAPI][Initial_process][D2252E058-28][192.168.200.11] InstanceInit return : OK
+2023-04-18 15:42:04.1123|INFO|ClrFunc|[BBOXONE28A][setOperatingFreq][D2252E058-28] Phi-A mode
+2023-04-18 15:42:04.1123|INFO|ClrFunc|[BBOXONE28A][captureInfoFromTable][D2252E058-28] Current table version : 3.0.0.4 , at freqency 28
+2023-04-18 15:42:06.2268|INFO|ClrFunc|[BBOXONE28A][LoadCalibrationInfo][D2252E058-28] Load Calibration table Complete.
+2023-04-18 15:42:06.4472|INFO|ClrFunc|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2252E058-28_28GHz.json 
+2023-04-18 15:42:06.4662|INFO|ClrFunc|[BBOXONE28A][setOperatingFreq][D2252E058-28] Load Beam table into device complete
+2023-04-18 15:42:06.4662|INFO|ClrFunc|[BBOXONE28A][setOperatingFreq][D2252E058-28] Firmware version : v1.2.15, Calibration table version : 3.0.0.4
+2023-04-18 15:42:17.4585|INFO|ClrFunc|[BBOXONE28A][setOperatingFreq][D2252E058-28] Calibration table is pre-loaded
+2023-04-18 15:42:17.4585|INFO|ClrFunc|[BBOXONE28A][setOperatingFreq][D2252E058-28] Firmware version : v1.2.15, Calibration table version : 3.0.0.4
+2023-04-18 15:42:17.4719|INFO|ClrFunc|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-04-18 15:44:47.4299|INFO|ClrFunc|[BBoxDevice][selectAAKit][D2252E058-28] Set TMYTEK_28ONE_4x4_C2104L020-28 AAKIT
+2023-04-18 15:45:38.3890|INFO|ClrFunc|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2252E058-28_28GHz.json 
+2023-04-18 15:45:38.7190|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Apply_BeamPattern_Table
+2023-04-18 15:45:38.7190|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on fast parallel mode FBS/TDBS
+2023-04-18 15:45:38.7190|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on externalSPI
+2023-04-18 15:45:49.6206|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Trun off externalSPI
+2023-04-18 15:45:49.6206|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn off fast parallel mode FBS/TDBS
+2023-04-18 15:45:54.6265|INFO|ClrFunc|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2252E058-28_28GHz.json 
+2023-04-18 15:45:54.9383|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Apply_BeamPattern_Table
+2023-04-18 15:45:54.9383|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on fast parallel mode FBS/TDBS
+2023-04-18 15:45:54.9383|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on externalSPI
+2023-04-18 15:47:15.1562|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Trun off externalSPI
+2023-04-18 15:47:15.1562|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn off fast parallel mode FBS/TDBS
+2023-04-18 15:51:10.6351|INFO|ClrFunc|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2252E058-28_28GHz.json 
+2023-04-18 15:51:10.9449|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Apply_BeamPattern_Table
+2023-04-18 15:51:10.9449|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on fast parallel mode FBS/TDBS
+2023-04-18 15:51:10.9449|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on externalSPI
+2023-04-18 15:52:56.6660|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Trun off externalSPI
+2023-04-18 15:52:56.6660|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn off fast parallel mode FBS/TDBS
+2023-04-18 15:52:59.2571|INFO|ClrFunc|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2252E058-28_28GHz.json 
+2023-04-18 15:52:59.5673|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Apply_BeamPattern_Table
+2023-04-18 15:52:59.5673|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on fast parallel mode FBS/TDBS
+2023-04-18 15:52:59.5673|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on externalSPI
+2023-04-18 15:53:03.6391|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Trun off externalSPI
+2023-04-18 15:53:03.6411|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn off fast parallel mode FBS/TDBS
+2023-04-18 15:53:14.5932|INFO|ClrFunc|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2252E058-28_28GHz.json 
+2023-04-18 15:53:14.9062|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Apply_BeamPattern_Table
+2023-04-18 15:53:14.9062|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on fast parallel mode FBS/TDBS
+2023-04-18 15:53:14.9062|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on externalSPI
+2023-04-18 15:53:17.2072|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Trun off externalSPI
+2023-04-18 15:53:17.2072|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn off fast parallel mode FBS/TDBS
+2023-04-18 15:53:22.2682|INFO|ClrFunc|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2252E058-28_28GHz.json 
+2023-04-18 15:53:22.5795|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Apply_BeamPattern_Table
+2023-04-18 15:53:22.5795|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on fast parallel mode FBS/TDBS
+2023-04-18 15:53:22.5795|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on externalSPI
+2023-04-18 15:59:30.7659|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Trun off externalSPI
+2023-04-18 15:59:30.7659|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn off fast parallel mode FBS/TDBS
+2023-04-18 15:59:58.5454|INFO|ClrFunc|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2252E058-28_28GHz.json 
+2023-04-18 15:59:58.8594|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Apply_BeamPattern_Table
+2023-04-18 15:59:58.8594|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on fast parallel mode FBS/TDBS
+2023-04-18 15:59:58.8594|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on externalSPI
+2023-04-18 16:00:02.2224|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Trun off externalSPI
+2023-04-18 16:00:02.2224|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn off fast parallel mode FBS/TDBS
+2023-04-18 16:00:04.7254|INFO|ClrFunc|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D2252E058-28_28GHz.json 
+2023-04-18 16:00:05.0331|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Apply_BeamPattern_Table
+2023-04-18 16:00:05.0331|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on fast parallel mode FBS/TDBS
+2023-04-18 16:00:05.0331|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn on externalSPI
+2023-04-18 16:06:10.3814|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Trun off externalSPI
+2023-04-18 16:06:10.3814|INFO|ClrFunc|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D2252E058-28] Turn off fast parallel mode FBS/TDBS
