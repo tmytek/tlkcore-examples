@@ -1,34 +1,30 @@
-﻿example/Python/logs
+﻿example/Python/logs/*
 *.pyc
-example/BBoxLite/2nd generation/C++/ConsoleApplication1/Release/logs
-example/BBoxOne/1st generation/C++/ConsoleApplication1/Release/logs
-example/BBoxLite/second_generation/C#/ConsoleApp1/bin/Release/logs
-example/BBoxOne/first_generation/C++/ConsoleApplication1/Release/logs
-example/BBoxLite Series/BBoxLite 5G/Labview2019/BBoxLite28A/logs
-example/BBoxLite Series/BBoxLite 5G/C#/ConsoleApp1/bin/Release/logs
+example/BBoxLite Series/BBoxLite 5G/Labview2019/BBoxLite28A/logs/*
+example/BBoxLite Series/BBoxLite 5G/C#/ConsoleApp1/bin/Release/logs/*
 example/BBoxLite Series/BBoxLite 5G/C#/.vs/ConsoleApp1/FileContentIndex
 example/BBoxOne Series/BBoxOne  5G/C#/.vs/ConsoleApp1/FileContentIndex
-example/BBoxOne Series/BBoxOne  5G/C#/ConsoleApp1/bin/Release/logs
-example/BBoxLite Series/BBoxLite 5G/Python/files/BeamTable
-example/BBoxOne Series/BBoxOne  5G/Python/files/BeamTable
+example/BBoxOne Series/BBoxOne  5G/C#/ConsoleApp1/bin/Release/logs/*
+example/BBoxLite Series/BBoxLite 5G/Python/files/BeamTable/*
+example/BBoxOne Series/BBoxOne  5G/Python/files/BeamTable/*
 example/BBoard Series/C#/.vs/ConsoleApp1/FileContentIndex
-example/BBoard Series/C#/ConsoleApp1/bin/Release/logs
-example/BBoard Series/C++/ConsoleApplication1/Release/logs
+example/BBoard Series/C#/ConsoleApp1/bin/Release/logs/*
+example/BBoard Series/C++/ConsoleApplication1/Release/logs/*
 example/BBoxLite Series/C#/.vs/ConsoleApp1/FileContentIndex
 example/BBoxLite Series/C++/ConsoleApplication1/ConsoleApplication1/files/BeamTable
 example/BBoxLite Series/C++/ConsoleApplication1/Release/files/BeamTable
-example/BBoxLite Series/C++/ConsoleApplication1/Release/logs
+example/BBoxLite Series/C++/ConsoleApplication1/Release/logs/*
 example/BBoxOne Series/C#/.vs/ConsoleApp1/FileContentIndex
 example/BBoxOne Series/C++/ConsoleApplication1/.vs/ConsoleApplication1/FileContentIndex
-example/BBoxOne Series/C++/ConsoleApplication1/Release/logs
+example/BBoxOne Series/C++/ConsoleApplication1/Release/logs/*
 example/BBoard Series/C++/ConsoleApplication1/.vs/ConsoleApplication1/FileContentIndex
-example/BBoxLite Series/C#/ConsoleApp1/bin/Release/files/BeamTable
+example/BBoxLite Series/C#/ConsoleApp1/bin/Release/files/BeamTable/*
 example/BBoxLite Series/C++/ConsoleApplication1/.vs/ConsoleApplication1/FileContentIndex
-example/BBoxOne Series/C#/ConsoleApp1/bin/Release/files/BeamTable
-example/BBoxOne Series/C#/ConsoleApp1/bin/Release/logs
-example/BBoxOne Series/C++/ConsoleApplication1/ConsoleApplication1/files/BeamTable
-example/BBoxLite Series/LabVIEW/builds/BBoxLite/My Application/logs
-example/BBoxLite Series/LabVIEW/logs
-example/BBoxOne Series/LabVIEW/files/BeamTable
-example/BBoxOne Series/LabVIEW/logs
-example/BBoxLite Series/LabVIEW/files/BeamTable
+example/BBoxOne Series/C#/ConsoleApp1/bin/Release/files/BeamTable/*
+example/BBoxOne Series/C#/ConsoleApp1/bin/Release/logs/*
+example/BBoxOne Series/C++/ConsoleApplication1/ConsoleApplication1/files/BeamTable/*
+example/BBoxLite Series/LabVIEW/builds/BBoxLite/My Application/logs/*
+example/BBoxLite Series/LabVIEW/logs/*
+example/BBoxOne Series/LabVIEW/files/BeamTable/*
+example/BBoxOne Series/LabVIEW/logs/*
+example/BBoxLite Series/LabVIEW/files/BeamTable/*
