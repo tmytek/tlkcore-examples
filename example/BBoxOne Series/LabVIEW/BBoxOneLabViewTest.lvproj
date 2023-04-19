@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Project Type="Project" LVVersion="22308000">
+<Project Type="Project" LVVersion="21008000">
 	<Property Name="varPersistentID:{D3B59895-4D38-49C4-AD08-0294A3724064}" Type="Ref">/My Computer/Untitled Library 1.lvlib/TX Minimum Gain</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
