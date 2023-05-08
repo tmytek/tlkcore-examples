@@ -13,7 +13,7 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="BBoxLite.vi" Type="VI" URL="../BBoxLite.vi"/>
 		<Item Name="FastBeamMode.vi" Type="VI" URL="../FastBeamMode.vi"/>
-		<Item Name="BeamTableEditor.vi" Type="VI" URL="../../../BBoxOne Series/LabVIEW/BeamTableEditor.vi"/>
+		<Item Name="BeamTableEditor.vi" Type="VI" URL="../BeamTableEditor.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
