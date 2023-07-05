@@ -1,0 +1,191 @@
+2023-07-05 13:48:16.3041|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 13:48:16.3481|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 13:48:16.3481|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 13:48:16.3481|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 13:48:16.4311|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][Set_device_information] SN : D2104L011-28, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A_NI
+2023-07-05 13:48:17.2731|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 13:48:18.2541|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 13:48:18.5871|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28] Create instance : BBOXLITE28A, firmware version : v1.2.15.1
+2023-07-05 13:48:18.5871|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.100.111] InstanceInit return : OK
+2023-07-05 13:48:22.9149|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D2104L011-28] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE28A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 13:48:22.9149|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D2104L011-28] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE28A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 13:48:22.9281|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D2104L011-28] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE28A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 13:48:22.9281|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D2104L011-28] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE28A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 13:48:32.9441|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D2104L011-28] setCommonGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE28A.setCommonGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 13:48:33.9676|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D2104L011-28] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE28A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 13:48:33.9726|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D2104L011-28] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE28A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 13:48:33.9726|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D2104L011-28] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE28A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 13:48:33.9726|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D2104L011-28] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE28A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 13:50:38.0863|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 13:50:38.1333|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 13:50:38.1333|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 13:50:38.1333|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 13:50:38.2293|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][Set_device_information] SN : D2104L011-28, IP : 192.168.100.111, DEV_TYPE : DEV_BBOARD28A
+2023-07-05 13:50:39.0743|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 13:50:40.0038|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 13:50:40.5543|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28] Create instance : BBOARD28A, firmware version : v1.2.15
+2023-07-05 13:50:40.5543|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:58:49.9118|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:58:49.9508|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 14:58:49.9508|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:58:49.9508|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:58:50.0439|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOARD28A
+2023-07-05 14:58:50.8852|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:58:51.8099|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:58:52.2459|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOARD28A, firmware version : v1.2.15
+2023-07-05 14:58:52.2459|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:59:01.3480|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:59:01.3830|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 14:59:01.3830|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:59:01.3830|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:59:02.3043|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2023-07-05 15:01:40.3944|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 15:01:40.4324|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 15:01:40.4324|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 15:01:40.4324|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 15:01:40.5116|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOARD28A
+2023-07-05 15:01:41.3549|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 15:01:42.3415|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 15:01:42.6021|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOARD28A, firmware version : v1.2.15
+2023-07-05 15:01:42.6021|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 15:02:12.0095|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 15:02:12.1425|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 15:02:12.1435|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 15:02:12.1435|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 15:02:12.2495|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][Set_device_information] SN : B2104L001-39, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE39A
+2023-07-05 15:02:13.0976|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 15:02:14.0366|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 15:02:14.3216|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][B2104L001-39] Create instance : BBOXLITE39A, firmware version : v1.2.15.1
+2023-07-05 15:02:14.3216|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][B2104L001-39][192.168.100.111] InstanceInit return : OK
+2023-07-05 15:02:20.1611|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:02:20.1611|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:02:20.1611|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:02:20.1781|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:02:20.3375|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setCommonGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setCommonGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:02:24.8509|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:02:24.8509|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:02:24.8509|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:02:24.8657|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:03:28.5831|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 15:03:28.6507|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 15:03:28.6507|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 15:03:28.6507|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 15:03:28.7327|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][Set_device_information] SN : B2104L001-39, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE39A
+2023-07-05 15:03:28.7327|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOARD28A
+2023-07-05 15:03:29.5745|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 2
+2023-07-05 15:03:30.4871|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 2, Virtual Device Config Num : 0 
+2023-07-05 15:03:30.7720|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][B2104L001-39] Create instance : BBOXLITE39A, firmware version : v1.2.15
+2023-07-05 15:03:30.7720|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][B2104L001-39][192.168.100.111] InstanceInit return : OK
+2023-07-05 15:03:33.7908|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:03:33.8017|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:03:33.8017|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:03:33.8178|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:03:34.0158|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setCommonGainStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setCommonGainStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:03:34.2404|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:03:34.2404|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:03:34.2554|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:03:34.2554|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][B2104L001-39] setChannelPhaseStep : ERROR_REFLECTION : System.MissingMethodException: Method 'BBOXLITE39A.setChannelPhaseStep' not found.
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 15:03:34.6460|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] Device IP conflicts
+2023-07-05 15:03:34.9870|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] SwitchTxRxMode : Instance not active
+2023-07-05 15:03:34.9870|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] getTxRxMode : Instance not active
+2023-07-05 15:03:35.3486|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] switchChannelPower : Instance not active
+2023-07-05 15:03:35.7734|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] setChannelGainStep : Instance not active
+2023-07-05 15:03:35.7734|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] setChannelGainStep : Instance not active
+2023-07-05 15:03:35.7734|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] setChannelGainStep : Instance not active
+2023-07-05 15:03:35.7734|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] setChannelGainStep : Instance not active
+2023-07-05 15:03:36.1169|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] setCommonGainStep : Instance not active
+2023-07-05 15:03:36.4603|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] setChannelPhaseStep : Instance not active
+2023-07-05 15:03:36.4603|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] setChannelPhaseStep : Instance not active
+2023-07-05 15:03:36.4603|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] setChannelPhaseStep : Instance not active
+2023-07-05 15:03:36.4603|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] setChannelPhaseStep : Instance not active
+2023-07-05 15:03:36.6687|ERROR|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ReflectFunction][D00000000-00] getTemperatureADC : Instance not active
+2023-07-05 15:03:42.1448|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 15:03:42.1899|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 15:03:42.1899|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 15:03:42.1899|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 15:03:42.3009|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOARD28A
+2023-07-05 15:03:43.1359|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 15:03:44.1367|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 15:03:44.3929|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOARD28A, firmware version : v1.2.15
+2023-07-05 15:03:44.3929|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK

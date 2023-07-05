@@ -1,0 +1,140 @@
+2023-07-05 13:56:42.5056|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 13:56:42.5505|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 13:56:42.5505|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 13:56:42.5505|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 13:56:42.6415|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : D2104L011-28, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 13:56:43.4781|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 13:56:44.4576|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 13:56:44.7226|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 13:56:44.7226|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.100.111] InstanceInit return : OK
+2023-07-05 13:58:28.8647|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 13:58:28.9056|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 13:58:28.9056|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 13:58:28.9056|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 13:58:29.0815|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : D2104L011-28, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 13:58:29.9323|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 13:58:30.8969|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 13:58:31.1511|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 13:58:31.1511|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.100.111] InstanceInit return : OK
+2023-07-05 13:59:04.3686|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 13:59:04.4124|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 13:59:04.4124|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 13:59:04.4124|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 13:59:04.4885|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 13:59:05.3389|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 13:59:06.3574|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 13:59:06.6139|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 13:59:06.6139|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 13:59:06.6139|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 13:59:06.7534|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2023-07-05 13:59:07.1746|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 13:59:07.1746|WARN|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Beam_Pattern_Configuration][check_beam_table] Beam table not exist
+2023-07-05 13:59:07.2521|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Beam_Pattern_Configuration][generate_default_beam_table] Generate default Beam_Configuration
+2023-07-05 13:59:07.3061|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Beam_Pattern_Configuration][load_beam_table] Load files\BeamTable\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 13:59:07.3061|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 13:59:07.3061|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 13:59:07.3491|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 13:59:07.3491|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2023-07-05 14:14:36.9263|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:14:36.9703|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 14:14:36.9713|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:14:36.9713|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:14:37.0493|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:14:37.8973|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:14:38.8210|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:14:39.1499|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 14:14:39.1499|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:14:39.1639|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 14:14:39.1899|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2023-07-05 14:14:39.6759|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 14:14:39.7919|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Beam_Pattern_Configuration][load_beam_table] Load files\BeamTable\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 14:14:39.8029|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 14:14:39.8029|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 14:14:39.8029|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 14:14:39.8169|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2023-07-05 14:16:06.4135|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:16:06.5245|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 14:16:06.5245|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:16:06.5245|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:16:06.6515|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : B2104L001-39, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE39A
+2023-07-05 14:16:07.4646|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:16:08.4162|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:16:08.7172|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][B2104L001-39] Create instance : BBOXLITE39A, firmware version : v1.2.15.1
+2023-07-05 14:16:08.7172|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][B2104L001-39][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:46:10.9790|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:46:11.0190|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 14:46:11.0190|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:46:11.0190|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:46:11.0889|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:46:11.9342|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:46:12.8368|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:46:35.8010|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:46:35.8534|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 14:46:35.8534|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:46:35.8534|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:46:35.9884|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:46:36.8431|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:46:37.7817|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:46:38.0311|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 14:46:38.0311|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:46:38.0370|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 14:46:38.0370|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2023-07-05 14:46:38.4657|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 14:46:38.5767|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Beam_Pattern_Configuration][load_beam_table] Load files\BeamTable\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 14:46:38.5877|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 14:46:38.5877|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOXLITE28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 14:46:38.5986|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 14:46:38.5986|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2023-07-05 14:46:46.2403|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:46:46.2749|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 14:46:46.2749|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:46:46.2749|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:46:47.2012|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2023-07-05 14:46:52.4887|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:46:52.5387|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 14:46:52.5387|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:46:52.5387|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:46:53.4911|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2023-07-05 15:08:14.9734|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 15:08:15.0184|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 15:08:15.0184|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 15:08:15.0184|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 15:08:15.1104|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOARD28A
+2023-07-05 15:08:15.9524|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 15:08:16.8787|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 15:08:17.2793|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOARD28A, firmware version : v1.2.15
+2023-07-05 15:08:17.2793|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 15:08:17.2873|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOARD28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 15:08:17.3103|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOARD28A][captureInfoFromTable][D00000000-00] A Current table version : 2.0.0 , at freqency 28
+2023-07-05 15:08:17.7333|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOARD28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 15:08:17.8922|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Beam_Pattern_Configuration][load_beam_table] Load files\BeamTable\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 15:08:17.9023|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOARD28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 15:08:17.9023|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOARD28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 15:08:17.9132|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 15:08:17.9132|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2023-07-05 15:09:00.8637|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 15:09:00.9037|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 15:09:00.9037|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 15:09:00.9037|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 15:09:00.9791|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : B00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXONE28A_NI
+2023-07-05 15:09:01.8226|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 15:09:02.7501|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 15:09:03.1172|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][B00000000-00] Create instance : BBOXONE28A, firmware version : v1.2.15
+2023-07-05 15:09:03.1172|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][B00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 15:09:48.3774|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 15:09:48.4724|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C#\ConsoleApp1\bin\Release\NLog.config
+2023-07-05 15:09:48.4724|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 15:09:48.4724|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 15:09:48.5874|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOARD28A
+2023-07-05 15:09:49.4338|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 15:09:50.4055|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 15:09:50.6709|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOARD28A, firmware version : v1.2.15
+2023-07-05 15:09:50.6709|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 15:09:50.6769|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOARD28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 15:09:50.6769|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOARD28A][captureInfoFromTable][D00000000-00] A Current table version : 2.0.0 , at freqency 28
+2023-07-05 15:09:51.0855|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOARD28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 15:09:51.1965|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[Beam_Pattern_Configuration][load_beam_table] Load files\BeamTable\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 15:09:51.2075|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOARD28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 15:09:51.2075|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBOARD28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 15:09:51.2075|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 15:09:51.2075|INFO|BBoxLite_DEMO.BBoxLite_Control_DEMO|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT

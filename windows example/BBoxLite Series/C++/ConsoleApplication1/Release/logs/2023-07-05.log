@@ -1,0 +1,76 @@
+2023-07-05 14:19:27.8179|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:19:27.9184|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 14:19:27.9184|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:19:27.9184|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:19:28.8339|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2023-07-05 14:19:28.8339|ERROR|main|[BBoxOneAPI][Init] Init failed : Couldn't find SN from device list
+2023-07-05 14:27:35.5660|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:27:35.6830|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 14:27:35.6830|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:27:35.6830|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:27:36.6250|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2023-07-05 14:27:36.6290|ERROR|main|[BBoxOneAPI][Init] Init failed : Couldn't find SN from device list
+2023-07-05 14:28:33.3996|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:28:33.5546|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 14:28:33.5546|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:28:33.5546|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:28:34.5373|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2023-07-05 14:38:50.7698|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:38:50.8808|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 14:38:50.8808|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:38:50.8808|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:38:51.8044|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2023-07-05 14:38:51.8044|ERROR|main|[BBoxOneAPI][Init] Init failed : Couldn't find SN from device list
+2023-07-05 14:39:39.8859|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:39:39.9889|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 14:39:39.9889|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:39:39.9889|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:39:40.9664|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2023-07-05 14:39:40.9764|ERROR|main|[BBoxOneAPI][Init] Init failed : Couldn't find SN from device list
+2023-07-05 14:41:02.2558|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:41:02.3778|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 14:41:02.3778|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:41:02.3778|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:41:03.2979|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2023-07-05 14:41:03.3098|ERROR|main|[BBoxOneAPI][Init] Init failed : Couldn't find SN from device list
+2023-07-05 14:43:13.3449|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:43:13.4390|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 14:43:13.4432|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:43:13.4432|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:43:14.3890|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2023-07-05 14:44:05.6288|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 14:44:05.7465|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 14:44:05.7465|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:44:05.7465|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:44:05.8427|INFO|main|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:44:06.6925|INFO|main|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:44:07.7080|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:44:08.3488|INFO|main|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 14:44:08.3488|INFO|main|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:44:08.3488|INFO|main|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 14:44:08.3488|INFO|main|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2023-07-05 14:44:08.7668|INFO|main|[BBOXLITE28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 14:44:08.7668|WARN|main|[Beam_Pattern_Configuration][check_beam_table] Beam table not exist
+2023-07-05 14:44:08.8433|INFO|main|[Beam_Pattern_Configuration][generate_default_beam_table] Generate default Beam_Configuration
+2023-07-05 14:44:08.8914|INFO|main|[Beam_Pattern_Configuration][load_beam_table] Load files\BeamTable\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 14:44:08.8914|INFO|main|[BBOXLITE28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 14:44:08.8914|INFO|main|[BBOXLITE28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 14:44:08.9130|INFO|main|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 14:44:08.9130|INFO|main|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2023-07-05 15:10:49.0694|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 15:10:49.1464|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoxLite Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 15:10:49.1464|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 15:10:49.1464|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 15:10:49.2725|INFO|main|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOARD28A
+2023-07-05 15:10:50.1820|INFO|main|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 15:10:51.3252|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 15:10:51.8799|INFO|main|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOARD28A, firmware version : v1.2.15
+2023-07-05 15:10:51.8799|INFO|main|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 15:10:51.8799|INFO|main|[BBOARD28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 15:10:51.8929|INFO|main|[BBOARD28A][captureInfoFromTable][D00000000-00] A Current table version : 2.0.0 , at freqency 28
+2023-07-05 15:10:52.3288|INFO|main|[BBOARD28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 15:10:52.4388|INFO|main|[Beam_Pattern_Configuration][load_beam_table] Load files\BeamTable\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 15:10:52.4498|INFO|main|[BBOARD28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 15:10:52.4498|INFO|main|[BBOARD28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 15:10:52.4658|INFO|main|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 15:10:52.4658|INFO|main|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT

@@ -1,0 +1,18 @@
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C#\ConsoleApp1\bin\Release\ConsoleApp1.exe.config
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C#\ConsoleApp1\bin\Release\ConsoleApp1.exe
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C#\ConsoleApp1\bin\Release\ConsoleApp1.pdb
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.csproj.AssemblyReference.cache
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.csproj.SuggestedBindingRedirects.cache
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.csproj.CopyComplete
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.exe
+D:\tmytek\Source\bbox-api\example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.pdb
+D:\tmytek\Source\bbox-api\windows example\BBoxOne Series\C#\ConsoleApp1\bin\Release\ConsoleApp1.exe.config
+D:\tmytek\Source\bbox-api\windows example\BBoxOne Series\C#\ConsoleApp1\bin\Release\ConsoleApp1.exe
+D:\tmytek\Source\bbox-api\windows example\BBoxOne Series\C#\ConsoleApp1\bin\Release\ConsoleApp1.pdb
+D:\tmytek\Source\bbox-api\windows example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.csproj.AssemblyReference.cache
+D:\tmytek\Source\bbox-api\windows example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.csproj.SuggestedBindingRedirects.cache
+D:\tmytek\Source\bbox-api\windows example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\tmytek\Source\bbox-api\windows example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.csproj.CopyComplete
+D:\tmytek\Source\bbox-api\windows example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.exe
+D:\tmytek\Source\bbox-api\windows example\BBoxOne Series\C#\ConsoleApp1\obj\Release\ConsoleApp1.pdb

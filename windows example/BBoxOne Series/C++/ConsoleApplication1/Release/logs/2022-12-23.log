@@ -1,0 +1,37 @@
+2022-12-23 16:52:23.2204|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 16:52:23.2534|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxOne Series\C++\ConsoleApplication1\Release\NLog.config
+2022-12-23 16:52:23.2534|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 16:52:23.2534|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 16:52:23.2534|INFO|main|[Virtual_Device_Interface][read_configuration_files] Configuration directory was created at 12/23/2022 4:52:23 PM.
+2022-12-23 16:52:23.4498|INFO|main|[Queryer][Set_device_information] SN : B00000000-00, IP : 192.168.212.33, DEV_TYPE : DEV_BBOXONE28A
+2022-12-23 16:52:24.1711|INFO|main|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2022-12-23 16:52:25.0837|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-12-23 16:52:25.1734|INFO|main|[BBoxOneAPI][Initial_process][B00000000-00] Create instance : BBOXONE28A, firmware version : v1.2.15
+2022-12-23 16:52:25.1734|INFO|main|[BBoxOneAPI][Initial_process][B00000000-00][192.168.212.33] InstanceInit return : OK
+2022-12-23 16:52:25.1734|INFO|main|[BBOXONE28A][setOperatingFreq][B00000000-00] Phi-A mode
+2022-12-23 16:52:25.1734|INFO|main|[BBOXONE28A][captureInfoFromTable][B00000000-00] Current table version : 2.0.0 , at freqency 28
+2022-12-23 16:52:26.8602|INFO|main|[BBOXONE28A][LoadCalibrationInfo][B00000000-00] Load Calibration table Complete.
+2022-12-23 16:52:26.9933|INFO|main|[Beam_Pattern_Configuration][generate_default_beam_table] Generate default Beam_Configuration
+2022-12-23 16:52:27.0119|INFO|main|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_B00000000-00_28GHz.json 
+2022-12-23 16:52:27.0339|INFO|main|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_B00000000-00_28GHz.json 
+2022-12-23 16:52:27.0339|INFO|main|[BBOXONE28A][setOperatingFreq][B00000000-00] Load Beam table into device complete
+2022-12-23 16:52:27.0339|INFO|main|[BBOXONE28A][setOperatingFreq][B00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2022-12-23 16:52:27.0529|INFO|main|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-12-23 16:52:27.0529|INFO|main|[BBoxDevice][selectAAKit][B00000000-00] Set TMYTEK_28ONE_4x4_C2104L020-28 AAKIT
+2022-12-23 16:53:21.2907|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 16:53:21.3157|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxOne Series\C++\ConsoleApplication1\Release\NLog.config
+2022-12-23 16:53:21.3157|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 16:53:21.3157|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 16:53:21.5260|INFO|main|[Queryer][Set_device_information] SN : B00000000-00, IP : 192.168.212.33, DEV_TYPE : DEV_BBOXONE28A
+2022-12-23 16:53:22.2495|INFO|main|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2022-12-23 16:53:23.1674|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-12-23 16:53:23.2663|INFO|main|[BBoxOneAPI][Initial_process][B00000000-00] Create instance : BBOXONE28A, firmware version : v1.2.15
+2022-12-23 16:53:23.2663|INFO|main|[BBoxOneAPI][Initial_process][B00000000-00][192.168.212.33] InstanceInit return : OK
+2022-12-23 16:53:23.2663|INFO|main|[BBOXONE28A][setOperatingFreq][B00000000-00] Phi-A mode
+2022-12-23 16:53:23.2663|INFO|main|[BBOXONE28A][captureInfoFromTable][B00000000-00] Current table version : 2.0.0 , at freqency 28
+2022-12-23 16:53:24.9564|INFO|main|[BBOXONE28A][LoadCalibrationInfo][B00000000-00] Load Calibration table Complete.
+2022-12-23 16:53:25.0841|INFO|main|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_B00000000-00_28GHz.json 
+2022-12-23 16:53:25.0971|INFO|main|[BBOXONE28A][setOperatingFreq][B00000000-00] Load Beam table into device complete
+2022-12-23 16:53:25.0971|INFO|main|[BBOXONE28A][setOperatingFreq][B00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2022-12-23 16:53:25.0971|INFO|main|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-12-23 16:53:25.0971|INFO|main|[BBoxDevice][selectAAKit][B00000000-00] Set TMYTEK_28ONE_4x4_C2104L020-28 AAKIT
