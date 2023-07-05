@@ -1,0 +1,28 @@
+2022-12-23 15:41:00.1411|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 15:41:00.1801|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2022-12-23 15:41:00.1801|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 15:41:00.1801|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 15:41:00.3961|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][Set_device_information] SN : D2104L011-28, IP : 192.168.212.34, DEV_TYPE : DEV_BBOARD28A
+2022-12-23 15:41:01.1191|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2022-12-23 15:41:02.0627|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-12-23 15:41:02.2427|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28] Create instance : BBOARD28A, firmware version : v1.2.15
+2022-12-23 15:41:02.2427|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.212.34] InstanceInit return : OK
+2022-12-23 15:44:12.7549|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 15:44:12.7879|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2022-12-23 15:44:12.7879|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 15:44:12.7879|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 15:44:12.9812|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][Set_device_information] SN : D2104L011-28, IP : 192.168.212.34, DEV_TYPE : DEV_BBOARD28A
+2022-12-23 15:44:13.6993|INFO|BBoard_DEMO.BBoard_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2022-12-23 15:44:14.6105|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-12-23 15:44:14.6896|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28] Create instance : BBOARD28A, firmware version : v1.2.15
+2022-12-23 15:44:14.6896|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.212.34] InstanceInit return : OK
+2022-12-23 15:44:20.3303|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 15:44:20.3613|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2022-12-23 15:44:20.3613|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 15:44:20.3613|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 15:44:21.2769|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 
+2022-12-23 15:44:30.6273|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 15:44:30.6603|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoard Series\C#\ConsoleApp1\bin\Release\NLog.config
+2022-12-23 15:44:30.6603|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 15:44:30.6603|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 15:44:31.5752|INFO|BBoard_DEMO.BBoard_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 0, Virtual Device Config Num : 0 

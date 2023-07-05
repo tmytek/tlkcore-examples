@@ -1,0 +1,21 @@
+2022-12-23 16:15:12.1725|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 16:15:12.3325|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoxOne Series\C#\ConsoleApp1\bin\Release\NLog.config
+2022-12-23 16:15:12.3325|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 16:15:12.3325|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 16:15:12.3325|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[Virtual_Device_Interface][read_configuration_files] Configuration directory was created at 12/23/2022 4:15:12 PM.
+2022-12-23 16:15:12.5975|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[Queryer][Set_device_information] SN : B00000000-00, IP : 192.168.212.33, DEV_TYPE : DEV_BBOXONE28A
+2022-12-23 16:15:13.3179|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2022-12-23 16:15:14.2465|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-12-23 16:15:28.1551|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBoxOneAPI][Initial_process][B00000000-00] Create instance : BBOXONE28A, firmware version : v1.2.15
+2022-12-23 16:15:28.1551|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBoxOneAPI][Initial_process][B00000000-00][192.168.212.33] InstanceInit return : OK
+2022-12-23 16:15:28.1591|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBOXONE28A][setOperatingFreq][B00000000-00] Phi-A mode
+2022-12-23 16:15:28.1591|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBOXONE28A][captureInfoFromTable][B00000000-00] Current table version : 2.0.0 , at freqency 28
+2022-12-23 16:15:29.9241|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBOXONE28A][LoadCalibrationInfo][B00000000-00] Load Calibration table Complete.
+2022-12-23 16:15:29.9241|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[Beam_Pattern_Configuration][check_beam_table] Beam table directory was created at 12/23/2022 4:15:29 PM.
+2022-12-23 16:15:29.9241|WARN|BBOXONE_DEMO.BBoxOne_Control_DEMO|[Beam_Pattern_Configuration][check_beam_table] Beam table not exist
+2022-12-23 16:15:30.1308|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[Beam_Pattern_Configuration][generate_default_beam_table] Generate default Beam_Configuration
+2022-12-23 16:15:30.1869|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_B00000000-00_28GHz.json 
+2022-12-23 16:15:30.1918|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBOXONE28A][setOperatingFreq][B00000000-00] Load Beam table into device complete
+2022-12-23 16:15:30.1918|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBOXONE28A][setOperatingFreq][B00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2022-12-23 16:15:30.1918|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2022-12-23 16:15:30.2049|INFO|BBOXONE_DEMO.BBoxOne_Control_DEMO|[BBoxDevice][selectAAKit][B00000000-00] Set TMYTEK_28ONE_4x4_C2104L020-28 AAKIT

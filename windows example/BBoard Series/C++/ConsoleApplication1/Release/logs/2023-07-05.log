@@ -1,0 +1,18 @@
+2023-07-05 13:51:18.5829|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 13:51:18.6569|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoard Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 13:51:18.6589|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 13:51:18.6589|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 13:51:18.8670|INFO|main|[Queryer][Set_device_information] SN : D2104L011-28, IP : 192.168.100.111, DEV_TYPE : DEV_BBOARD28A
+2023-07-05 13:51:19.7461|INFO|main|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 13:51:20.8812|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 13:51:21.4123|INFO|main|[BBoxOneAPI][Initial_process][D2104L011-28] Create instance : BBOARD28A, firmware version : v1.2.15
+2023-07-05 13:51:21.4123|INFO|main|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.100.111] InstanceInit return : OK
+2023-07-05 15:06:15.7691|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18.4
+2023-07-05 15:06:15.8811|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\windows example\BBoard Series\C++\ConsoleApplication1\Release\NLog.config
+2023-07-05 15:06:15.8811|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 15:06:15.8811|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 15:06:15.9681|INFO|main|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOARD28A
+2023-07-05 15:06:16.8160|INFO|main|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 15:06:17.9172|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 15:06:18.4394|INFO|main|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOARD28A, firmware version : v1.2.15
+2023-07-05 15:06:18.4394|INFO|main|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK

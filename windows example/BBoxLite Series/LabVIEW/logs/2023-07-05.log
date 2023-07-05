@@ -1,0 +1,154 @@
+2023-07-05 14:00:04.3034|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] API Version : 3.3.18.2
+2023-07-05 14:00:04.3485|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Using Nlog config : C:\Users\Raymond_Su\Desktop\X410 Integration\FastBeamControl\FastBeamControl\NLog.config
+2023-07-05 14:00:04.3485|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2023-07-05 14:00:04.3485|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:00:04.4545|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:00:05.2539|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:00:06.1044|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:00:06.5047|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 14:00:06.5047|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:00:06.5047|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 14:00:06.6381|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2023-07-05 14:00:06.6441|ERROR|NationalInstruments.LabVIEW.DNRuntime|[Brute_CalibrationMap][captureInfoFromTable] SN parse failed. Target SN : D00000000-00, table SN : D2104L011-28
+2023-07-05 14:00:06.6441|ERROR|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ReflectFunction][D00000000-00] setOperatingFreq : ERROR_REFLECTION : System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BBOXLITE28A.captureInfoFromTable(StreamReader file, Double[,]& dr_calculated)
+   at BBOXLITE28A.LoadCalibrationInfo()
+   at BBOXLITE28A.setOperatingFreq(Double freq)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 14:00:06.6608|INFO|NationalInstruments.LabVIEW.DNRuntime|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 14:00:06.6608|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2023-07-05 14:00:06.6758|ERROR|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ReflectFunction][D00000000-00] getDR : ERROR_REFLECTION : System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.Object.GetType()
+   at BBoxAPI.Queryer.ReflectFunction(String sn, String methodName, Object[] param)
+2023-07-05 14:00:06.6758|ERROR|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][getELEDR][D00000000-00] Unload calibration table
+2023-07-05 14:00:06.6758|ERROR|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setBeamAngle][D00000000-00] Unload calibration table
+2023-07-05 14:00:06.6908|ERROR|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setChannelGainPhase][D00000000-00] Unload calibration table
+2023-07-05 14:00:06.6908|ERROR|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setAllChannelGain][D00000000-00] Unload calibration table
+2023-07-05 14:01:22.3648|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] API Version : 3.3.18.2
+2023-07-05 14:01:22.4158|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Using Nlog config : C:\Users\Raymond_Su\Desktop\X410 Integration\FastBeamControl\FastBeamControl\NLog.config
+2023-07-05 14:01:22.4158|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Current culture is English (United States) : en-US
+2023-07-05 14:01:22.4158|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:01:22.5208|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:01:23.3238|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:01:24.1824|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:01:24.6112|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 14:01:24.6112|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:01:24.6182|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 14:01:24.6272|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2023-07-05 14:01:24.9613|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 14:01:24.9613|WARN|NationalInstruments.LabVIEW.DNRuntime|[Beam_Pattern_Configuration][check_beam_table] Beam table not exist
+2023-07-05 14:01:25.0880|INFO|NationalInstruments.LabVIEW.DNRuntime|[Beam_Pattern_Configuration][generate_default_beam_table] Generate default Beam_Configuration
+2023-07-05 14:01:25.1530|INFO|NationalInstruments.LabVIEW.DNRuntime|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 14:01:25.1530|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 14:01:25.1530|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 14:01:25.1670|INFO|NationalInstruments.LabVIEW.DNRuntime|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 14:01:25.1670|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2023-07-05 14:01:25.1917|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkGainRange][D00000000-00] Exceed TX minimum gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:01:25.2227|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkBoardGainRange][D00000000-00] RX gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:01:25.2227|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkBoardGainRange][D00000000-00] RX gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:01:25.2227|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkBoardGainRange][D00000000-00] RX gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:01:25.2227|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkBoardGainRange][D00000000-00] RX gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:01:25.2227|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkBoardGainRange][D00000000-00] RX gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:01:59.1447|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] API Version : 3.3.18.2
+2023-07-05 14:01:59.1944|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Using Nlog config : C:\Users\Raymond_Su\Desktop\X410 Integration\FastBeamControl\FastBeamControl\NLog.config
+2023-07-05 14:01:59.1944|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Current culture is English (United States) : en-US
+2023-07-05 14:01:59.1944|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:01:59.3011|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:02:00.1026|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:02:00.9636|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:02:01.3608|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 14:02:01.3608|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:02:01.3678|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 14:02:01.3778|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2023-07-05 14:02:01.7099|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 14:02:01.9248|INFO|NationalInstruments.LabVIEW.DNRuntime|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 14:02:01.9398|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 14:02:01.9398|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 14:02:01.9398|INFO|NationalInstruments.LabVIEW.DNRuntime|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 14:02:01.9398|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2023-07-05 14:02:01.9808|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkGainRange][D00000000-00] Exceed TX minimum gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:02:02.0008|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkBoardGainRange][D00000000-00] RX gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:02:02.0078|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkBoardGainRange][D00000000-00] RX gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:02:02.0078|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkBoardGainRange][D00000000-00] RX gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:02:02.0078|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkBoardGainRange][D00000000-00] RX gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:02:02.0078|WARN|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][checkBoardGainRange][D00000000-00] RX gain : 0 is smaller than minimum gain : 2.5
+2023-07-05 14:02:13.1760|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] API Version : 3.3.18.2
+2023-07-05 14:02:13.2260|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Using Nlog config : C:\Users\Raymond_Su\Desktop\X410 Integration\FastBeamControl\FastBeamControl\NLog.config
+2023-07-05 14:02:13.2260|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Current culture is English (United States) : en-US
+2023-07-05 14:02:13.2260|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:02:13.3310|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:02:14.1401|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:02:15.0012|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:02:15.3932|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 14:02:15.3932|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:02:15.3932|ERROR|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Init][] Init failed : SN not found
+2023-07-05 14:02:15.3932|ERROR|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ReflectFunction][] getFrequencyList : Instance not exists
+2023-07-05 14:02:15.3932|ERROR|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ReflectFunction][] setOperatingFreq : Instance not exists
+2023-07-05 14:02:15.3932|ERROR|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ReflectFunction][] getAAKitList : Instance not exists
+2023-07-05 14:02:15.4092|ERROR|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ReflectFunction][] selectAAKit : Instance not exists
+2023-07-05 14:02:15.4092|ERROR|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ReflectFunction][] Set_Fast_Parallel_Mode : Instance not exists
+2023-07-05 14:02:36.5984|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] API Version : 3.3.18.2
+2023-07-05 14:02:36.6404|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Using Nlog config : C:\Users\Raymond_Su\Desktop\X410 Integration\FastBeamControl\FastBeamControl\NLog.config
+2023-07-05 14:02:36.6404|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Current culture is English (United States) : en-US
+2023-07-05 14:02:36.6404|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:02:36.7434|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:02:37.5453|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:02:38.4063|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:02:38.8001|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 14:02:38.8001|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:02:38.8001|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 14:02:38.8191|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2023-07-05 14:02:39.1451|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 14:02:39.3611|INFO|NationalInstruments.LabVIEW.DNRuntime|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 14:02:39.3751|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 14:02:39.3751|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 14:02:39.3881|INFO|NationalInstruments.LabVIEW.DNRuntime|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 14:02:39.3881|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2023-07-05 14:02:39.4191|INFO|NationalInstruments.LabVIEW.DNRuntime|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 14:02:39.7026|INFO|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D00000000-00] Apply_BeamPattern_Table
+2023-07-05 14:02:39.7026|INFO|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D00000000-00] Turn on fast parallel mode FBS/TDBS
+2023-07-05 14:02:39.7066|INFO|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D00000000-00] Turn on externalSPI
+2023-07-05 14:04:01.4103|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] API Version : 3.3.18.2
+2023-07-05 14:04:01.4614|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Using Nlog config : C:\Users\Raymond_Su\Desktop\X410 Integration\FastBeamControl\FastBeamControl\NLog.config
+2023-07-05 14:04:01.4614|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Current culture is English (United States) : en-US
+2023-07-05 14:04:01.4614|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:04:01.5664|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:04:02.3676|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:04:03.2243|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:04:03.6175|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 14:04:03.6175|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:04:03.6175|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 14:04:03.6345|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2023-07-05 14:04:03.9626|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 14:04:04.1776|INFO|NationalInstruments.LabVIEW.DNRuntime|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 14:04:04.1926|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 14:04:04.1926|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 14:04:04.2056|INFO|NationalInstruments.LabVIEW.DNRuntime|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 14:04:04.2056|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT
+2023-07-05 14:04:04.2356|INFO|NationalInstruments.LabVIEW.DNRuntime|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 14:04:04.5239|INFO|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D00000000-00] Apply_BeamPattern_Table
+2023-07-05 14:04:04.5239|INFO|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D00000000-00] Turn on fast parallel mode FBS/TDBS
+2023-07-05 14:04:04.5239|INFO|NationalInstruments.LabVIEW.DNRuntime|[CustomA_BBoxDevice][Set_Fast_Parallel_Mode][D00000000-00] Turn on externalSPI
+2023-07-05 14:04:40.4580|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] API Version : 3.3.18.2
+2023-07-05 14:04:40.5050|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Using Nlog config : C:\Users\Raymond_Su\Desktop\X410 Integration\FastBeamControl\FastBeamControl\NLog.config
+2023-07-05 14:04:40.5050|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Current culture is English (United States) : en-US
+2023-07-05 14:04:40.5050|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2023-07-05 14:04:40.6120|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][Set_device_information] SN : D00000000-00, IP : 192.168.100.111, DEV_TYPE : DEV_BBOXLITE28A
+2023-07-05 14:04:41.4150|INFO|NationalInstruments.LabVIEW.DNRuntime|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2023-07-05 14:04:42.2765|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2023-07-05 14:04:43.0137|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00] Create instance : BBOXLITE28A, firmware version : v1.2.15
+2023-07-05 14:04:43.0137|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxOneAPI][Initial_process][D00000000-00][192.168.100.111] InstanceInit return : OK
+2023-07-05 14:04:43.0217|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Phi-A mode
+2023-07-05 14:04:43.0217|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][captureInfoFromTable][D00000000-00] Current table version : 2.0.0 , at freqency 28
+2023-07-05 14:04:43.3737|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][LoadCalibrationInfo][D00000000-00] Load Calibration table Complete.
+2023-07-05 14:04:43.5957|INFO|NationalInstruments.LabVIEW.DNRuntime|[Beam_Pattern_Configuration][load_beam_table] Load files\\BeamTable\\Beam_Configuration_D00000000-00_28GHz.json 
+2023-07-05 14:04:43.6107|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Load Beam table into device complete
+2023-07-05 14:04:43.6107|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBOXLITE28A][setOperatingFreq][D00000000-00] Firmware version : v1.2.15, Calibration table version : 2.0.0
+2023-07-05 14:04:43.6267|INFO|NationalInstruments.LabVIEW.DNRuntime|[AAKitSupporter][getAAKitNameList] AAkitInfoList.Count : 1
+2023-07-05 14:04:43.6297|INFO|NationalInstruments.LabVIEW.DNRuntime|[BBoxDevice][selectAAKit][D00000000-00] Set TMYTEK_28LITE_4x4_C2104L020-28 AAKIT

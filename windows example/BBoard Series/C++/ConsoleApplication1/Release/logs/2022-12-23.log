@@ -1,0 +1,20 @@
+2022-12-23 16:26:41.8007|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 16:26:41.9176|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoard Series\C++\ConsoleApplication1\Release\NLog.config
+2022-12-23 16:26:41.9176|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 16:26:41.9176|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 16:26:41.9236|INFO|main|[Virtual_Device_Interface][read_configuration_files] Configuration directory was created at 12/23/2022 4:26:41 PM.
+2022-12-23 16:26:42.1882|INFO|main|[Queryer][Set_device_information] SN : D2104L011-28, IP : 192.168.212.34, DEV_TYPE : DEV_BBOARD28A
+2022-12-23 16:26:42.9152|INFO|main|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2022-12-23 16:26:43.9608|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-12-23 16:26:44.3552|INFO|main|[BBoxOneAPI][Initial_process][D2104L011-28] Create instance : BBOARD28A, firmware version : v1.2.15
+2022-12-23 16:26:44.3552|INFO|main|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.212.34] InstanceInit return : OK
+2022-12-23 16:30:14.2085|INFO|main|[BBoxOneAPI][.ctor] API Version : 3.3.18
+2022-12-23 16:30:14.2415|INFO|main|[BBoxOneAPI][.ctor] Using Nlog config : D:\tmytek\Source\bbox-api\example\BBoard Series\C++\ConsoleApplication1\Release\NLog.config
+2022-12-23 16:30:14.2415|INFO|main|[BBoxOneAPI][.ctor] Current culture is 中文(台灣) : zh-TW
+2022-12-23 16:30:14.2415|INFO|main|[BBoxOneAPI][.ctor] Set default culture is English (United States) : en-US
+2022-12-23 16:30:14.2415|INFO|main|[Virtual_Device_Interface][read_configuration_files] Configuration directory was created at 12/23/2022 4:30:14 PM.
+2022-12-23 16:30:14.4431|INFO|main|[Queryer][Set_device_information] SN : D2104L011-28, IP : 192.168.212.34, DEV_TYPE : DEV_BBOARD28A
+2022-12-23 16:30:15.1620|INFO|main|[Queryer][ScanDevice] Re-Scan device. current_cnt = 1
+2022-12-23 16:30:16.0725|INFO|main|[BBoxOneAPI][ScanningDevice] Physical Device Num : 1, Virtual Device Config Num : 0 
+2022-12-23 16:30:16.1560|INFO|main|[BBoxOneAPI][Initial_process][D2104L011-28] Create instance : BBOARD28A, firmware version : v1.2.15
+2022-12-23 16:30:16.1560|INFO|main|[BBoxOneAPI][Initial_process][D2104L011-28][192.168.212.34] InstanceInit return : OK
