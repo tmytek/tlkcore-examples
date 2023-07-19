@@ -52,6 +52,7 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="BBoxAPI.dll" Type="Document" URL="/C/Users/Raymond_Su/Desktop/X410 Integration/FastBeamControl/FastBeamControl/BBoxAPI.dll"/>
+			<Item Name="BBoxAPI.dll" Type="Document" URL="../BBoxAPI.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Application" Type="EXE">

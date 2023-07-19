@@ -49,7 +49,7 @@
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
-			<Item Name="BBoxAPI.dll" Type="Document" URL="/C/Users/Raymond_Su/Desktop/X410 Integration/FastBeamControl/FastBeamControl/BBoxAPI.dll"/>
+			<Item Name="BBoxAPI.dll" Type="Document" URL="../BBoxAPI.dll"/>
 			<Item Name="Kernel32.dll" Type="Document" URL="Kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
