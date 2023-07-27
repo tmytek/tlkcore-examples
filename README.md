@@ -46,8 +46,8 @@ Every model has its own sample code. Please refer to the sample code inside each
       - [ C++ ]
       - [ C# ]
       - [ LabVIEW ]
-        - [BBoxLite Getting Started](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/LabVIEW)
-        - [BBoxOne Getting Started](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/LabVIEW)
+        - [BBoxLite Getting Started](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoxLite/LabVIEW)
+        - [BBoxOne Getting Started](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoxOne/LabVIEW)
       - [ Matlab ]
 
     - [BBox 5G Series Common API Usage](#BBox-Series-Common-API-Usage)
@@ -128,40 +128,40 @@ DEMO4 : Device Beam Steering Control
 
 ### **Python**
 
-- [BBoard](https://github.com/tmytek/bbox-api/tree/master/example/BBoard/Python)
+- [BBoard](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoard/Python)
 
-- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/Python)
+- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoxLite/Python)
 
-- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/Python)
+- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoxOne/Python)
 
 
 ### **C++**
 
-- [BBoard](https://github.com/tmytek/bbox-api/tree/master/example/BBoard/C%2B%2B)
+- [BBoard](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoard/C%2B%2B)
 
-- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/C%2B%2B)
+- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoxLite/C%2B%2B)
 
-- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/C%2B%2B)
+- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoxOne/C%2B%2B)
 
 
 ### **C#**
 
-- [BBoard](https://github.com/tmytek/bbox-api/tree/master/example/BBoard/C%23)
+- [BBoard](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoard/C%23)
 
-- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/C%23)
+- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoxLite/C%23)
 
-- [BBoxOne](https://github.com/tmytek/bbox-api/master/example/BBoxOne/C%23)
+- [BBoxOne](https://github.com/tmytek/bbox-api/master/example_Windows/BBoxOne/C%23)
 
 
 ### **MATLAB**
 
-- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/MatLab)
+- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoxOne/MatLab)
 
 ### **LabVIEW**
 
-- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/LabVIEW)
+- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoxLite/LabVIEW)
 
-- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/LabVIEW)
+- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example_Windows/BBoxOne/LabVIEW)
 
 
 ## **BBox Series Common API Usage**
