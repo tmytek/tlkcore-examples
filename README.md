@@ -2,7 +2,7 @@
 
 ## **Introduction**
 
-TMYTEK Box Series API helps developing mmwave( n257 / n260 ) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down converter)**.
+TMYTEK Box Series API helps developing mmwave( n257 / n260 ) **beamforming** and **beam steering** applications with **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down frequency converter)**.
 
 The .dll format release is windows shared library and test on visual studio community 2022 and labView 2021.
 
@@ -50,7 +50,7 @@ Every model has its own sample code. Please refer to the sample code inside each
         - [BBoxOne Getting Started](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/LabVIEW)
       - [ Matlab ]
 
-    - [BBox Series Common API Usage](#BBox-Series-Common-API-Usage)
+    - [BBox 5G Series Common API Usage](#BBox-Series-Common-API-Usage)
       - [ ScanningDevice ]      : Query the Active Devices Information on Ethernet
       - [ Init ]                : Initialize the Default Device Settings
       - [ getTxRxMode ]         : Query Device Operating Mode
@@ -128,40 +128,40 @@ DEMO4 : Device Beam Steering Control
 
 ### **Python**
 
-- [BBoard 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoard%20Series/Python)
+- [BBoard](https://github.com/tmytek/bbox-api/tree/master/example/BBoard/Python)
 
-- [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/Python)
+- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/Python)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/Python)
+- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/Python)
 
 
 ### **C++**
 
-- [BBoard 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoard%20Series/C%2B%2B)
+- [BBoard](https://github.com/tmytek/bbox-api/tree/master/example/BBoard/C%2B%2B)
 
-- [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/C%2B%2B)
+- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/C%2B%2B)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/C%2B%2B)
+- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/C%2B%2B)
 
 
 ### **C#**
 
-- [BBoard 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoard%20Series/C%23)
+- [BBoard](https://github.com/tmytek/bbox-api/tree/master/example/BBoard/C%23)
 
-- [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/C%23)
+- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/C%23)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/master/example/BBoxOne%20Series/C%23)
+- [BBoxOne](https://github.com/tmytek/bbox-api/master/example/BBoxOne/C%23)
 
 
 ### **MATLAB**
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/MatLab)
+- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/MatLab)
 
 ### **LabVIEW**
 
-- [BBoxLite 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite%20Series/LabVIEW)
+- [BBoxLite](https://github.com/tmytek/bbox-api/tree/master/example/BBoxLite/LabVIEW)
 
-- [BBoxOne 5G Series](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne%20Series/LabVIEW)
+- [BBoxOne](https://github.com/tmytek/bbox-api/tree/master/example/BBoxOne/LabVIEW)
 
 
 ## **BBox Series Common API Usage**
