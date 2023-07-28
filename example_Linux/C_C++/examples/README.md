@@ -9,7 +9,7 @@ This example directory contains two sub directories, please configure to your ow
    * device.conf, it mentions the device infomations for Beamform & UD.
       * Beamform devices with SN as key then includes AAKIT name and the path to beam configruation.
       * UD devices only include SN as key then includes STATE with json format.
-   *. Beam configruation files, i.g. CustomBatchBeams_D2230E013-28.csv.
+         *. Beam configruation files, i.g. CustomBatchBeams_D2230E013-28.csv.
       * You can edit/pre-config it via Office or any text editor, no matter what it is config to one of below options:
         * A whole beam (BeamType=0)
            * beam_db: gain with float type, please DO NOT exceed the DR (dynamic range).

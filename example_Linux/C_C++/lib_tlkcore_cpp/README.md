@@ -1,7 +1,9 @@
 # Building TLKCore C++ shared library using CMake
 
-This directory contains a tiny C++ wrappper example of a TLKCore-based application.
-It is completely independent of the TLKCore source tree.
+This directory contains a tiny C++ wrappper example of a TLKCore-based library, it's completely independent of the TLKCore source tree.
+
+For C/C++ supporting, please install related Python packages from requirements.txt
+    `pip install -r requirements.txt`
 
 To try it out, run these commands:
 
@@ -10,7 +12,7 @@ To try it out, run these commands:
 3. `cmake {options} ..`
 4. `make install` to generate to your output path
 
-`options` might be:
+`options` might be(modify to your Python version here):
 
     -Dpybind11_DIR=~/.local/share/cmake/pybind11
     -DPYBIND11_PYTHON_VERSION=3.6
