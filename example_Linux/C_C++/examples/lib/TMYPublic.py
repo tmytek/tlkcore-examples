@@ -16,7 +16,6 @@ class BeamType(Enum):
     CHANNEL = auto()
 
 class RetCode(Enum):
-    #_baseVersion = "3.3.16.0"
 
     OK                      = 0
     WARNING                 = auto()
@@ -43,6 +42,8 @@ class RetCode(Enum):
     ERROR_SEND_CMD          = auto()
     ERROR_RESP_CMD          = auto()
     ERROR_SEND_CMD_TIMEOUT  = auto()
+    ERROR_COMPORT           = auto()
+    ERROR_USB               = auto()
 
     # CMD to device
     ERROR_CMD               = 40
@@ -68,6 +69,11 @@ class RetCode(Enum):
     # PD device
     ERROR_PD_CALI           = 150
     ERROR_PD_SOURCE         = auto()
+    # UDM device
+    ERROR_FREQ_RANGE        = 240
+    ERROR_LICENSE_LENGTH    = auto()
+    ERROR_LICENSE_KEY       = auto()
+    ERROR_REF_CHANGE        = auto()
     # UD device
     ERROR_FREQ_EQUATION     = 250
     WARNING_HARMONIC        = auto()
@@ -88,11 +94,13 @@ class UDState(Enum):
     PWR_5V          = auto()
     PWR_9V          = auto()
 
-class UDMState(Enum):
-    NO_SET          = -1
-    SYSTEM          = 0
-    PLO_LOCK        = auto()
-    REF_LOCK        = auto()
+class UDMState(Flag):
+    NO_SET      = 0
+    SYSTEM      = auto()
+    PLO_LOCK    = auto()
+    REF_LOCK    = auto()
+    LICENSE     = auto()
+    ALL         = SYSTEM | PLO_LOCK | REF_LOCK | LICENSE
 
 class UDM_SYS(Enum):
     SYS_ERROR       = -1
@@ -106,3 +114,9 @@ class UDM_REF(Enum):
     UNLOCK          = -1
     INTERNAL        = 0
     EXTERNAL        = auto()
+
+class UDM_LICENSE(Enum):
+    VERIFY_FAIL_FLASH   = -2
+    VERIFY_FAIL_DIGEST  = -1
+    NON_LICENSE         = 0
+    VERIFY_PASS         = auto()
