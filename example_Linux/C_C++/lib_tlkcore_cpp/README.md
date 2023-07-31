@@ -15,6 +15,6 @@ To try it out, run these commands:
 `options` might be(modify to your Python version here):
 
     -Dpybind11_DIR=~/.local/share/cmake/pybind11
-    -DPYBIND11_PYTHON_VERSION=3.6
+    -DPYBIND11_PYTHON_VERSION=3.8
 
 See the CMakeLists.txt file to figure out how to set up a build system.

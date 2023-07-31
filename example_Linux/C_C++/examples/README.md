@@ -25,7 +25,7 @@ This example directory contains two sub directories, please configure to your ow
    * **include/tlkcore_lib.hpp** -> ../../lib_tlkcore_cpp/include/tlkcore_lib.hpp
    * **libusrp_fbs.so** -> ../lib_usrp_spi/libusrp_fbs.so
    * **include/usrp_fbs.hpp** -> ../../lib_usrp_spi/include/usrp_fbs.hpp
-4. After libraries built, according to your Python environment, copy the extracted **lib/** from **TLKCore_release/** to **example/lib/**, and we already placed libs for Python3.6 as default.
+4. After libraries built, according to your Python environment, copy the extracted **lib/** from **TLKCore_release/** to **example/lib/**, and we already placed libs for Python3.8 as default.
 
 # Building TLKCore+USRP Applications using CMake
 After above process, to try it out, run these commands:
