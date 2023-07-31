@@ -7,9 +7,9 @@ set(GCC_MIN_VERSION "6.3.0")
 set(CLANG_MIN_VERSION "6.0.0")
 # This Python version gets used for Python API (if requested) as well as
 # all the build-time Python scripts
-set(PYTHON_MIN_VERSION "3.6")
+set(PYTHON_MIN_VERSION "3.8")
 #set(PYTHON_VERSION 3.6)
-set(PYBIND11_PYTHON_VERSION 3.6)
+set(PYBIND11_PYTHON_VERSION 3.8)
 
 cmake_minimum_required(VERSION 3.4...3.18)
 set(CMAKE_CXX_STANDARD 11)

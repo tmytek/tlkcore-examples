@@ -19,15 +19,17 @@ int update_beam_config(tlkcore_lib::tlkcore_ptr service)
         service->get_fast_parallel_mode(sn, fpga_mode);
         printf("[Main] get_fast_parallel_mode: %d\r\n", fpga_mode);
 
+#if 0
         /* A sample to set beam directly */
         rf_mode_t mode = MODE_TX;
         float gain_db = 4;
         int theta = 0;
         int phi = 0;
         service->set_beam_angle(sn, 28.0, mode, gain_db, theta, phi);
-
+#else
         /* Set all beam configs via csv file */
         service->apply_beam_patterns(sn, 28.0);
+#endif
     }
     return 0;
 }
@@ -49,8 +51,9 @@ int fpga_conftrol(tlkcore_lib::tlkcore_ptr service)
     std::string usrp_addr = "";//"addr=192.168.100.10";
     usrp_spi_setup(usrp_addr);
 
-    // Control UHD to switch beam id
     char buf[64];
+#if 1
+    // Case1: control UHD to switch beam id by typing beam id
     int beam_id = 0;
     do {
         memset(buf, 0, sizeof(buf));
@@ -67,6 +70,16 @@ int fpga_conftrol(tlkcore_lib::tlkcore_ptr service)
             continue;
         }
     } while (1);
+#else
+    // Case2: setup batch beams, please DO NOT print any msg after running
+    printf("Please press enter to start:");
+    fgets(buf, sizeof(buf), stdin);
+    int beams[] = {1, 2, 3, 1, 4, 64};
+    int length = sizeof(beams)/sizeof(beams[0]);
+    for (int i=0; i<length; i++) {
+        usrp_select_beam_id(MODE_TX, beams[i]);
+    }
+#endif
 
     // Setup BBox back from fast parallel mode
     fpga_mode = false;

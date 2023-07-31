@@ -1,4 +1,4 @@
-// Example for SPI testing for BBox of TMYTEK.
+// Example for SPI control beam for BBox of TMYTEK.
 //
 // This example shows how to work with SPI (for TMYTEK BBox procotol)
 // which is based on the GPIO interface of the X410.
@@ -56,6 +56,8 @@ uhd::spi_iface::sptr spi_ref;
 // The spi_config_t holds items like the clock divider and the SDI and SDO edges
 uhd::spi_config_t spi_config;
 
+static const bool debug = false;
+static int rf_mode = 0; //0:TX
 std::string to_bit_string(uint32_t val, const size_t num_bits)
 {
     std::string out;
@@ -104,6 +106,22 @@ void output_reg_values(const std::string& bank,
     } catch (...) {
         throw;
     }
+}
+
+/*
+ * Switch TX/RX mode via gpio operation for BBox of TMYTEK
+ */
+void usrp_set_mode(int mode)
+{
+    uint32_t tx_pin = (mode == 0 ? GPIO_BIT(GPIO_DEFAULT_TX_EN_PIN) : 0);
+    uint32_t rx_pin = (mode == 0 ? 0 : GPIO_BIT(GPIO_DEFAULT_RX_EN_PIN));
+    if (debug) {
+        std::string msg = (mode == 0 ? "[USRP] Tx mode": "[USRP] Rx mode");
+        std::cout << msg << std::endl;
+    }
+    usrp->set_gpio_attr(gpio_bank, "OUT", tx_pin, GPIO_BIT(GPIO_DEFAULT_TX_EN_PIN));
+    usrp->set_gpio_attr(gpio_bank, "OUT", rx_pin, GPIO_BIT(GPIO_DEFAULT_RX_EN_PIN));
+    rf_mode = mode;
 }
 
 /*
@@ -184,6 +202,9 @@ int usrp_spi_setup(std::string addr)
     usrp->set_gpio_attr(gpio_bank, "OUT", GPIO_BIT(SPI_DEFAULT_SDI_PIN), GPIO_BIT(SPI_DEFAULT_SDI_PIN));
     usrp->set_gpio_attr(gpio_bank, "OUT", GPIO_BIT(GPIO_DEFAULT_LDB_PIN), GPIO_BIT(GPIO_DEFAULT_LDB_PIN));
 
+    // Set TX as default
+    usrp_set_mode(0);
+
     std::cout << "[USRP] Configured GPIO values:" << std::endl;
     bool has_src_api = true;
     output_reg_values(gpio_bank, port, usrp, num_bits, has_src_api);
@@ -208,30 +229,30 @@ int usrp_select_beam_id(int mode, int id)
     }
 
     // Switch Tx/Rx mode
-    if (mode == 0) {
-        std::cout << "[USRP] Tx mode" << std::endl;
-        usrp->set_gpio_attr(gpio_bank, "OUT", GPIO_BIT(GPIO_DEFAULT_TX_EN_PIN), GPIO_BIT(GPIO_DEFAULT_TX_EN_PIN));
-        usrp->set_gpio_attr(gpio_bank, "OUT", 0, GPIO_BIT(GPIO_DEFAULT_RX_EN_PIN));
-    } else {
-        std::cout << "[USRP] Rx mode" << std::endl;
-        usrp->set_gpio_attr(gpio_bank, "OUT", 0, GPIO_BIT(GPIO_DEFAULT_TX_EN_PIN));
-        usrp->set_gpio_attr(gpio_bank, "OUT", GPIO_BIT(GPIO_DEFAULT_RX_EN_PIN), GPIO_BIT(GPIO_DEFAULT_RX_EN_PIN));
+    if (rf_mode != mode) {
+        usrp_set_mode(mode);
     }
 
-    /* Transform payload to the format of BF IC, and index starts from 0
+    /*
+     * Transform payload to the format of BF IC, and index starts from 0
      * [Example]:
      *      1. TX beam_id=1  => Gain:0x1600 & Phase:0x1e00
      *      2. RX beam_id=20 => Gain:0x1513 & Phase:0x1c13
      */
+    uint32_t payload_id = ((id-1) & 0x3F);
+    if (debug) {
+        for (int i=0; i<2; i++) {
+            payload = (reg_address[mode][i] << 6) | payload_id;
+            std::cout << "[USRP] Writing payload: 0x" << std::hex << payload << " with length "
+                    << std::dec << payload_length << " bits" << std::endl;
+        }
+    }
+
     for (int i=0; i<2; i++) {
-        payload = (reg_address[mode][i] << 6) | ((id-1) & 0x3F);
-        std::cout << "[USRP] Writing payload: 0x" << std::hex << payload << " with length "
-              << std::dec << payload_length << " bits" << std::endl;
+        payload = (reg_address[mode][i] << 6) | payload_id;
 
         // Do the SPI transaction. There are write() and read() methods available, too.
-        std::cout << "[USRP] Performing SPI transaction..." << std::endl;
-        // uint32_t read_data = spi_ref->transact_spi(0, spi_config, payload, payload_length, true);
-        // std::cout << "Data read: 0x" << std::hex << read_data << std::endl;
+        // std::cout << "[USRP] Performing SPI transaction..." << std::endl;
         spi_ref->write_spi(0, spi_config, payload, payload_length);
 
         // TMY LDB: low pulse
@@ -239,7 +260,9 @@ int usrp_select_beam_id(int mode, int id)
         usrp->set_gpio_attr(gpio_bank, "OUT", GPIO_BIT(GPIO_DEFAULT_LDB_PIN), GPIO_BIT(GPIO_DEFAULT_LDB_PIN));
     }
 
-    std::cout << "[USRP] BeamID:" << id << " selected" << std::endl;
+    if (debug) {
+        std::cout << "[USRP] BeamID:" << id << " selected" << std::endl;
+    }
     return EXIT_SUCCESS;
 }
 
