@@ -12,6 +12,6 @@ To try it out, run these commands:
     $ cmake ..
     $ make install
 
-This will find the [UHD libraries](https://github.com/EttusResearch/uhd), and link and compile the example program. Include header directories and library names are automatically gathered.
+This will find the pre-installed libraries from [UHD libraries](https://github.com/EttusResearch/uhd) and [UHD Installation](https://files.ettus.com/manual/page_install.html#install_linux), then link and compile the example program. Include header directories and library names are automatically gathered.
 
 See the CMakeLists.txt file to figure out how to set up a build system.

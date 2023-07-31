@@ -78,7 +78,10 @@ public:
         cout << "[TLKCore] TMYConfig: " << dev_config_dict << endl;
 
         cout << "[TLKCore] Calling scanDevices()..." << endl;
-        auto ret = service.attr("scanDevices")();
+        py::object DevInterface = py::module::import("lib.TMYPublic").attr("DevInterface");
+        // After TLKCore v1.1.3, we provides multiple interface for scanning,
+        // default is "LAN", and you can set to "ALL" for other TMY products.
+        auto ret = service.attr("scanDevices")(); //(DevInterface.attr("ALL"));
         if (ret.attr("RetCode").attr("value").cast<int>() != RetCode.attr("OK").attr("value").cast<int>()) {
             cout << "[TLKCore] Init failed: " + ret.attr("RetMsg").cast<string>() << endl;
             printf("Called scanDevices() failed\r\n");
