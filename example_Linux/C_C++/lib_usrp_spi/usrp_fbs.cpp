@@ -113,8 +113,10 @@ void output_reg_values(const std::string& bank,
  */
 void usrp_set_mode(int mode)
 {
+    // mode_cal_time to cal pin state
     uint32_t tx_pin = (mode == 0 ? GPIO_BIT(GPIO_DEFAULT_TX_EN_PIN) : 0);
     uint32_t rx_pin = (mode == 0 ? 0 : GPIO_BIT(GPIO_DEFAULT_RX_EN_PIN));
+
     if (debug) {
         std::string msg = (mode == 0 ? "[USRP] Tx mode": "[USRP] Rx mode");
         std::cout << msg << std::endl;
@@ -193,6 +195,7 @@ int usrp_spi_setup(std::string addr)
               << "  Clock = " << (int)(periph_cfg.periph_clk) << std::endl
               << "  SDO   = " << (int)(periph_cfg.periph_sdo) << std::endl
               << "  SDI   = " << (int)(periph_cfg.periph_sdi) << std::endl
+              << "  LDB   = " << (int)(GPIO_DEFAULT_LDB_PIN) << std::endl
               << std::endl;
 
     // Disable ATR mode(automatic controlled by FPGA) for all pins
@@ -211,8 +214,8 @@ int usrp_spi_setup(std::string addr)
 
     spi_config.divider            = clk_divider;
     spi_config.use_custom_divider = true;
-    spi_config.mosi_edge          = spi_config.EDGE_RISE;
-    spi_config.miso_edge          = spi_config.EDGE_FALL;
+    spi_config.mosi_edge          = spi_config.EDGE_RISE;//SDI
+    spi_config.miso_edge          = spi_config.EDGE_FALL;//SDO
 
     return EXIT_SUCCESS;
 }
@@ -321,8 +324,10 @@ int UHD_SAFE_MAIN(int argc, char* argv[])
     }
 
     int ret = usrp_spi_setup(args);
-    if (ret == EXIT_FAILURE)
+    if (ret == EXIT_FAILURE) {
+        usrp_free();
         return ret;
+    }
 
     payload = strtoul(payload_str.c_str(), NULL, 0);
     std::cout << "Writing payload: 0x" << std::hex << payload << " with length "

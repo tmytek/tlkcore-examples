@@ -37,10 +37,9 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
     * Offline-Host
       * Download [setup executable driver from FTDI](https://ftdichip.com/drivers/d2xx-drivers/) and install it.
   * Linux
-      1. Download [Driver(.so) from FTDI](https://ftdichip.com/drivers/d2xx-drivers/) then place to the same folder.
-      2. Follow [steps](https://gitlab.com/msrelectronics/python-ft4222/-/tree/master#accessrights) to create or extend **/etc/udev/rules.d/99-ftdi.rules** includes:
+      1. Follow [steps](https://gitlab.com/msrelectronics/python-ft4222/-/tree/master#accessrights) to create or extend **/etc/udev/rules.d/99-ftdi.rules** includes:
           `SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="601c", GROUP="plugdev", MODE="0666"`
-      3. Try to reload udev rules or re-plugin USB devices.
+      2. Try to reload udev rules or re-plugin USB devices.
           `sudo udevadm control --reload-rules`
           `sudo udevadm trigger`
 
