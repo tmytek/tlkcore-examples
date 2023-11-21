@@ -1,9 +1,3 @@
-<style>
-th {text-align:start;}
-.blue{height:4px;background:#00FFFF}
-.navyblue{height:4px;background:#0076a8}
-</style>
-
 # Getting Started with MATLAB Sample Code
 
 ## Prerequisites
