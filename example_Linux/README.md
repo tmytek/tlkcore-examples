@@ -18,7 +18,7 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
 
 #### Software
 
-* **TLKCoreService** is <u>main entry</u> for developer, all of operations/functions must passed by TLKCoreService, e.g. scanDevices(), initDev().
+* **TLKCoreService** is ==main entry== for developer, all of operations/functions must passed by TLKCoreService, e.g. scanDevices(), initDev().
 * TMYCommService is maintaining physical communications for all devices, it usually not handled directly by developer.
 * TMYUtils defines all data structure for return data, let developer more easier to know current status of processed function.
 * **TMYPublic** is a open source code, it defines all data structure which developer might used, e.g. RFMode(TX/RX), RetCode(OK/ERROR/...), UDState...etc.
