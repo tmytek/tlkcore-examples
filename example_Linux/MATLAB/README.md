@@ -17,6 +17,7 @@ P.S. The following example executes ==MATLAB R2021b & Pyhton 3.8 64bit== on Wind
 ## MATLAB sample execution steps
 
 1. Copy **TLKCoreExample.m** to extracted/unzipped directory of [TLKCore_release](https://github.com/tmytek/bbox-api/tree/master/example_Linux/TLKCore_release)
+
    ![](../../images/MATLAB_1.png)
 
 2. Double-click TLKCoreExample.m to launch MATLAB process.

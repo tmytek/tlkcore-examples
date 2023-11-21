@@ -18,6 +18,7 @@ P.S. The following example executes ==LabVIEW 2021 64bit & Pyhton 3.8 64bit== on
 ## LabVIEW sample execution steps
 
 1. Double-click BBox.vi or **TLKCore.lvproj** then BBox.vi.
+
    ![](../../images/LabVIEW_BBoxOne_1.png)
 
 2. Please check fields under the description with ==BLUE== color
@@ -39,5 +40,6 @@ P.S. The following example executes ==LabVIEW 2021 64bit & Pyhton 3.8 64bit== on
       * Gain(dB): this example only provides the **MAX value of dynamic range** or you can modify to your setting via modifying Block Diagram of LabVIEW
 3. 'Run' it.
 4. Expected result shall be
+
    ![](../../images/LabVIEW_BBoxOne_success.png)
 
