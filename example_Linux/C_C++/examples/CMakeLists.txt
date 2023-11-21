@@ -27,7 +27,19 @@ set(example_sources
 )
 add_executable(tlkcore_fbs ${example_sources})
 target_link_libraries(tlkcore_fbs tlkcore_lib) # -Wl,--no-as-needed)
-target_link_libraries(tlkcore_fbs usrp_fbs)
+
+# Default TRUE to setup beam config to BBox then let SPI control beams, or FALSE to set single beam to BBox
+set(FBS TRUE)
+if(FBS)
+    # Fast beam steering via SPI
+    message(STATUS "Set Beam control from SPI")
+    # Add definition into source code
+    target_compile_definitions(tlkcore_fbs PRIVATE TMY_FBS)
+    target_link_libraries(tlkcore_fbs usrp_fbs)
+else(FBS)
+    # Direct to set beam via etherent
+    message(STATUS "Set Beam control directly")
+endif(FBS)
 
 # Set the related path of output file path to the same path with CMakeLists.txt
 install(TARGETS tlkcore_fbs DESTINATION ${CMAKE_CURRENT_SOURCE_DIR})

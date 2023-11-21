@@ -1,4 +1,4 @@
-Building UHD Application/Library using CMake
+Building UHD application/library using CMake
 =====================================
 
 This directory contains a tiny example of a UHD-based application.

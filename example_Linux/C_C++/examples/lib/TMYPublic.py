@@ -16,7 +16,10 @@ class BeamType(Enum):
     CHANNEL = auto()
 
 class RetCode(Enum):
-
+    def __str__(self):
+        return self.name
+    def __int__(self):
+        return self.value
     OK                      = 0
     WARNING                 = auto()
     ERROR                   = auto()

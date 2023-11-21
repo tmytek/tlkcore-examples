@@ -129,14 +129,11 @@ void usrp_set_mode(int mode)
 /*
  * Setup SPI & gpio config for BBox of TMYTEK
  */
-int usrp_spi_setup(std::string addr)
+int usrp_spi_setup(uhd::usrp::multi_usrp::sptr available_usrp)
 {
-    // const uhd::device_addr_t& dev_addr
-    // It will be the format likes: addr=192.168.100.10
-    if(usrp == NULL) {
-        // Create a usrp device
-        std::cout << "[USRP] Creating the usrp device with: " << addr << "..." << std::endl;
-        usrp = uhd::usrp::multi_usrp::make(addr);
+    usrp = available_usrp;
+    if (usrp == NULL) {
+        std::cout << "[USRP] Got the NULL usrp device" << std::endl;
     }
 
     // Get the SPI getter interface from where we'll get the SPI interface itself
@@ -218,6 +215,23 @@ int usrp_spi_setup(std::string addr)
     spi_config.miso_edge          = spi_config.EDGE_FALL;//SDO
 
     return EXIT_SUCCESS;
+}
+int usrp_spi_setup()
+{
+    // Create a usrp device
+    std::cout << "[USRP] Creating the usrp device" << std::endl;
+    usrp = uhd::usrp::multi_usrp::make("");
+    return usrp_spi_setup(usrp);
+}
+int usrp_spi_setup(std::string addr)
+{
+    // const uhd::device_addr_t& dev_addr
+    // It will be the format likes: addr=192.168.100.10
+    if (usrp == NULL) {
+        std::cout << "[USRP] Creating the usrp device with: " << addr << "..." << std::endl;
+        usrp = uhd::usrp::multi_usrp::make(addr);
+        return usrp_spi_setup(usrp);
+    }
 }
 
 /*
