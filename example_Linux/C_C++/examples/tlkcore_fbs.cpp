@@ -1,5 +1,7 @@
 #include "tlkcore_lib.hpp"
+#if TMY_FBS
 #include "usrp_fbs.hpp"
+#endif
 #include "common_lib.h"
 
 #include <iostream>
@@ -8,52 +10,83 @@
 
 using namespace tlkcore;
 
+// Please assign the SN which you want to control, and they must included in device.conf
+const std::vector<std::string> bf_list = {
+    "D2252E058-28",
+};
+const std::vector<std::string> ud_list = {
+    //"UD-BD22070012-24",
+};
+
+float target_freq = 28.0;
+
+/***********************************************************************
+ * Update bema configs to TLKCore for FBS
+ * Or, just simple beam steering
+ **********************************************************************/
 int update_beam_config(tlkcore_lib::tlkcore_ptr service)
 {
-    const std::vector<std::string> bf = {
-        "D2252E058-28",
-    };
+    for (std::string sn : bf_list) {
+#if TMY_FBS
+        bool fbs_mode;
+        if (service->get_fast_parallel_mode(sn, fbs_mode) < 0)
+        {
+             printf("[Main] get_fast_parallel_mode: failed\r\n");
+             return -1;
+        }
+        printf("[Main] get_fast_parallel_mode: %d\r\n", fbs_mode);
 
-    for (std::string sn : bf) {
-        bool fpga_mode;
-        service->get_fast_parallel_mode(sn, fpga_mode);
-        printf("[Main] get_fast_parallel_mode: %d\r\n", fpga_mode);
+        if (fbs_mode == false) {
+            // Set all beam configs via csv file
+            if (service->apply_beam_patterns(sn, target_freq) < 0) {
+                printf("[Main] apply_beam_patterns failed\r\n");
+                return -1;
+            }
+        }
 
-#if 0
+#else
         /* A sample to set beam directly */
         rf_mode_t mode = MODE_TX;
         float gain_db = 4;
         int theta = 0;
         int phi = 0;
-        service->set_beam_angle(sn, 28.0, mode, gain_db, theta, phi);
-#else
-        /* Set all beam configs via csv file */
-        service->apply_beam_patterns(sn, 28.0);
+        printf("[Main] set beam with gain/theta/phi: %.1f/%d/%d\r\n", gain_db, theta, phi);
+        service->set_beam_angle(sn, target_freq, mode, gain_db, theta, phi);
 #endif
     }
     return 0;
 }
 
-int fpga_conftrol(tlkcore_lib::tlkcore_ptr service)
+#if TMY_FBS
+/***********************************************************************
+ * Setup BBox to fast parallel mode for fast beam steering
+ * Then let usrp process switching beams
+ **********************************************************************/
+int fpga_conftrol(tlkcore_lib::tlkcore_ptr service, std::string sn)
 {
-    const std::string sn = "D2252E058-28";
-
-    // Setup BBox as fast parallel mode
-    bool fpga_mode;
-    service->get_fast_parallel_mode(sn, fpga_mode);
-    printf("[Main] get_fast_parallel_mode: %d\r\n", fpga_mode);
-    if (fpga_mode == false) {
-        fpga_mode = true;
-        service->set_fast_parallel_mode(sn, fpga_mode, 28.0);
+    bool fbs_mode;
+    if (service->get_fast_parallel_mode(sn, fbs_mode) != 0)
+    {
+            printf("[Main] get_fast_parallel_mode: failed\r\n");
+            return -1;
+    }
+    printf("[Main] get_fast_parallel_mode: %d\r\n", fbs_mode);
+    if (fbs_mode == false) {
+        fbs_mode = true;
+        service->set_fast_parallel_mode(sn, fbs_mode, target_freq);
     }
 
-    // Setup UHD for SPI ready, and assign IP to reduce finding time, and assign "" will takes to scan available usrps
-    std::string usrp_addr = "";//"addr=192.168.100.10";
-    usrp_spi_setup(usrp_addr);
+    // Setup UHD for SPI ready, passing usrp instance or create a usrp instance or assign IP create a usrp instance
+    // usrp_spi_setup(usrp);
+
+    usrp_spi_setup();
+
+    // std::string usrp_addr = "192.168.100.10";
+    // usrp_spi_setup(usrp_addr);
 
     char buf[64];
 #if 1
-    // Case1: control UHD to switch beam id by typing beam id
+    // Case1: Manually control UHD to switch beam id by typing beam id
     int beam_id = 0;
     do {
         memset(buf, 0, sizeof(buf));
@@ -71,7 +104,7 @@ int fpga_conftrol(tlkcore_lib::tlkcore_ptr service)
         }
     } while (1);
 #else
-    // Case2: setup batch beams, please DO NOT print any msg after running
+    // Case2: Auto switching all beams, please DO NOT print any msg after running
     printf("Please press enter to start:");
     fgets(buf, sizeof(buf), stdin);
     int beams[] = {1, 2, 3, 1, 4, 64};
@@ -82,19 +115,17 @@ int fpga_conftrol(tlkcore_lib::tlkcore_ptr service)
 #endif
 
     // Setup BBox back from fast parallel mode
-    fpga_mode = false;
-    service->set_fast_parallel_mode(sn, fpga_mode, 28.0);
-    service->get_fast_parallel_mode(sn, fpga_mode);
+    fbs_mode = false;
+    service->set_fast_parallel_mode(sn, fbs_mode, target_freq);
+    service->get_fast_parallel_mode(sn, fbs_mode);
     return 0;
 }
+#endif
 
 int set_ud_freq(tlkcore_lib::tlkcore_ptr service)
 {
-    const std::vector<std::string> ud = {
-        "UD-BD22070012-24",
-    };
-    for (std::string sn : ud) {
-        service->set_ud_freq(sn, 24000000, 28000000, 4000000);
+    for (std::string sn : ud_list) {
+        service->set_ud_freq(sn, 24e6, target_freq*1e6, 4e6);
     }
     return 0;
 }
@@ -102,6 +133,11 @@ int set_ud_freq(tlkcore_lib::tlkcore_ptr service)
 int tmy_device_control()
 {
     printf("[Main] Start controlling\r\n");
+#if TMY_FBS
+    printf("FBS\r\n");
+#else
+    printf("beam\r\n");
+#endif
     // Please keep this pointer to maintain instance of tlkcore.
     tlkcore_lib::tlkcore_ptr ptr;
 
@@ -111,16 +147,26 @@ int tmy_device_control()
     const std::string path = "config/device.conf";
     ptr->scan_init_dev(path);
 
-    // set_ud_freq(ptr);
-    update_beam_config(ptr);
-    fpga_conftrol(ptr);
+    set_ud_freq(ptr);
+    if (update_beam_config(ptr) < 0)
+    {
+        return -1;
+    }
+
+#if TMY_FBS
+    for (std::string sn : bf_list) {
+        fpga_conftrol(ptr, sn);
+    }
     usrp_free();
+#endif
 
     return 0;
 }
 
 int main(int argc, char* argv[])
 {
-    tmy_device_control();
-    printf("[Main] testing end\r\n");
+    if (tmy_device_control() < 0)
+        printf("[Main] testing failed\r\n");
+    else
+        printf("[Main] testing end\r\n");
 }

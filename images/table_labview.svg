@@ -1,0 +1,112 @@
+<svg fill="none" viewBox="0 0 940 380" width="1000" height="400" xmlns="http://www.w3.org/2000/svg"
+>
+   <foreignObject width="100%" height="100%">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+         <style>
+         th {
+            text-align:start;
+         }
+         .blue{
+            height:4px;
+            background:#00FFFF;
+         }
+         .navyblue{
+            height:4px;
+            background:#03b585;
+         }
+         </style>
+         <table width="100%" border="1">
+               <tbody>
+                  <tr>
+                     <th rowspan="2" width="16%">LabVIEW Version</th>
+                     <th colspan="6">Python Version</th>
+                  </tr>
+                  <tr>
+                     <th width="14%" class="blue">3.10</th>
+                     <th width="14%">3.9</th>
+                     <th width="14%" class="blue">3.8</th>
+                     <th width="14%">3.7</th>
+                     <th width="14%" class="blue">3.6</th>
+                  </tr>
+                  <tr>
+                     <th>2023 Q1</th>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                  </tr>
+                  <tr>
+                     <th>2022 Q3</th>
+                     <td></td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                  </tr>
+                  <tr>
+                     <th>2021 SP1</th>
+                     <td></td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                  </tr>
+                  <tr>
+                     <th>2021</th>
+                     <td> </td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                     <td class="navyblue"> </td>
+                  </tr>
+                  <tr>
+                     <th>2020 SP1</th>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td class="navyblue"> </td>
+                  </tr>
+                  <tr>
+                     <th>2020</th>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td class="navyblue"> </td>
+                  </tr>
+                  <tr>
+                     <th>2019 SP1</th>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td class="navyblue"> </td>
+                  </tr>
+                  <tr>
+                     <th>2019</th>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td class="navyblue"> </td>
+                  </tr>
+                  <tr>
+                     <th>2018 SP1</th>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td class="navyblue"> </td>
+                  </tr>
+               </tbody>
+         </table>
+         <table width="32" height="32">
+               <tbody>
+                  <td class="navyblue"> </td>
+               </tbody>
+         </table>Compatible
+      </div>
+   </foreignObject>
+</svg>

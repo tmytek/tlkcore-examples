@@ -166,11 +166,11 @@ public:
         py::str config_path = config["BEAM_CONFIG"];
         cout << "[TLKCore] Fetch custom beam config: "  << config_path << endl;
 
-        py::object obj = py::module::import("lib.TMYBeamConfig").attr("TMYBeamConfig")(config_path);
+        py::object obj = py::module::import("lib.TMYBeamConfig").attr("TMYBeamConfig")(sn, service, config_path);
         py::dict beam_config_dict = obj.attr("getConfig")();
         cout << "[TLKCore] TMYBeamConfig: " << beam_config_dict << endl;
 
-        auto success = obj.attr("apply_beams")(service, sn);
+        auto success = obj.attr("apply_beams")();
         if (py::str(success).is(py::str(Py_False)))
             return -1;
 
