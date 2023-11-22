@@ -8,8 +8,8 @@
         * BBox antenna table -> **AAKIT_{AAKitName}.csv**
     2. example/config/
         * **device.conf**, it mentions the device infomations for Beamform & UD.
-          * <u>Beamform devices</u> with SN as key then includes AAKIT name and the path to beam configruation.
-          * <u>UD devices</u> only includes SN as key then includes STATE with json format.
+          * *Beamform devices* with SN as key then includes AAKIT name and the path to beam configruation.
+          * *UD devices* only includes SN as key then includes STATE with json format.
         * [FBS] **Beam configuration file**, i.g. CustomBatchBeams_D2230E058-28.csv. You can edit/pre-config it via Office-like software or any text editor, no matter what it is config to one of below options:
            * A whole beam (BeamType=0)
              * beam_db: gain with float type, please DO NOT exceed the DR (dynamic range).
@@ -27,7 +27,7 @@
            * Default gives a max value of gain DR
            * Default gives degree 0 include theta,phi
            * ex: TX beam1 will be MAX of DR with degree (0, 0), and TX beam8 just modify ch 9~12 to 1dB
-           ![](../../../images/CustomBatchBeams.png)
+           ![CustomBatchBeams](/images/CustomBatchBeams.png)
 
 * There are some linked files, please build lib_tlkcore_cpp/ and lib_usrp_spi/ if necessary.
   * **libtlkcore_lib.so** -> ../lib_tlkcore_cpp/libtlkcore_lib.so

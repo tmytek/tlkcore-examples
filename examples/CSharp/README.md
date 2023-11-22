@@ -4,7 +4,6 @@
 
 * Python 3
     1. Install Python *3.6 or 3.8 or 3.10* which mapping with [TLKCore_release](https://github.com/tmytek/bbox-api/tree/master/example_Linux/TLKCore_release), and follow reference user guide of [Getting Started with Python Sample Code](https://github.com/tmytek/bbox-api/tree/master/example_Linux/Python/README.md) to make sure your Python environment first.
-        * Example gives a default libraries for Python 3.8 ([python-3.8.0 64-bit download Link](https://www.python.org/downloads/release/python-380/))
     2. Extract zip file under the [TLKCore_release](https://github.com/tmytek/bbox-api/tree/master/example_Linux/TLKCore_release) then copy the whole `lib/` & `logging.conf` to TLKCoreExample/
         ![](../../images/CS_Lib_copy.png)
     3. Make sure your Python related path already exist in environment variable: `Path`
