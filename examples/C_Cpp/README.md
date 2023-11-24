@@ -11,6 +11,6 @@
 
 ## Prerequisites
 
-1. Install Python 3.6 or 3.8 or 3.10, and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md)
+1. Install Python *3.6 or 3.8 or 3.10*, and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md)
 2. For C/C++ supporting, please install related Python packages from lib_tlkcore_cpp/requirements.txt
     `pip install -r lib_tlkcore_cpp/requirements.txt`
