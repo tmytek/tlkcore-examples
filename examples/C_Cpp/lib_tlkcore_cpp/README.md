@@ -26,8 +26,9 @@ It provides a tip to enhance your wrapper
 
 * Change default path for files/ and tlk_core_log/
   * New feature after TLKCore v1.2.0
-  1. Open tlkcore_lib.cpp
-  2. Add the specfic path as parameter to new TLKCoreService instance `py::module::import("lib.TLKCoreService").attr("TLKCoreService")();`
-     * "../"
-     * "~/"
-  3. Remember to put tables into new files/
+  * Steps
+    1. Open tlkcore_lib.cpp
+    2. Add the specfic path as parameter to new TLKCoreService instance `py::module::import("lib.TLKCoreService").attr("TLKCoreService")();`
+       * "../"
+       * "~/"
+    3. Remember to put tables into new files/

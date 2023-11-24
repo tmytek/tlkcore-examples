@@ -3,7 +3,7 @@
 ## Configuration files
 
 * This example directory contains two sub directories, please configure to your own envirenment:
-    1. example/files/ : [BBoxOne/Lite] Copy your calibration & antenna tables into **example/files/** under the [TLKCore_release](https://github.com/tmytek/bbox-api/tree/master/example_Linux/TLKCore_release), see more to [change default path](https://github.com/tmytek/bbox-api/tree/master/example_Linux/C_C%2B%2B/lib_tlkcore_cpp)
+    1. example/files/ : [BBoxOne/Lite] Copy your calibration & antenna tables into **example/files/** under the [TLKCore_release](/release), see more to [change default path](../lib_tlkcore_cpp/README.md#guideline-of-c-wrapper-for-tlkcore)
         * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
         * BBox antenna table -> **AAKIT_{AAKitName}.csv**
     2. example/config/
@@ -21,11 +21,11 @@
                 * ch_db: gain with float type.
                 * ch_deg: phase degree with int type.
         * Note: lost fields always follow the rule of default beam/channel config
-           * Must assign TX/RX, BeamID and BeamType
+           * **Must assign TX/RX, BeamID and BeamType**
            * Default takes channel config (not a beam)
            * Default enabled
            * Default gives a max value of gain DR
-           * Default gives degree 0 include theta,phi
+           * Default gives degree 0 including theta,phi
            * ex: TX beam1 will be MAX of DR with degree (0, 0), and TX beam8 just modify ch 9~12 to 1dB
            ![CustomBatchBeams](/images/CustomBatchBeams.png)
 
@@ -34,22 +34,22 @@
     * **include/tlkcore_lib.hpp** -> ../../lib_tlkcore_cpp/include/tlkcore_lib.hpp
   * [FBS] **libusrp_fbs.so** -> ../lib_usrp_spi/libusrp_fbs.so
   * **include/usrp_fbs.hpp** -> ../../lib_usrp_spi/include/usrp_fbs.hpp
-* After libraries built, according to your Python environment, copy the extracted **lib/** & logging.conf from [TLKCore_release](https://github.com/tmytek/bbox-api/tree/master/example_Linux/TLKCore_release) to **example/lib/**, and we already placed libs for Python 3.8 as default.
+* After libraries built, according to your Python environment, copy the extracted **lib/** & **logging.conf** from [TLKCore_release](/release) to **example/lib/**, and we already placed libs for *Python 3.8* as default.
 
 ## Building TLKCore C++ shared library using CMake
 
-Please reference [Building TLKCore C++ shared library using CMake](https://github.com/tmytek/bbox-api/tree/master/example_Linux/C_C%2B%2B/lib_tlkcore_cpp)
+Please reference [Building TLKCore C++ shared library using CMake](../lib_tlkcore_cpp)
 
 ## [FBS] Building UHD application/library using CMake
 
-Please reference [Building UHD application/library using CMake](https://github.com/tmytek/bbox-api/tree/master/example_Linux/C_C%2B%2B/lib_usrp_spi)
+Please reference [Building UHD application/library using CMake](../lib_usrp_spi)
 
 ## Building example applications using CMake
 
-After above process, there are 2 build options to choose example runs for FBS or direct beam, FBS default is enabled, then runs the left commands.
+After above process, there are 2 build options to choose example runs for FBS or direct beam, FBS is enabled in default, then runs the left commands.
 
 1. Set build options to Enable FBS as TRUE or not, via edit examples/CMakeLists.txt
-   ![](../../../images/C_Cpp_FBS_option.png)
+  ![FBS](/images/C_Cpp_FBS_option.png)
 2. `mkdir build/` to creates a new build directory
 3. `cd build/`
 4. `cmake ..`
@@ -59,4 +59,4 @@ After above process, there are 2 build options to choose example runs for FBS or
 
 This directory contains the generated binary: tlkcore_fbs, just run the command under examples/:
 
-      ./tlkcore_fbs
+    ./tlkcore_fbs

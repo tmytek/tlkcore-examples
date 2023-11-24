@@ -5,8 +5,8 @@
 * Here is a C/C++ fast beamsteering example to control BBoxOne 5G via TLKCore, also control USRP to raise SPI signal via UHD driver to BBox.
 * **lib_tlkcore_cpp/** includes a tiny C++ wrappper example, it generates to libtlkcore_lib.so
 * [FBS] **lib_usrp_spi/** includes UHD application/library and it invoke pre-installed UHD driver to raise SPI transmissions for BBox 5G series, it grnerates to libusrp_fbs.so as default.
-  * Developer can skip **FBS(fast beamsteering)** via examples/CMakeLists.txt, please reference [README under C_Cpp/examples/](examples)
-* **examples/** is a simple application which using libtlkcore_lib.so and libusrp_fbs.so to achieve BBox fast beam switching.
+  * Developer can skip **FBS(fast beamsteering)** via examples/CMakeLists.txt, please reference to the next point - [README under C_Cpp/examples/](examples)
+* **examples/** is a simple application which using libtlkcore_lib.so and libusrp_fbs.so to achieve BBox fast beamsteering.
   ![UHD](/images/TLKCore_UHD_usage.png)
 
 ## Prerequisites
