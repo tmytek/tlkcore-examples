@@ -4,7 +4,7 @@
 
 ## Introduction
 
-**TLKCore** is a core service which inside the TMXLAB KIT(TLK/[WEB-TLK](https://web-tlk.tmytek.com/)), it integrates Python built libraries which developing mmwave( n257 / n260 ) **beamforming** and **beam steering** applications on **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down frequency converter)** and other standard products developed by TMYTEK.
+**TLKCore** is a core service which inside the TMXLAB KIT(TLK/[WEB-TLK](https://web-tlk.tmytek.com/)), it integrates Python built libraries which developing mmWave( n257 / n258 / n260 / n261 ) **beamforming** and **beam steering** applications on **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down frequency converter)** and other standard products developed by TMYTEK.
 
 The **.pyd** format release is for Windows shared library and **.so** format release is for Linux shared library. Python is a cross-platform programming language, and we provide the basic Python example for all devices/platforms in the release package, and C/C++ examples for Linux platform in **C_Cpp** folder. Please refer to the sample code inside each folder for the specific programming language.
 
