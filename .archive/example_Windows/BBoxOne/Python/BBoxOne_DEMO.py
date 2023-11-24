@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     instance = BBoxOneAPI()
 
-    dev_info = instance.ScanningDevice(0)
+    dev_info = instance.ScanningDevice(DEV_SCAN_MODE.NORMAL)
     device_num = len(dev_info)
 
     if device_num == 1 and dev_info[0] == "Result,NoDeviceFound,-1":
