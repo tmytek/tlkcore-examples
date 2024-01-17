@@ -41,6 +41,9 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
 
 * Install Python *3.6 or 3.8 or 3.10* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
 * Example gives a default libraries for Python 3.8 ([python-3.8.10 64-bit download link](https://www.python.org/downloads/release/python-3810))
+  * Remember to **allow** the option: `Add python.exe to PATH`
+
+    ![python](/images/Python_Install.png)
 
 ### Communication environment
 
@@ -50,14 +53,41 @@ Host PC can communicate with TMYTEK product through physical connection as the f
 
 * DHCP - Put devide and host PC in the LAN.
 * Static IP - Configure your network environment to IP: **192.168.100**.xxx, and Subnet Mask Bits <= `/24`, likes: 255.255.255.0
-![network](/images/Network.png)
+
+  ![network](/images/Network.png)
 
 #### ComPort
 
 * Windows
   * Launch **Device Manager**
 * Linux
-  * `lsusb` to check your device.
+  1. `lsusb` to check your device.
+  2. Create or extend **/etc/udev/rules.d/99-tmytek-usb.rules** including:
+
+      ```shell
+      SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", GROUP="plugdev", MODE="0666"
+      SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", GROUP="plugdev", MODE="0666"
+      ```
+
+  3. To add blacklist of ModemManager, please create or extend **/lib/udev/rules.d/78-tmytek-usb.rules** including:
+
+      ```shell
+      # Overwrite to 77-mm-usb-device-blacklist.rules
+
+      ACTION!="add|change|move|bind", GOTO="mm_usb_device_blacklist_end"
+      SUBSYSTEM!="usb", GOTO="mm_usb_device_blacklist_end"
+
+      # TMYTEK's PD
+      ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", ENV{ID_MM_DEVICE_IGNORE}="1"
+      ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", ENV{ID_MM_DEVICE_IGNORE}="1"
+
+      LABEL="mm_usb_device_blacklist_end"
+      ```
+
+  4. Try to reload udev rules.
+     1. `sudo udevadm control --reload-rules`
+     2. `sudo udevadm trigger`
+     3. Re-plugin com port device.
 
 #### USB (Optional)
 
@@ -69,28 +99,33 @@ Install USB driver if scan interface includes `DevInterface.USB` -> [Installatio
   * Offline-Host
     * Download [setup executable driver from FTDI](https://ftdichip.com/drivers/d2xx-drivers/) and install it.
 * Linux
-  1. Follow [steps](https://gitlab.com/msrelectronics/python-ft4222/-/tree/master#accessrights) to create or extend **/etc/udev/rules.d/99-ftdi.rules** including:
-    `SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="601c", GROUP="plugdev", MODE="0666"`
-  2. Try to reload udev rules or re-plugin USB devices.
-    `sudo udevadm control --reload-rules`
-    `sudo udevadm trigger`
+  1. `lsusb` to check your device.
+  2. Follow [steps](https://gitlab.com/msrelectronics/python-ft4222/-/tree/master#accessrights) to create or extend **/etc/udev/rules.d/99-tmytek-usb.rules** including:
+
+      ```shell
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="601c", GROUP="plugdev", MODE="0666"
+      ```
+
+  3. Try to reload udev rules or re-plugin USB devices.
+     1. `sudo udevadm control --reload-rules`
+     2. `sudo udevadm trigger`
 
 ## Troubleshooting
 
 1. I called `scanDevices()` but can not find my device via Ethernet.
-  Please check the following steps
-   1. Make sure your physical connection, PC-device or PC-Router-Device...etc.
-   2. Make sure your [network setting](#communication-environment).
-   3. Check your firewall disabled, if you must enable firewall, please enable outgoing/incoming UDP or enable whitelist UDP ports: 5025, 7025-7040
-      * Windows
-        * `netsh advfirewall firewall add rule name="Allow UDP out" protocol=UDP dir=out localport=5025 action=allow`
-        * `netsh advfirewall firewall add rule name="Allow UDP in" protocol=UDP dir=in localport=7025-7040 action=allow`
-      * Ubuntu
-        * `sudo ufw allow 5025/udp`
-        * `sudo ufw allow 7025-7040/udp`
-      * CentOS
-        * `sudo firewall-cmd --permanent --add-port=5025/udp --add-port=7025-7040/udp`
-        * `sudo systemctl restart firewalld`
+   * [Action] Please check the following steps
+     1. Make sure your physical connection, PC-device or PC-Router-Device...etc.
+     2. Make sure your [network setting](#communication-environment).
+     3. Check your firewall disabled, if you must enable firewall, please enable outgoing/incoming UDP or enable whitelist UDP ports: 5025, 7025-7040
+        * Windows
+          * `netsh advfirewall firewall add rule name="Allow UDP out" protocol=UDP dir=out localport=5025 action=allow`
+          * `netsh advfirewall firewall add rule name="Allow UDP in" protocol=UDP dir=in localport=7025-7040 action=allow`
+        * Ubuntu
+          * `sudo ufw allow 5025/udp`
+          * `sudo ufw allow 7025-7040/udp`
+        * CentOS
+          * `sudo firewall-cmd --permanent --add-port=5025/udp --add-port=7025-7040/udp`
+          * `sudo systemctl restart firewalld`
 
 2. Where is my calibration table or antenna table(AA-Kit)?
-  They shall put on your USB FLASH, copy them to **files/**.
+    * [Action] They shall put on your USB FLASH, copy them to **files/**.

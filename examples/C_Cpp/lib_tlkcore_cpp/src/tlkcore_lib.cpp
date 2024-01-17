@@ -170,7 +170,7 @@ public:
         py::dict beam_config_dict = obj.attr("getConfig")();
         cout << "[TLKCore] TMYBeamConfig: " << beam_config_dict << endl;
 
-        auto success = obj.attr("apply_beams")();
+        auto success = obj.attr("applyBeams")();
         if (py::str(success).is(py::str(Py_False)))
             return -1;
 
