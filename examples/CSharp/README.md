@@ -11,7 +11,8 @@
         * Please follow [the reference link](https://learn.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio) to install pythonnet 3.x.x
         ![Install_Python](/images/CS_Install_Python_Runtime.png)
 
-    2. Setup Python version/path in ExampleMain.cs, and '.' is your output folder
+    2. Setup Python version/path in ExampleMain.cs, and '.' is your output folder,
+        and you can *assign external path for external TLKCore libraries* to replace `lib` (optional).
         ![Python_Path](/images/CS_Python_Path_Setup.png)
 
 ## C# sample build steps

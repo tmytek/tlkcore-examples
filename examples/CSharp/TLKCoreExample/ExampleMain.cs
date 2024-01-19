@@ -13,7 +13,7 @@ namespace TLKCoreExample
             string env = Environment.GetEnvironmentVariable("Path");
             string[] array = env.Split(new[] { ";" }, StringSplitOptions.None);
             string pathToVirtualEnv = "";
-            // Asign your Python version
+            // Assign your Python version
             string PyVer = "38";
             foreach (var path in array)
             {
@@ -28,15 +28,15 @@ namespace TLKCoreExample
             Runtime.PythonDLL = Path.Combine(pathToVirtualEnv, "python"+ PyVer + ".dll");
             PythonEngine.PythonHome = Path.Combine(pathToVirtualEnv, "python.exe");
             
-            // Set default Python lib path and path to import TLKCore
+            // Set default Python lib path and path to import TLKCore libraries(or assign external lib path)
             PythonEngine.PythonPath = $".;lib;{pathToVirtualEnv}\\Lib\\site-packages;{pathToVirtualEnv}\\Lib;{pathToVirtualEnv}\\DLLs";
 
             PythonEngine.Initialize();
             using (Py.GIL())
             {
                 // Import modules which we need
-                dynamic tlkcoreIns = Py.Import("TLKCoreService");
-                dynamic tmy_public = Py.Import("TMYPublic");
+                dynamic tlkcoreIns = Py.Import("tlkcore.TLKCoreService");
+                dynamic tmy_public = Py.Import("tlkcore.TMYPublic");
 
                 // Please keep this instance
                 dynamic service = tlkcoreIns.TLKCoreService();
@@ -77,7 +77,7 @@ namespace TLKCoreExample
         }
         public void TestBBox(string sn, dynamic service)
         {
-            dynamic tmy_public = Py.Import("TMYPublic");
+            dynamic tmy_public = Py.Import("tlkcore.TMYPublic");
 
             dynamic mode = tmy_public.RFMode.TX;
             dynamic ret = service.setRFMode(sn, mode);
@@ -160,9 +160,10 @@ namespace TLKCoreExample
             }
         }
                 
+
         public void TestUDBox(string sn, dynamic service)
         {
-            dynamic tmy_public = Py.Import("TMYPublic");
+            dynamic tmy_public = Py.Import("tlkcore.TMYPublic");
             dynamic UDState = tmy_public.UDState;
 
             Console.WriteLine("PLO state: " + service.getUDState(sn, UDState.PLO_LOCK).RetData);
@@ -194,7 +195,7 @@ namespace TLKCoreExample
         }
         public void TestUDM(string sn, dynamic service)
         {
-            dynamic tmy_public = Py.Import("TMYPublic");
+            dynamic tmy_public = Py.Import("tlkcore.TMYPublic");
 
             dynamic ret = service.getUDState(sn);
             if (ret.RetCode.value != tmy_public.RetCode.OK.value)

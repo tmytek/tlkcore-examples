@@ -1,14 +1,8 @@
 import csv
 import logging
 import os
-import sys
 
-sys.path.insert(0, os.path.abspath('.'))
-
-try:
-    from lib.TMYPublic import RetCode, RFMode, BeamType
-except:
-    from src.TMYPublic import RetCode, RFMode, BeamType
+from tlkcore.TMYPublic import RetCode, RFMode, BeamType
 
 logger = logging.getLogger("TMYBeamConfig")
 
@@ -76,7 +70,7 @@ class TMYBeamConfig():
             return None
         return self.__config
 
-    def apply_beams(self):
+    def applyBeams(self):
         try:
             if self.__service is None:
                 logger.error("service is None")
@@ -208,5 +202,3 @@ if __name__ == '__main__':
     if not os.path.isdir('tlk_core_log/'):
         os.mkdir('tlk_core_log/')
     logging.config.fileConfig('logging.conf')
-    c = TMYBeamConfig("config/CustomBatchBeams_D2123E001-28.csv")
-    # print(c.getConfig())

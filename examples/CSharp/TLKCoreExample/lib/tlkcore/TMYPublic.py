@@ -24,7 +24,7 @@ class RetCode(Enum):
     WARNING                 = auto()
     ERROR                   = auto()
     NO_RESPONSE             = auto()
-    # genereal scan & init
+    # genereal operations
     ERROR_GET_SN            = 10
     ERROR_DEV_TYPE          = auto()
     ERROR_SCAN              = auto()
@@ -36,6 +36,7 @@ class RetCode(Enum):
     ERROR_POWER             = auto()
     ERROR_EXPORT_LOG        = auto()
     ERROR_FW_NOT_SUPPORT    = auto()
+    ERROR_DFU               = auto()
 
     # Communication interface related
     ERROR_COMM_NOT_INIT     = 30
@@ -78,12 +79,20 @@ class RetCode(Enum):
     ERROR_LICENSE_KEY       = auto()
     ERROR_REF_CHANGE        = auto()
     # UD device
+    ERROR_UD_FREQ           = 245
     ERROR_FREQ_EQUATION     = 250
     WARNING_HARMONIC        = auto()
     ERROR_HARMONIC_BLOCK    = auto()
     ERROR_PLO_UNLOCK        = 253
     ERROR_PLO_CRC           = auto()
     ERROR_UD_STATE          = auto()
+
+class UDFreq(Enum):
+    def __str__(self):
+        return self.name
+    UDFreq  = 0
+    RFFreq  = auto()
+    IFFreq  = auto()
 
 class UDState(Enum):
     NO_SET          = -1
@@ -109,11 +118,11 @@ class UDM_SYS(Enum):
     SYS_ERROR       = -1
     NORMAL          = 0
 
-class UDM_PLO(Enum):
+class UD_PLO(Enum):
     UNLOCK          = -1
     LOCK            = 0
 
-class UDM_REF(Enum):
+class UD_REF(Enum):
     UNLOCK          = -1
     INTERNAL        = 0
     EXTERNAL        = auto()
