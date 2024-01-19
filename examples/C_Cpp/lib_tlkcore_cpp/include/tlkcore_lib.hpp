@@ -19,13 +19,19 @@ public:
     virtual ~tlkcore_lib(void) = 0;
 
     /*!
-     * Make a new multi usrp from the device address.
-     * \param dev_addr the device address
-     * \return a new single usrp object
-     * \throws uhd::key_error no device found
-     * \throws uhd::index_error fewer devices found than expected
+     * Make a new tlkcore_lib.
+     * \return a new tlkcore_lib object
+     * \throws init failed
      */
     static tlkcore_ptr make(void);
+
+    /*!
+     * Make a new multi usrp from the device address.
+     * \param lib_path where the tlkcore libraries(tlkcore/*.so) located
+     * \return a new tlkcore_lib object
+     * \throws init failed
+     */
+    static tlkcore_ptr make(const std::string& lib_path);
 
     /*! Scan TMY devices then makes sure these devices are in TMY config.
      * \param conf_path the config path.
