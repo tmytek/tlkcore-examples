@@ -40,12 +40,6 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
 ### Python 3
 
 * Install Python *3.6 or 3.8 or 3.10* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
-* Example gives a default libraries for Python 3.8 ([python-3.8.10 64-bit download link](https://www.python.org/downloads/release/python-3810))
-  * Remember to **allow** the option: `Add python.exe to PATH`
-
-    ![python38](/images/Python_Install38.png)
-
-    ![python310](/images/Python_Install310.png)
 
 ### Communication environment
 
