@@ -12,9 +12,13 @@
 
 2. Extract zip file.
 3. Install related Python packages from requirements.txt
+
     `pip install -r requirements.txt`
+
 4. Create the new directory named **files** to target directory.
+
    ![files](/images/TLKCore_release_files.png)
+
 5. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the target directory.
    * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
    * BBox antenna table -> **AAKIT_{AAKitName}.csv**
@@ -169,7 +173,7 @@ service.setUDFreq(sn, LO, RF, IF, BW)
             python3 main.py --root {Your_Path}
 
 3. I connected my device directly and I will not change my network environment, Is there any way to skip scanning procedure?
-    * Please make sure you have scanned the devuce before, and record the scanned result from the log, then just passing the result to initDev() in the following example:
+    * Please make sure you have scanned the device before, and record the scanned result from the log, then just passing the result to initDev() in the following example:
 
         1. Record SN, address, device type from log
 

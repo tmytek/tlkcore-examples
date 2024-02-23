@@ -7,7 +7,9 @@
    ![matlab](/images/table_matlab.svg)
 3. Extract zip file under the [TLKCore_release](/release)
 4. Create the new directory: *files*
+
    ![files](/images/TLKCore_release_files.png)
+
 5. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the [TLKCore_release](/release)
    * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
    * BBox antenna table -> **AAKIT_{AAKitName}.csv**
