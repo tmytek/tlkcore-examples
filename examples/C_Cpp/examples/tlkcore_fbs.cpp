@@ -141,6 +141,7 @@ int tmy_device_control()
     // Please keep this pointer to maintain instance of tlkcore.
     tlkcore_lib::tlkcore_ptr ptr;
 
+    // Make a new tlkcore_lib, you can assign the path to searching tlkcore libraries.
     ptr = tlkcore_lib::make();
 
     // Please provide the device config file for lib scanning & init

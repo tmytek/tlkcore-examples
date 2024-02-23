@@ -21,6 +21,7 @@ private:
     py::object RetCode;
     py::object RFMode;
     py::dict dev_config_dict;
+    string tlkcore_root = ".";
 
     int apply_rf(std::string sn, float freq)
     {
@@ -52,16 +53,36 @@ private:
         }
         return 0;
     }
+    /*
+     * Add to sys path
+     */
+    void set_tlkcore_path(const std::string& root)
+    {
+        tlkcore_root = root;
+        // Add to sys path, likes sys.path.insert(0, os.path.abspath(lib_path))
+        py::module::import("sys").attr("path").attr("insert")(0, tlkcore_root);
+    }
+    // py::module get_pymod(const std::string& path)
+    // {
+    //     string tmp = tlkcore_root + '.' + path;
+    //     // string to const char*
+    //     return py::module::import(tmp.c_str());
+    // }
 public:
-    tlkcore_lib_impl()
+    /*
+     * Constructor for implementation of tlkcore_lib
+     */
+    tlkcore_lib_impl(const std::string& root)
     {
         printf("[TLKCore] TLKCore lib impl initialization\r\n");
 
-        RetCode = py::module::import("lib.TMYPublic").attr("RetCode");
-        RFMode = py::module::import("lib.TMYPublic").attr("RFMode");
+        set_tlkcore_path(root);
 
-        // from lib.TLKCoreService import TLKCoreService then init the instance object
-        service  = py::module::import("lib.TLKCoreService").attr("TLKCoreService")();
+        RetCode = py::module::import("tlkcore.TMYPublic").attr("RetCode");
+        RFMode = py::module::import("tlkcore.TMYPublic").attr("RFMode");
+
+        // Import TLKCoreService from tlkcore.TLKCoreService then init the instance object
+        service  = py::module::import("tlkcore.TLKCoreService").attr("TLKCoreService")();
         printf("[TLKCore] TLKCoreService imported\r\n");
 
         auto ver = service.attr("queryTLKCoreVer")();
@@ -73,12 +94,12 @@ public:
     {
         // printf("Config path: %s\r\n", conf_path.c_str());
         cout << "[TLKCore] Config path: " << conf_path << endl;
-        py::object config = py::module::import("lib.TMYConfig").attr("TMYConfig")(conf_path);
+        py::object config = py::module::import("TMYConfig").attr("TMYConfig")(conf_path);
         dev_config_dict = config.attr("getConfig")();
         cout << "[TLKCore] TMYConfig: " << dev_config_dict << endl;
 
         cout << "[TLKCore] Calling scanDevices()..." << endl;
-        py::object DevInterface = py::module::import("lib.TMYPublic").attr("DevInterface");
+        py::object DevInterface = py::module::import("tlkcore.TMYPublic").attr("DevInterface");
         // After TLKCore v1.1.3, we provides multiple interface for scanning,
         // default is "LAN", and you can set to "ALL" for other TMY products.
         auto ret = service.attr("scanDevices")(); //(DevInterface.attr("ALL"));
@@ -166,11 +187,11 @@ public:
         py::str config_path = config["BEAM_CONFIG"];
         cout << "[TLKCore] Fetch custom beam config: "  << config_path << endl;
 
-        py::object obj = py::module::import("lib.TMYBeamConfig").attr("TMYBeamConfig")(sn, service, config_path);
+        py::object obj = py::module::import("tlkcore.TMYBeamConfig").attr("TMYBeamConfig")(sn, service, config_path);
         py::dict beam_config_dict = obj.attr("getConfig")();
         cout << "[TLKCore] TMYBeamConfig: " << beam_config_dict << endl;
 
-        auto success = obj.attr("apply_beams")();
+        auto success = obj.attr("applyBeams")();
         if (py::str(success).is(py::str(Py_False)))
             return -1;
 
@@ -264,11 +285,15 @@ tlkcore_lib::~tlkcore_lib(void)
 /***********************************************************************
  * The Make Function
  **********************************************************************/
-tlkcore_lib::tlkcore_ptr tlkcore_lib::make()
+tlkcore_lib::tlkcore_ptr tlkcore_lib::make(const std::string& lib_path)
 {
     printf("[TLKCore] Making TLKCore instance\r\n");
     // return std::make_shared<tlkcore_lib_impl>();
-    return shared_ptr<tlkcore_lib_impl>(new tlkcore_lib_impl());
+    return shared_ptr<tlkcore_lib_impl>(new tlkcore_lib_impl(lib_path));
+}
+tlkcore_lib::tlkcore_ptr tlkcore_lib::make()
+{
+    return tlkcore_lib::make("lib");
 }
 
 int main()

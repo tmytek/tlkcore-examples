@@ -6,10 +6,10 @@
 2. According to [Integrating Python Code in LabVIEW](https://www.ni.com/en/support/documentation/supplemental/18/installing-python-for-calling-python-code.html#section-1736000138) to download LabVIEW to maps your Python version. Please download 64bit version not 32bit.
    ![labview](/images/table_labview.svg)
 
-3. Extract zip file under the [TLKCore_release](/release)
-4. Create the new directory named **files**
+3. Extract zip file under the [TLKCore_release](/release) to target directory (*here we download to C:\\*)
+4. Create the new directory named **files** to target directory (*here we rename to C:\\TLKCore\\*).
    ![files](/images/TLKCore_release_files.png)
-5. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the [TLKCore_release](/release)
+5. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the target directory.
    * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
    * BBox antenna table -> **AAKIT_{AAKitName}.csv**
 
@@ -41,4 +41,4 @@ P.S. The following example executes *LabVIEW 2021 64bit & Pyhton 3.8 64bit* on W
 3. Press **Run** to execute.
 4. Expected result shall be
 
-   ![LabVIEW_BBoxOne_success](../../images/LabVIEW_BBoxOne_success.png)
+   ![LabVIEW_BBoxOne_success](/images/LabVIEW_BBoxOne_success.png)

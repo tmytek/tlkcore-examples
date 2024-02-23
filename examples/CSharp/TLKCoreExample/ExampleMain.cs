@@ -13,7 +13,7 @@ namespace TLKCoreExample
             string env = Environment.GetEnvironmentVariable("Path");
             string[] array = env.Split(new[] { ";" }, StringSplitOptions.None);
             string pathToVirtualEnv = "";
-            // Asign your Python version
+            // Assign your Python version
             string PyVer = "38";
             foreach (var path in array)
             {
@@ -24,19 +24,19 @@ namespace TLKCoreExample
             }
             Console.WriteLine($"Python installed path: {pathToVirtualEnv}\n");
 
-            // Setting relative environment for execute Python, please update parameters from your real Python version 
+            // Setting relative environment for execute Python, please update parameters from your real Python version
             Runtime.PythonDLL = Path.Combine(pathToVirtualEnv, "python"+ PyVer + ".dll");
             PythonEngine.PythonHome = Path.Combine(pathToVirtualEnv, "python.exe");
-            
-            // Set default Python lib path and path to import TLKCore
+
+            // Set default Python lib path and path to import TLKCore libraries(or assign external lib path)
             PythonEngine.PythonPath = $".;lib;{pathToVirtualEnv}\\Lib\\site-packages;{pathToVirtualEnv}\\Lib;{pathToVirtualEnv}\\DLLs";
 
             PythonEngine.Initialize();
             using (Py.GIL())
             {
                 // Import modules which we need
-                dynamic tlkcoreIns = Py.Import("TLKCoreService");
-                dynamic tmy_public = Py.Import("TMYPublic");
+                dynamic tlkcoreIns = Py.Import("tlkcore.TLKCoreService");
+                dynamic tmy_public = Py.Import("tlkcore.TMYPublic");
 
                 // Please keep this instance
                 dynamic service = tlkcoreIns.TLKCoreService();
@@ -77,7 +77,7 @@ namespace TLKCoreExample
         }
         public void TestBBox(string sn, dynamic service)
         {
-            dynamic tmy_public = Py.Import("TMYPublic");
+            dynamic tmy_public = Py.Import("tlkcore.TMYPublic");
 
             dynamic mode = tmy_public.RFMode.TX;
             dynamic ret = service.setRFMode(sn, mode);
@@ -159,15 +159,16 @@ namespace TLKCoreExample
                 Console.WriteLine("PhiA mode cannot process beam steering");
             }
         }
-                
+
+
         public void TestUDBox(string sn, dynamic service)
         {
-            dynamic tmy_public = Py.Import("TMYPublic");
+            dynamic tmy_public = Py.Import("tlkcore.TMYPublic");
             dynamic UDState = tmy_public.UDState;
 
             Console.WriteLine("PLO state: " + service.getUDState(sn, UDState.PLO_LOCK).RetData);
             Console.WriteLine("All state: " + service.getUDState(sn).RetData);
-            
+
             Console.WriteLine(service.setUDState(sn, 0, UDState.CH1));
             Console.WriteLine("Wait for CH1 OFF");
             Console.ReadKey();
@@ -194,7 +195,7 @@ namespace TLKCoreExample
         }
         public void TestUDM(string sn, dynamic service)
         {
-            dynamic tmy_public = Py.Import("TMYPublic");
+            dynamic tmy_public = Py.Import("tlkcore.TMYPublic");
 
             dynamic ret = service.getUDState(sn);
             if (ret.RetCode.value != tmy_public.RetCode.OK.value)
@@ -215,29 +216,29 @@ namespace TLKCoreExample
             ret = service.getUDFreq(sn);
             Console.WriteLine("UDM current freq: " + ret);
 
-            dynamic source = tmy_public.UDM_REF.INTERNAL;
+            dynamic source = tmy_public.UD_REF.INTERNAL;
 
             // A case to set internal source to output
             dynamic supported = service.getRefFrequencyList(sn, source).RetData;
             Console.WriteLine("Supported internal reference clock(KHz): {0}", supported);
             dynamic output_freq = supported[0];
-            Console.WriteLine("Enable UDM ref output({0}KHz): {1}", output_freq, service.setOutputReference(sn, true, output_freq));
+            Console.WriteLine("Enable UD ref output({0}KHz): {1}", output_freq, service.setOutputReference(sn, true, output_freq));
             Console.WriteLine("Get UDM ref ouput: {0}", service.getOutputReference(sn));
 
             Console.WriteLine("Press ENTER to disable output");
             Console.ReadKey();
 
-            Console.WriteLine("Disable UDM ref output({0}KHz): {1}", output_freq, service.setOutputReference(sn, true, output_freq));
+            Console.WriteLine("Disable UD ref output({0}KHz): {1}", output_freq, service.setOutputReference(sn, true, output_freq));
             Console.WriteLine("Get UDM ref ouput: {0}", service.getOutputReference(sn));
 
             // A case to change reference source to EXTERNAL
-            source = tmy_public.UDM_REF.EXTERNAL;
+            source = tmy_public.UD_REF.EXTERNAL;
             // Get external reference source supported list
             supported = service.getRefFrequencyList(sn, source).RetData;
             Console.WriteLine("Supported external reference clock(KHz): {0}", supported);
             // Try to change reference source to external: 10M
             ret = service.setRefSource(sn, source, supported[0]);
-            Console.WriteLine("Change UDM ref source to {0} -> {1} with freq: {2}", source, ret, supported[0]);
+            Console.WriteLine("Change UD ref source to {0} -> {1} with freq: {2}", source, ret, supported[0]);
 
             Console.WriteLine("\r\nWaiting for external reference clock input...\n");
             Console.ReadKey();
