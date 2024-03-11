@@ -117,7 +117,9 @@ if testFBS:
     batch_import = False
 
     if batch_import:
-        batch = TMYBeamConfig(sn, service)
+        # Please reference #FBS topic
+        beam_config_file = "CustomBatchBeams.csv"
+        batch = TMYBeamConfig(sn, service, beam_config_file)
         batch.applyBeams():
     else:
         # Skip it
@@ -144,6 +146,34 @@ service.setUDFreq(sn, LO, RF, IF, BW)
 ## Commandline to run
 
     python3 main.py
+
+## FBS
+
+This topic introduces TLKCore how to process FBS (Fast Beam Steering), it loads a readable beam configuration file, then generates a internal data structure, and converts to SPI signals to BBoxOne/Lite.
+
+* TMYBeamConfig
+  * It comes from *tlkcore.TMYBeamConfig.py* in the downloaded library package with source code.
+
+* Beam configuration file, i.g. [CustomBatchBeams_D2230E058-28.csv](/examples/C_Cpp/examples/config/CustomBatchBeams_D2252E058-28.csv). You can edit/pre-config it via Office-like software or any text editor, **PLEASE RENAME** it for real environment, and passing parameter to TMYBeamConfig()
+  * Basic beam type, there are two basic types, usually we define to CHANNEL CONFIG as default.
+    * A whole **BEAM config (BeamType=0)**
+      * beam_db: gain with float type, please DO NOT EXCEED the DR (dynamic range).
+      * beam_theta with integer degree
+      * beam_phi with integer degree
+    * **CHANNEL/Custom beam config(BeamType=1)**, suggest use TMXLAB Kit first to makes sure your settings.
+      * ch: Assigned channel to config
+      * ch_sw: 0 means channel is ON, 1 is OFF.
+      * ch_db: gain with float type.
+      * ch_deg: phase degree with int type.
+  * Edit rule: lost fields always follow the rule of default beam/channel config
+    * **Must assign TX/RX and BeamID**
+    * Default takes **channel config** (not a beam)
+    * Default **enabled** if not mentioned.
+    * Default gives a **MAX value of gain DR** if BEAM config not mentioned.
+    * Default gives a **MAX value of gain common+element DR** if CHANNEL config not mentioned.
+    * Default gives **degree 0** for theta, phi ... etc
+  * Example: TX beam1 will be MAX of DR with degree(0, 0), and TX beam8 just modify ch 9~12 to 1dB
+     ![CustomBatchBeams](/images/CustomBatchBeams.png)
 
 ## Extra usage
 

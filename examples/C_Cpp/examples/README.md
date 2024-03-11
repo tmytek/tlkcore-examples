@@ -10,24 +10,7 @@
         * **device.conf**, it mentions the device infomations for Beamform & UD.
           * *Beamform devices* with SN as key then includes AAKIT name and the path to beam configruation.
           * *UD devices* only includes SN as key then includes STATE with json format.
-        * [FBS] **Beam configuration file**, i.g. CustomBatchBeams_D2230E058-28.csv. You can edit/pre-config it via Office-like software or any text editor, no matter what it is config to one of below options:
-           * A whole beam (BeamType=0)
-             * beam_db: gain with float type, please DO NOT exceed the DR (dynamic range).
-             * beam_theta with integer degree
-             * beam_phi with integer degree
-           * Custom beam (BeamType=1), suggest use TMXLAB Kit first to makes sure your settings.
-             * ch: Assigned channel to config
-                * ch_sw: 0 means channel is ON, 1 is OFF.
-                * ch_db: gain with float type.
-                * ch_deg: phase degree with int type.
-        * Note: lost fields always follow the rule of default beam/channel config
-           * **Must assign TX/RX, BeamID and BeamType**
-           * Default takes channel config (not a beam)
-           * Default enabled
-           * Default gives a max value of gain DR
-           * Default gives degree 0 including theta,phi
-           * ex: TX beam1 will be MAX of DR with degree (0, 0), and TX beam8 just modify ch 9~12 to 1dB
-           ![CustomBatchBeams](/images/CustomBatchBeams.png)
+        * [FBS] **Beam configuration file**, i.g. [CustomBatchBeams_D2230E058-28.csv](config/CustomBatchBeams_D2252E058-28.csv), please reference [FBS topic](/examples/Python/README.md#FBS) in Python example.
 
 * There are some linked files, please build lib_tlkcore_cpp/ and lib_usrp_spi/ if necessary.
   * **libtlkcore_lib.so** -> ../lib_tlkcore_cpp/libtlkcore_lib.so
