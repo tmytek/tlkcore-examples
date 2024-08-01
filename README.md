@@ -22,19 +22,37 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
 * TMYCommService is maintaining physical communications for all devices, it usually not handled directly by developer.
 * TMYUtils defines all data structure for return data, let developer more easier to know current status of processed function.
 * **TMYPublic** is a open source code, it defines all data structure which developer might used, e.g. RFMode(TX/RX), RetCode(OK/ERROR/...), UDState...etc.
-* (Optional) **TMYBeamConfig** is option solution for FBS (fast beam steering), it aims to parse assigned csv file to a dict structure and check beam configuration, please reference [FBS](/examples//Python/README.md#FBS)
+* (Optional) **TMYBeamConfig** is option solution for FBS (fast beam steering), it aims to parse assigned csv file to a dict structure and check beam configuration, please reference [FBS](/examples/Python/README.md#FBS)
 * All files/function under tmydev/ are all operating logic of standard products
 * db/ used for WEB-TLK, developer could ignore it.
 
   ![architecture](/images/TLKCore_architecture.png)
 
-##### Latest Release & Reference Guide
+## Latest Release & Examples
 
 * [[Download Link](/release)]
 
-* Supported languages
+* [[Example code for supported languages](/examples/)]
 
-  ![support](/images/support_languages.png)
+  <!-- [![support](/images/support_languages.png)](/examples/) -->
+
+  <p style="display:flex;justify-content:space-between;align-items:center">
+    <a href="/examples/C_Cpp">
+      <img src="/images/Logo_Cpp.png" alt="Image 1" width="100" height="100"/>
+    </a>
+    <a href="/examples/CSharp">
+      <img src="/images/Logo_CSharp.png" alt="Image 1" width="100" height="100"/>
+    </a>
+    <a href="/examples/LabVIEW">
+      <img src="/images/Logo_LabVIEW.svg" alt="Image 1" width="140" height="100"/>
+    </a>
+    <a href="/examples/MATLAB">
+      <img src="/images/Logo_MATLAB.png" alt="Image 1" width="170" height="100"/>
+    </a>
+    <a href="/examples/Python">
+      <img src="/images/Logo_Python.png" alt="Image 1" width="110" height="100"/>
+    </a>
+  </p>
 
 ## Prerequisites
 
@@ -48,7 +66,7 @@ Host PC can communicate with TMYTEK product through physical connection as the f
 
 #### Ethernet/RJ-45
 
-* DHCP - Put devide and host PC in the LAN.
+* DHCP - Put the device and host PC in the LAN.
 * Static IP - Configure your network environment to IP: **192.168.100**.xxx, and Subnet Mask Bits <= `/24`, likes: 255.255.255.0
 
   ![network](/images/Network.png)
