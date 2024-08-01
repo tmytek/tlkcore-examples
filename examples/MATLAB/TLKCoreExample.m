@@ -1,12 +1,18 @@
-% Setup your Python execution version for MATLAB interface engine (just 
+% Setup your Python execution version for MATLAB interface engine (just
 % execute it once after MATLAB started), assign the version name to Windows
 % registry (Windows Only) or set the full path
+
+terminate(pyenv)
 pe = pyenv;
 if pe.Status == "NotLoaded"
-    disp("Set to out")
+    disp(" ----- Calling pyenv to check Python environment, and it's NotLoaded -> Start loading(OutOfProcess) -----")
+
+    % PLEASE MODIFY TO YOUR PYTHON VERSION (3.8/3.10/...) HERE
     pyenv(ExecutionMode="OutOfProcess")%, "Version", "3.8")
 end
-py.list % Call a Python function to load interpreter
+disp(" ----- Calling a simple Pytohn function: py.list to load Python interpreter -----")
+py.list
+disp(" ----- Calling pyenv to check Python environment -----")
 pyenv
 
 % Setup TLKCore lib path
@@ -14,14 +20,16 @@ pylibfolder = '.\lib';
 if count(py.sys.path, pylibfolder) == 0
     insert(py.sys.path, int64(0), pylibfolder);
 end
+disp(" ----- Calling py.sys.path to get Python execute sequence -----")
 py.sys.path
 
-% Create instance
-tlkcore = py.TLKCoreService.TLKCoreService;
+% Create instance, it finds TLKCoreService class under pylibfolder
+tlkcore = py.tlkcore.TLKCoreService.TLKCoreService;
 disp("TLKCore version: " + tlkcore.version)
 
-% Exevute scan devices
+% Scan devices via your main.py calls "scanDevices" function
 scan_list = py.main.wrapper("scanDevices");
+disp("Scan result:")
 disp(scan_list)
 
 % Display system information then init each device to control
@@ -42,7 +50,7 @@ for i = 1:length(scan_list)
     % Initial device
     ret = py.main.wrapper("initDev", SN);
     disp(ret)
-    
+
     % Simple query test
     disp(py.main.wrapper("querySN", SN))
     disp(py.main.wrapper("queryFWVer", SN))
@@ -64,17 +72,19 @@ for i = 1:length(scan_list)
     % Remember to de-int device to free memory
     py.main.wrapper("DeInitDev", SN)
 end
+disp(" ----- Terminate pyenv -----")
 terminate(pyenv)
 
 function testBBox(SN)
     disp("Test BBox")
 
     % Load basic enums
-    tmy_public = py.importlib.import_module('TMYPublic');
+    tmy_public = py.importlib.import_module('tlkcore.TMYPublic');
     RFMode = tmy_public.RFMode;
 
-    % Set TX, 28GHz here, please modify for your purpose, and make sure
-    % related tables exist
+    % Set TX & 28GHz here as example,
+    % please modify for your purpose,
+    % and make sure related tables exist.
     mode = RFMode.TX;
     py.main.wrapper("setRFMode", SN, mode)
     py.main.wrapper("setOperatingFreq", SN, 28)
@@ -87,7 +97,7 @@ function testBBox(SN)
     aakit_pat = "4x4";
     aakitList = py.main.wrapper("getAAKitList", SN, mode);
     disp(aakitList)
-    if length(aakitList) == 0
+    if isempty(aakitList)
         warning("PhiA mode")
     end
     % Check each aakit_name in aakitList meets the seaching pattern
@@ -114,7 +124,7 @@ function testUDBox(SN)
     disp("Test UDBox")
 
     % Load basic enums
-    tmy_public = py.importlib.import_module('TMYPublic');
+    tmy_public = py.importlib.import_module('tlkcore.TMYPublic');
     UDState = tmy_public.UDState;
 
     state = py.main.wrapper("getUDState", SN, UDState.PLO_LOCK);
@@ -127,7 +137,7 @@ function testUDBox(SN)
     disp(py.main.wrapper("setUDState", SN, int32(0), UDState.CH1))
     input("Wait for ch1 off")
     disp(py.main.wrapper("setUDState", SN, int32(1), UDState.CH1))
-    
+
     disp(py.main.wrapper("setUDState", SN, int32(1), UDState.OUT_10M))
     disp(py.main.wrapper("setUDState", SN, int32(1), UDState.OUT_100M))
     disp(py.main.wrapper("setUDState", SN, int32(1), UDState.PWR_5V))
