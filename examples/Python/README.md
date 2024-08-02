@@ -209,7 +209,7 @@ This topic introduces TLKCore how to process FBS (Fast Beam Steering), it loads 
 
             ![scanned](/images/scanned.png)
 
-        2. Direct connect v
+        2. Direct connect
            1. Via typing:
 
                     python3 main.py --dc D2230E013-28 192.168.100.121 9

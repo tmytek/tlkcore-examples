@@ -23,4 +23,8 @@ P.S. The following example executes *MATLAB R2021b & Pyhton 3.8 64bit* on Window
    ![MATLAB_copy](/images/MATLAB_copy.png)
 
 2. Double-click TLKCoreExample.m to launch MATLAB process.
-3. Press **Run** to execute.
+3. Modify to your Python version
+
+   ![MATLAB_ver](/images/MATLAB_Python_version.png)
+
+4. Press **Run** to execute.
