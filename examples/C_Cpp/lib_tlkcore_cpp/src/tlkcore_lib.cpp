@@ -130,7 +130,7 @@ public:
             auto config = devs.attr("get")(sn);
             if (config == Py_None) { // equals Python: if config is None:
                 cout << "[TLKCore] Not found: " << sn << "in the config file" << endl;
-                return -1;
+                continue;
             }
             // cout << config << endl;
 
