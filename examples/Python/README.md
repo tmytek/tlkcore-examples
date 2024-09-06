@@ -1,8 +1,19 @@
 # Getting Started with Python Sample Code
 
+* Outline
+* [Prerequisites](#prerequisites)
+* [Introduction of main.py](#introduction-of-mainpy)
+  * [Usage](#usage)
+  * [Basic call flow](#basic-call-flow)
+    * [startService()](#startservice)
+    * [testBBox()](#testbbox)
+    * [testUDBox()](#testudbox)
+* [FBS](#fbs)
+* [Extra usage](#extra-usage)
+
 ## Prerequisites
 
-1. Install Python *3.6 or 3.8 or 3.10*, the version must mapping with [TLKCore_release](/release)
+1. Install Python *3.6 or 3.8 / 3.10 / 3.12*, the version must mapping with [TLKCore_release](/release)
     * Example gives a default libraries for *Python 3.8* ([python-3.8.10 64-bit download Link](https://www.python.org/downloads/release/python-3810))
     * Remember to **allow** the option: `Add python.exe to PATH`
 
@@ -14,6 +25,13 @@
 3. Install related Python packages from requirements.txt
 
     `pip install -r requirements.txt`
+
+    * [Hint] If you environment is Ubuntu, please install pip
+      * `sudo apt-get update`
+      * `sudo apt install python3-pip`
+        * [PEP-668](https://peps.python.org/pep-0668/)
+        * [error: externally-managed-environment](https://askubuntu.com/questions/1465218/pip-error-on-ubuntu-externally-managed-environment-%C3%97-this-environment-is-extern)
+      * `pip install --break-system-packages --user <username> -r requirement.txt`
 
 4. Create the new directory named **files** to target directory.
 
@@ -37,6 +55,10 @@ optional arguments:
   --dfu DFU             DFU image path
   --root ROOT           The root path/directory of for log/ & files/
 ```
+
+#### example
+
+    python3 main.py
 
 ### Basic call flow
 
@@ -142,10 +164,6 @@ IF = 4e6
 BW = 1e5
 service.setUDFreq(sn, LO, RF, IF, BW)
 ```
-
-## Commandline to run
-
-    python3 main.py
 
 ## FBS
 

@@ -124,8 +124,13 @@ int fpga_conftrol(tlkcore_lib::tlkcore_ptr service, std::string sn)
 
 int set_ud_freq(tlkcore_lib::tlkcore_ptr service)
 {
+    // Here is a example we set freq for ALL UD devices
+    // PLEASE MODIFY for your purpose
     for (std::string sn : ud_list) {
-        service->set_ud_freq(sn, 24e6, target_freq*1e6, 4e6);
+        if (service->set_ud_freq(sn, 24e6, target_freq*1e6, 4e6) < 0)
+        {
+            return -1;
+        }
     }
     return 0;
 }
@@ -146,9 +151,18 @@ int tmy_device_control()
 
     // Please provide the device config file for lib scanning & init
     const std::string path = "config/device.conf";
-    ptr->scan_init_dev(path);
+    if (ptr->scan_init_dev(path) < 0)
+    {
+        printf("[Main] Scan & init device got failed!\r\n");
+        return -1;
+    }
 
-    set_ud_freq(ptr);
+    // Set UD example
+    if (set_ud_freq(ptr) < 0)
+    {
+        return -1;
+    }
+    // Set BBox example
     if (update_beam_config(ptr) < 0)
     {
         return -1;
