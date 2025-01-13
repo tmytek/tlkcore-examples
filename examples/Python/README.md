@@ -9,11 +9,15 @@
     * [testBBox()](#testbbox)
     * [testUDBox()](#testudbox)
 * [FBS](#fbs)
+* [DFU](#dfu)
 * [Extra usage](#extra-usage)
 
 ## Prerequisites
 
-1. Install Python *3.6 or 3.8 / 3.10 / 3.12*, the version must mapping with [TLKCore_release](/release)
+1. Check your Python version
+    * Windows: `python -V`
+    * Linux: `python3 -V`
+1. Install Python *3.6 or 3.8 / 3.10 / 3.12*, the version MUST mapping with [TLKCore_release](/release)
     * Example gives a default libraries for *Python 3.8* ([python-3.8.10 64-bit download Link](https://www.python.org/downloads/release/python-3810))
     * Remember to **allow** the option: `Add python.exe to PATH`
 
@@ -26,12 +30,17 @@
 
     `pip install -r requirements.txt`
 
-    * [Hint] If you environment is Ubuntu, please install pip
+    * [Hint-1] Under Ubuntu, please install pip
       * `sudo apt-get update`
       * `sudo apt install python3-pip`
         * [PEP-668](https://peps.python.org/pep-0668/)
         * [error: externally-managed-environment](https://askubuntu.com/questions/1465218/pip-error-on-ubuntu-externally-managed-environment-%C3%97-this-environment-is-extern)
-      * `pip install --break-system-packages --user <username> -r requirement.txt`
+      * `pip install --break-system-packages --user <username> -r requirements.txt`
+    * [Hint-2] Under Windows, sometimes you might met the following error: ![cpp_build_tool](/images/Python_cpp_build_tools.png)
+      * Please install [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version)
+    * [Hint-3] Python 3.12 user please modify parts of requirements.txt
+      * psutil==6.1.0
+      * ft4222==1.10.0
 
 4. Create the new directory named **files** to target directory.
 
@@ -58,7 +67,15 @@ optional arguments:
 
 #### example
 
+   * Windows
+
+    python main.py
+
+
+   * Linux
+
     python3 main.py
+
 
 ### Basic call flow
 
@@ -172,7 +189,7 @@ This topic introduces TLKCore how to process FBS (Fast Beam Steering), it loads 
 * TMYBeamConfig
   * It comes from *tlkcore.TMYBeamConfig.py* in the downloaded library package with source code.
 
-* Beam configuration file, i.g. [CustomBatchBeams_D2230E058-28.csv](/examples/C_Cpp/examples/config/CustomBatchBeams_D2252E058-28.csv). You can edit/pre-config it via Office-like software or any text editor, **PLEASE RENAME** it for real environment, and passing parameter to TMYBeamConfig()
+* Beam configuration file, i.g. [CustomBatchBeams_D2230E058-28.csv](/examples/C_Cpp/examples/config/CustomBatchBeams_D2252E058-28.csv). You can edit/pre-config it via Office-like software or any text editor, please **RENAME** it for real environment, and passing parameter to TMYBeamConfig()
   * Basic beam type, there are two basic types, usually we define to CHANNEL CONFIG as default.
     * A whole **BEAM config (BeamType=0)**
       * beam_db: gain with float type, please DO NOT EXCEED the DR (dynamic range).
@@ -192,6 +209,26 @@ This topic introduces TLKCore how to process FBS (Fast Beam Steering), it loads 
     * Default gives **degree 0** for theta, phi ... etc
   * Example: TX beam1 will be MAX of DR with degree(0, 0), and TX beam8 just modify ch 9~12 to 1dB
      ![CustomBatchBeams](/images/CustomBatchBeams.png)
+  * [Notice] TLKCore generates the Beam_Configuration_{SN}_{Freq}GHz_{AAKitName}.json after fetch CSV file, please remove this json file if your json overrided.
+
+## DFU
+
+Device FW Update, starting from TLKCore v1.2.1, to update Beamform series firmware via TLKCore.
+
+  1. Make sure your Python environment installed tftpy package, if not,  please `pip install tftpy==0.8.2`
+  2. Query/download FW image for your BBoxOne/BBoxLite/BBoard/CloverCell device
+  3. Please disable firewall first to allow tftp protocol transmission
+      * Windows
+          * `netsh advfirewall set allprofile state off`
+      * Ubuntu
+          * `sudo ufw disable`
+      * CentOS
+          * `sudo systemctl stop firewalld`
+      * macOS
+          * `sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off`
+  4. Argument assign image path to main.py
+
+          python3 main.py --dfu {IMAGE_PATH}
 
 ## Extra usage
 
@@ -234,18 +271,3 @@ This topic introduces TLKCore how to process FBS (Fast Beam Steering), it loads 
 
            2. Or passing to initDev()
             `service.initDev(sn, addr, dev_type)`
-
-4. DFU(Device FW Update), from TLKCore v1.2.1, support to update BBox series firmware via TLKCore now!
-    1. Query/download FW image for your BBoxOne/BBoxLite/BBoard device
-    2. Please disable firewall first to allow tftp protocol transmission
-        * Windows
-            * `netsh advfirewall set allprofile state off`
-        * Ubuntu
-            * `sudo ufw disable`
-        * CentOS
-            * `sudo systemctl stop firewalld`
-        * macOS
-            * `sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off`
-    3. Argument assign image path to main.py
-
-            python3 main.py --dfu {IMAGE_PATH}
