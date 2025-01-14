@@ -2,7 +2,7 @@
 
 * TMYTEK general API for Windows/Linux platform.
 
-# Menu
+# Outline
 
 * [Introduction](#introduction)
 * [Latest Release & Examples](#latest-release--examples)
@@ -67,7 +67,7 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
 
 ### Python 3
 
-* Install Python *3.6 or 3.8 or 3.10* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
+* Install Python *3.6 or 3.8 / 3.10 / 3.12* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
 
 ### Communication environment
 
