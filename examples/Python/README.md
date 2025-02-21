@@ -17,7 +17,7 @@
 1. Check your Python version
     * Windows: `python -V`
     * Linux: `python3 -V`
-1. Install Python *3.6 or 3.8 / 3.10 / 3.12*, the version MUST mapping with [TLKCore_release](/release)
+1. Install Python *3.6 or 3.8 / 3.10 / 3.12* with **64 bit** version, the version MUST mapping with [TLKCore_release](/release)
     * Example gives a default libraries for *Python 3.8* ([python-3.8.10 64-bit download Link](https://www.python.org/downloads/release/python-3810))
     * Remember to **allow** the option: `Add python.exe to PATH`
 
@@ -213,8 +213,16 @@ This topic introduces TLKCore how to process FBS (Fast Beam Steering), it loads 
 
 ## DFU
 
-Device FW Update, starting from TLKCore v1.2.1, to update Beamform series firmware via TLKCore.
+Device FW Update, starting from TLKCore v1.2.1, to update firmware via TLKCore.
 
+* Support devices
+  * BBox series
+  * BBoard
+  * CloverCellEVB
+  * UDB-0630
+  * RIS
+
+* Steps:
   1. Make sure your Python environment installed tftpy package, if not,  please `pip install tftpy==0.8.2`
   2. Query/download FW image for your BBoxOne/BBoxLite/BBoard/CloverCell device
   3. Please disable firewall first to allow tftp protocol transmission
@@ -226,7 +234,7 @@ Device FW Update, starting from TLKCore v1.2.1, to update Beamform series firmwa
           * `sudo systemctl stop firewalld`
       * macOS
           * `sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off`
-  4. Argument assign image path to main.py
+  4. Argument assign image path from directory or website to main.py
 
           python3 main.py --dfu {IMAGE_PATH}
 
