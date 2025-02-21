@@ -71,7 +71,7 @@ namespace TLKCoreExample
                     example.GetType().InvokeMember("Test"+dev_name, BindingFlags.InvokeMethod, Type.DefaultBinder, example, param);
                 }
 
-                Console.WriteLine("Presss any key to exit ...");
+                Console.WriteLine("Press any key to exit ...");
                 Console.ReadKey();
             }
         }
