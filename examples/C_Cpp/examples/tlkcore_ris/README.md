@@ -1,15 +1,29 @@
-# Setup TLKCore RIS configurations with C/C++ Sample Code
+# C/C++ Sample Code - RIS
+
+Here is a C/C++ RIS example to control RIS devices via TLKCore.
+
+![wrapper](/images/TLKCore_C_wrapper.png)
 
 ## Configuration files
 
+├── lib
+│   ├── TMYConfig.py
+│   └── tlkcore/
+└── tlkcore_ris
+    ├── CMakeLists.txt
+    ├── README.md
+    ├── config/
+    ├── libtlkcore_lib.so -> ../../lib_tlkcore_cpp/libtlkcore_lib.so
+    └── src/
+
 * This tlkcore_ris directory contains two sub directories, please configure to your own envirenment:
-    1. tlkcore_ris/config/
+    1. [tlkcore_ris/config/](tlkcore_ris/config/)
         * **device.conf**, it mentions the device infomation for RIS.
           * *RIS devices* with SN as the key. Under each device, multiple controllable port are defined, each containing parameters that control the behavior of the RIS tiles or elements
-    2. tlkcore_ris/src/
+    2. [tlkcore_ris/src/](tlkcore_ris/src/)
         * **tlkcore_ris.cpp**, it contains the example code for controlling RIS devices.
 
-* There are some linked files, please build lib_tlkcore_cpp/ and if necessary.
+* There are some **linked files**, please build lib_tlkcore_cpp/ if necessary.
   * **libtlkcore_lib.so** -> ../../lib_tlkcore_cpp/libtlkcore_lib.so
     * **include/tlkcore_lib.hpp** -> ../../lib_tlkcore_cpp/include/tlkcore_lib.hpp
 * After libraries built, according to your Python environment, copy the extracted **../lib/** & **../logging.conf** from [TLKCore_release](/release) to **../lib/**, and we already placed libs for *Python 3.8* as default.

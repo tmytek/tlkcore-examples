@@ -21,11 +21,11 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
 
 * TLKCore is running on Windows/Linux PC, to communicate with standard products developed by TMYTEK via Ethernet/ComPort/USB cable.
 * (Optional) FBS part is optional solution to control BBox 5G series as fast beam steering.
-  ![block](/images/TLKCore_block.png)
+  ![block](/images/TLKCore_usage.png)
 
 #### Software
 
-* **TLKCoreService** is a  **entry point** for developer, all of operations/functions must passed by TLKCoreService, e.g. scanDevices(), initDev().
+* **TLKCoreService** is a **entry point** for developer, all of operations/functions must passed by TLKCoreService, e.g. scanDevices(), initDev().
 * TMYCommService is maintaining physical communications for all devices, it usually not handled directly by developer.
 * TMYUtils defines all data structure for return data, let developer more easier to know current status of processed function.
 * **TMYPublic** is a open source code, it defines all data structure which developer might used, e.g. RFMode(TX/RX), RetCode(OK/ERROR/...), UDState...etc.

@@ -1,12 +1,33 @@
-# Setup TLKCore configurations with C/C++ Sample Code
+# C/C++ Sample Code - Fast Beamsteering
+
+Here is a C/C++ fast beamsteering example to control BBoxOne 5G and RIS devices via TLKCore, also control USRP to raise SPI signal via UHD driver to BBox.
+
+![UHD](/images/TLKCore_UHD_usage.png)
 
 ## Configuration files
 
+├── files
+│   ├── AAKIT_TMYTEK-4x4_ONE_28_IDEAL.csv
+│   ├── AAKIT_TMYTEK_28ONE_4x4_C2104L020-28.csv
+│   ├── BeamTable
+│   ├── D2230E013-28_28GHz.csv
+│   └── D2252E058-28_28GHz.csv
+├── lib
+│   ├── TMYConfig.py
+│   └── tlkcore/
+└── tlkcore_fbs
+    ├── CMakeLists.txt
+    ├── README.md
+    ├── config/
+│   ├── libtlkcore_lib.so -> ../../lib_tlkcore_cpp/libtlkcore_lib.so
+│   ├── libusrp_fbs.so -> ../../lib_usrp_spi/libusrp_fbs.so
+    └── src/
+
 * This example directory contains two sub directories, please configure to your own envirenment:
-    1. example/files/ : [BBoxOne/Lite] Copy your calibration & antenna tables into **example/files/** under the [TLKCore_release](/release), see more to [change default path](../lib_tlkcore_cpp/README.md#guideline-of-c-wrapper-for-tlkcore)
+    1. [example/files/](example/files/) : [BBoxOne/Lite] Copy your calibration & antenna tables into **example/files/** under the [TLKCore_release](/release), see more to [change default path](../lib_tlkcore_cpp/README.md#guideline-of-c-wrapper-for-tlkcore)
         * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
         * BBox antenna table -> **AAKIT_{AAKitName}.csv**
-    2. example/config/
+    2. [example/config/](example/config/)
         * **device.conf**, it mentions the device infomations for Beamform & UD.
           * *Beamform devices* with SN as key then includes AAKIT name and the path to beam configruation.
           * *UD devices* only includes SN as key then includes STATE with json format.
