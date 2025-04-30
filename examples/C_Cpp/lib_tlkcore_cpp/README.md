@@ -2,7 +2,7 @@
 
 This directory contains a tiny **C++ wrappper** example of a TLKCore-based library, it's completely independent of the TLKCore source tree.
 
-For C/C++ supporting, please install related Python packages from requirements.txt
+For C/C++ supporting, please install related Python packages from [requirements.txt](requirements.txt)
     `pip install -r requirements.txt`
     - P.S. Please check your install/execute environment are mapped for user account or root.
 
@@ -18,7 +18,7 @@ To try it out, run these commands:
     -Dpybind11_DIR=~/.local/share/cmake/pybind11
     -DPYBIND11_PYTHON_VERSION=3.8
 
-See the **CMakeLists.txt** file to figure out how to set up a build system.
+See the [**CMakeLists.txt**](CMakeLists.txt) file to figure out how to set up a build system.
 
   ```shell
   # This Python version gets used for Python API (if requested) as well as

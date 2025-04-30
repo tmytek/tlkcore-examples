@@ -128,19 +128,20 @@ public:
                 devs = dev_config_dict["UD_LAYERS"];
             } else if (devtype == 28) {
                 devs = dev_config_dict["RIS_LAYERS"];
-            
+
+                // Update scanned info into file.
                 auto it = devs.begin();
                 if (it != devs.end()) {
                     std::string old_key = py::str(it->first);
                     py::object old_value = py::reinterpret_borrow<py::object>(it->second);
-            
+
                     devs.attr("pop")(old_key);
-            
+
                     devs[sn.c_str()] = old_value;
-            
+
                     py::module json = py::module_::import("json");
                     py::module builtins = py::module_::import("builtins");
-            
+
                     py::object open_fn = builtins.attr("open");
                     py::object wfile = open_fn(conf_path, "w");
                     json.attr("dump")(dev_config_dict, wfile, py::arg("indent") = 4);
@@ -254,6 +255,9 @@ public:
         return 0;
     }
 
+    /*
+     * Set UD state only
+    */
     int set_ud_state(const std::string& sn) override
     {
         auto ret = service.attr("getUDState")(sn);
@@ -311,7 +315,7 @@ public:
         for (auto it = dict_ret.begin(); it != dict_ret.end(); ++it) {
             std::string port = py::str(it->first);
             py::object info = py::reinterpret_borrow<py::object>(it->second);
-        
+
             module_info[port] = info;
         }
         // for (const auto& [port, info] : module_info) {
@@ -343,20 +347,20 @@ public:
         for (auto item : module_info) {
             std::string port = py::str(item.first);
             py::object info = item.second;
-    
+
             py::object port_config = device_config.attr("get")(port);
             if (!port_config || py::isinstance<py::none>(port_config)) {
                 std::cerr << "[TLKCore] No config found for port: " << port << endl;
                 continue;
             }
-    
+
             port_config["sn"] = sn;
             port_config["module"] = port;
-    
+
             py::object ret = service.attr("setRISAngle")(**port_config);
             cout << "[TLKCore] Set RIS angle (port " << port << "): "
                       << py::str(ret) << endl;
-    
+
             if (!ret.attr("RetCode").equal(RetCode.attr("OK"))) {
                 return -1;
             }
