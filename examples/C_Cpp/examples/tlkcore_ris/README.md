@@ -6,16 +6,17 @@ Here is a C/C++ RIS example to control RIS devices via TLKCore.
 
 ## Configuration files
 
+```
 ├── lib
 │   ├── TMYConfig.py
-│   └── tlkcore/
+│   └── tlkcore/
 └── tlkcore_ris
     ├── CMakeLists.txt
     ├── README.md
     ├── config/
     ├── libtlkcore_lib.so -> ../../lib_tlkcore_cpp/libtlkcore_lib.so
     └── src/
-
+```
 * This tlkcore_ris directory contains two sub directories, please configure to your own envirenment:
     1. [tlkcore_ris/config/](config/)
         * **device.conf**, it mentions the device infomation for RIS.

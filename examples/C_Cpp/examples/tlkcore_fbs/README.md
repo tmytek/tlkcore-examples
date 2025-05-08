@@ -1,27 +1,29 @@
 # C/C++ Sample Code - Fast Beamsteering
 
-Here is a C/C++ fast beamsteering example to control BBoxOne 5G and RIS devices via TLKCore, also control USRP to raise SPI signal via UHD driver to BBox.
+Here is a C/C++ fast beamsteering example to control BBoxOne 5G and UD devices via TLKCore, also control USRP to raise SPI signal via UHD driver to BBox.
 
 ![UHD](/images/TLKCore_UHD_usage.png)
 
 ## Configuration files
 
+```
 ├── files
-│   ├── AAKIT_TMYTEK-4x4_ONE_28_IDEAL.csv
-│   ├── AAKIT_TMYTEK_28ONE_4x4_C2104L020-28.csv
-│   ├── BeamTable
-│   ├── D2230E013-28_28GHz.csv
-│   └── D2252E058-28_28GHz.csv
+│   ├── AAKIT_TMYTEK-4x4_ONE_28_IDEAL.csv
+│   ├── AAKIT_TMYTEK_28ONE_4x4_C2104L020-28.csv
+│   ├── BeamTable
+│   ├── D2230E013-28_28GHz.csv
+│   └── D2252E058-28_28GHz.csv
 ├── lib
-│   ├── TMYConfig.py
-│   └── tlkcore/
+│   ├── TMYConfig.py
+│   └── tlkcore/
 └── tlkcore_fbs
     ├── CMakeLists.txt
     ├── README.md
     ├── config/
-│   ├── libtlkcore_lib.so -> ../../lib_tlkcore_cpp/libtlkcore_lib.so
-│   ├── libusrp_fbs.so -> ../../lib_usrp_spi/libusrp_fbs.so
+    ├── libtlkcore_lib.so -> ../../lib_tlkcore_cpp/libtlkcore_lib.so
+    ├── libusrp_fbs.so -> ../../lib_usrp_spi/libusrp_fbs.so
     └── src/
+```
 
 * This example directory contains two sub directories, please configure to your own envirenment:
     1. [example/files/](/examples/C_Cpp//examples/files/) : [BBoxOne/Lite] Copy your calibration & antenna tables into **example/files/** under the [TLKCore_release](/release), see more to [change default path](../../lib_tlkcore_cpp/README.md#guideline-of-c-wrapper-for-tlkcore)
