@@ -17,10 +17,10 @@ Here is a C/C++ RIS example to control RIS devices via TLKCore.
     └── src/
 
 * This tlkcore_ris directory contains two sub directories, please configure to your own envirenment:
-    1. [tlkcore_ris/config/](tlkcore_ris/config/)
+    1. [tlkcore_ris/config/](config/)
         * **device.conf**, it mentions the device infomation for RIS.
           * *RIS devices* with SN as the key. Under each device, multiple controllable port are defined, each containing parameters that control the behavior of the RIS tiles or elements
-    2. [tlkcore_ris/src/](tlkcore_ris/src/)
+    2. [tlkcore_ris/src/](src/)
         * **tlkcore_ris.cpp**, it contains the example code for controlling RIS devices.
 
 * There are some **linked files**, please build lib_tlkcore_cpp/ if necessary.
@@ -28,11 +28,13 @@ Here is a C/C++ RIS example to control RIS devices via TLKCore.
     * **include/tlkcore_lib.hpp** -> ../../lib_tlkcore_cpp/include/tlkcore_lib.hpp
 * After libraries built, according to your Python environment, copy the extracted **../lib/** & **../logging.conf** from [TLKCore_release](/release) to **../lib/**, and we already placed libs for *Python 3.8* as default.
 
-## Building TLKCore C++ shared library using CMake
+## How to Run
 
-Please reference [Building TLKCore C++ shared library using CMake](../../lib_tlkcore_cpp)
+### 1. Building TLKCore C++ shared library using CMake
 
-## Building example applications using CMake
+Please reference [Building TLKCore C++ shared library using CMake](../../lib_tlkcore_cpp/)
+
+### 2. Building example applications using CMake
 
 After the above process, build the example code then runs the left commands.
 
@@ -41,7 +43,7 @@ After the above process, build the example code then runs the left commands.
 3. `cmake ..`
 4. `make install`
 
-## Execute the built binary
+### 3. Execute the built binary
 
 This directory contains the generated binary: tlkcore_fbs, just run the command under tlkcore_ris/:
 

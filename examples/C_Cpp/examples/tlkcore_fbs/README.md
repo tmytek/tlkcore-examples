@@ -24,31 +24,33 @@ Here is a C/C++ fast beamsteering example to control BBoxOne 5G and RIS devices 
     └── src/
 
 * This example directory contains two sub directories, please configure to your own envirenment:
-    1. [example/files/](example/files/) : [BBoxOne/Lite] Copy your calibration & antenna tables into **example/files/** under the [TLKCore_release](/release), see more to [change default path](../lib_tlkcore_cpp/README.md#guideline-of-c-wrapper-for-tlkcore)
+    1. [example/files/](/examples/C_Cpp//examples/files/) : [BBoxOne/Lite] Copy your calibration & antenna tables into **example/files/** under the [TLKCore_release](/release), see more to [change default path](../../lib_tlkcore_cpp/README.md#guideline-of-c-wrapper-for-tlkcore)
         * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
         * BBox antenna table -> **AAKIT_{AAKitName}.csv**
-    2. [example/config/](example/config/)
+    2. [example/config/](config/)
         * **device.conf**, it mentions the device infomations for Beamform & UD.
           * *Beamform devices* with SN as key then includes AAKIT name and the path to beam configruation.
           * *UD devices* only includes SN as key then includes STATE with json format.
         * [FBS] **Beam configuration file**, i.g. [CustomBatchBeams_D2230E058-28.csv](config/CustomBatchBeams_D2252E058-28.csv), please reference [FBS topic](/examples/Python/README.md#FBS) in Python example.
 
 * There are some linked files, please build lib_tlkcore_cpp/ and lib_usrp_spi/ if necessary.
-  * **libtlkcore_lib.so** -> ../lib_tlkcore_cpp/libtlkcore_lib.so
+  * **libtlkcore_lib.so** -> ../../lib_tlkcore_cpp/libtlkcore_lib.so
     * **include/tlkcore_lib.hpp** -> ../../lib_tlkcore_cpp/include/tlkcore_lib.hpp
-  * [FBS] **libusrp_fbs.so** -> ../lib_usrp_spi/libusrp_fbs.so
+  * [FBS] **libusrp_fbs.so** -> ../../lib_usrp_spi/libusrp_fbs.so
   * **include/usrp_fbs.hpp** -> ../../lib_usrp_spi/include/usrp_fbs.hpp
 * After libraries built, according to your Python environment, copy the extracted **lib/** & **logging.conf** from [TLKCore_release](/release) to **example/lib/**, and we already placed libs for *Python 3.8* as default.
 
-## Building TLKCore C++ shared library using CMake
+## How to Run
 
-Please reference [Building TLKCore C++ shared library using CMake](../lib_tlkcore_cpp)
+### 1. Building TLKCore C++ shared library using CMake
 
-## [FBS] Building UHD application/library using CMake
+Please reference [Building TLKCore C++ shared library using CMake](../../lib_tlkcore_cpp/)
 
-Please reference [Building UHD application/library using CMake](../lib_usrp_spi)
+### 2. [FBS] Building UHD application/library using CMake
 
-## Building example applications using CMake
+Please reference [Building UHD application/library using CMake](../../lib_usrp_spi/)
+
+### 3. Building example applications using CMake
 
 After above process, there are 2 build options to choose example runs for FBS or direct beam, FBS is enabled in default, then runs the left commands.
 
@@ -59,7 +61,7 @@ After above process, there are 2 build options to choose example runs for FBS or
 4. `cmake ..`
 5. `make install`
 
-## Execute the built binary
+### 4. Execute the built binary
 
 This directory contains the generated binary: tlkcore_fbs, just run the command under examples/:
 
