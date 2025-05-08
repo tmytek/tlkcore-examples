@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 # need these include and link directories for the build
 include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../include
 )
 link_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -23,10 +23,10 @@ message(STATUS "$CMAKE_CURRENT_SOURCE_DIR=" ${CMAKE_CURRENT_SOURCE_DIR})
 
 ### Make the executable #######################################################
 set(example_sources
-    ${CMAKE_CURRENT_SOURCE_DIR}/tlkcore_fbs.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/tlkcore_fbs.cpp
 )
 add_executable(tlkcore_fbs ${example_sources})
-target_link_libraries(tlkcore_fbs tlkcore_lib) # -Wl,--no-as-needed)
+target_link_libraries(tlkcore_fbs tlkcore_lib) # -Wl,--no-as-needed
 
 # Default TRUE to setup beam config to BBox then let SPI control beams, or FALSE to set single beam to BBox
 set(FBS TRUE)

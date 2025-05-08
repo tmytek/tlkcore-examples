@@ -1,8 +1,10 @@
 #pragma once
 
 // #include <iostream>
+#include <vector>
 #include <memory>
-// using namespace std;
+
+using namespace std;
 
 namespace tlkcore {
 
@@ -50,6 +52,12 @@ public:
     virtual int set_ud_state(const std::string& sn) = 0;
 
     virtual int set_ud_freq(const std::string& sn, int freq_ud, int freq_rf, int freq_if) = 0;
+
+    virtual int get_ris_module_info(const std::string& sn) = 0;
+
+    virtual int get_ris_pattern(const std::string& sn) = 0;
+
+    virtual int set_ris_angle(const std::string& sn) = 0;
 
 };
 
