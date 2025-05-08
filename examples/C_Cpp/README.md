@@ -33,4 +33,5 @@ Here is a simple architecture for C/C++ example to control BBoxOne 5G and UDBox 
 
 1. Install Python *3.8 or 3.10 or 3.12*, and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md)
 2. For C/C++ supporting, please install related Python packages from [lib_tlkcore_cpp/requirements.txt](lib_tlkcore_cpp/requirements.txt)
-    `pip install -r lib_tlkcore_cpp/requirements.txt`
+
+   `pip install -r lib_tlkcore_cpp/requirements.txt`
