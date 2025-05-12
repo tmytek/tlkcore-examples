@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-1. Install Python *3.6 or 3.8 or 3.10* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](../Python/README.md) to make sure your Python environment first.
+1. Install Python *3.8 or 3.10 or 3.12* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](../Python/README.md) to make sure your Python environment first.
 2. According to [Versions of Python Compatible with MATLAB Products by Release](https://www.mathworks.com/support/requirements/python-compatibility.html) to download MATLAB to maps your Python version.
    ![matlab](/images/table_matlab.svg)
 3. Extract zip file under the [TLKCore_release](/release)

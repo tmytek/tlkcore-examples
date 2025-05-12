@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * Python 3
-    1. Install Python *3.6 or 3.8 or 3.10* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
+    1. Install Python *3.8 or 3.10* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
     2. Extract zip file under the [TLKCore_release](/release) then copy the whole `lib/` & `logging.conf` to TLKCoreExample/
         ![copy](/images/CS_Lib_copy.png)
 * Visual Studio - Example runs on *Visual Studio 2019 with .NET Framework 4.7.2*

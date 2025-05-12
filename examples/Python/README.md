@@ -17,7 +17,7 @@
 1. Check your Python version
     * Windows: `python -V`
     * Linux: `python3 -V`
-1. Install Python *3.6 or 3.8 / 3.10 / 3.12* with **64 bit** version, the version MUST mapping with [TLKCore_release](/release)
+2. Install Python *3.8 / 3.10 / 3.12* with **64 bit** version, the version MUST mapping with [TLKCore_release](/release)
     * Example gives a default libraries for *Python 3.8* ([python-3.8.10 64-bit download Link](https://www.python.org/downloads/release/python-3810))
     * Remember to **allow** the option: `Add python.exe to PATH`
 
@@ -25,8 +25,8 @@
 
         ![python310](/images/Python_Install310.png)
 
-2. Extract zip file.
-3. Install related Python packages from requirements.txt
+3. Extract zip file.
+4. Install related Python packages from requirements.txt
 
     `pip install -r requirements.txt`
 
@@ -42,11 +42,11 @@
       * psutil==6.1.0
       * ft4222==1.10.0
 
-4. Create the new directory named **files** to target directory.
+5. Create the new directory named **files** to target directory.
 
    ![files](/images/TLKCore_release_files.png)
 
-5. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the target directory.
+6. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the target directory.
    * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
    * BBox antenna table -> **AAKIT_{AAKitName}.csv**
 
