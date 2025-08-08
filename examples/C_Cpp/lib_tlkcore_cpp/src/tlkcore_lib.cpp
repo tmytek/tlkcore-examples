@@ -255,9 +255,9 @@ public:
         return 0;
     }
 
-    /*
+    /**
      * Set UD state only
-    */
+     */
     int set_ud_state(const std::string& sn) override
     {
         auto ret = service.attr("getUDState")(sn);
@@ -300,6 +300,35 @@ public:
         }
         cout << msg << endl;
         return 0;
+    }
+
+    /**
+     * Check for harmonic interference in the specified frequency configuration
+     * @param sn Serial number of the device
+     * @param freq_ud Up/Down frequency in kHz
+     * @param freq_if IF frequency in kHz
+     * @param freq_bw Signal bandwidth in kHz
+     * @return 0: No harmonic detected, 1: Harmonic warning, -1: Error occurred
+     */
+    int get_harmonic(const std::string& sn, int freq_ud, int freq_if, int freq_bw) override
+    {
+        // Call Python service method to check harmonic
+        auto ret = service.attr("getHarmonic")(sn, freq_ud, freq_if, freq_bw);
+        cout << "[TLKCore] Check harmonic: " << ret.attr("__str__")().cast<string>() << endl;
+
+        // Check if the operation was successful
+        if (!ret.attr("RetCode").equal(RetCode.attr("OK"))) {
+            return -1; // Return error code
+        }
+
+        // Extract harmonic detection result from return data
+        bool has_harmonic = ret.attr("RetData").cast<bool>();
+        if (has_harmonic) {
+            cout << "[TLKCore] WARNING: Harmonic detected!" << endl;
+            return 1; // Return warning code indicating harmonic presence
+        }
+
+        return 0; // Return success code - no harmonic detected
     }
 
     int get_ris_module_info(const std::string &sn) override
