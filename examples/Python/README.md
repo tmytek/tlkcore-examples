@@ -17,7 +17,7 @@
 1. Check your Python version
     * Windows: `python -V`
     * Linux: `python3 -V`
-2. Install Python *3.8 / 3.10 / 3.12* with **64 bit** version, the version MUST mapping with [TLKCore_release](/release)
+2. Install Python *3.8 ~ 3.12* with **64 bit** version, the version MUST mapping with [TLKCore_release](/release)
     * Example gives a default libraries for *Python 3.8* ([python-3.8.10 64-bit download Link](https://www.python.org/downloads/release/python-3810))
     * Remember to **allow** the option: `Add python.exe to PATH`
 
@@ -38,9 +38,6 @@
       * `pip install --break-system-packages --user <username> -r requirements.txt`
     * [Hint-2] Under Windows, sometimes you might met the following error: ![cpp_build_tool](/images/Python_cpp_build_tools.png)
       * Please install [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version)
-    * [Hint-3] Python 3.12 user please modify parts of requirements.txt
-      * psutil==6.1.0
-      * ft4222==1.10.0
 
 5. Create the new directory named **files** to target directory.
 
@@ -51,6 +48,23 @@
    * BBox antenna table -> **AAKIT_{AAKitName}.csv**
 
 ## Introduction of main.py
+
+## Folder structure
+
+```
+├── lib
+│   ├── files
+│   ├── include
+│   ├── lib
+│   ├── tlkcore_fbs
+│   └── tlkcore_ris
+├── lib_tlkcore_cpp
+│   ├── include
+│   ├── lib
+│   └── src
+└── lib_usrp_spi
+    └── include
+```
 
 ### Usage
 
@@ -223,8 +237,8 @@ Device FW Update, starting from TLKCore v1.2.1, to update firmware via TLKCore.
   * RIS
 
 * Steps:
-  1. Make sure your Python environment installed tftpy package, if not,  please `pip install tftpy==0.8.2`
-  2. Query/download FW image for your BBoxOne/BBoxLite/BBoard/CloverCell device
+  1. Make sure your Python environment installed tftpy package, if not,  please `pip install tftpy==0.8.5`
+  2. Query/download FW image for your device
   3. Please disable firewall first to allow tftp protocol transmission
       * Windows
           * `netsh advfirewall set allprofile state off`
@@ -234,9 +248,13 @@ Device FW Update, starting from TLKCore v1.2.1, to update firmware via TLKCore.
           * `sudo systemctl stop firewalld`
       * macOS
           * `sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off`
-  4. Argument assign image path from directory or website to main.py
+  4. Replace `{IMAGE_PATH}` for your FW image path from directory or website to main.py
 
           python3 main.py --dfu {IMAGE_PATH}
+
+* Note
+
+  You can use `--dc` to provide your device information, but be careful if the device IP is assigned by DHCP, as a DFU reboot might change it to another IP address!
 
 ## Extra usage
 

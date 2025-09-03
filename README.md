@@ -39,7 +39,7 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
 
 * [[Download Link](/release)]
 
-* [[Doc for function reference](/release/doc/)]
+* [[Doc for function reference](https://tmytek-tlkcore.readthedocs-hosted.com/en/v2.3.0/)]
 
 * [[Example code for supported languages](/examples/)]
 
@@ -67,7 +67,7 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
 
 ### Python 3
 
-* Install Python *3.8 / 3.10 / 3.12* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
+* Install Python *3.8 ~ 3.12* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
 
 ### Communication environment
 

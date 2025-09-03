@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-1. Install Python *3.8 or 3.10 or 3.12* which mapping with [TLKCore_release](/release), TLKCore libraries only support 64bit currently.
+1. Install Python *3.8 ~ 3.12* which mapping with [TLKCore_release](/release), TLKCore libraries only support **64bit** currently.
 2. According to [Integrating Python Code in LabVIEW](https://www.ni.com/en/support/documentation/supplemental/18/installing-python-for-calling-python-code.html#section-1736000138) to download LabVIEW to maps your Python version. Please download 64bit version not 32bit.
    ![labview](/images/table_labview.svg)
 
