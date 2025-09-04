@@ -384,7 +384,6 @@ public:
             }
 
             port_config["sn"] = sn;
-            port_config["module"] = port;
 
             py::object ret = service.attr("setRISAngle")(**port_config);
             cout << "[TLKCore] Set RIS angle (port " << port << "): "

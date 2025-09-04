@@ -9,6 +9,7 @@
 #include <regex>
 
 using namespace tlkcore;
+using namespace std;
 
 std::vector<std::string> ris_list;
 
