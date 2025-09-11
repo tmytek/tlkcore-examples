@@ -355,15 +355,16 @@ public:
 
     int get_ris_pattern(const std::string &sn) override
     {
+        std::vector<std::string> ports;
         for (auto item : module_info) {
             std::string port = py::str(item.first);
-            auto ret = service.attr("getRISPattern")(sn, port);
-            // cout << "[TLKCore] Get RIS pattern: " << ret.attr("__str__")().cast<string>() << endl;
-            cout << "[TLKCore] Get RIS pattern (port " << port << "): "
-                      << ret.attr("__str__")().cast<string>() << endl;
-            if (! ret.attr("RetCode").equal(RetCode.attr("OK"))) {
-                return -1;
-            }
+            ports.push_back(port);
+        }
+        auto ret = service.attr("getRISPattern")(sn, ports);
+        cout << "[TLKCore] Get RIS pattern: "
+                    << ret.attr("__str__")().cast<string>() << endl;
+        if (! ret.attr("RetCode").equal(RetCode.attr("OK"))) {
+            return -1;
         }
         return 0;
     }
@@ -373,25 +374,13 @@ public:
         py::dict devs = dev_config_dict["RIS_LAYERS"];
         auto device_config = devs.attr("get")(sn);
 
-        for (auto item : module_info) {
-            std::string port = py::str(item.first);
-            py::object info = item.second;
+        device_config["sn"] = sn;
+        py::object ret = service.attr("setRISAngle")(**device_config);
+        cout << "[TLKCore] Set RIS angle: "
+                    << py::str(ret) << endl;
 
-            py::object port_config = device_config.attr("get")(port);
-            if (!port_config || py::isinstance<py::none>(port_config)) {
-                std::cerr << "[TLKCore] No config found for port: " << port << endl;
-                continue;
-            }
-
-            port_config["sn"] = sn;
-
-            py::object ret = service.attr("setRISAngle")(**port_config);
-            cout << "[TLKCore] Set RIS angle (port " << port << "): "
-                      << py::str(ret) << endl;
-
-            if (!ret.attr("RetCode").equal(RetCode.attr("OK"))) {
-                return -1;
-            }
+        if (!ret.attr("RetCode").equal(RetCode.attr("OK"))) {
+            return -1;
         }
         return 0;
     }

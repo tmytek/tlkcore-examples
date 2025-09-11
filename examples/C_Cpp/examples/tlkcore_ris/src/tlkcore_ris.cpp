@@ -88,7 +88,7 @@ int tmy_device_control()
         return -1;
     }
 
-    ris_list = load_sn_from_conf("config/device.conf");
+    ris_list = load_sn_from_conf(path);
     
     if (get_ris_module_info(ptr) < 0)
     {
