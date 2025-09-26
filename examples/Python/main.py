@@ -31,21 +31,21 @@ def check_ex_files(directory, extension=".so"):
     return False
 
 try:
-    from tlkcore.TLKCoreService import TLKCoreService
-    from tlkcore.TMYPublic import (
-            DevInterface,
-            RetCode,
-            RFMode,
-            UDState,
-            UDMState,
-            BeamType,
-            UD_REF,
-            UD_LO_CONFIG,
-            RIS_Dir,
-            RIS_ModuleConfig,
-            CellRFMode,     # For CloverCell series AiP
-            POLARIZATION    # For CloverCell series AiP
-        )
+    from tlkcore import (
+        TLKCoreService,
+        DevInterface,
+        RetCode,
+        RFMode,
+        UDState,
+        UDMState,
+        BeamType,
+        UD_REF,
+        UD_LO_CONFIG,
+        RIS_Dir,
+        RIS_ModuleConfig,
+        CellRFMode,     # For CloverCell series AiP
+        POLARIZATION    # For CloverCell series AiP
+    )
 except Exception as e:
     myos = platform.system()
     d = os.path.join(sys.path[0], 'tlkcore',)
@@ -90,7 +90,7 @@ def wrapper(*args, **kwarg):
         logger.error("Invalid parameter: please passing function name and parameters")
         raise Exception
     if service is None:
-        service = TLKCoreService()
+        service = TLKCoreService(working_root=root_path)
         logger.info("TLKCoreService v%s %s" %(service.version, "is running" if service.running else "can not run"))
         logger.info(sys.path)
 
@@ -378,7 +378,7 @@ def testUDM(sn, service):
     return testUDC(sn, service)
 
 def testUDB(sn, service):
-    from tlkcore.TMYPublic import UD_SN_TYPE
+    from tlkcore import UD_SN_TYPE
     logger.info("SN: %s" %service.querySN(sn, UD_SN_TYPE.ALL))
     return testUDC(sn, service, "UDB")
 
@@ -636,7 +636,7 @@ def testBBox(sn, service):
 
         batch_import = False
         if batch_import:
-            from tlkcore.TMYBeamConfig import TMYBeamConfig
+            from tlkcore import TMYBeamConfig
             batch = TMYBeamConfig(sn, service)
             if not batch.applyBeams():
                 logger.error("Beam Config setting failed")
