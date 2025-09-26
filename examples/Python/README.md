@@ -14,57 +14,26 @@
 
 ## Prerequisites
 
-1. Check your Python version
-    * Windows: `python -V`
-    * Linux: `python3 -V`
-2. Install Python *3.8 ~ 3.12* with **64 bit** version, the version MUST mapping with [TLKCore_release](/release)
-    * Example gives a default libraries for *Python 3.8* ([python-3.8.10 64-bit download Link](https://www.python.org/downloads/release/python-3810))
-    * Remember to **allow** the option: `Add python.exe to PATH`
+* Python 3 ([Installing Python3](/Install.md#installing-python3))
+* TLKCore ([Installing TLKCore](/Install.md#installing-tlkcore))
+* Files for BBoxOne/Lite
+  1. Audo/Manually create the new directory named **files** to target directory.
 
-        ![python38](/images/Python_Install38.png)
+    * Installed from pip/whl
 
-        ![python310](/images/Python_Install310.png)
+      ![files](/images/TLKCore_release_files.png)
 
-3. Extract zip file.
-4. Install related Python packages from requirements.txt
+    * Portable library
 
-    `pip install -r requirements.txt`
+      ![files](/images/TLKCore_release_files_portable.png)
 
-    * [Hint-1] Under Ubuntu, please install pip
-      * `sudo apt-get update`
-      * `sudo apt install python3-pip`
-        * [PEP-668](https://peps.python.org/pep-0668/)
-        * [error: externally-managed-environment](https://askubuntu.com/questions/1465218/pip-error-on-ubuntu-externally-managed-environment-%C3%97-this-environment-is-extern)
-      * `pip install --break-system-packages --user <username> -r requirements.txt`
-    * [Hint-2] Under Windows, sometimes you might met the following error: ![cpp_build_tool](/images/Python_cpp_build_tools.png)
-      * Please install [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version)
-
-5. Create the new directory named **files** to target directory.
-
-   ![files](/images/TLKCore_release_files.png)
-
-6. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the target directory.
+  2. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the target directory.
    * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
    * BBox antenna table -> **AAKIT_{AAKitName}.csv**
 
 ## Introduction of main.py
 
-## Folder structure
-
-```
-├── lib
-│   ├── files
-│   ├── include
-│   ├── lib
-│   ├── tlkcore_fbs
-│   └── tlkcore_ris
-├── lib_tlkcore_cpp
-│   ├── include
-│   ├── lib
-│   └── src
-└── lib_usrp_spi
-    └── include
-```
+Download [main.py](/examples/Python/main.py)
 
 ### Usage
 
@@ -79,7 +48,7 @@ optional arguments:
   --root ROOT           The root path/directory of for log/ & files/
 ```
 
-#### example
+#### Execute
 
    * Windows
 
@@ -161,7 +130,7 @@ if testChannels:
 # Beam control example
 if testBeam:
     if aakit_selected:
-        service.setBeamAngle(sn, gain_max, 0, 0))
+        service.setBeamAngle(sn, gain_max, 0, 0)
     else:
         logger.error("PhiA mode cannot process beam steering")
 

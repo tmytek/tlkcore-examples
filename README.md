@@ -13,7 +13,7 @@
 
 **TLKCore** is a core service which inside the TMXLAB KIT(TLK/[WEB-TLK](https://web-tlk.tmytek.com/)), it integrates Python built libraries which developing mmWave( n257 / n258 / n260 / n261 ) **beamforming** and **beam steering** applications on **BBox 5G Series(mmwave beamformer)** and **UDBox 5G Series(mmwave Up-down frequency converter)** and other standard products developed by TMYTEK.
 
-The **.pyd** format release is for Windows shared library and **.so** format release is for Linux shared library. Python is a cross-platform programming language, and we provide the basic Python example for all devices/platforms in the release package, and C/C++ examples for Linux platform in **C_Cpp** folder. Please refer to the sample code inside each folder for the specific programming language.
+Python is a cross-platform programming language, and we provide the basic Python example [main.py](/examples/Python/main.py) for all devices/platforms in the release package, and C/C++ examples for Linux platform in **C_Cpp** folder. Please refer to the sample code inside each folder for the specific programming language.
 
 ### Architecture
 
@@ -37,9 +37,9 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
 
 ## Latest Release & Examples
 
-* [[Download Link](/release)]
+* [[Install](/Install.md)]
 
-* [[Doc for function reference](https://tmytek-tlkcore.readthedocs-hosted.com/en/v2.3.0/)]
+* [[Function docs](https://tmytek-tlkcore.readthedocs-hosted.com/en/v2.3.0/)]
 
 * [[Example code for supported languages](/examples/)]
 
@@ -67,7 +67,7 @@ The **.pyd** format release is for Windows shared library and **.so** format rel
 
 ### Python 3
 
-* Install Python *3.8 ~ 3.12* which mapping with [TLKCore_release](/release), and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
+* TLKCore support Python *3.8 ~ 3.12*, and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
 
 ### Communication environment
 
@@ -153,3 +153,6 @@ Install USB driver if scan interface includes `DevInterface.USB` -> [Installatio
 
 2. Where is my calibration table or antenna table(AA-Kit)?
     * [Action] They shall put on your USB FLASH, copy them to **files/**.
+
+3. Sometimes I can't scanned any device.
+    * [Action] Plug-out & in your RJ-45 cable, and try again.
