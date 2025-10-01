@@ -225,10 +225,13 @@ Device FW Update, starting from TLKCore v1.2.1, to update firmware via TLKCore.
 
   You can use `--dc` to provide your device information, but be careful if the device IP is assigned by DHCP, as a DFU reboot might change it to another IP address!
 
-## Extra usage
+## FAQ
 
-1. I have my own project to import TLKCore, so I can not import TLKCore libraries under the current directory, how to import TLKCore libraries?
-    * You can set the system environment variables to caller to finding TLKCore libraries, just modify the  caller (main.py) in the following example:
+#### Q1. 
+I have my own project to import TLKCore, so I can not import TLKCore libraries under the current directory, how to import TLKCore libraries?
+
+#### A1.
+You can set the system environment variables to caller to finding TLKCore libraries, just modify the  caller (main.py) in the following example:
 
         ```Python
         # Please setup path of tlkcore libraries to environment variables,
@@ -241,28 +244,34 @@ Device FW Update, starting from TLKCore v1.2.1, to update firmware via TLKCore.
         lib_path = Path("C:\\MyTLKCore\\lib\\").absolute()
         ```
 
-2. How to assign the path of **files/** and **tlk_core_log/** ?
-    * You can assign a new root path as parameter to TLKCoreService
+#### Q2.
+How to assign the path of **files/** and **tlk_core_log/** ?
 
-        ```Python
-        service = TLKCoreService({Your_Path})
-        ```
+#### A2.
+* You can assign a new root path as parameter to TLKCoreService
 
-    * Or you can also try:
+    ```Python
+    service = TLKCoreService({Your_Path})
+    ```
 
-            python3 main.py --root {Your_Path}
+* Or you can also try:
 
-3. I connected my device directly and I will not change my network environment, Is there any way to skip scanning procedure?
-    * Please make sure you have scanned the device before, and record the scanned result from the log, then just passing the result to initDev() in the following example:
+        python3 main.py --root {Your_Path}
 
-        1. Record SN, address, device type from log
+#### Q3.
+I connected my device directly and I will not change my network environment, Is there any way to skip scanning procedure?
 
-            ![scanned](/images/scanned.png)
+#### A3.
+Please make sure you have scanned the device before, and record the scanned result from the log, then just passing the result to initDev() in the following example:
 
-        2. Direct connect
-           1. Via typing:
+1. Record SN, address, device type from log
 
-                    python3 main.py --dc D2230E013-28 192.168.100.121 9
+    ![scanned](/images/scanned.png)
 
-           2. Or passing to initDev()
-            `service.initDev(sn, addr, dev_type)`
+2. Direct connect
+    1. Via typing:
+
+            python3 main.py --dc D2230E013-28 192.168.100.121 9
+
+    2. Or passing to initDev()
+    `service.initDev(sn, addr, dev_type)`
