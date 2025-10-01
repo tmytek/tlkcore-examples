@@ -19,7 +19,7 @@ Python is a cross-platform programming language, and we provide the basic Python
 
 #### Hardware
 
-* TLKCore is running on Windows/Linux PC, to communicate with standard products developed by TMYTEK via Ethernet/ComPort/USB cable.
+* TLKCore can run on Windows/Linux PC, to communicate with standard products developed by TMYTEK via Ethernet/ComPort/USB cable.
 * (Optional) FBS part is optional solution to control BBox 5G series as fast beam steering.
   ![block](/images/TLKCore_usage.png)
 
@@ -28,7 +28,7 @@ Python is a cross-platform programming language, and we provide the basic Python
 * **TLKCoreService** is a **entry point** for developer, all of operations/functions must passed by TLKCoreService, e.g. scanDevices(), initDev().
 * TMYCommService is maintaining physical communications for all devices, it usually not handled directly by developer.
 * TMYUtils defines all data structure for return data, let developer more easier to know current status of processed function.
-* **TMYPublic** is a open source code, it defines all data structure which developer might used, e.g. RFMode(TX/RX), RetCode(OK/ERROR/...), UDState...etc.
+* **TMYPublic** is a open source code, it defines all data structure which developer might used, e.g. RFMode(TX/RX), RetCode(OK/ERROR/...), UDState, etc.
 * (Optional) **TMYBeamConfig** is option solution for FBS (fast beam steering), it aims to parse assigned csv file to a dict structure and check beam configuration, please reference [FBS](/examples/Python/README.md#FBS)
 * All files/function under tmydev/ are all operating logic of standard products
 * db/ used for WEB-TLK, developer could ignore it.
@@ -138,7 +138,7 @@ Install USB driver if scan interface includes `DevInterface.USB` -> [Installatio
 
 1. I called `scanDevices()` but can not find my device via Ethernet.
    * [Action] Please check the following steps
-     1. Make sure your physical connection, PC-device or PC-Router-Device...etc.
+     1. Make sure your physical connection, PC-device or PC-Router-Device, etc.
      2. Make sure your [network setting](#communication-environment).
      3. Check your firewall disabled, if you must enable firewall, please enable outgoing/incoming UDP or enable whitelist UDP ports: 5025, 7025-7040
         * Windows
