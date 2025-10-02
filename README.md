@@ -136,23 +136,32 @@ Install USB driver if scan interface includes `DevInterface.USB` -> [Installatio
 
 ## Troubleshooting
 
-1. I called `scanDevices()` but can not find my device via Ethernet.
-   * [Action] Please check the following steps
-     1. Make sure your physical connection, PC-device or PC-Router-Device, etc.
-     2. Make sure your [network setting](#communication-environment).
-     3. Check your firewall disabled, if you must enable firewall, please enable outgoing/incoming UDP or enable whitelist UDP ports: 5025, 7025-7040
-        * Windows
-          * `netsh advfirewall firewall add rule name="Allow UDP out" protocol=UDP dir=out localport=5025 action=allow`
-          * `netsh advfirewall firewall add rule name="Allow UDP in" protocol=UDP dir=in localport=7025-7040 action=allow`
-        * Ubuntu
-          * `sudo ufw allow 5025/udp`
-          * `sudo ufw allow 7025-7040/udp`
-        * CentOS
-          * `sudo firewall-cmd --permanent --add-port=5025/udp --add-port=7025-7040/udp`
-          * `sudo systemctl restart firewalld`
+### Q1.
+I called `scanDevices()` but can not find my device via Ethernet.
 
-2. Where is my calibration table or antenna table(AA-Kit)?
-    * [Action] They shall put on your USB FLASH, copy them to **files/**.
+### A1.
+Please check the following steps:
+  1. Make sure your physical connection, PC-device or PC-Router-Device, etc.
+  2. Make sure your [network setting](#communication-environment).
+  3. Check your firewall disabled, if you must enable firewall, please enable outgoing/incoming UDP or enable whitelist UDP ports: 5025, 7025-7040
+    * Windows
+      * `netsh advfirewall firewall add rule name="Allow UDP out" protocol=UDP dir=out localport=5025 action=allow`
+      * `netsh advfirewall firewall add rule name="Allow UDP in" protocol=UDP dir=in localport=7025-7040 action=allow`
+    * Ubuntu
+      * `sudo ufw allow 5025/udp`
+      * `sudo ufw allow 7025-7040/udp`
+    * CentOS
+      * `sudo firewall-cmd --permanent --add-port=5025/udp --add-port=7025-7040/udp`
+      * `sudo systemctl restart firewalld`
 
-3. Sometimes I can't scanned any device.
-    * [Action] Plug-out & in your RJ-45 cable, and try again.
+### Q2.
+Where is my calibration table or antenna table(AA-Kit)?
+
+### A2.
+They shall put on your USB FLASH, copy them to **files/**.
+
+### Q3.
+Sometimes I can't scanned any device.
+
+### A3.
+Plug-out & in your RJ-45 cable, and try again.
