@@ -378,7 +378,7 @@ def testUDM(sn, service):
     return testUDC(sn, service)
 
 def testUDB(sn, service):
-    from tlkcore import UD_SN_TYPE
+    from tlkcore.TMYPublic import UD_SN_TYPE
     logger.info("SN: %s" %service.querySN(sn, UD_SN_TYPE.ALL))
     return testUDC(sn, service, "UDB")
 
@@ -636,7 +636,7 @@ def testBBox(sn, service):
 
         batch_import = False
         if batch_import:
-            from tlkcore import TMYBeamConfig
+            from tlkcore.TMYBeamConfig import TMYBeamConfig
             batch = TMYBeamConfig(sn, service)
             if not batch.applyBeams():
                 logger.error("Beam Config setting failed")
