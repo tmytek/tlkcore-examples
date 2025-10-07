@@ -31,8 +31,7 @@ def check_ex_files(directory, extension=".so"):
     return False
 
 try:
-    from tlkcore import (
-        TLKCoreService,
+    from tlkcore.TMYPublic import (
         DevInterface,
         RetCode,
         RFMode,
@@ -43,9 +42,10 @@ try:
         UD_LO_CONFIG,
         RIS_Dir,
         RIS_ModuleConfig,
-        CellRFMode,     # For CloverCell series AiP
-        POLARIZATION    # For CloverCell series AiP
+        CellRFMode,
+        POLARIZATION,
     )
+    from tlkcore.TLKCoreService import TLKCoreService
 except Exception as e:
     myos = platform.system()
     d = os.path.join(sys.path[0], 'tlkcore',)
