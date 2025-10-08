@@ -27,7 +27,7 @@ If it works, no additional changes are needed. If you encounter import or runtim
         1. Modify your `main.py` imports:
             - Update all `import lib.tlkcore` or any code that modifies `sys.path` to include `lib/` to `import tlkcore`.
             ![Example1](/images/Python_upgrade_main_change_example_1.png)
-            - Remove any lines such as `sys.path.insert(0, os.path.abspath(lib_path))` that force Python to use the local `lib/` directory.
+            - Remove any lines such as `sys.path.insert(0, os.path.abspath(lib_path))` that force Python to use the local `lib` directory.
             ![Example2](/images/Python_upgrade_main_change_example_2.png)
 
 4. **Troubleshooting**
