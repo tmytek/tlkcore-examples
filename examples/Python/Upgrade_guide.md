@@ -1,4 +1,4 @@
-# Upgrade from v2.2.0 to v2.3.0
+# Upgrade TLKCore from v2.2.0 to v2.3.0
 
 If you are upgrading from TLKCore v2.2.0 to v2.3.0 (via pip install), please follow these steps to ensure a smooth transition:
 
