@@ -21,7 +21,6 @@ Here is a simple architecture for C/C++ example to control BBoxOne 5G and UDBox 
 │   └── tlkcore_ris
 ├── lib_tlkcore_cpp
 │   ├── include
-│   ├── lib
 │   └── src
 └── lib_usrp_spi
     └── include
