@@ -8,7 +8,7 @@ Reference from [tlkcore on pypi](https://pypi.org/project/tlkcore/), and launch 
 
     pip install tlkcore
 
-* Tip: [How to upgrade TLKCore before v2.3.0](/examples/Python/Upgrade_guide.md)
+* Tip: [How to upgrade TLKCore if current version before v2.3.0](/examples/Python/Upgrade_guide.md)
 
 ## Offline installation using a downloaded `whl` file
 
@@ -17,7 +17,7 @@ Reference from [tlkcore on pypi](https://pypi.org/project/tlkcore/), and launch 
     * Linux: `python3 -V`
 2. Download from [tlkcore whl on pypi](https://pypi.org/project/tlkcore/#files) for your platform and Python version.
 
-* Tip: [How to upgrade TLKCore before v2.3.0](/examples/Python/Upgrade_guide.md)
+* Tip: [How to upgrade TLKCore if current version before v2.3.0](/examples/Python/Upgrade_guide.md)
 
 ## Portable library package (original release method)
 
