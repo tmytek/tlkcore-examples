@@ -8,6 +8,9 @@ namespace py = pybind11;
 using namespace tlkcore;
 using namespace std;
 
+// Define const variable for default TLKCore path at the top
+const string DEFAULT_TLKCORE_PATH = "../lib";
+
 // Start the interpreter and keep it alive
 py::scoped_interpreter guard{};
 
@@ -402,7 +405,7 @@ tlkcore_lib::tlkcore_ptr tlkcore_lib::make(const std::string& lib_path)
 }
 tlkcore_lib::tlkcore_ptr tlkcore_lib::make()
 {
-    return tlkcore_lib::make("../lib");
+    return tlkcore_lib::make(DEFAULT_TLKCORE_PATH);
 }
 
 int main()

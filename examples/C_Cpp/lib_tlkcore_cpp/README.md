@@ -36,7 +36,7 @@ Here provide some tips to enhance your wrapper/examples
     * Modify tlkcore_fbs.cpp:
 
       ```C++
-      ptr = tlkcore_lib::make({Your_Import_Path});
+      const string DEFAULT_TLKCORE_PATH = "{Your_Import_Path}";
       ```
 
 2. Change default path for files/ and tlk_core_log/
