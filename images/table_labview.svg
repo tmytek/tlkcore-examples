@@ -1,4 +1,4 @@
-<svg fill="none" viewBox="0 0 940 380" width="1000" height="400" xmlns="http://www.w3.org/2000/svg"
+<svg fill="none" viewBox="0 0 700 280" width="1000" height="400" xmlns="http://www.w3.org/2000/svg"
 >
    <foreignObject width="100%" height="100%">
       <div xmlns="http://www.w3.org/1999/xhtml">
@@ -22,30 +22,24 @@
                      <th colspan="8">Python Version</th>
                   </tr>
                   <tr>
-				     <th width="12%" class="blue">3.12</th>
-					 <th width="12%">3.11</th>
-                     <th width="12%" class="blue">3.10</th>
-                     <th width="12%">3.9</th>
-                     <th width="12%" class="blue">3.8</th>
-                     <th width="12%">3.7</th>
-                     <th width="12%">3.6</th>
+                     <th width="15%" class="blue">3.12</th>
+                     <th width="15%" class="blue">3.11</th>
+                     <th width="15%" class="blue">3.10</th>
+                     <th width="15%" class="blue">3.9</th>
+                     <th width="15%" class="blue">3.8</th>
                   </tr>
-				  <tr>
-                     <th>2025 Q1</th>
+                  <tr>
+                     <th>2025 Q1/Q3</th>
                      <td class="navyblue"> </td>
                      <td class="navyblue"> </td>
                      <td class="navyblue"> </td>
                      <td class="navyblue"> </td>
                      <td></td>
-					 <td></td>
-					 <td></td>
                   </tr>
                   <tr>
                      <th>2023, 2024</th>
-					 <td></td>
-					 <td></td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
+                     <td></td>
+                     <td></td>
                      <td class="navyblue"> </td>
                      <td class="navyblue"> </td>
                      <td class="navyblue"> </td>
@@ -53,81 +47,25 @@
                   <tr>
                      <th>2022 Q3</th>
                      <td></td>
-					 <td></td>
-					 <td></td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
+                     <td></td>
+                     <td></td>
                      <td class="navyblue"> </td>
                      <td class="navyblue"> </td>
                   </tr>
                   <tr>
                      <th>2021 SP1</th>
                      <td></td>
-					 <td></td>
-					 <td></td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
+                     <td></td>
+                     <td></td>
                      <td class="navyblue"> </td>
                      <td class="navyblue"> </td>
                   </tr>
                   <tr>
                      <th>2021</th>
                      <td></td>
-					 <td></td>
-					 <td></td>
+                     <td></td>
+                     <td></td>
                      <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
-                  </tr>
-                  <tr>
-                     <th>2020 SP1</th>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-					 <td></td>
-					 <td></td>
-                     <td class="navyblue"> </td>
-                  </tr>
-                  <tr>
-                     <th>2020</th>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-					 <td></td>
-					 <td></td>
-                     <td class="navyblue"> </td>
-                  </tr>
-                  <tr>
-                     <th>2019 SP1</th>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-					 <td></td>
-					 <td></td>
-                     <td class="navyblue"> </td>
-                  </tr>
-                  <tr>
-                     <th>2019</th>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-					 <td></td>
-					 <td></td>
-                     <td class="navyblue"> </td>
-                  </tr>
-                  <tr>
-                     <th>2018 SP1</th>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-					 <td></td>
-					 <td></td>
                      <td class="navyblue"> </td>
                   </tr>
                </tbody>

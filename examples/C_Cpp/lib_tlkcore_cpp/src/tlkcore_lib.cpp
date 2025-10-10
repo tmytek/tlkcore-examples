@@ -8,6 +8,9 @@ namespace py = pybind11;
 using namespace tlkcore;
 using namespace std;
 
+// Define const variable for default TLKCore path at the top
+const string DEFAULT_TLKCORE_PATH = "../lib";
+
 // Start the interpreter and keep it alive
 py::scoped_interpreter guard{};
 
@@ -255,9 +258,9 @@ public:
         return 0;
     }
 
-    /*
+    /**
      * Set UD state only
-    */
+     */
     int set_ud_state(const std::string& sn) override
     {
         auto ret = service.attr("getUDState")(sn);
@@ -302,6 +305,35 @@ public:
         return 0;
     }
 
+    /**
+     * Check for harmonic interference in the specified frequency configuration
+     * @param sn Serial number of the device
+     * @param freq_ud Up/Down frequency in kHz
+     * @param freq_if IF frequency in kHz
+     * @param freq_bw Signal bandwidth in kHz
+     * @return 0: No harmonic detected, 1: Harmonic warning, -1: Error occurred
+     */
+    int get_harmonic(const std::string& sn, int freq_ud, int freq_if, int freq_bw) override
+    {
+        // Call Python service method to check harmonic
+        auto ret = service.attr("getHarmonic")(sn, freq_ud, freq_if, freq_bw);
+        cout << "[TLKCore] Check harmonic: " << ret.attr("__str__")().cast<string>() << endl;
+
+        // Check if the operation was successful
+        if (!ret.attr("RetCode").equal(RetCode.attr("OK"))) {
+            return -1; // Return error code
+        }
+
+        // Extract harmonic detection result from return data
+        bool has_harmonic = ret.attr("RetData").cast<bool>();
+        if (has_harmonic) {
+            cout << "[TLKCore] WARNING: Harmonic detected!" << endl;
+            return 1; // Return warning code indicating harmonic presence
+        }
+
+        return 0; // Return success code - no harmonic detected
+    }
+
     int get_ris_module_info(const std::string &sn) override
     {
         auto ret = service.attr("getRISModuleInfo")(sn);
@@ -326,15 +358,16 @@ public:
 
     int get_ris_pattern(const std::string &sn) override
     {
+        std::vector<std::string> ports;
         for (auto item : module_info) {
             std::string port = py::str(item.first);
-            auto ret = service.attr("getRISPattern")(sn, port);
-            // cout << "[TLKCore] Get RIS pattern: " << ret.attr("__str__")().cast<string>() << endl;
-            cout << "[TLKCore] Get RIS pattern (port " << port << "): "
-                      << ret.attr("__str__")().cast<string>() << endl;
-            if (! ret.attr("RetCode").equal(RetCode.attr("OK"))) {
-                return -1;
-            }
+            ports.push_back(port);
+        }
+        auto ret = service.attr("getRISPattern")(sn, ports);
+        cout << "[TLKCore] Get RIS pattern: "
+                    << ret.attr("__str__")().cast<string>() << endl;
+        if (! ret.attr("RetCode").equal(RetCode.attr("OK"))) {
+            return -1;
         }
         return 0;
     }
@@ -344,26 +377,13 @@ public:
         py::dict devs = dev_config_dict["RIS_LAYERS"];
         auto device_config = devs.attr("get")(sn);
 
-        for (auto item : module_info) {
-            std::string port = py::str(item.first);
-            py::object info = item.second;
+        device_config["sn"] = sn;
+        py::object ret = service.attr("setRISAngle")(**device_config);
+        cout << "[TLKCore] Set RIS angle: "
+                    << py::str(ret) << endl;
 
-            py::object port_config = device_config.attr("get")(port);
-            if (!port_config || py::isinstance<py::none>(port_config)) {
-                std::cerr << "[TLKCore] No config found for port: " << port << endl;
-                continue;
-            }
-
-            port_config["sn"] = sn;
-            port_config["module"] = port;
-
-            py::object ret = service.attr("setRISAngle")(**port_config);
-            cout << "[TLKCore] Set RIS angle (port " << port << "): "
-                      << py::str(ret) << endl;
-
-            if (!ret.attr("RetCode").equal(RetCode.attr("OK"))) {
-                return -1;
-            }
+        if (!ret.attr("RetCode").equal(RetCode.attr("OK"))) {
+            return -1;
         }
         return 0;
     }
@@ -385,7 +405,7 @@ tlkcore_lib::tlkcore_ptr tlkcore_lib::make(const std::string& lib_path)
 }
 tlkcore_lib::tlkcore_ptr tlkcore_lib::make()
 {
-    return tlkcore_lib::make("../lib");
+    return tlkcore_lib::make(DEFAULT_TLKCORE_PATH);
 }
 
 int main()

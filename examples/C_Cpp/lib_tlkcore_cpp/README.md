@@ -33,10 +33,10 @@ Here provide some tips to enhance your wrapper/examples
 
 1. Import external TLKCore libraries (if not under ./lib/)
     * New feature after TLKCore v1.2.1
-    * Modify tlkcore_fbs.cpp:
+    * Modify tlkcore_lib.cpp:
 
       ```C++
-      ptr = tlkcore_lib::make({Your_Import_Path});
+      const string DEFAULT_TLKCORE_PATH = "{Your_Import_Path}";
       ```
 
 2. Change default path for files/ and tlk_core_log/

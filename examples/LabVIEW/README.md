@@ -2,18 +2,20 @@
 
 ## Prerequisites
 
-1. Install Python *3.8 or 3.10 or 3.12* which mapping with [TLKCore_release](/release), TLKCore libraries only support 64bit currently.
-2. According to [Integrating Python Code in LabVIEW](https://www.ni.com/en/support/documentation/supplemental/18/installing-python-for-calling-python-code.html#section-1736000138) to download LabVIEW to maps your Python version. Please download 64bit version not 32bit.
+1. Python 3 ([Installing Python3](/Install.md#installing-python3))
+2. TLKCore ([Installing TLKCore](/Install.md#installing-tlkcore))
+3. According to [Integrating Python Code in LabVIEW](https://www.ni.com/en/support/documentation/supplemental/18/installing-python-for-calling-python-code.html#section-1736000138) to download LabVIEW to maps your Python version. `Please download 64bit version not 32bit`.
    ![labview](/images/table_labview.svg)
 
-3. Extract zip file under the [TLKCore_release](/release) to target directory (*here we download to C:\\*)
-4. Create the new directory named **files** to target directory (*here we rename to C:\\TLKCore\\*).
+4. Download [main.py](/examples/Python/main.py) and create **files** directory.
+
    ![files](/images/TLKCore_release_files.png)
+
 5. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the target directory.
    * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
    * BBox antenna table -> **AAKIT_{AAKitName}.csv**
 
-P.S. The following example executes *LabVIEW 2021 64bit & Pyhton 3.8 64bit* on Windows 10
+P.S. The following example executes *LabVIEW 2025 Q1 64bit & Pyhton 3.10 64bit* on Windows 10
 
 ## LabVIEW sample execution steps
 

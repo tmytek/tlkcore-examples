@@ -53,6 +53,8 @@ public:
 
     virtual int set_ud_freq(const std::string& sn, int freq_ud, int freq_rf, int freq_if) = 0;
 
+    virtual int get_harmonic(const std::string& sn, int freq_ud, int freq_if, int freq_bw) = 0;
+
     virtual int get_ris_module_info(const std::string& sn) = 0;
 
     virtual int get_ris_pattern(const std::string& sn) = 0;

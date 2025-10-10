@@ -126,8 +126,16 @@ int set_ud_freq(tlkcore_lib::tlkcore_ptr service)
 {
     // Here is a example we set freq for ALL UD devices
     // PLEASE MODIFY for your purpose
+    int freq_ud = 24e6; // 24 GHz
+    int freq_if = 4e6; // 4 GHz
+    int freq_bw = 1e5; // 100 MHz
     for (std::string sn : ud_list) {
-        if (service->set_ud_freq(sn, 24e6, target_freq*1e6, 4e6) < 0)
+        // Hormonic check
+        if (service->get_harmonic(sn, freq_ud, freq_if, freq_bw) != 0)
+        {
+            return -1;
+        }
+        if (service->set_ud_freq(sn, freq_ud, target_freq*1e6, freq_if) < 0)
         {
             return -1;
         }

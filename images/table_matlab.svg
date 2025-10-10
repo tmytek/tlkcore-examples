@@ -22,123 +22,83 @@
                      <th colspan="8">Python Version</th>
                   </tr>
                   <tr>
-                     <th width="12%" class="blue">3.12</th>
-					 <th width="12%">3.11</th>
-                     <th width="12%" class="blue">3.10</th>
-                     <th width="12%">3.9</th>
-                     <th width="12%" class="blue">3.8</th>
-                     <th width="12%">3.7</th>
-                     <th width="12%">3.6</th>
-                  </tr>
-				  <tr>
-                     <th>R2024b</th>
-                     <td class="navyblue"></td>
-                     <td class="navyblue"></td>
-					 <td class="navyblue"></td>
-                     <td class="navyblue"></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                  </tr>
-				  <tr>
-                     <th>R2024a</th>
-                     <td></td>
-                     <td class="navyblue"></td>
-					 <td class="navyblue"></td>
-                     <td class="navyblue"></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
+                     <th width="15%" class="blue">3.12</th>
+                     <th width="15%" class="blue">3.11</th>
+                     <th width="15%" class="blue">3.10</th>
+                     <th width="15%" class="blue">3.9</th>
+                     <th width="15%" class="blue">3.8</th>
                   </tr>
                   <tr>
-                     <th>R2023b</th>
-                     <td></td>
-                     <td class="navyblue"></td>
-					 <td class="navyblue"></td>
-                     <td class="navyblue"></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
+                        <th>R2025a</th>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td></td>
                   </tr>
                   <tr>
-                     <th>R2023a</th>
-					 <td></td>
-                     <td></td>
-                     <td class="navyblue"></td>
-                     <td class="navyblue"></td>
-                     <td class="navyblue"></td>
-                     <td></td>
-                     <td></td>
+                        <th>R2024b</th>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td></td>
                   </tr>
                   <tr>
-                     <th>R2022b</th>
-					 <td></td>
-                     <td></td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
-                     <td> </td>
-                     <td> </td>
+                        <th>R2024a</th>
+                        <td></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td></td>
                   </tr>
                   <tr>
-                     <th>R2022a</th>
-					 <td></td>
-                     <td></td>
-                     <td></td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
-                     <td></td>
-                     <td></td>
+                        <th>R2023b</th>
+                        <td></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td></td>
                   </tr>
                   <tr>
-                     <th>R2021b</th>
-					 <td></td>
-                     <td></td>
-                     <td></td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
-                     <td> </td>
+                        <th>R2023a</th>
+                        <td></td>
+                        <td></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
                   </tr>
                   <tr>
-                     <th>R2021a</th>
-					 <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td class="navyblue"> </td >
-                     <td class="navyblue"> </td>
-                     <td> </td>
+                        <th>R2022b</th>
+                        <td></td>
+                        <td></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
                   </tr>
                   <tr>
-                     <th>R2020b</th>
-                     <td></td>
-                     <td></td>
-					 <td></td>
-                     <td></td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
+                        <th>R2022a</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
                   </tr>
                   <tr>
-                     <th>R2020a</th>
-                     <td></td>
-                     <td></td>
-					 <td></td>
-                     <td></td>
-                     <td></td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
+                        <th>R2021b</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="navyblue"></td>
+                        <td class="navyblue"></td>
                   </tr>
                   <tr>
-                     <th>R2019b</th>
-                     <td></td>
-                     <td></td>
-					 <td></td>
-                     <td></td>
-                     <td></td>
-                     <td class="navyblue"> </td>
-                     <td class="navyblue"> </td>
+                        <th>R2021a</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="navyblue"></td>
                   </tr>
                </tbody>
          </table>
