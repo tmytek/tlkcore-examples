@@ -1,3 +1,16 @@
+"""
+ _____            _   _ _                              ____    _____  ___
+|  ___|__  _ __  | |_| | | _____ ___  _ __ ___  __   _|___ \  |___ / / _ \   _
+| |_ / _ \| '__| | __| | |/ / __/ _ \| '__/ _ \ \ \ / / __) |   |_ \| | | |_| |_
+|  _| (_) | |    | |_| |   < (_| (_) | | |  __/  \ V / / __/ _ ___) | |_| |_   _|
+|_|  \___/|_|     \__|_|_|\_\___\___/|_|  \___|   \_/ |_____(_)____(_)___/  |_|
+
+This main.py requires tlkcore version >= v2.3.0
+
+Please make sure you have the correct version installed.
+
+"""
+
 import argparse
 import json
 import logging
@@ -31,7 +44,8 @@ def check_ex_files(directory, extension=".so"):
     return False
 
 try:
-    from tlkcore.TMYPublic import (
+    from tlkcore import (
+        TLKCoreService,
         DevInterface,
         RetCode,
         RFMode,
@@ -42,10 +56,9 @@ try:
         UD_LO_CONFIG,
         RIS_Dir,
         RIS_ModuleConfig,
-        CellRFMode,
-        POLARIZATION,
+        CellRFMode,     # For CloverCell series AiP
+        POLARIZATION    # For CloverCell series AiP
     )
-    from tlkcore.TLKCoreService import TLKCoreService
 except Exception as e:
     myos = platform.system()
     d = os.path.join(sys.path[0], 'tlkcore',)
@@ -378,7 +391,7 @@ def testUDM(sn, service):
     return testUDC(sn, service)
 
 def testUDB(sn, service):
-    from tlkcore.TMYPublic import UD_SN_TYPE
+    from tlkcore import UD_SN_TYPE
     logger.info("SN: %s" %service.querySN(sn, UD_SN_TYPE.ALL))
     return testUDC(sn, service, "UDB")
 
@@ -622,7 +635,6 @@ def testBBox(sn, service):
             logger.info("SetBeamAngle-1: %s" %service.setBeamAngle(sn, gain_max, 0, 0))
             logger.info("getBeamGainList: %s" %service.getBeamGainList(sn))
             logger.info("getBeamPhaseList: %s" %service.getBeamPhaseList(sn))
-            return
             logger.info("SetBeamAngle-2: %s" %service.setBeamAngle(sn, gain_max, 10, 30))
             logger.info("SetBeamAngle-3: %s" %service.setBeamAngle(sn, gain_max, 2, 180))
         else:
@@ -636,7 +648,7 @@ def testBBox(sn, service):
 
         batch_import = False
         if batch_import:
-            from tlkcore.TMYBeamConfig import TMYBeamConfig
+            from tlkcore import TMYBeamConfig
             batch = TMYBeamConfig(sn, service)
             if not batch.applyBeams():
                 logger.error("Beam Config setting failed")
