@@ -15,6 +15,12 @@
    * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
    * BBox antenna table -> **AAKIT_{AAKitName}.csv**
 
+   > Notice:
+   >
+   > Also able to find the AAKit name in the CSV file.
+   >
+   > ![files](/images/AAKit_name.png)
+
 P.S. The following example executes *LabVIEW 2025 Q1 64bit & Pyhton 3.10 64bit* on Windows 10
 
 ## LabVIEW sample execution steps
