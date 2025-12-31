@@ -246,7 +246,9 @@ def testDevice(sn, service, dfu_image:str="", address:str="", dev_type:int=0, in
                         }
         f = globals()["startDFU"]
     else:
-        if 'BBoard' in dev_name:
+        if dev_type == 32:
+            dev_name = "BBoxDuo"
+        elif 'BBoard' in dev_name:
             dev_name = "BBoard"
         elif 'BBox' in dev_name:
             dev_name = "BBox"
@@ -974,6 +976,53 @@ def testRIS(sn, service):
             for row in p:
                 logger.info(f"Get Ptn {i:>2} = {row}")
                 i+=1
+
+def testBBoxDuo(sn, service):
+    logger.info("MAC: %s" %service.queryMAC(sn))
+    logger.info("Static IP: %s" %service.queryStaticIP(sn))
+
+    logger.info("========= BBox Duo Get functions =========")
+
+    ret = service.getRfFreq(sn).RetData
+    logger.info("Get RF freq: %s kHz" % ret)
+
+    ret = service.getLoFreq(sn).RetData
+    logger.info("Get LO freq: %s kHz" % ret)
+
+    ret = service.getLoStatus(sn).RetData
+    logger.info("Get LO status: %s" % ret)
+
+    ret = service.getRefSource(sn).RetData
+    logger.info("Get Ref source: %s" % ret)
+
+    ret = service.getTRx(sn).RetData
+    logger.info("Get TRx status: %s" % ret)
+
+    ret = service.checkHarmonic(sn, lo_freq = 22500000, if_freq = 5000000, bandwidth = 2000000).RetData
+    logger.info("Check Harmonic: %s" % ret)
+
+    logger.info("========= BBox Duo Set functions =========")
+
+    ret = service.setRfFreq(sn, 28000000).RetData
+    logger.info("Set RF freq to 28000000 kHz: %s" % ret)
+
+    ret = service.setLoFreq(sn, 22500000).RetData
+    logger.info("Set LO freq to 22500000 kHz: %s" % ret)
+
+    ret = service.setRefSource(sn, 0).RetData
+    logger.info("Set Ref source to External 10M: %s" % ret)
+
+    ret = service.setBeam(sn, theta = 30, phi = 60).RetData
+    logger.info("Set Beam to theta=30, phi=60: %s" % ret)
+
+    ret = service.setTRx(sn, 2).RetData
+    logger.info("Set TRx to 2 (RX): %s" % ret)
+
+    ret = service.setRxUdAtt(sn, 0).RetData
+    logger.info("Set RX user attenuation to 0: %s" % ret)
+
+    ret = service.setTxUdAtt(sn, 0).RetData
+    logger.info("Set TX user attenuation to 0: %s" % ret)
 
 def startDFU(sn, service, dfu_image:str, dfu_dev_info:dict):
     """A example to process DFU"""
