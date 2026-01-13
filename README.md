@@ -39,7 +39,7 @@ Python is a cross-platform programming language, and we provide the basic Python
 
 * [[Install](/Install.md)]
 
-* [[Function docs](https://tmytek-tlkcore.readthedocs-hosted.com/en/v2.3.0/)]
+* [[Function docs](https://tmytek-tlkcore.readthedocs-hosted.com/en/latest/)]
 
 * [[Example code for supported languages](/examples/)]
 
