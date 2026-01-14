@@ -172,7 +172,7 @@ def startService(root:str=root_path, direct_connect_info:list=None, dfu_image:st
         # So we provide a extend init function to connect device driectly without scanning,
         # the parameter address and devtype could fetch by previous results of scanning.
         # The following is simple example, please modify it
-        kw = {'sn': direct_connect_info[0], 'address':direct_connect_info[1], 'dev_type':int(direct_connect_info[2])}
+        kw = {'sn': direct_connect_info[0], 'address':direct_connect_info[1], 'dev_type':int(direct_connect_info[2]), 'is_custom_calibration': False}
         # Parameter: SN, Address, Devtype
         ret = service.initDev(**kw)
         if ret.RetCode is RetCode.OK:
@@ -192,7 +192,7 @@ def startService(root:str=root_path, direct_connect_info:list=None, dfu_image:st
             logger.info("====== Dev_%d: %s, %s, %d, %r ======" %(i, sn, addr, devtype, in_dfu))
 
             # Init device, the first action for device before the operations
-            if service.initDev(sn).RetCode is not RetCode.OK and not in_dfu:
+            if service.initDev(sn, is_custom_calibration=False).RetCode is not RetCode.OK and not in_dfu:
                 continue
             testDevice(sn, service, dfu_image, addr, devtype, in_dfu)
 
