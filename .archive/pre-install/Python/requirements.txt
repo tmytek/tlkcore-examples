@@ -1,3 +1,0 @@
-numpy==1.22.0
-pandas==1.1.5
-pythonnet==2.5.2
