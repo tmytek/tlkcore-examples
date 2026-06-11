@@ -26,7 +26,7 @@ Here is a C/C++ fast beamsteering example to control BBoxOne 5G and UD devices v
 ```
 
 * This example directory contains two sub directories, please configure to your own envirenment:
-    1. [example/files/](/examples/C_Cpp//examples/files/) : [BBoxOne/Lite] Copy your calibration & antenna tables into **example/files/** under the [TLKCore_release](/release), see more to [change default path](../../lib_tlkcore_cpp/README.md#guideline-of-c-wrapper-for-tlkcore)
+    1. [example/files/](/examples/C_Cpp//examples/files/) : [BBoxOne/Lite] Copy your calibration & antenna tables into **example/files/**, see more to [change default path](../../lib_tlkcore_cpp/README.md#guideline-of-c-wrapper-for-tlkcore)
         * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
         * BBox antenna table -> **AAKIT_{AAKitName}.csv**
     2. [example/config/](config/)
@@ -40,7 +40,7 @@ Here is a C/C++ fast beamsteering example to control BBoxOne 5G and UD devices v
     * **include/tlkcore_lib.hpp** -> ../../lib_tlkcore_cpp/include/tlkcore_lib.hpp
   * [FBS] **libusrp_fbs.so** -> ../../lib_usrp_spi/libusrp_fbs.so
   * **include/usrp_fbs.hpp** -> ../../lib_usrp_spi/include/usrp_fbs.hpp
-* After libraries built, according to your Python environment, copy the extracted **lib/** & **logging.conf** from [TLKCore_release](/release) to **example/lib/**, and we already placed libs for *Python 3.8* as default.
+
 
 ## How to Run
 
