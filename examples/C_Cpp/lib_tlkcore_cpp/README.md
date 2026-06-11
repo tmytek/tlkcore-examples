@@ -16,15 +16,15 @@ To try it out, run these commands:
 `options` might be(modify to **your Python version** here):
 
     -Dpybind11_DIR=~/.local/share/cmake/pybind11
-    -DPYBIND11_PYTHON_VERSION=3.8
+    -DPYBIND11_PYTHON_VERSION=3.10
 
 See the [**CMakeLists.txt**](CMakeLists.txt) file to figure out how to set up a build system.
 
   ```shell
   # This Python version gets used for Python API (if requested) as well as
   # all the build-time Python scripts
-  set(PYTHON_MIN_VERSION "3.8")
-  set(PYBIND11_PYTHON_VERSION 3.8)
+  set(PYTHON_MIN_VERSION "3.10")
+  set(PYBIND11_PYTHON_VERSION 3.10)
   ```
 
 ## Guideline of C++ wrapper for TLKCore
