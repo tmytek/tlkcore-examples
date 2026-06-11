@@ -19,28 +19,11 @@ Reference from [tlkcore on pypi](https://pypi.org/project/tlkcore/), and launch 
 
 * Tip: [How to upgrade TLKCore if current version before v2.3.0](/examples/Python/Upgrade_guide.md)
 
-## Portable library package (original release method)
-
-The original release method, it `will be deprecated` after v2.3.0 release
-
-1. Check your Python version
-    * Windows: `python -V`
-    * Linux: `python3 -V`
-2. Download from [TLKCore_release](/release)
-3. Extract zip file.
-4. Install dependent Python packages from requirements.txt
-
-    `pip install -r requirements.txt`
-
-    * [Hint-1] Under Ubuntu, please install pip
-      * `sudo apt-get update`
-      * `sudo apt install python3-pip`
+* [Hint-1] Under Ubuntu, please install pip
+    * `sudo apt-get update`
+    * `sudo apt install python3-pip`
         * [PEP-668](https://peps.python.org/pep-0668/)
         * [error: externally-managed-environment](https://askubuntu.com/questions/1465218/pip-error-on-ubuntu-externally-managed-environment-%C3%97-this-environment-is-extern)
-      * `pip install --break-system-packages --user <username> -r requirements.txt`
-    * [Hint-2] Under Windows, sometimes you might met the following error: ![cpp_build_tool](/images/Python_cpp_build_tools.png)
-      * Please install [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version)
-
 
 # Installing Python3
 

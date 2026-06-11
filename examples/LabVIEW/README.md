@@ -5,11 +5,25 @@
 1. Python 3 ([Installing Python3](/Install.md#installing-python3))
 2. TLKCore ([Installing TLKCore](/Install.md#installing-tlkcore))
 3. According to [Integrating Python Code in LabVIEW](https://www.ni.com/en/support/documentation/supplemental/18/installing-python-for-calling-python-code.html#section-1736000138) to download LabVIEW to maps your Python version. `Please download 64bit version not 32bit`.
-   ![labview](/images/table_labview.svg)
+
+| LabVIEW Version | Python 3.12 | Python 3.11 | Python 3.10 | Python 3.9 | Python 3.8 |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **2026 Q1** | ✅ | ✅ | ✅ | ✅ | |
+| **2025 Q3,Q1** | ✅ | ✅ | ✅ | ✅ | |
+| **2024 Q3,Q1** | | | ✅ | ✅ | ✅ |
+| **2023 Q3,Q1** |  | | ✅ | ✅ | ✅ |
+| **2022 Q3** | | | | ✅ | ✅ |
+| **2021 SP1** | | | | ✅ | ✅ |
+| **2021** | | | | ✅ | ✅ |
+
+> Notice：`✅` mean supported。
 
 4. Download [main.py](/examples/Python/main.py) and create **files** directory.
-
-   ![files](/images/TLKCore_release_files.png)
+```
+├── files
+├── main.py
+└── README.md
+```
 
 5. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the target directory.
    * BBox calibration tables -> **{SN}_{Freq}GHz.csv**

@@ -14,7 +14,7 @@ namespace TLKCoreExample
             string[] array = env.Split(new[] { ";" }, StringSplitOptions.None);
             string pathToVirtualEnv = "";
             // Assign your Python version
-            string PyVer = "38";
+            string PyVer = "310";
             foreach (var path in array)
             {
                 if (path.Contains("Python"+ PyVer+"\\") && !path.Contains("Script")) {

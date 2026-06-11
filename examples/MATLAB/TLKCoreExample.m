@@ -8,7 +8,7 @@ if pe.Status == "NotLoaded"
     disp(" ----- Calling pyenv to check Python environment, and it's NotLoaded -> Start loading(OutOfProcess) -----")
 
     % PLEASE MODIFY TO YOUR PYTHON VERSION (3.8/3.10/...) HERE
-    pyenv(ExecutionMode="OutOfProcess")%, "Version", "3.8")
+    pyenv(ExecutionMode="OutOfProcess")%, "Version", "3.10")
 end
 disp(" ----- Calling a simple Pytohn function: py.list to load Python interpreter -----")
 py.list

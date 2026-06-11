@@ -28,7 +28,6 @@ Here is a C/C++ RIS example to control RIS devices via TLKCore.
 * There are some **linked files**, please build lib_tlkcore_cpp/ if necessary.
   * **libtlkcore_lib.so** -> ../../lib_tlkcore_cpp/libtlkcore_lib.so
     * **include/tlkcore_lib.hpp** -> ../../lib_tlkcore_cpp/include/tlkcore_lib.hpp
-* After libraries built, according to your Python environment, copy the extracted **../lib/** & **../logging.conf** from [TLKCore_release](/release) to **../lib/**, and we already placed libs for *Python 3.8* as default.
 
 ## How to Run
 

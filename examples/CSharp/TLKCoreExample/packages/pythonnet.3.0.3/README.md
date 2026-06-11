@@ -6,8 +6,8 @@ integrate Python engine and use Python libraries.
 -  You must set `Runtime.PythonDLL` property or `PYTHONNET_PYDLL` environment variable,
    otherwise you will receive `BadPythonDllException`
    (internal, derived from `MissingMethodException`) upon calling `Initialize`.
-   Typical values are `python38.dll` (Windows), `libpython3.8.dylib` (Mac),
-   `libpython3.8.so` (most other *nix). Full path may be required.
+   Typical values are `python310.dll` (Windows), `libpython3.10.dylib` (Mac),
+   `libpython3.10.so` (most other *nix). Full path may be required.
 -  Then call `PythonEngine.Initialize()`. If you plan to [use Python objects from
    multiple threads](https://github.com/pythonnet/pythonnet/wiki/Threading),
    also call `PythonEngine.BeginAllowThreads()`.
