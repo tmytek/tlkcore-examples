@@ -17,15 +17,14 @@
 * Python 3 ([Installing Python3](/Install.md#installing-python3))
 * TLKCore ([Installing TLKCore](/Install.md#installing-tlkcore))
 * Files for BBoxOne/Lite
-  1. Audo/Manually create the new directory named **files** to target directory.
-
-    * Installed from pip/whl
-
-      ![files](/images/TLKCore_release_files.png)
-
-    * Portable library
-
-      ![files](/images/TLKCore_release_files_portable.png)
+  1. Manually create the new directory named **files** to target directory.
+  ```
+  ├── files
+  ├── CustomBatchBeams.csv
+  ├── main.py
+  ├── README.md
+  └── Upgrade_guide.md
+  ```
 
   2. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the target directory.
    * BBox calibration tables -> **{SN}_{Freq}GHz.csv**

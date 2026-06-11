@@ -8,8 +8,11 @@
    ![labview](/images/table_labview.svg)
 
 4. Download [main.py](/examples/Python/main.py) and create **files** directory.
-
-   ![files](/images/TLKCore_release_files.png)
+```
+├── files
+├── main.py
+└── README.md
+```
 
 5. [BBoxOne/Lite] Copy your calibration & antenna tables into **files/** under the target directory.
    * BBox calibration tables -> **{SN}_{Freq}GHz.csv**
