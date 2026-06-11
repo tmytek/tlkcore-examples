@@ -57,13 +57,17 @@ try:
         RIS_Dir,
         RIS_ModuleConfig,
         CellRFMode,     # For CloverCell series AiP
-        POLARIZATION    # For CloverCell series AiP
+        POLARIZATION,    # For CloverCell series AiP
+        POLARIZATION_DEGSHIFT,  # For BBoxDuo series (legacy)
+        POLARIZATION_TYPE,      # For BBoxDuo series (supports synthesis polarization)
+        AzElAngle,
+        ThetaPhiAngle
     )
 except Exception as e:
     myos = platform.system()
     d = os.path.join(sys.path[0], 'tlkcore',)
-    if ((myos == 'Windows' and check_ex_files(d), ".so")
-        or (myos == 'Linux' and check_ex_files(d), ".pyd")):
+    if ((myos == 'Windows' and check_ex_files(d, ".so"))
+        or (myos == 'Linux' and check_ex_files(d, ".pyd"))):
         print(f"[Main] Import the wrong library for {myos}")
     else:
         print("[Main] Import path has something wrong")
@@ -152,11 +156,21 @@ def wrapper(*args, **kwarg):
         return ret.RetData
 
 def startService(root:str=root_path, direct_connect_info:list=None, dfu_image:str=""):
-    """ALL return type from TLKCoreService always be RetType,
-    and it include: RetCode, RetMsg, RetData,
-    you could fetch service.func().RetData
-    or just print string result directly if you make sure it always OK"""
-    # You can assign a new root directory into TLKCoreService() to change files and log directory
+    """
+    Entry point: initialize TLKCoreService, connect device(s), then run testDevice().
+
+    There are two connection modes:
+      - Scan mode (default): automatically scans all available interfaces for devices.
+      - Direct connect mode: skips scanning by accepting a known SN, IP, and device type.
+        Use --dc SN Address DevType on the command line to activate this mode.
+
+    USER CONFIGURATION — the variables below are the most common ones to change:
+      - skip_builtin_tables : set True to skip loading built-in calibration and AAKit tables (not recommended for normal use)
+      - interface           : choose which interface(s) to scan (see options below)
+    """
+    # ----------------------------------------------------------------
+    # Resolve working root directory (for files/ and logs/ sub-folders)
+    # ----------------------------------------------------------------
     if Path(root).exists() and Path(root).absolute() != Path(root_path):
         service_root = root
     else:
@@ -167,41 +181,72 @@ def startService(root:str=root_path, direct_connect_info:list=None, dfu_image:st
     if not service.running:
         return False
 
+    # ----------------------------------------------------------------
+    # USER CONFIGURATION — modify the values below to suit your needs
+    # ----------------------------------------------------------------
+
+    # Skip loading built-in tables (Calibration and AAKit) during initialization.
+    #
+    # Set to True to bypass the requirement for table files in the 'files/' directory.
+    # Note:
+    # - Beamforming functions will be UNAVAILABLE as they require calibration data.
+    # - Single-channel control remains functional for manual gain/phase adjustments.
+    # - Commonly used for initial hardware verification or when providing custom tables post-init.
+    skip_builtin_tables = False
+
+    # ----------------------------------------------------------------
+    # Connection: Direct connect mode vs. Scan mode
+    # ----------------------------------------------------------------
+
     if isinstance(direct_connect_info, list) and len(direct_connect_info) == 3:
-        # For some developers just connect device and the address always constant (static IP or somthing),
-        # So we provide a extend init function to connect device driectly without scanning,
-        # the parameter address and devtype could fetch by previous results of scanning.
-        # The following is simple example, please modify it
-        kw = {'sn': direct_connect_info[0], 'address':direct_connect_info[1], 'dev_type':int(direct_connect_info[2]), 'is_custom_calibration': False}
-        # Parameter: SN, Address, Devtype
+        # --- Direct connect mode (activated via --dc SN Address DevType) ---
+        # Use this when your device has a fixed/known address (e.g. static IP or COM port).
+        # SN, address, and dev_type can be obtained from a previous scan result.
+        kw = {
+                'sn':                 direct_connect_info[0],  # Serial number string
+                'address':            direct_connect_info[1],  # IP address or COM port (e.g. "192.168.100.2")
+                'dev_type':           int(direct_connect_info[2]),  # Integer device type code
+                'is_custom_calibration': skip_builtin_tables
+            }
         ret = service.initDev(**kw)
         if ret.RetCode is RetCode.OK:
             kw['service'] = service
             kw['dfu_image'] = dfu_image
+            kw.pop('is_custom_calibration', None) # Remove this parameter which is only for direct init
             testDevice(**kw)
     else:
-        # Please select or combine your interface or not pass any parameters: service.scanDevices()
-        interface = DevInterface.ALL #DevInterface.LAN | DevInterface.COMPORT
+        # --- Scan mode ---
+        # Choose which interface(s) to scan. Combine with | or use DevInterface.ALL.
+        # Options: DevInterface.LAN | DevInterface.COMPORT | DevInterface.ALL
+        interface = DevInterface.ALL
         logger.info("Searching devices via: %s" %interface)
         ret = service.scanDevices(interface=interface)
 
         scan_dict = service.getScanInfo().RetData
-        i = 0
-        for sn, (addr, devtype, in_dfu) in list(scan_dict.items()):
-            i+=1
+        for i, (sn, (addr, devtype, in_dfu)) in enumerate(scan_dict.items(), start=1):
             logger.info("====== Dev_%d: %s, %s, %d, %r ======" %(i, sn, addr, devtype, in_dfu))
 
-            # Init device, the first action for device before the operations
-            if service.initDev(sn, is_custom_calibration=False).RetCode is not RetCode.OK and not in_dfu:
+            # initDev() must be called before any other operation.
+            # If initialization fails and the device is not already in DFU mode, skip it.
+            if service.initDev(sn, is_custom_calibration=skip_builtin_tables).RetCode is not RetCode.OK and not in_dfu:
                 continue
             testDevice(sn, service, dfu_image, addr, devtype, in_dfu)
 
     return True
 
 def testDevice(sn, service, dfu_image:str="", address:str="", dev_type:int=0, in_dfu=False):
-    """ A simple query operations to device """
+    """
+    Query basic device info and dispatch to the appropriate test function.
+
+    The test function is selected automatically based on the device type name returned by
+    getDevTypeName(). The mapping is:  "test" + dev_name  → e.g. testBBox, testRIS, testUDM ...
+
+    Supported device name suffixes (must match a function defined below):
+        PD, UDBox, UDM, UDB, BBox, BBoard, CloverCell, RIS, BBoxDuo
+
+    If dfu_image is provided, startDFU() is called instead of a test function.
+    """
     dev_name = service.getDevTypeName(sn)
-    # print(dev_name)
 
     fw_ver = None
     hw_ver = None
@@ -215,25 +260,24 @@ def testDevice(sn, service, dfu_image:str="", address:str="", dev_type:int=0, in
         logger.info("FW ver: %s" %fw_ver)
         logger.info("HW ver: %s" %hw_ver)
 
-    # Process device testing, runs a device test function likes testPD, testBBox, testUD ...etc
-    # 1. parameters
+    # Build the common keyword arguments passed to every test function
     kw = {}
     kw['sn'] = sn
     kw['service'] = service
 
-    # 2. Test function name
     if len(dfu_image) > 0:
-        while not in_dfu:
+        # --- DFU path ---
+        # Try to read bootloader version; if the device is already in DFU mode the query
+        # will fail, which is expected — we just mark in_dfu=True and continue.
+        if not in_dfu:
             ret = service.queryLoaderVer(sn)
             if ret.RetCode is not RetCode.OK:
                 logger.warning("Error to query bootloader version: \'%s\', maybe it's in DFU mode" %ret.RetMsg)
                 in_dfu = True
-                break
-            loader_ver = ret.RetData
-            logger.info(f"[DFU] Bootloader version: {loader_ver}")
-            break
+            else:
+                loader_ver = ret.RetData
+                logger.info(f"[DFU] Bootloader version: {loader_ver}")
 
-        # DFU function
         kw['dfu_image'] = dfu_image
         kw['dfu_dev_info'] = {
                             "sn": sn,
@@ -244,19 +288,26 @@ def testDevice(sn, service, dfu_image:str="", address:str="", dev_type:int=0, in
                             "hw_ver": hw_ver,
                             "loader_ver": loader_ver
                         }
-        f = globals()["startDFU"]
+        func_name = "startDFU"
     else:
-        if dev_type == 32:
-            dev_name = "BBoxDuo"
-        elif 'BBoard' in dev_name:
+        # --- Normal test path ---
+        # Normalize device name to match one of the test* functions defined below.
+        if 'BBoard' in dev_name:
             dev_name = "BBoard"
-        elif 'BBox' in dev_name:
+        elif 'BBox' in dev_name and 'Duo' not in dev_name:
             dev_name = "BBox"
-        f = globals()["test"+dev_name]
 
-    # Start testing
+        func_name = "test" + dev_name
+        if func_name not in globals():
+            logger.error("No test function found for device '%s' (looked for '%s'). "
+                         "Please add a %s() function or update the name mapping above."
+                         % (dev_name, func_name, func_name))
+            service.DeInitDev(sn)
+            return
+
+    # Run the selected function, then release the device
+    f = globals()[func_name]
     f(**kw)
-
     service.DeInitDev(sn)
 
 """ ----------------- Test examples for TMY devices ----------------- """
@@ -319,6 +370,12 @@ __caliConfig = {
 }
 
 def testPD(sn, service):
+    """Power Detector (PD) test example.
+
+    Uploads the calibration config for each frequency band defined in __caliConfig,
+    then polls voltage and power readings, and ends with a reboot test.
+    After the reboot it enters a continuous polling loop — press Ctrl+C to exit.
+    """
     for freq, config in __caliConfig.items():
         logger.info("Process cali %s: %s" %(freq, service.setCaliConfig(sn, {freq: config})))
 
@@ -337,6 +394,12 @@ def testPD(sn, service):
             break
 
 def testUDBox(sn, service):
+    """Up/Down Converter Box (UDBox) test example.
+
+    Toggle flags at the top of this function to choose what to test:
+      testUDState  — get/set individual switch states (CH1, ext ref source, etc.)
+      testUDFreq   — read and configure LO/RF/IF/BW frequencies (in kHz)
+    """
     logger.info("PLO state: %r" %service.getUDState(sn, UDState.PLO_LOCK).RetData)
     logger.info("All state: %r" %service.getUDState(sn).RetData)
 
@@ -390,14 +453,26 @@ def testUDBox(sn, service):
         logger.info("Get current freq: %s" %service.getUDFreq(sn))
 
 def testUDM(sn, service):
+    """UDM test entry point — delegates to testUDC() with name='UDM'."""
     return testUDC(sn, service)
 
 def testUDB(sn, service):
+    """UDB test entry point — queries all sub-SNs, then delegates to testUDC() with name='UDB'.
+
+    UDB has an extra LO input/output test (testLOInOut) that UDM does not.
+    """
     from tlkcore import UD_SN_TYPE
     logger.info("SN: %s" %service.querySN(sn, UD_SN_TYPE.ALL))
     return testUDC(sn, service, "UDB")
 
 def testUDC(sn, service, name="UDM"):
+    """Shared test logic for UDM and UDB devices.
+
+    Toggle flags at the top of this function to choose what to test:
+      testFreq      — read and set LO/RF/IF frequencies
+      testRefSource — toggle between INTERNAL and EXTERNAL reference clock
+      testLOInOut   — (UDB only) toggle LO port between normal / output / input mode
+    """
     # Just passing parameter via another way
     param = {"sn": sn}
     param['item'] = UDMState.REF_LOCK | UDMState.SYSTEM | UDMState.PLO_LOCK
@@ -420,6 +495,8 @@ def testUDC(sn, service, name="UDM"):
 
     testFreq = True
     testRefSource = True
+    # testLOInOut is only relevant for UDB; it is False by default for UDM
+    testLOInOut = False
     if name == "UDB":
         testLOInOut = True
 
@@ -494,6 +571,18 @@ def testUDC(sn, service, name="UDM"):
         logger.info("Change UDB LO to %s: %s" %(lo_cfg, ret))
 
 def testBBox(sn, service):
+    """BBox One / BBox Lite test example.
+
+    Steps performed: set RF mode → set operating frequency → select AAKit → configure
+    board gain range, then run the sub-tests selected by the flags below.
+
+    Toggle flags to choose what to test:
+      testChannels — individual channel gain / phase / switch control
+      testBeam     — beam steering by angle (requires an AAKit to be selected)
+      testFBS      — fast beam steering (FBS) mode with beam pattern programming
+
+    Tip: call getAAKitList() to see which AAKit files are present in files/.
+    """
     logger.info("MAC: %s" %service.queryMAC(sn))
     logger.info("Static IP: %s" %service.queryStaticIP(sn))
     # Sample to passing parameter with dict
@@ -580,13 +669,22 @@ def testBBox(sn, service):
     logger.info("Board:%d common gain range: %s, and element gain limit: %s"
                     %(board, common_gain_rng, ele_dr_limit))
 
-    # Test example options, you can decide what to test
+    # ----------------------------------------------------------------
+    # USER CONFIGURATION — set True/False to enable or disable each test section
+    # Note: testBeam requires an AAKit to be selected (aakit_selected must be True).
+    #       If no matching AAKit is found, the device falls back to PhiA mode.
+    # ----------------------------------------------------------------
     testChannels = False
     testBeam = False
     testFBS = True
 
     if testChannels:
-        """Individual gain/phase/switch control example, there are some advanced test options, you can decide what to test"""
+        """
+        Individual gain/phase/switch control example, there are some advanced test options, you can decide what to test
+            - testGain: set IC channel gain with/without common gain, and it can check gain range limit
+            - testGainPhase: set channel gain and phase together, and it must set all channels together, otherwise it will return error
+            - testSwitch: enable/disable specific channel, and it can check channel switch status, but it can NOT set switch status for all channels together
+        """
         testGain = True
         testGainPhase = True
         testSwitch = False
@@ -722,6 +820,13 @@ def testBBox(sn, service):
         logger.info("Fast Beam Steering Mode done")
 
 def testBBoard(sn, service):
+    """BBoard test example.
+
+    Toggle flags to choose what to test:
+      testTC        — read temperature ADC and get/set TC (temperature compensation) config
+      testDis       — disable and re-enable individual antenna channels
+      testGainPhase — set common gain step and per-channel gain/phase steps
+    """
     mode = RFMode.TX
     logger.info("Set RF mode: %s" %service.setRFMode(sn, mode).name)
     logger.info("Get RF mode: %s" %service.getRFMode(sn))
@@ -763,6 +868,15 @@ def testBBoard(sn, service):
         logger.info("Set ch%d with gain step(%d): %s" %(ch, gs, service.setChannelGainStep(sn, ch, gs)))
 
 def testCloverCell(sn, service):
+    """CloverCell series AiP test example.
+
+    Important: CloverCell uses CellRFMode instead of RFMode, and all gain/phase/beam
+    operations require a POLARIZATION argument (HORIZON or VERTICAL).
+
+    Toggle flags to choose what to test:
+      testChannels — individual channel gain / phase / switch control per polarization
+      testBeam     — beam steering by angle per polarization
+    """
     # Please use CellRFMode to replace RFMode
     logger.info("Get current RF mode: %s" %service.getRFMode(sn))
     mode = CellRFMode.TX
@@ -881,6 +995,16 @@ def testCloverCell(sn, service):
     logger.info("Set RF mode: %s" %service.setRFMode(sn, mode).name)
 
 def testRIS(sn, service):
+    """Reconfigurable Intelligent Surface (RIS) test example.
+
+    Toggle flags to choose what to test:
+      testAngleElseImport — True: set beam by incident/reflection angles (with optional tile-up);
+                            False: import a custom pattern from a CSV file
+      testTileUp          — (only when testAngleElseImport=True) True: control 4 tiled modules;
+                            False: control a single module
+
+    Frequency steps for RIS are every 100 MHz — adjust the adjust_mhz value accordingly.
+    """
     logger.info("Get Net config: %s" %service.getNetInfo(sn))
     # logger.info("Set Net: %s" %service.setIPMode(sn, 0))
     # logger.info("Set Net: %s" %service.setSubnetMsk(sn, "255.255.255.0"))
@@ -978,12 +1102,24 @@ def testRIS(sn, service):
                 i+=1
 
 def testBBoxDuo(sn, service):
+    """BBox 8x8 Duo test example.
+
+    Demonstrates the main get/set operations for BBoxDuo:
+      - RF/LO frequency configuration (values are in Hz)
+      - Reference source selection
+      - Beam steering by theta/phi angles
+      - TRx mode switching and user-defined gain (attenuation) setting
+    """
     logger.info("MAC: %s" %service.queryMAC(sn))
     logger.info("Static IP: %s" %service.queryStaticIP(sn))
+    logger.info("FPGA version: %s" %service.queryFpgaVer(sn))
 
-    logger.info("========= BBox Duo Get functions =========")
+    logger.info("========= BBox 8x8 Duo Get functions =========")
 
-    ret = service.getRfFreq(sn).RetData
+    ret = service.getSysStatus(sn).RetData
+    logger.info("Get system status: %s" % ret)
+
+    ret = service.getRFFreq(sn).RetData
     logger.info("Get RF freq: %s kHz" % ret)
 
     ret = service.getLoFreq(sn).RetData
@@ -995,37 +1131,75 @@ def testBBoxDuo(sn, service):
     ret = service.getRefSource(sn).RetData
     logger.info("Get Ref source: %s" % ret)
 
-    ret = service.getTRx(sn).RetData
-    logger.info("Get TRx status: %s" % ret)
+    ret = service.getRFMode(sn).RetData
+    logger.info("Get RF mode: %s" % ret)
 
-    ret = service.checkHarmonic(sn, lo_freq = 22500000, if_freq = 5000000, bandwidth = 2000000).RetData
+    ret = service.checkHarmonic(sn, lo_freq=22500000, if_freq=5000000, bandwidth=2000000).RetData
     logger.info("Check Harmonic: %s" % ret)
 
-    logger.info("========= BBox Duo Set functions =========")
+    logger.info("========= BBox 8x8 Duo Set functions =========")
 
-    ret = service.setRfFreq(sn, 28000000).RetData
+    testAzEl = True # Set True to test AzElAngle or False to test ThetaPhiAngle
+
+    ret = service.setRFFreq(sn, 28000000).RetData
     logger.info("Set RF freq to 28000000 kHz: %s" % ret)
 
     ret = service.setLoFreq(sn, 22500000).RetData
-    logger.info("Set LO freq to 22500000 kHz: %s" % ret)
+    logger.info("Set LO freq to 22500000 kHz (22.5 GHz): %s" % ret)
 
     ret = service.setRefSource(sn, 0).RetData
-    logger.info("Set Ref source to External 10M: %s" % ret)
+    logger.info("Set Ref source to Internal: %s" % ret)
 
-    ret = service.setBeam(sn, theta = 30, phi = 60).RetData
-    logger.info("Set Beam to theta=30, phi=60: %s" % ret)
+    # Example for setting Beam Angle (polar, rf_mode, angle, gain_db)
+    if testAzEl:
+        # Single polarization — one SETBEAM command
+        ret = service.setBeamAngle(sn, POLARIZATION_TYPE.POL_1, CellRFMode.TX, AzElAngle(azimuth=45.0, elevation=30.0), gain_db=10)
+        logger.info("Set Beam Angle POL_1 (AzEl): %s" % ret)
 
-    ret = service.setTRx(sn, 2).RetData
-    logger.info("Set TRx to 2 (RX): %s" % ret)
+        # Synthesis polarization — two SETBEAM commands (POL_1 offset=0, POL_2 offset=180)
+        ret = service.setBeamAngle(sn, POLARIZATION_TYPE.POL_H, CellRFMode.TX, AzElAngle(azimuth=45.0, elevation=30.0), gain_db=10)
+        logger.info("Set Beam Angle POL_H (AzEl, synthesis): %s" % ret)
+    else:
+        # Single polarization — one SETBEAM command
+        ret = service.setBeamAngle(sn, POLARIZATION_TYPE.POL_1, CellRFMode.TX, ThetaPhiAngle(theta=30, phi=60), gain_db=10)
+        logger.info("Set Beam Angle POL_1 (ThetaPhi): %s" % ret)
 
-    ret = service.setRxUdAtt(sn, 0).RetData
-    logger.info("Set RX user attenuation to 0: %s" % ret)
+        # Synthesis polarization — two SETBEAM commands (POL_1 offset=0, POL_2 offset=90)
+        ret = service.setBeamAngle(sn, POLARIZATION_TYPE.POL_RC, CellRFMode.TX, ThetaPhiAngle(theta=30, phi=60), gain_db=10)
+        logger.info("Set Beam Angle POL_RC (ThetaPhi, synthesis): %s" % ret)
 
-    ret = service.setTxUdAtt(sn, 0).RetData
-    logger.info("Set TX user attenuation to 0: %s" % ret)
+    ret = service.setRFMode(sn, CellRFMode.RX).RetData
+    logger.info("Set RF mode to RX: %s" % ret)
+
+    ret = service.setUdGain(sn, POLARIZATION_TYPE.POL_1, CellRFMode.RX, 0).RetData
+    logger.info("Set RX user gain to 0 dB: %s" % ret)
+
+    ret = service.setUdGain(sn, POLARIZATION_TYPE.POL_1, CellRFMode.TX, 0).RetData
+    logger.info("Set TX user gain to 0 dB: %s" % ret)
+
+    # Example for direct BFIC config control
+    testBficConfig = False
+    if testBficConfig:
+        bfic_config = {
+            "tx": {
+                "pol_1": {
+                    "1": {"enable": [1, 1, 1, 1], "com_gain_db": 15, "ele_gain_db": [14, 13, 12, 2], "phase_deg": [1, 10, 40, 63]},
+                    "2": {"enable": [1, 1, 1, 1], "com_gain_db": 15, "ele_gain_db": [14, 13, 12, 2], "phase_deg": [1, 10, 40, 63]}
+                },
+                "pol_2": {
+                    "3": {"enable": [1, 1, 1, 1], "com_gain_db": 15, "ele_gain_db": [14, 13, 12, 2], "phase_deg": [1, 10, 40, 63]},
+                    "4": {"enable": [1, 1, 1, 1], "com_gain_db": 15, "ele_gain_db": [14, 13, 12, 2], "phase_deg": [1, 10, 40, 63]}
+                }
+            }
+        }
+        ret = service.setBficConfig(sn, bfic_config)
+        logger.info("Set BFIC config: %s" % ret)
+
+    ret = service.setAllBficEnable(sn, POLARIZATION_TYPE.POL_1, CellRFMode.TX, True)
+    logger.info("Enable all BFIC beams (POL_1, TX): %s" % ret)
 
 def startDFU(sn, service, dfu_image:str, dfu_dev_info:dict):
-    """A example to process DFU"""
+    """An example to process DFU (Device Firmware Update)."""
     if len(dfu_image) <= 0:
         logger.error("[DFU] image path is wrong -> exit")
         return
