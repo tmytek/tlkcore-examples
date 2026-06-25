@@ -38,24 +38,20 @@ TARGET_PATTERN_ID = 1
 def set_fps_config(devA, pattern_id: int):
     """
     Set RIS_FPS Pattern ID and trigger FPS.
-    (Fixed typos from the original snippet: pattern_ids -> pattern_id, patten_id -> pattern_id)
     """
     logger.info(f"==== Set RIS_FPS Pattern ID:{pattern_id} ====")
 
-    # Extract low and high bytes
+    # Extract to low and high bytes
     low_byte = int(pattern_id) & 0xFF
     high_byte = (int(pattern_id) >> 8) & 0xFF
+    cmd = bytes.fromhex(f"08 F0 {low_byte:02X} {high_byte:02X}")
 
-    # Construct the first SPI data packet (Convert hex string to bytes)
-    pattern = bytes.fromhex(f"08 F0 {low_byte:02X} {high_byte:02X}")
-
-    # Execute single SPI read/write
-    # Note: spiMaster_SingleReadWrite usually returns bytes received from the slave device if needed
-    devA.spiMaster_SingleReadWrite(pattern)
+    # Set pattern
+    devA.spiMaster_SingleReadWrite(cmd)
 
     # Trigger FPS
-    pattern_trigger = bytes.fromhex("08 05 02")
-    devA.spiMaster_SingleReadWrite(pattern_trigger)
+    cmd = bytes.fromhex("08 05 02")
+    devA.spiMaster_SingleReadWrite(cmd)
 
 
 def main():
