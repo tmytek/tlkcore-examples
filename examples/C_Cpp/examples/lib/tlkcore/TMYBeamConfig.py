@@ -2,38 +2,52 @@ import csv
 import logging
 import os
 
-from tlkcore.TMYPublic import RetCode, RFMode, BeamType
+from .TMYPublic import RetCode, RFMode, BeamType
 
 logger = logging.getLogger("TMYBeamConfig")
 
+
+# Public API definition
+__all__ = [
+    "TMYBeamConfig",
+]
+
+
 class TMYBeamConfig():
-    def __init__(self, sn, service, path="CustomBatchBeams.csv"):
+    def __init__(self, sn:str, service, path="CustomBatchBeams.csv", delimiter=","):
         """
-            Test for parsing batch beam configs then apply it,
-            please edit gains to feet available gain range for your BBox
+        Test for parsing batch beam configs then apply it,
+        please edit gains to feet available gain range for your BeamForm devices, e.g., BBoxOne
+
+        Args:
+            sn (str): Device serail number
+            service (_type_): TLKCoreService instance
+            path (str, optional): _description_. Defaults to "CustomBatchBeams.csv".
+            delimiter (str, optional): delimiter in csv. Defaults to ",".
         """
+
         self.__sn = sn
         self.__service = service
         self.__config = None
         if not os.path.exists(path):
             logger.error("Not exist: %s" %path)
             return
-        self.__config = self.__parse(path)
+        self.__config = self.__parse(path, delimiter)
 
-    def __parse(self, path):
+    def __parse(self, path:str, delimiter:str):
         logger.info("Start to parsing...")
         try:
             aakit_selected = True if self.__service.getAAKitInfo(self.__sn).RetCode is RetCode.OK else False
             logger.info("[AppyBatchBeams] AAKit %sselected" %"" if aakit_selected else "NOT ")
 
             file = open(path)
-            reader = csv.reader(_.replace('\x00', '') for _ in file)
+            reader = csv.reader((_.replace('\x00', '') for _ in file), delimiter=delimiter)
             custom = { 'TX': {}, 'RX': {}}
             # Parsing CSV
             for col in reader:
                 if len(col) == 0 or len(col[0]) == 0 or col[0] == 'Mode':
                     continue
-                # col = line.split(',')
+                # print(col)
                 mode_name = col[0]
                 beamID = int(col[1])
                 beam_type = BeamType(int(col[2]))
@@ -97,6 +111,9 @@ class TMYBeamConfig():
                 for id in [*custom[mode_name]]:
                     beamID = int(id)
                     ret = service.getBeamPattern(sn, mode, beamID)
+                    if ret.RetCode is not RetCode.OK:
+                        logger.error("Get [%s]BeamID %02d failed: %s" %(mode_name, beamID, ret.RetMsg))
+                        return False
                     beam = ret.RetData
                     logger.debug("Get [%s]BeamID %02d info: %s" %(mode_name, beamID, beam))
 
@@ -105,7 +122,7 @@ class TMYBeamConfig():
                     logger.info("Get [%s]BeamID %02d custom: %s" %(mode_name, beamID, value))
 
                     if beam_type is BeamType.BEAM:
-                        if beam['beam_type'] != beam_type.value:
+                        if beam is None or beam['beam_type'] != beam_type.value:
                             # Construct a new config
                             beam = {'beam_config': {'db': dr[mode.name][1], 'theta': 0, 'phi':0 }}
                         config = beam['beam_config']
@@ -116,7 +133,7 @@ class TMYBeamConfig():
                         if len(value[2]) > 0:
                             config['phi'] = int(value[2])
                     else: #CHANNEL
-                        if beam['beam_type'] != beam_type.value:
+                        if beam is None or beam['beam_type'] != beam_type.value:
                             # Construct a new config
                             beam = {'channel_config': {}}
                             for ch in range(1, channel_count+1):
@@ -197,8 +214,8 @@ class TMYBeamConfig():
         logger.info("Apply beam configs to %s successfully" %sn)
         return True
 
-if __name__ == '__main__':
-    import logging.config
-    if not os.path.isdir('tlk_core_log/'):
-        os.mkdir('tlk_core_log/')
-    logging.config.fileConfig('logging.conf')
+# if __name__ == '__main__':
+#     import logging.config
+#     if not os.path.isdir('tlk_core_log/'):
+#         os.mkdir('tlk_core_log/')
+#     logging.config.fileConfig('logging.conf')

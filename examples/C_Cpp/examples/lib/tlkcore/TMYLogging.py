@@ -1,9 +1,16 @@
 from datetime import datetime
 import logging
 import logging.config
-import os
 
-import tlkcore.TMYUtils as Utils
+from pathlib import Path
+from .TMYUtils import _Utils
+
+
+# Public API definition
+__all__ = [
+    "TMYLogging",
+]
+
 
 class TMYLogging():
     """
@@ -100,13 +107,29 @@ class TMYLogging():
     }
 
     def __init__(self):
-        """TLKCoreService calls TMYLogging.py if change another root path"""
+        """
+        TLKCoreService calls TMYLogging.py if change another root path
+        """
         print('TMYLogging __init__')
 
     def applyLogger(self):
+        """
+        Apply logging configuration
+        """
         # Update current dict
-        print("applyLogger: %s" %Utils.root)
-        self._LOGGING_CONFIG["handlers"]["file"]["filename"] = os.path.join(Utils.root, self._LOGGING_CONFIG["handlers"]["file"]["filename"])
-        self._LOGGING_CONFIG["handlers"]["libFile"]["filename"] = os.path.join(Utils.root, self._LOGGING_CONFIG["handlers"]["libFile"]["filename"])
+        print(f"Apply logger path to : {_Utils._get_log_dir()}")
+
+        # Get log directory (guaranteed to have value after _initRoot validation)
+        log_dir_path = _Utils._get_log_dir()
+        log_dir = Path(log_dir_path)
+        log_dir.mkdir(parents = True, exist_ok = True)
+
+        # Update filename path to use the log directory
+        filename = self._LOGGING_CONFIG["handlers"]["file"]["filename"]
+        self._LOGGING_CONFIG["handlers"]["file"]["filename"] = str(log_dir / Path(filename).name)
+
+        # Update libFile handler path as well
+        lib_filename = self._LOGGING_CONFIG["handlers"]["libFile"]["filename"]
+        self._LOGGING_CONFIG["handlers"]["libFile"]["filename"] = str(log_dir / Path(lib_filename).name)
 
         logging.config.dictConfig(self._LOGGING_CONFIG)
