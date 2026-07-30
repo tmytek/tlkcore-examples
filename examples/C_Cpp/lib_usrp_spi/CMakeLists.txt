@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5.1)
 project(usrp_fbs CXX)
 
 ### Configure Compiler ########################################################
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" AND ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
     set(CMAKE_EXE_LINKER_FLAGS "-lthr ${CMAKE_EXE_LINKER_FLAGS}")
@@ -16,7 +16,7 @@ endif()
 option(UHD_USE_STATIC_LIBS OFF)
 
 # To add UHD as a dependency to this project, add a line such as this:
-find_package(UHD 4.1.0 REQUIRED)
+find_package(UHD 4.10.0 REQUIRED)
 # The version in ^^^^^  here is a minimum version.
 # To specify an exact version:
 #find_package(UHD 4.0.0 EXACT REQUIRED)

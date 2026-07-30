@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5...3.18)
 project(tmy_dev_example CXX)
 
 ### Configure Compiler ########################################################
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 # set(CMAKE_CXX_FLAGS "-g")
 
 ### Set up build environment ##################################################
@@ -35,7 +35,23 @@ if(FBS)
     message(STATUS "Set Beam control from SPI")
     # Add definition into source code
     target_compile_definitions(tlkcore_fbs PRIVATE TMY_FBS)
-    target_link_libraries(tlkcore_fbs usrp_fbs)
+
+    # usrp_fbs is linked as a plain .so here (not a CMake target from
+    # add_subdirectory), so its UHD/Boost symbols don't propagate automatically
+    # and must be resolved again for this executable.
+    find_package(UHD 4.10.0 REQUIRED)
+    set(UHD_BOOST_REQUIRED_COMPONENTS
+        program_options
+        system
+        thread
+    )
+    set(BOOST_MIN_VERSION 1.65)
+    include(UHDBoost)
+
+    include_directories(${Boost_INCLUDE_DIRS} ${UHD_INCLUDE_DIRS})
+    link_directories(${Boost_LIBRARY_DIRS})
+
+    target_link_libraries(tlkcore_fbs usrp_fbs ${UHD_LIBRARIES} ${Boost_LIBRARIES})
 else(FBS)
     # Direct to set beam via etherent
     message(STATUS "Set Beam control directly")

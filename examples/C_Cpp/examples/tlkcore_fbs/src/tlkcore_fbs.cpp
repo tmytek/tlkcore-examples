@@ -103,7 +103,7 @@ int fpga_conftrol(tlkcore_lib::tlkcore_ptr service, std::string sn)
             continue;
         }
     } while (1);
-#else
+#elif 0
     // Case2: Auto switching all beams, please DO NOT print any msg after running
     printf("Please press enter to start:");
     fgets(buf, sizeof(buf), stdin);
@@ -112,6 +112,24 @@ int fpga_conftrol(tlkcore_lib::tlkcore_ptr service, std::string sn)
     for (int i=0; i<length; i++) {
         usrp_select_beam_id(MODE_TX, beams[i]);
     }
+#else
+    // Case3: BBox 8x8 Duo - manually enter FBS_ADDR (Fast Command Mode 2, A=B phase, 0-511)
+    int fbs_addr = 0;
+    do {
+        memset(buf, 0, sizeof(buf));
+        printf("Please enter the FBS_ADDR (0-511) or quit(\'q\'): ");
+
+        fgets(buf, sizeof(buf), stdin);
+        if (buf[0] == 'q') { // Begin with 'q'
+            printf("Break and quit loop\r\n");
+            break;
+        }
+        printf("You entered: %s", buf);
+        fbs_addr = atoi(buf);
+        if (usrp_select_fbs_addr(MODE_TX, fbs_addr) <= 0) {
+            continue;
+        }
+    } while (1);
 #endif
 
     // Setup BBox back from fast parallel mode

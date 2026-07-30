@@ -32,6 +32,14 @@ static const size_t reg_address[][2] = { {0x58, 0x78}, {0x54, 0x70} };
 
 static const size_t num_bits = 12;
 
+// BBox 8x8 Duo Fast Command Mode SPI framing (Fast write, FBS_ADDR word)
+// Frame = prefix[4:0] | p | 0 | b | FBS_ADDR[8:0]  (17 bits total)
+static const uint32_t FBS_TX_PREFIX      = 0x1E; // 0b11110
+static const uint32_t FBS_RX_PREFIX      = 0x1C; // 0b11100
+static const uint32_t FBS_P_BIT          = 1;    // parity_en=0 assumed -> p=1
+static const uint32_t FBS_B_BIT          = 0;    // STROBE not used -> b=0
+static const size_t   FBS_ADDR_CMD_LENGTH = 17;
+
 static inline uint32_t GPIO_BIT(const size_t x)
 {
     return (1 << x);
@@ -279,6 +287,44 @@ int usrp_select_beam_id(int mode, int id)
 
     if (debug) {
         std::cout << "[USRP] BeamID:" << id << " selected" << std::endl;
+    }
+    return EXIT_SUCCESS;
+}
+
+/*
+ * BBox 8x8 Duo: Fast Command Mode 2 (A=B phase) write.
+ * Sets a single FBS_ADDR (0-511) applied to both A/B channels for TX or RX.
+ */
+int usrp_select_fbs_addr(int mode, int addr)
+{
+    // Check addr is in range
+    if (addr < 0 || addr > 511) {
+        std::cout << "[USRP] Invalid FBS_ADDR: " << addr << std::endl;
+        return EXIT_FAILURE;
+    }
+
+    // Switch Tx/Rx mode
+    if (rf_mode != mode) {
+        usrp_set_mode(mode);
+    }
+
+    uint32_t prefix = (mode == 0 ? FBS_TX_PREFIX : FBS_RX_PREFIX);
+    uint32_t fbs_payload = (prefix << 12) | (FBS_P_BIT << 11) | (FBS_B_BIT << 9) | (uint32_t(addr) & 0x1FF);
+
+    if (debug) {
+        std::cout << "[USRP] Writing FBS_ADDR payload: 0x" << std::hex << fbs_payload
+                   << " with length " << std::dec << FBS_ADDR_CMD_LENGTH << " bits" << std::endl;
+    }
+
+    // Do the SPI transaction.
+    spi_ref->write_spi(0, spi_config, fbs_payload, FBS_ADDR_CMD_LENGTH);
+
+    // TMY LDB: low pulse
+    usrp->set_gpio_attr(gpio_bank, "OUT", 0, GPIO_BIT(GPIO_DEFAULT_LDB_PIN));
+    usrp->set_gpio_attr(gpio_bank, "OUT", GPIO_BIT(GPIO_DEFAULT_LDB_PIN), GPIO_BIT(GPIO_DEFAULT_LDB_PIN));
+
+    if (debug) {
+        std::cout << "[USRP] FBS_ADDR:" << addr << " (mode=" << mode << ") selected" << std::endl;
     }
     return EXIT_SUCCESS;
 }
