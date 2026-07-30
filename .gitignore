@@ -1,4 +1,6 @@
 ﻿.vscode/
+.claude/
+CLAUDE.md
 __pycache__/
 *.pyc
 BeamTable/
