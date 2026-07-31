@@ -85,7 +85,7 @@ int fpga_conftrol(tlkcore_lib::tlkcore_ptr service, std::string sn)
     // usrp_spi_setup(usrp_addr);
 
     char buf[64];
-#if 1
+#if 0
     // Case1: Manually control UHD to switch beam id by typing beam id
     int beam_id = 0;
     do {
@@ -126,7 +126,7 @@ int fpga_conftrol(tlkcore_lib::tlkcore_ptr service, std::string sn)
         }
         printf("You entered: %s", buf);
         fbs_addr = atoi(buf);
-        if (usrp_select_fbs_addr(MODE_TX, fbs_addr) <= 0) {
+        if (usrp_select_fbs_mode2(MODE_TX, fbs_addr) <= 0) {
             continue;
         }
     } while (1);

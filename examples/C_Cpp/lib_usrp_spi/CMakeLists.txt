@@ -51,6 +51,16 @@ else(USRP_FBS_LIB)
     add_executable(usrp_fbs usrp_fbs.cpp)
 endif(USRP_FBS_LIB)
 
+# BBox 8x8 Duo's HDMI/GPIO wiring and LDB usage differ from other TMYTEK
+# devices (see comment in usrp_fbs.cpp): SDO lands on a different pin, and no
+# LDB pulse/config is used at all. Turn this OFF when building for other
+# devices that follow the original pin4/PDI + LDB wiring.
+option(TMY_8X8_DUO "Build for BBox 8x8 Duo (pin mapping + no LDB usage)" ON)
+if(TMY_8X8_DUO)
+    message(STATUS "Target device: BBox 8x8 Duo")
+    target_compile_definitions(usrp_fbs PRIVATE TMY_8X8_DUO)
+endif(TMY_8X8_DUO)
+
 
 set(CMAKE_BUILD_TYPE "Release")
 message(STATUS "******************************************************************************")

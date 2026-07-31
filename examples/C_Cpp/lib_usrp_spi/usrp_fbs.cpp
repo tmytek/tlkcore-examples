@@ -13,12 +13,21 @@
 #include "usrp_fbs.hpp"
 
 // static const std::string SPI_DEFAULT_GPIO      = "GPIOA";
+// Define TMY_8X8_DUO (see CMakeLists.txt) when the device on the other end of
+// the HDMI/GPIO connector is a BBox 8x8 Duo: its wiring only uses CS(pin1),
+// CLK(pin6), SDO->SPI_SDI(pin9), TX_EN(pin4), RX_EN(pin15), GND(pin2) -
+// PDI(pin7)/LDB(pin10)/MISO(pin12) are not wired on this harness, and it
+// needs no LDB pulse at all (see usrp_spi_setup() and usrp_select_fbs_mode2()
+// below). Other devices use the original pin4/PDI wiring with LDB in use.
 static const size_t SPI_DEFAULT_CLK_PIN        = 3;
 static const size_t SPI_DEFAULT_SDI_PIN        = 7;
-static const size_t SPI_DEFAULT_SDO_PIN        = 4;
+#ifdef TMY_8X8_DUO
+static const size_t SPI_DEFAULT_SDO_PIN        = 5; // -> connector Data[5]/SPI_SDI (HDMI pin9)
+#else
+static const size_t SPI_DEFAULT_SDO_PIN        = 4; // -> connector Data[4]/SPI_PDI (HDMI pin7)
+#endif
 static const size_t SPI_DEFAULT_CS_PIN         = 0;
 
-static const size_t GPIO_DEFAULT_SDI_PIN       = 5;
 static const size_t GPIO_DEFAULT_LDB_PIN       = 6;
 static const size_t GPIO_DEFAULT_TX_EN_PIN     = 2;
 static const size_t GPIO_DEFAULT_RX_EN_PIN     = 9;
@@ -33,12 +42,17 @@ static const size_t reg_address[][2] = { {0x58, 0x78}, {0x54, 0x70} };
 static const size_t num_bits = 12;
 
 // BBox 8x8 Duo Fast Command Mode SPI framing (Fast write, FBS_ADDR word)
-// Frame = prefix[4:0] | p | 0 | b | FBS_ADDR[8:0]  (17 bits total)
+// Header = prefix[4:0] | p | 0 | b  (8 bits total, shared by mode 1 and mode 2)
 static const uint32_t FBS_TX_PREFIX      = 0x1E; // 0b11110
 static const uint32_t FBS_RX_PREFIX      = 0x1C; // 0b11100
 static const uint32_t FBS_P_BIT          = 1;    // parity_en=0 assumed -> p=1
 static const uint32_t FBS_B_BIT          = 0;    // STROBE not used -> b=0
+
+// Mode 2 (A=B phase): header | FBS_ADDR[8:0]  (17 bits total)
 static const size_t   FBS_ADDR_CMD_LENGTH = 17;
+
+// Mode 1 (A,B phase, independent): header | FBS_ADDR_B[8:0] | FBS_ADDR_A[8:0]  (26 bits total)
+static const size_t   FBS_MODE1_CMD_LENGTH = 26;
 
 static inline uint32_t GPIO_BIT(const size_t x)
 {
@@ -183,12 +197,16 @@ int usrp_spi_setup(uhd::usrp::multi_usrp::sptr available_usrp)
     periph_cfgs.push_back(periph_cfg);
 
     // Set the data direction register
+    // BBox 8x8 Duo does not wire LDB at all, so it's left out of the output
+    // config entirely here (not just skipping the post-write pulse) - other
+    // devices still need it configured as an output for usrp_select_beam_id().
     uint32_t outputs = 0x0;
     outputs |= 1 << periph_cfg.periph_clk;
     outputs |= 1 << periph_cfg.periph_sdo;
     outputs |= 1 << periph_cfg.periph_cs;
-    outputs |= 1 << GPIO_DEFAULT_SDI_PIN; //IC_SDI, always low
+#ifndef TMY_8X8_DUO
     outputs |= 1 << GPIO_DEFAULT_LDB_PIN; //LDB, low pulse after transmission
+#endif
     outputs |= 1 << GPIO_DEFAULT_TX_EN_PIN;
     outputs |= 1 << GPIO_DEFAULT_RX_EN_PIN;
     std::cout << "[USRP] direction pin config: " << outputs << std::endl;
@@ -200,7 +218,9 @@ int usrp_spi_setup(uhd::usrp::multi_usrp::sptr available_usrp)
               << "  Clock = " << (int)(periph_cfg.periph_clk) << std::endl
               << "  SDO   = " << (int)(periph_cfg.periph_sdo) << std::endl
               << "  SDI   = " << (int)(periph_cfg.periph_sdi) << std::endl
+#ifndef TMY_8X8_DUO
               << "  LDB   = " << (int)(GPIO_DEFAULT_LDB_PIN) << std::endl
+#endif
               << std::endl;
 
     // Disable ATR mode(automatic controlled by FPGA) for all pins
@@ -208,7 +228,9 @@ int usrp_spi_setup(uhd::usrp::multi_usrp::sptr available_usrp)
     // Set default output pins
     usrp->set_gpio_attr(gpio_bank, "OUT", 0x0, outputs & 0xFFFFFF);
     usrp->set_gpio_attr(gpio_bank, "OUT", GPIO_BIT(SPI_DEFAULT_SDI_PIN), GPIO_BIT(SPI_DEFAULT_SDI_PIN));
+#ifndef TMY_8X8_DUO
     usrp->set_gpio_attr(gpio_bank, "OUT", GPIO_BIT(GPIO_DEFAULT_LDB_PIN), GPIO_BIT(GPIO_DEFAULT_LDB_PIN));
+#endif
 
     // Set TX as default
     usrp_set_mode(0);
@@ -295,7 +317,7 @@ int usrp_select_beam_id(int mode, int id)
  * BBox 8x8 Duo: Fast Command Mode 2 (A=B phase) write.
  * Sets a single FBS_ADDR (0-511) applied to both A/B channels for TX or RX.
  */
-int usrp_select_fbs_addr(int mode, int addr)
+int usrp_select_fbs_mode2(int mode, int addr)
 {
     // Check addr is in range
     if (addr < 0 || addr > 511) {
@@ -317,14 +339,48 @@ int usrp_select_fbs_addr(int mode, int addr)
     }
 
     // Do the SPI transaction.
+    // BBox 8x8 Duo latches FBS_ADDR directly from the SPI frame, no LDB pulse needed.
     spi_ref->write_spi(0, spi_config, fbs_payload, FBS_ADDR_CMD_LENGTH);
-
-    // TMY LDB: low pulse
-    usrp->set_gpio_attr(gpio_bank, "OUT", 0, GPIO_BIT(GPIO_DEFAULT_LDB_PIN));
-    usrp->set_gpio_attr(gpio_bank, "OUT", GPIO_BIT(GPIO_DEFAULT_LDB_PIN), GPIO_BIT(GPIO_DEFAULT_LDB_PIN));
 
     if (debug) {
         std::cout << "[USRP] FBS_ADDR:" << addr << " (mode=" << mode << ") selected" << std::endl;
+    }
+    return EXIT_SUCCESS;
+}
+
+/*
+ * BBox 8x8 Duo: Fast Command Mode 1 (A,B phase, independent) write.
+ * Sets FBS_ADDR_A and FBS_ADDR_B (0-511 each) independently for TX or RX.
+ */
+int usrp_select_fbs_mode1(int mode, int addr_a, int addr_b)
+{
+    // Check addr_a/addr_b are in range
+    if (addr_a < 0 || addr_a > 511 || addr_b < 0 || addr_b > 511) {
+        std::cout << "[USRP] Invalid FBS_ADDR: A=" << addr_a << " B=" << addr_b << std::endl;
+        return EXIT_FAILURE;
+    }
+
+    // Switch Tx/Rx mode
+    if (rf_mode != mode) {
+        usrp_set_mode(mode);
+    }
+
+    uint32_t prefix = (mode == 0 ? FBS_TX_PREFIX : FBS_RX_PREFIX);
+    uint32_t fbs_payload = (prefix << 21) | (FBS_P_BIT << 20) | (FBS_B_BIT << 18)
+                         | ((uint32_t(addr_b) & 0x1FF) << 9) | (uint32_t(addr_a) & 0x1FF);
+
+    if (debug) {
+        std::cout << "[USRP] Writing FBS_ADDR(mode1) payload: 0x" << std::hex << fbs_payload
+                   << " with length " << std::dec << FBS_MODE1_CMD_LENGTH << " bits" << std::endl;
+    }
+
+    // Do the SPI transaction.
+    // BBox 8x8 Duo latches FBS_ADDR directly from the SPI frame, no LDB pulse needed.
+    spi_ref->write_spi(0, spi_config, fbs_payload, FBS_MODE1_CMD_LENGTH);
+
+    if (debug) {
+        std::cout << "[USRP] FBS_ADDR A:" << addr_a << " B:" << addr_b
+                   << " (mode=" << mode << ") selected" << std::endl;
     }
     return EXIT_SUCCESS;
 }
