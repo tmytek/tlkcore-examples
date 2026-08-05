@@ -17,25 +17,19 @@ via FT4232H MPSSE.
 
 Sent as 32 bits (MPSSE `0x11`) + 3 bits (MPSSE `0x13`) — exactly 35 clock cycles.
 
-### Mode1 — 26-bit frame (independent FBS address per channel)
+### Mode1 — 23-bit frame (independent FBS address per channel)
 
 | Bits    | Field      | Width | Range            |
 |---------|------------|-------|------------------|
-| [25:21] | prefix     | 5     | Tx=0x1E, Rx=0x1C |
-| [20]    | p (parity) | 1     | =1               |
-| [19]    | reserved   | 1     | =0               |
-| [18]    | b (strobe) | 1     | =0               |
+| [22:18] | prefix     | 5     | Tx=0x1E, Rx=0x1C |
 | [17:9]  | FBS_ADDR_2 | 9     | 0–511            |
 | [8:0]   | FBS_ADDR_1 | 9     | 0–511            |
 
-### Mode2 — 17-bit frame (same FBS address for both channels)
+### Mode2 — 14-bit frame (same FBS address for both channels)
 
 | Bits    | Field      | Width | Range            |
 |---------|------------|-------|------------------|
-| [16:12] | prefix     | 5     | Tx=0x1E, Rx=0x1C |
-| [11]    | p (parity) | 1     | =1               |
-| [10]    | reserved   | 1     | =0               |
-| [9]     | b (strobe) | 1     | =0               |
+| [13:9]  | prefix     | 5     | Tx=0x1E, Rx=0x1C |
 | [8:0]   | FBS_ADDR   | 9     | 0–511            |
 
 ## Hardware Setup
@@ -130,7 +124,7 @@ session.send_frame(frame, num_bits=35)
 
 session.set_rf(mode=1)  # switch to Rx mode
 frame = pack_mode2_frame(mode=1, addr=300)
-session.send_frame(frame, num_bits=17)
+session.send_frame(frame, num_bits=14)
 
 session.close()
 ```

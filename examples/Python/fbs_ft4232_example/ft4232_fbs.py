@@ -11,8 +11,6 @@ logger = logging.getLogger(__name__)
 
 FBS_TX_PREFIX = 0x1E  # 0b11110
 FBS_RX_PREFIX = 0x1C  # 0b11100
-FBS_P_BIT     = 1     # parity_en=0 -> p=1
-FBS_B_BIT     = 0     # STROBE not used
 
 # MPSSE Low Byte GPIO command
 _MPSSE_SET_BITS_LOW = 0x80
@@ -67,13 +65,10 @@ def pack_mode0_frame(mode: int, tdbs_2: int, tdbs_1: int, fbs_2: int, fbs_1: int
 
 
 def pack_mode1_frame(mode: int, addr_1: int, addr_2: int) -> int:
-    """Pack a 26-bit Mode1 FBS frame (1,2 phase, independent).
+    """Pack a 23-bit Mode1 FBS frame (1,2 phase, independent).
 
     Bit layout (MSB first):
-      [25:21] prefix[4:0]
-      [20]    p (parity, =1)
-      [19]    0 (reserved)
-      [18]    b (strobe, =0)
+      [22:18] prefix[4:0]
       [17:9]  FBS_ADDR_2[8:0]
       [8:0]   FBS_ADDR_1[8:0]
     """
@@ -86,23 +81,18 @@ def pack_mode1_frame(mode: int, addr_1: int, addr_2: int) -> int:
 
     prefix = FBS_TX_PREFIX if mode == 0 else FBS_RX_PREFIX
     return (
-        (prefix        & 0x1F)  << 21 |
-        (FBS_P_BIT     & 0x1)   << 20 |
-        (FBS_B_BIT     & 0x1)   << 18 |
-        (addr_2        & 0x1FF) <<  9 |
-        (addr_1        & 0x1FF)
+        (prefix & 0x1F)  << 18 |
+        (addr_2 & 0x1FF) <<  9 |
+        (addr_1 & 0x1FF)
     )
 
 
 def pack_mode2_frame(mode: int, addr: int) -> int:
-    """Pack a 17-bit Mode2 FBS frame (A=B phase).
+    """Pack a 14-bit Mode2 FBS frame (A=B phase).
 
     Bit layout (MSB first):
-      [16:12] prefix[4:0]
-      [11]    p (parity, =1)
-      [10]    0 (reserved)
-      [9]     b (strobe, =0)
-      [8:0]   FBS_ADDR[8:0]
+      [13:9] prefix[4:0]
+      [8:0]  FBS_ADDR[8:0]
     """
     if mode not in (0, 1):
         raise ValueError(f"mode must be 0 (Tx) or 1 (Rx), got {mode}")
@@ -111,10 +101,8 @@ def pack_mode2_frame(mode: int, addr: int) -> int:
 
     prefix = FBS_TX_PREFIX if mode == 0 else FBS_RX_PREFIX
     return (
-        (prefix    & 0x1F) << 12 |
-        (FBS_P_BIT & 0x1)  << 11 |
-        (FBS_B_BIT & 0x1)  <<  9 |
-        (addr      & 0x1FF)
+        (prefix & 0x1F) << 9 |
+        (addr   & 0x1FF)
     )
 
 
@@ -263,14 +251,14 @@ def send_fbs_mode1(
     addr_2: int,
     url: str = DEFAULT_URL,
 ) -> None:
-    """Send a 26-bit Mode1 FBS frame (1,2 phase, independent)."""
+    """Send a 23-bit Mode1 FBS frame (1,2 phase, independent)."""
     frame = pack_mode1_frame(mode, addr_1, addr_2)
     logger.info(
         f"Mode1 frame: mode={'Tx' if mode == 0 else 'Rx'} "
         f"ADDR_1={addr_1} ADDR_2={addr_2} "
-        f"(0x{frame:07X}, 26 bits)"
+        f"(0x{frame:06X}, 23 bits)"
     )
-    _send_raw_frame(frame, 26, url, _GPIO_TX if mode == 0 else _GPIO_RX)
+    _send_raw_frame(frame, 23, url, _GPIO_TX if mode == 0 else _GPIO_RX)
     logger.info("Mode1 frame sent successfully.")
 
 
@@ -303,14 +291,14 @@ def send_fbs_mode2(
     addr: int,
     url: str = DEFAULT_URL,
 ) -> None:
-    """Send a 17-bit Mode2 FBS frame (A=B phase)."""
+    """Send a 14-bit Mode2 FBS frame (A=B phase)."""
     frame = pack_mode2_frame(mode, addr)
     logger.info(
         f"Mode2 frame: mode={'Tx' if mode == 0 else 'Rx'} "
         f"ADDR={addr} "
-        f"(0x{frame:05X}, 17 bits)"
+        f"(0x{frame:04X}, 14 bits)"
     )
-    _send_raw_frame(frame, 17, url, _GPIO_TX if mode == 0 else _GPIO_RX)
+    _send_raw_frame(frame, 14, url, _GPIO_TX if mode == 0 else _GPIO_RX)
     logger.info("Mode2 frame sent successfully.")
 
 
@@ -428,9 +416,9 @@ def main() -> None:
                     logger.info(
                         f"Mode1 frame: mode={_rf_label()} "
                         f"ADDR_1={addr_1} ADDR_2={addr_2} "
-                        f"(0x{frame:07X}, 26 bits)"
+                        f"(0x{frame:06X}, 23 bits)"
                     )
-                    session.send_frame(frame, 26)
+                    session.send_frame(frame, 23)
                     logger.info("Mode1 frame sent successfully.")
                 except ValueError as e:
                     print(f"  Error: {e}")
@@ -442,9 +430,9 @@ def main() -> None:
                     logger.info(
                         f"Mode2 frame: mode={_rf_label()} "
                         f"ADDR={addr} "
-                        f"(0x{frame:05X}, 17 bits)"
+                        f"(0x{frame:04X}, 14 bits)"
                     )
-                    session.send_frame(frame, 17)
+                    session.send_frame(frame, 14)
                     logger.info("Mode2 frame sent successfully.")
                 except ValueError as e:
                     print(f"  Error: {e}")

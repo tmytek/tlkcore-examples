@@ -83,6 +83,6 @@ print(f"Mode2 frame (Tx): 0x{frame2:05X}  ({frame2.bit_length()} bits)")
 #
 # session.set_rf(mode=1)                              # switch to Rx mode
 # frame = pack_mode2_frame(mode=1, addr=300)
-# session.send_frame(frame, num_bits=17)
+# session.send_frame(frame, num_bits=14)
 #
 # session.close()
