@@ -3,7 +3,7 @@ Usage examples for ft4232_fbs.py
 
 Shows how to call each public function.
 No hardware required for the frame-packing examples;
-hardware (FT4232H + BBox 8x8 Duo) is required for the send/GPIO examples.
+hardware (FT4232H or C232HM + BBox 8x8 Duo) is required for the send/GPIO examples.
 """
 
 from ft4232_fbs import (
@@ -38,7 +38,7 @@ frame2 = pack_mode2_frame(mode=0, addr=300)
 print(f"Mode2 frame (Tx): 0x{frame2:05X}  ({frame2.bit_length()} bits)")
 
 # ---------------------------------------------------------------------------
-# Send via FT4232H (hardware required)
+# Send via FTDI MPSSE device (hardware required)
 # ---------------------------------------------------------------------------
 
 # Set RF mode to Tx and keep GPIO held
@@ -64,7 +64,8 @@ print(f"Mode2 frame (Tx): 0x{frame2:05X}  ({frame2.bit_length()} bits)")
 # Custom device URL (if multiple FTDI devices connected)
 # ---------------------------------------------------------------------------
 
-# send_fbs_mode2(mode=0, addr=300, url="ftdi://ftdi:4232:SERIALNO/1")
+# send_fbs_mode2(mode=0, addr=300, url="ftdi://ftdi:232h:SERIALNO/1")
+# (FT4232H channel A: url="ftdi://ftdi:4232:SERIALNO/1")
 
 # ---------------------------------------------------------------------------
 # _FtdiSession class (hardware required)
@@ -74,7 +75,7 @@ print(f"Mode2 frame (Tx): 0x{frame2:05X}  ({frame2.bit_length()} bits)")
 # session.open() also pulses CS once, so you don't need to call it manually.
 # ---------------------------------------------------------------------------
 
-# session = _FtdiSession(url="ftdi://ftdi:4232/1")
+# session = _FtdiSession(url="ftdi://ftdi:232h/1")
 # session.open()                                     # connect + auto CS pulse
 #
 # session.set_rf(mode=0)                              # Tx mode

@@ -1,4 +1,4 @@
-"""FT4232H MPSSE SPI — BBox 8x8 Duo FBS/TDBS Fast Broadcast Command Modes 0/1/2."""
+"""FTDI MPSSE SPI (FT4232H / C232HM) — BBox 8x8 Duo FBS/TDBS Fast Broadcast Command Modes 0/1/2."""
 
 import logging
 import time
@@ -26,7 +26,9 @@ _GPIO_RX = 0x80  # ADBUS6=0, ADBUS7=1
 _MPSSE_BYTES_OUT_NEG_MSB = 0x11
 _MPSSE_BITS_OUT_NEG_MSB  = 0x13
 
-DEFAULT_URL = "ftdi://ftdi:4232/1"
+# pyftdi device URL. Same ADBUS/MPSSE pin mapping on FT4232H channel A and
+# C232HM (FT232H-based cable) — only the product string differs.
+DEFAULT_URL = "ftdi://ftdi:232h/1"
 
 
 # ---------------------------------------------------------------------------
@@ -172,7 +174,7 @@ def _build_mpsse_send(full_bytes: bytes, tail_byte: int, tail_bits: int, rf_bits
 
 
 def _send_raw_frame(frame: int, num_bits: int, url: str, rf_bits: int = _GPIO_TX) -> None:
-    """Open FT4232H, send an N-bit frame via MPSSE, close."""
+    """Open the FTDI MPSSE device, send an N-bit frame via MPSSE, close."""
     full_bytes, tail_byte, tail_bits = _split_frame(frame, num_bits)
 
     ftdi = Ftdi()
@@ -303,7 +305,7 @@ def send_fbs_mode2(
 
 
 class _FtdiSession:
-    """Holds an open FT4232H MPSSE session for the CLI.
+    """Holds an open FTDI MPSSE session for the CLI.
 
     Keeps the device open so GPIO state (TX/RX enable) persists between
     commands without being reset by set_bitmode on each open.
@@ -361,7 +363,7 @@ def main() -> None:
         logger.error(f"Failed to open device: {exc}")
         return
 
-    print(f"FT4232H FBS/TDBS CLI  (device: {url})")
+    print(f"FBS/TDBS CLI  (device: {url})")
     print("Commands: rf | 0 | 1 | 2 | q")
     print("Use 'rf' to set Tx/Rx — GPIO stays high/low until changed.")
 

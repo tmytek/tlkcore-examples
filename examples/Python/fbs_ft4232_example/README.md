@@ -1,7 +1,10 @@
-# FT4232H FBS/TDBS Example
+# FBS/TDBS Example (FT4232H / C232HM)
 
 Sends BBox 8x8 Duo **Fast Broadcast Command** frames (Mode0/Mode1/Mode2)
-via FT4232H MPSSE.
+via FTDI MPSSE, using either an **FT4232H** (channel A) or a **C232HM**
+MPSSE cable (FT232H-based). Both expose the same ADBUS pin layout, so the
+wiring and frame logic below apply to either device — only the pyftdi
+device URL differs.
 
 ## Frame Formats
 
@@ -34,17 +37,18 @@ Sent as 32 bits (MPSSE `0x11`) + 3 bits (MPSSE `0x13`) — exactly 35 clock cycl
 
 ## Hardware Setup
 
-FT4232H Channel A MPSSE pin mapping:
+MPSSE pin mapping (FT4232H channel A, and equivalently C232HM ADBUS):
 
-| MPSSE Pin   | Signal  | Direction |
-|-------------|---------|-----------|
-| bit 0 / TCK | SPI CLK | Output    |
-| bit 1 / TDI | SPI DO  | Output    |
-| bit 2 / TDO | SPI DI  | Input     |
-| bit 3 / TMS | SPI CS  | Output (active low) |
+| MPSSE Pin   | Signal  | Direction | C232HM wire color |
+|-------------|---------|-----------|--------------------|
+| bit 0 / TCK | SPI CLK | Output    | Orange (SK)        |
+| bit 1 / TDI | SPI DO  | Output    | Yellow (DO)        |
+| bit 3 / TMS | SPI CS  | Output (active low) | Brown (CS)  |
+| bit 6 / GPIOL2 | TX_EN | Output  | White (GPIOL2)     |
+| bit 7 / GPIOL3 | RX_EN | Output  | Blue (GPIOL3)      |
 
-On Windows: use **Zadig** to install WinUSB or libusb-win32 driver for
-the FT4232H channel before running.
+On Windows: use **Zadig** to install the WinUSB driver for the FT4232H
+channel, or for the C232HM's single interface, before running.
 
 ## Requirements
 
@@ -59,13 +63,19 @@ Install:
 pip install -r requirements.txt
 ```
 
-On Windows, also use **Zadig** to install the WinUSB driver for the FT4232H
-channel before running (one-time setup per machine):
+On Windows, also use **Zadig** to install the WinUSB driver before running
+(one-time setup per machine):
 
 1. Download Zadig from https://zadig.akeo.ie
 2. Options → List All Devices
-3. Select `FT4232H` Interface 0
+3. Select `FT4232H` Interface 0, or the C232HM's `USB Serial Converter` device
 4. Driver → **WinUSB** → Replace Driver
+
+Confirm the pyftdi device URL after driver setup:
+
+```bash
+python -c "from pyftdi.ftdi import Ftdi; Ftdi.show_devices()"
+```
 
 ## Usage
 
@@ -75,7 +85,7 @@ channel before running (one-time setup per machine):
 python ft4232_fbs.py
 ```
 
-Connecting opens the FT4232H and automatically pulses CS once — no need to
+Connecting opens the device and automatically pulses CS once — no need to
 trigger CS manually. Commands available in the session:
 
 | Command | Action                                    |
@@ -103,7 +113,8 @@ send_fbs_mode1(mode=0, addr_1=100, addr_2=200)
 send_fbs_mode2(mode=0, addr=300)
 
 # Custom device URL (if multiple FTDI devices connected)
-send_fbs_mode2(mode=0, addr=300, url="ftdi://ftdi:4232:SERIALNO/1")
+send_fbs_mode2(mode=0, addr=300, url="ftdi://ftdi:232h:SERIALNO/1")
+# (FT4232H channel A: url="ftdi://ftdi:4232:SERIALNO/1")
 ```
 
 ### Persistent session (`_FtdiSession`)
@@ -115,7 +126,7 @@ as the CLI — no manual CS call needed.
 ```python
 from ft4232_fbs import _FtdiSession, pack_mode0_frame, pack_mode2_frame
 
-session = _FtdiSession(url="ftdi://ftdi:4232/1")
+session = _FtdiSession(url="ftdi://ftdi:232h/1")
 session.open()  # connect + auto CS pulse
 
 session.set_rf(mode=0)  # Tx mode
@@ -137,4 +148,4 @@ python test_ft4232_fbs.py
 
 `test_ft4232_fbs.py` prints frame-packing examples (no hardware required)
 and shows commented-out examples of every send/GPIO/session call that
-does require the FT4232H + BBox 8x8 Duo hardware.
+does require the FT4232H or C232HM + BBox 8x8 Duo hardware.
