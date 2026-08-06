@@ -90,7 +90,7 @@ def pack_mode1_frame(mode: int, addr_1: int, addr_2: int) -> int:
 
 
 def pack_mode2_frame(mode: int, addr: int) -> int:
-    """Pack a 14-bit Mode2 FBS frame (A=B phase).
+    """Pack a 14-bit Mode2 FBS frame (1=2 phase).
 
     Bit layout (MSB first):
       [13:9] prefix[4:0]
@@ -140,7 +140,7 @@ def _split_frame(frame: int, num_bits: int) -> Tuple[bytes, int, int]:
 
 
 def _build_mpsse_init(rf_bits: int = _GPIO_TX) -> bytes:
-    """Return MPSSE initialization sequence (1 MHz SPI clock).
+    """Return MPSSE initialization sequence (30 MHz SPI clock).
 
     Args:
         rf_bits: RF enable GPIO bits to set on init (_GPIO_TX or _GPIO_RX)
@@ -217,7 +217,7 @@ def pulse_cs(mode: int = 0, url: str = DEFAULT_URL) -> None:
         time.sleep(0.01)
 
         ftdi.write_data(bytes([
-            _MPSSE_SET_BITS_LOW, rf_bits,               _GPIO_DIR,  # CS=0
+            _MPSSE_SET_BITS_LOW, rf_bits,_GPIO_DIR,                  # CS=0
             _MPSSE_SET_BITS_LOW, _GPIO_CS_BIT | rf_bits, _GPIO_DIR,  # CS=1
         ]))
         logger.info(f"CS pulsed ({'Tx' if mode == 0 else 'Rx'} mode).")
@@ -249,8 +249,8 @@ def send_fbs_mode0(
 
 def send_fbs_mode1(
     mode: int,
-    addr_1: int,
     addr_2: int,
+    addr_1: int,
     url: str = DEFAULT_URL,
 ) -> None:
     """Send a 23-bit Mode1 FBS frame (1,2 phase, independent)."""
@@ -293,7 +293,7 @@ def send_fbs_mode2(
     addr: int,
     url: str = DEFAULT_URL,
 ) -> None:
-    """Send a 14-bit Mode2 FBS frame (A=B phase)."""
+    """Send a 14-bit Mode2 FBS frame"""
     frame = pack_mode2_frame(mode, addr)
     logger.info(
         f"Mode2 frame: mode={'Tx' if mode == 0 else 'Rx'} "

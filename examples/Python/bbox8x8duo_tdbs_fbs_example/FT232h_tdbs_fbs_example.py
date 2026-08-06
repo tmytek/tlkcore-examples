@@ -1,12 +1,12 @@
 """
-Usage examples for ft4232_fbs.py
+Usage examples for FT232h_tdbs_fbs_module.py
 
 Shows how to call each public function.
 No hardware required for the frame-packing examples;
 hardware (FT4232H or C232HM + BBox 8x8 Duo) is required for the send/GPIO examples.
 """
 
-from ft4232_fbs import (
+from FT232h_tdbs_fbs_module import (
     pack_mode0_frame,
     pack_mode1_frame,
     pack_mode2_frame,
@@ -14,7 +14,6 @@ from ft4232_fbs import (
     send_fbs_mode1,
     send_fbs_mode2,
     set_rf_enable,
-    pulse_cs,
     _FtdiSession,
 )
 
@@ -53,9 +52,6 @@ print(f"Mode2 frame (Tx): 0x{frame2:05X}  ({frame2.bit_length()} bits)")
 # Send Mode2 frame (Tx, ADDR=300)
 # send_fbs_mode2(mode=0, addr=300)
 
-# Pulse CS without clocking data
-# pulse_cs(mode=0)
-
 # Switch to Rx mode
 # set_rf_enable(mode=1)
 # send_fbs_mode2(mode=1, addr=300)
@@ -81,9 +77,5 @@ print(f"Mode2 frame (Tx): 0x{frame2:05X}  ({frame2.bit_length()} bits)")
 # session.set_rf(mode=0)                              # Tx mode
 # frame = pack_mode0_frame(mode=0, tdbs_2=5, tdbs_1=3, fbs_2=100, fbs_1=200)
 # session.send_frame(frame, num_bits=35)
-#
-# session.set_rf(mode=1)                              # switch to Rx mode
-# frame = pack_mode2_frame(mode=1, addr=300)
-# session.send_frame(frame, num_bits=14)
 #
 # session.close()

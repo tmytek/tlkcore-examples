@@ -18,7 +18,6 @@ device URL differs.
 | [17:9]  | FBS_2   | 9     | 0–511            |
 | [8:0]   | FBS_1   | 9     | 0–511            |
 
-Sent as 32 bits (MPSSE `0x11`) + 3 bits (MPSSE `0x13`) — exactly 35 clock cycles.
 
 ### Mode1 — 23-bit frame (independent FBS address per channel)
 
@@ -82,7 +81,7 @@ python -c "from pyftdi.ftdi import Ftdi; Ftdi.show_devices()"
 ### Interactive CLI
 
 ```bash
-python ft4232_fbs.py
+python FT232h_tdbs_fbs_module.py
 ```
 
 Connecting opens the device and automatically pulses CS once — no need to
@@ -101,7 +100,7 @@ trigger CS manually. Commands available in the session:
 Each call opens the device, sends the frame, and closes it:
 
 ```python
-from ft4232_fbs import send_fbs_mode0, send_fbs_mode1, send_fbs_mode2
+from FT232h_tdbs_fbs_module import send_fbs_mode0, send_fbs_mode1, send_fbs_mode2
 
 # Mode0 — Tx mode: TDBS_2=5, TDBS_1=3, FBS_2=100, FBS_1=200
 send_fbs_mode0(mode=0, tdbs_2=5, tdbs_1=3, fbs_2=100, fbs_1=200)
@@ -124,7 +123,7 @@ state isn't reset on every call. `session.open()` also pulses CS once, same
 as the CLI — no manual CS call needed.
 
 ```python
-from ft4232_fbs import _FtdiSession, pack_mode0_frame, pack_mode2_frame
+from FT232h_tdbs_fbs_module import _FtdiSession, pack_mode0_frame, pack_mode2_frame
 
 session = _FtdiSession(url="ftdi://ftdi:232h/1")
 session.open()  # connect + auto CS pulse
@@ -133,19 +132,5 @@ session.set_rf(mode=0)  # Tx mode
 frame = pack_mode0_frame(mode=0, tdbs_2=5, tdbs_1=3, fbs_2=100, fbs_1=200)
 session.send_frame(frame, num_bits=35)
 
-session.set_rf(mode=1)  # switch to Rx mode
-frame = pack_mode2_frame(mode=1, addr=300)
-session.send_frame(frame, num_bits=14)
-
 session.close()
 ```
-
-## Usage Examples (no hardware needed to run)
-
-```bash
-python test_ft4232_fbs.py
-```
-
-`test_ft4232_fbs.py` prints frame-packing examples (no hardware required)
-and shows commented-out examples of every send/GPIO/session call that
-does require the FT4232H or C232HM + BBox 8x8 Duo hardware.
