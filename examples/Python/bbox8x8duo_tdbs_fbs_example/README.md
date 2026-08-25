@@ -10,13 +10,13 @@ device URL differs.
 
 ### Mode0 — 35-bit frame (individual TDBS + FBS per channel)
 
-| Bits    | Field   | Width | Range            |
-|---------|---------|-------|------------------|
-| [34:30] | prefix  | 5     | Tx=0x1E, Rx=0x1C |
-| [29:24] | TDBS_2  | 6     | 0–63             |
-| [23:18] | TDBS_1  | 6     | 0–63             |
-| [17:9]  | FBS_2   | 9     | 0–511            |
-| [8:0]   | FBS_1   | 9     | 0–511            |
+| Bits    | Field        | Width | Range            |
+|---------|--------------|-------|------------------|
+| [34:30] | prefix       | 5     | Tx=0x1E, Rx=0x1C |
+| [29:24] | TDBS_ADDR_2  | 6     | 0–63             |
+| [23:18] | TDBS_ADDR_1  | 6     | 0–63             |
+| [17:9]  | FBS_ADDR_2   | 9     | 0–511            |
+| [8:0]   | FBS_ADDR_1   | 9     | 0–511            |
 
 
 ### Mode1 — 23-bit frame (independent FBS address per channel)
@@ -102,8 +102,8 @@ Each call opens the device, sends the frame, and closes it:
 ```python
 from FT232h_tdbs_fbs_module import send_fbs_mode0, send_fbs_mode1, send_fbs_mode2
 
-# Mode0 — Tx mode: TDBS_2=5, TDBS_1=3, FBS_2=100, FBS_1=200
-send_fbs_mode0(mode=0, tdbs_2=5, tdbs_1=3, fbs_2=100, fbs_1=200)
+# Mode0 — Tx mode: TDBS_ADDR_2=5, TDBS_ADDR_1=3, FBS_ADDR_2=100, FBS_ADDR_1=200
+send_fbs_mode0(mode=0, tdbs_addr_2=5, tdbs_addr_1=3, fbs_addr_2=100, fbs_addr_1=200)
 
 # Mode1 — Tx mode: ADDR_1=100, ADDR_2=200
 send_fbs_mode1(mode=0, addr_1=100, addr_2=200)
@@ -129,7 +129,7 @@ session = _FtdiSession(url="ftdi://ftdi:232h/1")
 session.open()  # connect + auto CS pulse
 
 session.set_rf(mode=0)  # Tx mode
-frame = pack_mode0_frame(mode=0, tdbs_2=5, tdbs_1=3, fbs_2=100, fbs_1=200)
+frame = pack_mode0_frame(mode=0, tdbs_addr_2=5, tdbs_addr_1=3, fbs_addr_2=100, fbs_addr_1=200)
 session.send_frame(frame, num_bits=35)
 
 session.close()

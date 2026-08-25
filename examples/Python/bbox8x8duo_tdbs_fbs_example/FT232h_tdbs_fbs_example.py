@@ -22,10 +22,10 @@ from FT232h_tdbs_fbs_module import (
 # ---------------------------------------------------------------------------
 
 # Mode0: individual 1/2 channels, FBS + TDBS addresses
-frame0 = pack_mode0_frame(mode=0, tdbs_2=5, tdbs_1=3, fbs_2=100, fbs_1=200)
+frame0 = pack_mode0_frame(mode=0, tdbs_addr_2=5, tdbs_addr_1=3, fbs_addr_2=100, fbs_addr_1=200)
 print(f"Mode0 frame (Tx): 0x{frame0:09X}  ({frame0.bit_length()} bits)")
 
-frame0_rx = pack_mode0_frame(mode=1, tdbs_2=5, tdbs_1=3, fbs_2=100, fbs_1=200)
+frame0_rx = pack_mode0_frame(mode=1, tdbs_addr_2=5, tdbs_addr_1=3, fbs_addr_2=100, fbs_addr_1=200)
 print(f"Mode0 frame (Rx): 0x{frame0_rx:09X}  ({frame0_rx.bit_length()} bits)")
 
 # Mode1: independent FBS address per channel
@@ -43,8 +43,8 @@ print(f"Mode2 frame (Tx): 0x{frame2:05X}  ({frame2.bit_length()} bits)")
 # Set RF mode to Tx and keep GPIO held
 # set_rf_enable(mode=0)
 
-# Send Mode0 frame (Tx, TDBS_2=5, TDBS_1=3, FBS_2=100, FBS_1=200)
-# send_fbs_mode0(mode=0, tdbs_2=5, tdbs_1=3, fbs_2=100, fbs_1=200)
+# Send Mode0 frame (Tx, TDBS_ADDR_2=5, TDBS_ADDR_1=3, FBS_ADDR_2=100, FBS_ADDR_1=200)
+# send_fbs_mode0(mode=0, tdbs_addr_2=5, tdbs_addr_1=3, fbs_addr_2=100, fbs_addr_1=200)
 
 # Send Mode1 frame (Tx, ADDR_1=100, ADDR_2=200)
 # send_fbs_mode1(mode=0, addr_1=100, addr_2=200)
@@ -75,7 +75,7 @@ print(f"Mode2 frame (Tx): 0x{frame2:05X}  ({frame2.bit_length()} bits)")
 # session.open()                                     # connect + auto CS pulse
 #
 # session.set_rf(mode=0)                              # Tx mode
-# frame = pack_mode0_frame(mode=0, tdbs_2=5, tdbs_1=3, fbs_2=100, fbs_1=200)
+# frame = pack_mode0_frame(mode=0, tdbs_addr_2=5, tdbs_addr_1=3, fbs_addr_2=100, fbs_addr_1=200)
 # session.send_frame(frame, num_bits=35)
 #
 # session.close()

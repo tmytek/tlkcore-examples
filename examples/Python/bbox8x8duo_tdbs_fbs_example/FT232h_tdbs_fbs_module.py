@@ -35,34 +35,34 @@ DEFAULT_URL = "ftdi://ftdi:232h/1"
 # Frame packing
 # ---------------------------------------------------------------------------
 
-def pack_mode0_frame(mode: int, tdbs_2: int, tdbs_1: int, fbs_2: int, fbs_1: int) -> int:
+def pack_mode0_frame(mode: int, tdbs_addr_2: int, tdbs_addr_1: int, fbs_addr_2: int, fbs_addr_1: int) -> int:
     """Pack a 35-bit Mode0 FBS/TDBS frame (Individual 1,2).
 
     Bit layout (MSB first):
       [34:30] prefix[4:0]  — Tx=0x1E, Rx=0x1C
-      [29:24] TDBS_2[5:0]
-      [23:18] TDBS_1[5:0]
-      [17:9]  FBS_2[8:0]
-      [8:0]   FBS_1[8:0]
+      [29:24] TDBS_ADDR_2[5:0]
+      [23:18] TDBS_ADDR_1[5:0]
+      [17:9]  FBS_ADDR_2[8:0]
+      [8:0]   FBS_ADDR_1[8:0]
     """
     if mode not in (0, 1):
         raise ValueError(f"mode must be 0 (Tx) or 1 (Rx), got {mode}")
-    if not (0 <= tdbs_2 <= 63):
-        raise ValueError(f"tdbs_2 out of range [0,63]: {tdbs_2}")
-    if not (0 <= tdbs_1 <= 63):
-        raise ValueError(f"tdbs_1 out of range [0,63]: {tdbs_1}")
-    if not (0 <= fbs_2 <= 511):
-        raise ValueError(f"fbs_2 out of range [0,511]: {fbs_2}")
-    if not (0 <= fbs_1 <= 511):
-        raise ValueError(f"fbs_1 out of range [0,511]: {fbs_1}")
+    if not (0 <= tdbs_addr_2 <= 63):
+        raise ValueError(f"tdbs_addr_2 out of range [0,63]: {tdbs_addr_2}")
+    if not (0 <= tdbs_addr_1 <= 63):
+        raise ValueError(f"tdbs_addr_1 out of range [0,63]: {tdbs_addr_1}")
+    if not (0 <= fbs_addr_2 <= 511):
+        raise ValueError(f"fbs_addr_2 out of range [0,511]: {fbs_addr_2}")
+    if not (0 <= fbs_addr_1 <= 511):
+        raise ValueError(f"fbs_addr_1 out of range [0,511]: {fbs_addr_1}")
 
     prefix = FBS_TX_PREFIX if mode == 0 else FBS_RX_PREFIX
     return (
         (prefix & 0x1F)  << 30 |
-        (tdbs_2 & 0x3F)  << 24 |
-        (tdbs_1 & 0x3F)  << 18 |
-        (fbs_2  & 0x1FF) <<  9 |
-        (fbs_1  & 0x1FF)
+        (tdbs_addr_2 & 0x3F)  << 24 |
+        (tdbs_addr_1 & 0x3F)  << 18 |
+        (fbs_addr_2  & 0x1FF) <<  9 |
+        (fbs_addr_1  & 0x1FF)
     )
 
 
@@ -230,17 +230,17 @@ def pulse_cs(mode: int = 0, url: str = DEFAULT_URL) -> None:
 
 def send_fbs_mode0(
     mode: int,
-    tdbs_2: int,
-    tdbs_1: int,
-    fbs_2: int,
-    fbs_1: int,
+    tdbs_addr_2: int,
+    tdbs_addr_1: int,
+    fbs_addr_2: int,
+    fbs_addr_1: int,
     url: str = DEFAULT_URL,
 ) -> None:
     """Send a 35-bit Mode0 FBS/TDBS frame (Individual 1,2)."""
-    frame = pack_mode0_frame(mode, tdbs_2, tdbs_1, fbs_2, fbs_1)
+    frame = pack_mode0_frame(mode, tdbs_addr_2, tdbs_addr_1, fbs_addr_2, fbs_addr_1)
     logger.info(
         f"Mode0 frame: mode={'Tx' if mode == 0 else 'Rx'} "
-        f"TDBS_2={tdbs_2} TDBS_1={tdbs_1} FBS_2={fbs_2} FBS_1={fbs_1} "
+        f"TDBS_ADDR_2={tdbs_addr_2} TDBS_ADDR_1={tdbs_addr_1} FBS_ADDR_2={fbs_addr_2} FBS_ADDR_1={fbs_addr_1} "
         f"(0x{frame:09X}, 35 bits)"
     )
     _send_raw_frame(frame, 35, url, _GPIO_TX if mode == 0 else _GPIO_RX)
@@ -395,14 +395,14 @@ def main() -> None:
 
             elif cmd == "0":
                 try:
-                    tdbs_2 = int(input("  TDBS_2 [0-63]:  "))
-                    tdbs_1 = int(input("  TDBS_1 [0-63]:  "))
-                    fbs_2  = int(input("  FBS_2  [0-511]: "))
-                    fbs_1  = int(input("  FBS_1  [0-511]: "))
-                    frame = pack_mode0_frame(rf_mode, tdbs_2, tdbs_1, fbs_2, fbs_1)
+                    tdbs_addr_2 = int(input("  TDBS_ADDR_2 [0-63]:  "))
+                    tdbs_addr_1 = int(input("  TDBS_ADDR_1 [0-63]:  "))
+                    fbs_addr_2  = int(input("  FBS_ADDR_2  [0-511]: "))
+                    fbs_addr_1  = int(input("  FBS_ADDR_1  [0-511]: "))
+                    frame = pack_mode0_frame(rf_mode, tdbs_addr_2, tdbs_addr_1, fbs_addr_2, fbs_addr_1)
                     logger.info(
                         f"Mode0 frame: mode={_rf_label()} "
-                        f"TDBS_2={tdbs_2} TDBS_1={tdbs_1} FBS_2={fbs_2} FBS_1={fbs_1} "
+                        f"TDBS_ADDR_2={tdbs_addr_2} TDBS_ADDR_1={tdbs_addr_1} FBS_ADDR_2={fbs_addr_2} FBS_ADDR_1={fbs_addr_1} "
                         f"(0x{frame:09X}, 35 bits)"
                     )
                     session.send_frame(frame, 35)
