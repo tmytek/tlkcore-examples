@@ -14,6 +14,8 @@
 
 ## Prerequisites
 
+> **Deprecation notice:** Support for Python 3.8 and 3.9 is deprecated and will end in Q2 2027. Please plan to upgrade to Python 3.10 or later.
+
 * Python 3 ([Installing Python3](/Install.md#installing-python3))
 * TLKCore ([Installing TLKCore](/Install.md#installing-tlkcore))
 * Files for BBoxOne/Lite

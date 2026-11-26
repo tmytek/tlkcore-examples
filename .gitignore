@@ -7,3 +7,6 @@ bin/
 obj/
 tlk_core_log/
 Thumbs.db
+
+# Local AI tool settings; keep shared rules and skills trackable.
+.claude/settings.json

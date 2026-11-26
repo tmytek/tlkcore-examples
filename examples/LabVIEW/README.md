@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+> **Deprecation notice:** Support for Python 3.8 and 3.9 is deprecated and will end in Q2 2027. Please plan to upgrade to Python 3.10 or later.
+
 1. Python 3 ([Installing Python3](/Install.md#installing-python3))
 2. TLKCore ([Installing TLKCore](/Install.md#installing-tlkcore))
 3. According to [Integrating Python Code in LabVIEW](https://www.ni.com/en/support/documentation/supplemental/18/installing-python-for-calling-python-code.html#section-1736000138) to download LabVIEW to maps your Python version. `Please download 64bit version not 32bit`.

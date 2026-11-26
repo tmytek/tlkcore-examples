@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+> **Deprecation notice:** Support for Python 3.8 and 3.9 is deprecated and will end in Q2 2027. Please plan to upgrade to Python 3.10 or later.
+
 1. Install Python *3.8 ~ 3.12* and install TLKCore follow reference user guide of [Getting Started with Python Sample Code](../Python/README.md) to make sure your Python environment first.
 2. According to [Versions of Python Compatible with MATLAB Products by Release](https://www.mathworks.com/support/requirements/python-compatibility.html) to download MATLAB to maps your Python version.
 

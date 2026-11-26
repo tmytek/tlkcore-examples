@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+> **Deprecation notice:** Support for Python 3.8 and 3.9 is deprecated and will end in Q2 2027. Please plan to upgrade to Python 3.10 or later.
+
 * Python 3
     1. Install Python *3.8 ~ 3.12*, and install TLKCore follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
 * Visual Studio - Example runs on *Visual Studio 2022 with .NET Framework 4.7.2*

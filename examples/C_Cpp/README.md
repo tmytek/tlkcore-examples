@@ -30,6 +30,8 @@ Here is a simple architecture for C/C++ example to control BBoxOne 5G and UDBox 
 
 ## Prerequisites
 
+> **Deprecation notice:** Support for Python 3.8 and 3.9 is deprecated and will end in Q2 2027. Please plan to upgrade to Python 3.10 or later.
+
 1. Install Python *3.8 or 3.10 or 3.12*, and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md)
 2. For C/C++ supporting, please install related Python packages from [lib_tlkcore_cpp/requirements.txt](lib_tlkcore_cpp/requirements.txt)
 

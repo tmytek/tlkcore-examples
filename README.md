@@ -68,6 +68,7 @@ Python is a cross-platform programming language, and we provide the basic Python
 ### Python 3
 
 * TLKCore support Python *3.8 ~ 3.12*, and follow reference user guide of [Getting Started with Python Sample Code](/examples/Python/README.md) to make sure your Python environment first.
+* **Deprecation notice:** Support for Python 3.8 and 3.9 is deprecated and will end in Q2 2027. Please plan to upgrade to Python 3.10 or later.
 
 ### Communication environment
 
