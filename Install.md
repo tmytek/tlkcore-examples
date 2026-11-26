@@ -29,6 +29,8 @@ Reference from [tlkcore on pypi](https://pypi.org/project/tlkcore/), and launch 
 
 Install Python *3.8 ~ 3.12* with **64 bit** version
 
+> **Deprecation notice:** Support for Python 3.8 and 3.9 is deprecated and will end in Q2 2027. Please plan to upgrade to Python 3.10 or later.
+
 * TLKCore example give a default libraries for *Python 3.10* ([python-3.10.11 64-bit download Link](https://www.python.org/downloads/release/python-31011/))
 
 * Remember to **allow** the option: `Add python.exe to PATH`
